@@ -26,6 +26,9 @@ Explique o que acontece dentro da função qnd um parâmetro é passado e també
 Explique como uma variável pode receber um valor de uma IIFE.
 Explique como passar uma variável por parâmetro para a IIFE e acontece com ela dentro da função.
 
+
+## Considerações
+
 Quanto mais explicado melhor.
 
 Lembre que isso fará parte do seu currículo como aluno e será disponilizado no sistema de vagas, ou seja, o contratante poderá ver todos seus projetos e trabalhos feitos nesse curso.
