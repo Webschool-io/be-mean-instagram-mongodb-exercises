@@ -51,12 +51,25 @@ Referência .: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference
 
 ## Closure
 
-Explique o que é, o porquê acontece e como usar. 
-Cite situações que você usaria.
+### O que é ?
+È uma função interior que tem acesso a variáveis de uma função exterior, 
+e pode ter acesso a três cadeias de escopos, o escopo das variáveis globais, 
+o escopo da função exterior dele, e o seu próprio escopo.
+
+### O porquê acontece ?   
+
+
+### Como usar ? 
+
+### situações que você usaria.
+
+
+Referência .: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures , 
+	      http://javascriptbrasil.com/2013/10/12/entenda-closures-no-javascript-com-facilidade/
 
 ## Variável Global
 
-Explique como se usa uma var Global dentro de uma função.
+### Explique como se usa uma var Global dentro de uma função.
 
 ## Variável por parâmetro
 
