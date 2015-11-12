@@ -72,11 +72,18 @@ var pokemon = [
 
 be-mean-pokemon> db.pokemons.insert(pokemon)
 
+```
+
 ## Liste os pokemons existentes na sua coleção
 
+```
 db.pokemons.find()
 
+```
+
 ## Busque um pokemon e armazene-o em uma variavel chamada 'poke'
+
+```
 
 gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemon> var poke = {name: 'Pikachu'}
 gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemon> var p = db.pokemons.findOne(poke)
@@ -85,7 +92,11 @@ gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemon> poke
   "name": "Pikachu"
 }
 
+```
+
 ## Modifique sua description e salve
+
+```
 
 gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemon> p.description
 pokemon eletrico
@@ -102,7 +113,4 @@ WriteResult({
   "nModified": 1
 })
 
-
-
-
-
+```
