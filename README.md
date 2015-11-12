@@ -1,4 +1,5 @@
 # Artigo
+autor: Suissa
 
 Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia as variáveis, seguindo os seguintes tópicos.
 
@@ -13,7 +14,7 @@ Cite situações que você usaria.
 
 ## Variável Global
 
-Explique como se usa uma var Global dentro de uma função
+Explique como se usa uma var Global dentro de uma função.
 
 ## Variável por parâmetro
 
@@ -21,6 +22,9 @@ Explique o que acontece dentro da função qnd um parâmetro é passado e també
 
 
 ## Instanciação usando uma IIFE
+
+Explique como uma variável pode receber um valor de uma IIFE.
+Explique como passar uma variável por parâmetro para a IIFE e acontece com ela dentro da função.
 
 Quanto mais explicado melhor.
 
