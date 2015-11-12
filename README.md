@@ -21,6 +21,6 @@ Boa sorte.
 # Envio
 
 1. Fork [esse repositório](https://github.com/Webschool-io/be-mean-instagram-artigos/) 
-2. Nomeie seu artigo usando o seguinte padrão: artigo-githubuser-nome-completo.md
-3. Adicione seu exercício aqui na Pasta Instanciação-variáveis
+2. Nomeie seu artigo usando o seguinte padrão: artigo-instanciacao-githubuser-nome-completo.md
+3. Adicione seu exercício aqui na Pasta Variables
 4. Faça um Pull Requst enviando seu artigo.
