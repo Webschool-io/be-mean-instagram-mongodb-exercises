@@ -24,28 +24,28 @@ e são movidas para o inicio da função ou do código global.
 Declarar uma variável em qualquer parte do seu código é equivalente a declarar no início da função ou do código global.
 Até mesmo é possível utilizar uma variável antes dela ser declarada.
 
-Ex.
+	Ex.
 
-var x;
+		var x;
 
-x = 4;
+		x = 4;
 
-y = 3;
+		y = 3;
 
-alert(x + y); 
+		alert(x + y); 
 
-var y;
+		var y;
 
-// È o mesmo que !
+		// È o mesmo que !
 
-var x;
-var y;
+		var x;
+		var y;
 
-x = 4;
+		x = 4;
 
-y = 3;
+		y = 3;
 
-alert(x + y); 
+		alert(x + y); 
 
 Referência .: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/var
 
