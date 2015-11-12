@@ -3,7 +3,7 @@ autor: Adejair Júnior
 
 ## Listagem das databases
 ```
-show databases :notebook_with_decorative_cover:
+show databases 
 
 adejair(mongod-2.4.9) be-mean-pokemons> show databases
 be-mean-pokemons  → 0.203GB
