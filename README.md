@@ -1,5 +1,6 @@
 # Artigo
-autor: Suissa
+**autor**: Suissa
+**Prazo**: até dia 18 de Novembro de 2015
 
 Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia as variáveis, seguindo os seguintes tópicos.
 
