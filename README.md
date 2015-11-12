@@ -4,11 +4,20 @@ Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia 
 
 ## Hoisting
 
+### Com variável
+
+### Com função
+
 ## Closure
 
 ## Variável Global
 
+Explique como se usa uma var Global dentro de uma função
+
 ## Variável por parâmetro
+
+Explique o que acontece dentro da função qnd um parâmetro é passado e também explique quando uma GLOBAL é passada por parâmetro.
+
 
 ## Instanciação usando uma IIFE
 
