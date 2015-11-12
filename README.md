@@ -4,11 +4,12 @@ Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia 
 
 ## Hoisting
 
-### Com variável
-
-### Com função
+Explique o que é, o porquê acontece e como acontece com variável e função.
 
 ## Closure
+
+Explique o que é, o porquê acontece e como usar. 
+Cite situações que você usaria.
 
 ## Variável Global
 
