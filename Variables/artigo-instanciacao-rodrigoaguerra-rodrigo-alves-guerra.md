@@ -7,11 +7,21 @@ Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia 
 
 ## Hoisting
 
-Explique o que é, o porquê acontece e como acontece com variável e função.
+### O que é ?
 
-Tendo em vista que as variáveis são processadas antes que o código seja executado, 
+È a possibilidade de se declarar uma variável em qualquer parte do seu código, 
+sendo equivalente a declarar no início da função ou do código global.
+
+### Porquê acontece ?
+
+As variáveis são processadas antes que o código seja executado, 
+possibilitando a declaração de uma variável em qualquer parte do código.
+
+### Como acontece com variável e função ?
+
+Tendo em vista que no JavaScript as variáveis são processadas antes que o código seja executado, 
 e são movidas para o inicio da função ou do código global.
-Declarar uma variável em qualquer parte do seu código é equivalente a declarar no início.
+Declarar uma variável em qualquer parte do seu código é equivalente a declarar no início da função ou do código global.
 Até mesmo é possível utilizar uma variável antes dela ser declarada.
 
 Ex.
