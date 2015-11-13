@@ -98,7 +98,8 @@ autor: Fco Ronaldo Aragão
     ```
    be-mean-pokemons> poke.description = "Nova descrição do pikachu"
 	Nova descrição do pikachu
-	ronaldo-N4050(mongod-3.0.7) be-mean-pokemons> db.pokemons.save(poke)
+   
+   be-mean-pokemons> db.pokemons.save(poke)
 	Updated 1 existing record(s) in 14ms
 	WriteResult({
   	  "nMatched": 1,
