@@ -2,7 +2,7 @@
 autor: Edno Fedulo
 
 ## Liste todos Pokemons com a altura **menor que** 0.5;
-´´´
+```
 ubuntu-VirtualBox(mongod-3.0.7) be-mean-pokemons> var query = {height : {$lt: .5}}
 ubuntu-VirtualBox(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
 {
@@ -14,10 +14,10 @@ ubuntu-VirtualBox(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
   "description": "Diglett are raised in most farms. The reason is simple— wherever this Pokémon burrows, the soil is left perfectly tilled for planting crops. This soil is made ideal for growing delicious vegetables."
 }
 Fetched 1 record(s) in 1ms
-´´´
+```
 
 ## Liste todos Pokemons com a altura **maior ou igual que** 0.5
-´´´
+```
 ubuntu-VirtualBox(mongod-3.0.7) be-mean-pokemons> var query = {height: {$gte: 0.5}}
 ubuntu-VirtualBox(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
 {
@@ -62,18 +62,18 @@ ubuntu-VirtualBox(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
   "descriptio": "descricao alterada"
 }
 Fetched 5 record(s) in 1ms
-´´´
+```
 
 
 ## Liste todos Pokemons com a altura **menor ou igual que** 0.5 **E** do tipo grama
-´´´
+```
 ubuntu-VirtualBox(mongod-3.0.7) be-mean-pokemons> var query = {$and: [{height: {$lte: 0.5}},{type: 'grass'}]}
 ubuntu-VirtualBox(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
 Fetched 0 record(s) in 0ms
-´´´
+```
 
 ## Liste todos Pokemons com o name `Pikachu` **OU** com attack **menor ou igual que** 0.5
-´´´
+```
 ubuntu-VirtualBox(mongod-3.0.7) be-mean-pokemons> var query = {$or: [{name: 'Pikachu'},{attack: {$lte: 0.5}}]}
 ubuntu-VirtualBox(mongod-3.0.7) be-mean-pokemons> query
 {
@@ -90,10 +90,10 @@ ubuntu-VirtualBox(mongod-3.0.7) be-mean-pokemons> query
 }
 ubuntu-VirtualBox(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
 Fetched 0 record(s) in 1ms
-´´´
+```
 
 ## Liste todos Pokemons com o attack **MAIOR OU IGUAL QUE** 48 **E** com  height **menor ou igual que** 0.5
-´´´
+```
 ubuntu-VirtualBox(mongod-3.0.7) be-mean-pokemons> var query = {$and: [{attack: {$gte: 48}},{height: {$lte: 0.5}}]}
 ubuntu-VirtualBox(mongod-3.0.7) be-mean-pokemons> query
 {
@@ -128,4 +128,4 @@ ubuntu-VirtualBox(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
   "description": "alterando descricao"
 }
 Fetched 2 record(s) in 2ms
-´´´
+```
