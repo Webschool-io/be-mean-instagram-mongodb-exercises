@@ -1,4 +1,4 @@
- # MongoDB - Aula 01 - Exercício
+ # MongoDB - Aula 02 - Exercício
 autor: Diogo Pires Caires Silva (conta: Taise Feijo)
 
 ## Criando database
