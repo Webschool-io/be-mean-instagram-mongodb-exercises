@@ -33,47 +33,47 @@ autor: Fco Ronaldo Aragão
 
     ```
 	be-mean-pokemons> db.pokemons.find()
-	{
-	  "_id": ObjectId("56452c6f8dfbf85d4ae2dee4"),
-	  "name": "Charizard",
-	  "description": "Descrição do charizard",
-	  "type": "Fogo",
-	  "attack": 85,
-	  "height": 16
-	}
-	{
-	  "_id": ObjectId("56452e938dfbf85d4ae2dee5"),
-	  "name": "Blastoise",
-	  "description": "Descrição do blastoise",
-	  "type": "Água",
-	  "attack": 85,
-	  "height": 16
-	}
-	{
-	  "_id": ObjectId("56452eb18dfbf85d4ae2dee6"),
-	  "name": "Pikachu",
-	  "description": "Descrição do pikachu",
-	  "type": "Elétrico",
-	  "attack": 100,
-	  "height": 60
-	}
-	{
-	  "_id": ObjectId("56452ed88dfbf85d4ae2dee7"),
-	  "name": "Butterfly",
-	  "description": "Descrição do butterfly",
-	  "type": "Inseto",
-	  "attack": 48,
-	  "height": 38
-	}
-	{
-	  "_id": ObjectId("56452eee8dfbf85d4ae2dee8"),
-	  "name": "Twitter",
-	  "description": "Twitter não é um pokemon",
-	  "type": "Rede social",
-	  "attack": 140,
-	  "height": 140
-	}
-	Fetched 5 record(s) in 2ms
+{
+  "_id": ObjectId("56452c6f8dfbf85d4ae2dee4"),
+  "name": "Charizard",
+  "description": "Descrição do charizard",
+  "type": "Fogo",
+  "attack": 85,
+  "height": 16
+}
+{
+  "_id": ObjectId("56452e938dfbf85d4ae2dee5"),
+  "name": "Blastoise",
+  "description": "Descrição do blastoise",
+  "type": "Água",
+  "attack": 85,
+  "height": 16
+}
+{
+  "_id": ObjectId("56452eb18dfbf85d4ae2dee6"),
+  "name": "Pikachu",
+  "description": "Descrição do pikachu",
+  "type": "Elétrico",
+  "attack": 100,
+  "height": 60
+}
+{
+  "_id": ObjectId("56452ed88dfbf85d4ae2dee7"),
+  "name": "Butterfly",
+  "description": "Descrição do butterfly",
+  "type": "Inseto",
+  "attack": 48,
+  "height": 38
+}
+{
+  "_id": ObjectId("56452eee8dfbf85d4ae2dee8"),
+  "name": "Twitter",
+  "description": "Twitter não é um pokemon",
+  "type": "Rede social",
+  "attack": 140,
+  "height": 140
+}
+Fetched 5 record(s) in 2ms
 
     ```   
 ## Busque o pokemons a sua escolha, pelo nome, e armazene-o em uma variável chamada `poke`
