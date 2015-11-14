@@ -1,5 +1,5 @@
 # MongoDB - Aula 01 - Exercício
-autor: João Siqueira
+autor: Ciro Valente
 
 ## Importando os restaurantes
 
