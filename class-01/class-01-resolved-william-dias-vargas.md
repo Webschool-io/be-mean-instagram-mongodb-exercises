@@ -1,5 +1,5 @@
  # MongoDB - Aula 01 - Exercicio
- autor: Jean Nascimento
+ autor: William Dias Vargas
 
  ##Importando os restaurantes
 
