@@ -1,5 +1,5 @@
 ##MongoDB -Aula2- Exercícios
-##autor: marco aurellio
+##autor: MARCOS SANTOS
 
 ##Crie uma base chamada be-mean-pokemons:
 
