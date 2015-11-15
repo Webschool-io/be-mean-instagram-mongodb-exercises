@@ -39,6 +39,7 @@ autor: JOAO PAULO S DE ARAUJO
 	poke.attack = 1500
 	db.pokemons.save(poke)
 	```
+	```
 	var query = {$or: [{name: 'Pikachu'},{attack: {$lte: 500}}]}
 	var campos = {name: 1,attack: 1}
 	db.pokemons.find(query,campos)
