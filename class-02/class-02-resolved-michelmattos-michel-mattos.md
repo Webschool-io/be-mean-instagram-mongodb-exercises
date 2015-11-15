@@ -20,6 +20,10 @@ admin             → (empty)
 
 ```
 be-mean-pokemons> show collections
+<<<<<<< HEAD
+=======
+system.indexes → 0.000MB / 0.008MB
+>>>>>>> a7bb32d06f1c3ef509b546835f834d7c65a32a9b
 ```
 
 ## Cadastro dos pokemons (passo 4)
