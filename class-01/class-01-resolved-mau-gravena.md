@@ -1,5 +1,5 @@
 # MongoDB - Aula 01 - Exercício
-autor: Mauricio Gravena de Oliveira.
+autor: Mauricio Gravena de Oliveira
 
 ## Importando os restaurantes
 
