@@ -1,8 +1,8 @@
-```md
 # MongoDB - Aula 03 - Exercício
-autor: PABLO BOZZI FLORES OLIVEIRA
+autor: **PABLO BOZZI FLORES OLIVEIRA**
 
 ## Liste todos os pokemons com altura menor que 0.5
+```
 mean(mongod-3.0.7) be-mean> var query={height: {$lt:0.5}}
 mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
 {
@@ -31,8 +31,10 @@ mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
   "defense": 35
 }
 Fetched 3 record(s) in 2ms
+```
 
 ## Liste todos os pokemons com altura maior ou igual que 0.5
+```
 mean(mongod-3.0.7) be-mean> var query={height: {$gte:0.5}}
 mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
 {
@@ -52,8 +54,10 @@ mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
   "height": 0.5
 }
 Fetched 2 record(s) in 2ms
+```
 
 ## Liste todos os pokemons com altura menor ou igual que 0.5 e do tipo grama
+```
 mean(mongod-3.0.7) be-mean> var query={$and:[{height:{$lte:0.5}},{type:'grama'}]}
 mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
 {
@@ -65,8 +69,10 @@ mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
   "height": 0.4
 }
 Fetched 1 record(s) in 0ms
+```
 
 ## Liste todos os pokemons com o nome Pickachu ou com ataque menor ou igual que 0.5
+```
 mean(mongod-3.0.7) be-mean> var query={$or:[{name:'Pickachu'},{attack:{$lte:0.5}}]}
 mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
 {
@@ -78,8 +84,10 @@ mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
   "height": 0.4
 }
 Fetched 1 record(s) in 1ms
+```
 
 ## Liste todos os pokemons com ataque maior ou igual que 48 e com altura menor ou igual que 0.5
+```
 mean(mongod-3.0.7) be-mean> var query={$and:[{attack:{$gte:48}},{height:{$lte:0.5}}]}
 mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
 {
