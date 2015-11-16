@@ -1,5 +1,5 @@
 # MongoDB - Aula 03 - Exercício
-autor: ANDERSON MORAES
+autor: ANDERSON DA LUZ MORAES
 
 ## 1. Liste todos Pokemons com a altura menor que 0.5;
 
