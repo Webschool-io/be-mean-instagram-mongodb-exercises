@@ -8,6 +8,7 @@ MongoDB shell version: 2.4.9
 connecting to: test
 > use be-mean-pokemons
 switched to db be-mean-pokemons
+```
 
 ## Listando as databases
 ```
