@@ -14,6 +14,7 @@ autor: JOAO PAULO S DE ARAUJO
 	
 ## 2. Liste todos Pokemons com a altura maior ou igual que 1.5;
 	
+	
 	```
 	var query = {height: {$gte: 1.5}}
 	db.pokemons.find(query,campos)
