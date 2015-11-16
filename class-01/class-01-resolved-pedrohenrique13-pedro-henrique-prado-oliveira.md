@@ -1,5 +1,5 @@
-# MongoDB - Aula 01 - Exercício
-autor: SEU NOME
+# MongoDB - Aula 01 - ExercÃ­cio
+autor: Pedro Henrique Prado Oliveira
 
 ## Importando os restaurantes
 
