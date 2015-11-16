@@ -63,8 +63,8 @@ BulkWriteResult({
 ##Query para buscar o pokemon
 ```
 var query = {name:'Rapidash'}
-> var p = db.pokemons.find(query)
-> p
+> var poke = db.pokemons.find(query)
+> poke
 { "_id" : ObjectId("564921350910df3d8696d70d"), "name" : "Rapidash", "description" : "Ta pegando fogo bixo!", "type" : "fire", "attack" : 80, "defense" : 30, "height" : 1.7 }
 ```
 
