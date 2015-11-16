@@ -5,8 +5,8 @@ autor: Leonardo Cassuriaga Lima
 
 ## 1. Liste todos Pokemons com a altura menor que 0.5
 
-var query = { height: { $lt: 0.5}}..
-db.pokemons.find(query)..
+var query = { height: { $lt: 0.5}}  
+db.pokemons.find(query)  
 {  
     "_id": ObjectId("5642766175e5e0f170ca7eda"),  
     "name": "Pikachu",  
@@ -35,8 +35,8 @@ db.pokemons.find(query)..
 
 ## 2. Liste todos Pokemons com a altura maior ou igual que 0.5 
 
-var query = { height: { $gte: 0.5} }..
-db.pokemons.find(query)..
+var query = { height: { $gte: 0.5} }  
+db.pokemons.find(query)  
 {  
     "_id": ObjectId("564279b675e5e0f170ca7edc"),  
     "name": "Charmander",  
@@ -103,7 +103,7 @@ db.pokemons.find(query)
 ## 4. Liste todos Pokemons com o nome 'Pikachu' OU com attack menor ou igual que 0.5
 
 var query = { $or: [{ name: 'Pikachu'}, { attack: { $lte: 0.5}}]}  
-db.pokemons.find(query)..
+db.pokemons.find(query)  
 {  
     "_id": ObjectId("5642766175e5e0f170ca7eda"),  
     "name": "Pikachu",  
@@ -115,8 +115,8 @@ db.pokemons.find(query)..
 
 ## 5. liste todos Pokemons com attack MAIOR OU IGUAL QUE 48 E com height menor ou igual que 0.5
 
-var query = { $and: [{ attack: { $gte: 48}}, { height: { $lte: 0.5}}]}..
-db.pokemons.find(query)..
+var query = { $and: [{ attack: { $gte: 48}}, { height: { $lte: 0.5}}]}  
+db.pokemons.find(query)  
 {  
     "_id": ObjectId("5642766175e5e0f170ca7eda"),  
     "name": "Pikachu",  
