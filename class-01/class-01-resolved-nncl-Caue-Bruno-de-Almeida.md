@@ -1,5 +1,5 @@
 #MongoDB - Aula 01 - Exercício
-autor: Cauê Almeida
+autor: Cauê Bruno de Almeida
 
 ## Importando os restaurantes
 
