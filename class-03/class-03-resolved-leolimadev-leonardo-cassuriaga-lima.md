@@ -5,8 +5,8 @@ autor: Leonardo Cassuriaga Lima
 
 ## 1. Liste todos Pokemons com a altura menor que 0.5
 
-> var query = { height: { $lt: 0.5}}
-> db.pokemons.find(query)
+var query = { height: { $lt: 0.5}}
+db.pokemons.find(query)
 { "_id" : ObjectId("5642766175e5e0f170ca7eda"), "name" : "Pikachu", "description" : "Rato elétrico bem fofinho", "type" : "eletric", "attack" : 55, "height" : 0.4 }
 { "_id" : ObjectId("5642797375e5e0f170ca7edb"), "name" : "Bulbassauro", "description" : "Chicote de trepadeira", "type" : "grama", "attack" : 49, "height" : 0.4 }
 { "_id" : ObjectId("56427bcb75e5e0f170ca7ede"), "name" : "Caterpie", "description" : "Larva lutadora", "type" : "inseto", "attack" : 30, "height" : 0.3, "defense" : 35 }
