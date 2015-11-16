@@ -54,7 +54,6 @@ gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
 }
 
 
-
 ## 3 - Listando todos os Pokemons com a altura maior ou igual que 0.5 E do tipo poison
 
 gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> var query = {$and: [{height: {$gte: 0.5}}, {type: 'Poison'}]}
