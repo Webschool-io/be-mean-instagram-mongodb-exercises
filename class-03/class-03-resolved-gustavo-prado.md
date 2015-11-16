@@ -2,7 +2,7 @@
 autor: Gustavo Prado
 
 ## 1 - Listando todos os Pokemons com a altura menor que 0.5
-
+```
 gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> var query = {height: {$lt:0.5}}
 gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
 {
@@ -22,10 +22,11 @@ gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
   "height": 0.4
 }
 
-
+```
 
 ## 2 - Listando todos os Pokemons com a altura maior ou igual que 0.5
 
+```
 gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> var query = {height: {$gte:0.5}}
 gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
 {
@@ -53,8 +54,11 @@ gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
   "height": 3.5
 }
 
+```
 
 ## 3 - Listando todos os Pokemons com a altura maior ou igual que 0.5 E do tipo poison
+
+```
 
 gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> var query = {$and: [{height: {$gte: 0.5}}, {type: 'Poison'}]}
 gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
@@ -67,7 +71,11 @@ gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
   "height": 3.5
 }
 
+```
+
 ## 4 - Listando todos os Pokemons com o nome Blastoise OU com attack menor ou igual que 50
+
+```
 
 gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> var query = {$or: [{name: 'Blastoise'}, {attack: {$lte: 50}}]}
 gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
@@ -96,7 +104,11 @@ gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
   "height": 0.4
 }
 
+```
+
 ## 5 - Listando todos os Pokemons com attack maior ou igual que 48 E com height menor ou igual que 1.0
+
+```
 
 gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> var query = {$and: [{attack: {$gte: 48}}, {height: {$lte: 1.0}}]}
 gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
@@ -108,3 +120,5 @@ gustavo-Inspiron-3442(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
   "attack": 55,
   "height": 0.8
 }
+
+```
