@@ -1,3 +1,5 @@
+# MongoDB - Aula 02 - Exercício
+autor: Leandro Ferreira
 
 
 ### Etapa 1
@@ -99,15 +101,9 @@ Fetched 5 record(s) in 3ms
 
 
 ```
+
 leandro-IE-G31TM7(mongod-3.0.7) be-mean-pokemons> var query = {name : 'Rattata'}
 leandro-IE-G31TM7(mongod-3.0.7) be-mean-pokemons> var poke = db.pokemons.findOne(query)
-
-```
-
-### Etapa 7
-
-```
-
 leandro-IE-G31TM7(mongod-3.0.7) be-mean-pokemons> poke.type = 'demoníaco'
 leandro-IE-G31TM7(mongod-3.0.7) be-mean-pokemons> db.pokemons.save(poke)
 Updated 1 existing record(s) in 7ms
