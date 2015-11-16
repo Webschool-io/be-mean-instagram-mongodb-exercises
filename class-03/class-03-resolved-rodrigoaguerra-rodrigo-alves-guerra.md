@@ -8,7 +8,7 @@ autor: Rodrigo Alves Guerra
 	{
 	  "_id": ObjectId("5642cb668068785ae3aecb5b"),
 	  "name": "Rattata",
-	  "description": "Deixa a galera loka",
+	  "description": "Deixa a galera lokasa",
 	  "type": "normal",
 	  "attack": 30,
 	  "defense": "56",
@@ -61,7 +61,18 @@ autor: Rodrigo Alves Guerra
 
 
 ##  Liste todos Pokemons com a altura menor ou igual que 0.5 E do tipo grama (passo 3)
-	ogid-S430(mongod-2.4.9) be-mean-pokemons> var query = {$and:[{height : {$gte : 0.5}}, {type : 'grass'}]}
+	ogid-S430(mongod-2.4.9) be-mean-pokemons> var query = {$and:[{height : {$lte : 0.5}}, {type : 'grama'}]}
+	ogid-S430(mongod-2.4.9) be-mean-pokemons> db.pokemons.find(query)
+	Fetched 0 record(s) in 1ms
+
+
+## Liste todos Pokemons com o name `Pikachu` **OU** com attack **menor ou igual que** 0.5
+	ogid-S430(mongod-2.4.9) be-mean-pokemons> var query = {$or:[{attack : {$lte : 0.5}}, {name : 'Pikachu'}]}
+	ogid-S430(mongod-2.4.9) be-mean-pokemons> db.pokemons.find(query)
+	Fetched 0 record(s) in 1ms
+
+## Liste todos Pokemons com o attack **MAIOR OU IGUAL QUE** 48 **E** com height **menor ou igual que** 0.5
+	ogid-S430(mongod-2.4.9) be-mean-pokemons> var query = {$and:[{attack : {$gte : 48 }}, {height : {$lte : 0.5}} ]}
 	ogid-S430(mongod-2.4.9) be-mean-pokemons> db.pokemons.find(query)
 	Fetched 0 record(s) in 1ms
 
