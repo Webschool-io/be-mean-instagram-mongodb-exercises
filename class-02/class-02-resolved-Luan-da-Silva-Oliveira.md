@@ -1,5 +1,5 @@
 # MongoDB - Aula 02 - Exercício
-autor: Luan Oliveira
+autor: Luan da Silva Oliveira
 
 ## Listagem das databases (passo 2)
 luanoliveira(mongod-3.0.7) be-mean-instagram> use be-mean-pokemons

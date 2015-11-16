@@ -1,5 +1,5 @@
 # Mongo DB - Aula 01 - Exercício
-Autor: Luan Oliveira
+Autor: Luan da Silva Oliveira
 
 ## Importando os restaurantes
 
