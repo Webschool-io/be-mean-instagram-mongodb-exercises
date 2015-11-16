@@ -1,5 +1,5 @@
 #MongoDB - Aula 02 - Exercício
-Autor: Cauê Almeida
+Autor: Cauê Bruno de Almeida
 
 ## 1
 `use be-mean-pokemons`
