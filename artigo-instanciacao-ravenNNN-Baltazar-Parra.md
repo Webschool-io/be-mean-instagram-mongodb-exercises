@@ -15,7 +15,11 @@ Sempre que criamos uma variável, ela é içada para o topo do nosso escopo,
 antes mesmo do nosso código ser executado, ou seja,
 ele não chega a receber nenhum valor nessa fase, permanecendo indefinida.
 
-Como acontece com função?
+Já com funções, é um pouco diferente,
+não é somente o nome que é içado, neste caso,
+todo corpo de nossa função é levado para o topo do nosso escopo.
+No caso das expressões, ela vai se comportar como as variáveis,
+tendo somente seu nome içado.
 
 ## Closure
 
