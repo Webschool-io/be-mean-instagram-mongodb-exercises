@@ -5,8 +5,8 @@
 
 Em JavaScript antes do nosso código ser executado,
 ele é lido por inteiro. Nessa hora, todas nossas variáveis,
-e funções são içadas até o topo do nosso escopo,
-e só então a execução de fato acontece.
+e funções são içadas até o topo do nosso escopo;
+só então a execução de fato acontece.
 Isso é o que chamamos de Hoisting.
 
 Explicando melhor:
@@ -16,10 +16,16 @@ antes mesmo do nosso código ser executado, ou seja,
 ele não chega a receber nenhum valor nessa fase, permanecendo indefinida.
 
 Já com funções, é um pouco diferente,
-não é somente o nome que é içado, neste caso,
+não é somente o nome que é içado; neste caso,
 todo corpo de nossa função é levado para o topo do nosso escopo.
+
 No caso das expressões, ela vai se comportar como as variáveis,
 tendo somente seu nome içado.
+
+Exemplos:
+```
+    
+```
 
 ## Closure
 
