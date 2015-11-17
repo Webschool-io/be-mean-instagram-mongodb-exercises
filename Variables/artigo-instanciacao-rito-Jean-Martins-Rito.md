@@ -127,11 +127,182 @@ Acho que ficou um pouco mais claro pra mim. E pra você?
 
 ### Closure
 
-Explique o que é, o porquê acontece e como usar. Cite situações que você usaria.
+Agora tentar explicar de uma maneira mais clara o que é Closure...!
+
+"Closures (fechamentos) são funções que se referem a variáveis livres (independentes)."
+
+Show!!! #SQN
+Que porra é essa?
+
+Em outras palavras, a função definida no closure "lembra" do ambiente em que ela foi criada.
+
+Quase... Dá pra ser mais claro?
+
+Vamos ver se melhora com um pouco de prática pra tirarmos novas conclusões:
+
+'''
+function init() {
+  var name = "Rito";
+  function displayName() {
+    console.log(name);
+  }
+  displayName();
+}
+init();
+
+
+//Rito
+'''
+
+A função init() cria uma variável local chamada name, e depois define uma função chamada displayName(). 
+
+displayName() é uma função aninhada (um closure) — ela é definida dentro da função init(), e está disponivel apenas dentro do corpo daquela função. 
+Diferente de init(), displayName() não tem variáveis locais próprias, e ao invés disso reusa a variável name declarada na função pai.
+
+Este é um exemplo de  escopo léxico : em JavaScript, o escopo de uma variável é definido por sua localização dentro do código fonte (isto é aparentemente  léxico ) e funções aninhadas têm acesso às variáveis declaradas em seu escopo externo.
+
+Agora outro exemplo:
+
+'''
+function makeAdder(x) {
+  return function(y) {
+    return x + y;
+  };
+}
+
+var add5 = makeAdder(5);
+var add10 = makeAdder(10);
+
+console.log(add5(2));  
+console.log(add10(2)); 
+
+
+
+
+
+//7
+//12
+'''
+
+Neste exemplo definimos a função makeAdder(x) que toma um único argumento x e retorno uma nova função. A função retornada toma então um único argumento, y, e retorna então a soma de x e de y.
+
+Na essência o makeAdder trata-se de uma função fábrica - irá construir outras funções que podem adicionar um determinado valor específico a seu argumento. No exemplo acima usamos a fábrica de funções para criar duas novas funções - uma que adiciona 5 ao argumento, e outra que adiciona 10.
+
+Ambas as funções add5 e add10   são closures. Compartilham o mesmo corpo de definição de função mas armazenam diferentes ambientes. No ambiente da add5, por exemplo, x equivale a 5, enquanto na add10 o valor de x é 10.
+
+Esta é a teoria — mas closures são realmente úteis? Vamos considerar suas aplicações práticas. Uma closure deixa você associar dados (do ambiente) com uma função que trabalha estes dados. Isto está diretamente ligado com programação orientada a objetos, onde objetos nos permitem associar dados (as propriedades do objeto) utilizando um ou mais métodos.
+
+Consequentemente, você pode utilizar uma closure em qualquer lugar onde você normalmente utilizaria um objeto de único método.
+
+Situações onde você poderia utilizar isto são comuns em ambientes web. Muitos códigos escrito em JavaScript para web são baseados em eventos - nós definimos algum comportamento e então, o atribuimos a um evento que será disparado pelo usuário (quando uma tecla for pressionada, por exemplo). Nosso código normalmente é utilizado como callback: uma função que será executada como resposta ao evento.
+
+Um exemplo prático: suponha que queremos adicionar alguns botões para ajustar o tamanho do texto de uma página. Um jeito de fazer seria especificar o tamanho da fonte no elemento body e então definir o tamanho dos outros elementos da página (os cabeçalhos, por exemplo) utilizando a unidade relativa em:
+
+'''
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+  font-size: 1.2em;
+}
+'''
+
+Nossos botões interativos de tamanho de texto podem alterar a propriedade font-size do elemento body, e os ajustes serão refletidos em outros elementos graças à unidade relativa.
+
+O código JavaScript:
+
+'''
+function makeSizer(size) {
+  return function() {
+    document.body.style.fontSize = size + 'px';
+  };
+}
+
+var size12 = makeSizer(12);
+var size14 = makeSizer(14);
+var size16 = makeSizer(16);
+
+
+'''
+
+size12, size14 e size16 agora são funções que devem redimensionar o texto do elemento body para 12.14 e 16 pixels respectivamente. Nós podemos designá-las à botões (neste caso, links) como feito a seguir:
+
+'''
+document.getElementById('size-12').onclick = size12;
+document.getElementById('size-14').onclick = size14;
+document.getElementById('size-16').onclick = size16;
+'''
+
+'''
+<a href="#" id="size-12">12</a>
+<a href="#" id="size-14">14</a>
+<a href="#" id="size-16">16</a>
+'''
+
 
 ### Variável Global
 
-Explique como se usa uma var Global dentro de uma função.
+Todas as variáveis declaradas fora de uma função estão no escopo global.
+Qualquer variável declarada ou inicializada fora de uma função é uma variável global, e estará portanto disponível para toda a aplicação. Por exemplo:
+
+'''
+var myName = "Jean";
+'''
+
+ou
+'''
+firstName = "Richard";
+'''
+ou
+'''
+var name;
+name;
+'''
+
+Se uma variável é inicializada (atribuída com um valor) sem primeiro ser declarada com a palavra chave var, ela é automaticamente adicionada ao contexto global sendo assim portanto uma variável global:
+
+'''
+function showAge() {
+    //age é uma variável global porque ela não foi declarada com a palavra chave var dentro da função
+    age = 90;
+    console.log(age);
+}
+
+showAge();
+
+ 
+//age está no contexto global, então está disponível aqui, também
+console.log(age); 
+
+
+//90
+//90
+'''
+
+Demonstração de variáveis que estão no Escopo Global mesmo que pareça o contrário:
+
+'''
+//Ambas variáveis firstName estão no escopo global, mesmo que a segunda esteja dentro do bloco {}
+var firstName = "Jean";
+{
+    var firstName = "Rito";
+}
+ 
+//Para reiterar: JavaScript não tem escopo por nível de bloco
+//A segunda declaração ou firstName simplesmente redeclara e sobrescreve a primeira
+
+console.log (firstName); 
+
+
+//Rito
+'''
+
+
 
 ### Variável por parâmetro
 
@@ -154,3 +325,6 @@ Boa sorte.
 ### Referências Bibliográficas
 http://tableless.com.br/elevacao-ou-javascript-hoisting/
 http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures
+http://javascriptbrasil.com/2013/10/11/escopo-de-variavel-e-hoisting-no-javascript-explicado/
+
