@@ -24,12 +24,12 @@ WMD00096(mongod-3.0.7) be-mean-pokemons>
 ## Insira pelo menos 5 pokemons **A SUA ESCOLHA** utilizando o mesmo padrão de campos utilizado: name, description, attack, defense e height;
 ```
 WMD00096(mongod-3.0.7) be-mean-pokemons> var pokemons = [
-... {name: "Bulbasaur", description: "The seed on its back is filled with nutrients. The seed grows steadily larger as its body grows.", attack: 49, defense: 49, heigth: 7},
-... {name: "Charmander", description: "Obviously prefers hot places. When it rains, steam is said to spout from the tip of its tail.", attack: 52, defense: 43, heigth: 6},
-... {name: "Squirtle", description: "After birth, its back swells and hardens into a shell. Powerfully sprays foam from its mouth.", attack: 48, defense: 65, heigth: 5},
-... {name: "Caterpie", description: "For protection, it releases a horrible stench from the antennae on its head to drive away enemies.", attack: 30, defense: 35, heigth: 3},
-... {name: "Pikachu", description: "It raises its tail to check its sur roundings. The tail is sometimes struck by light ning in this pose.", attack: 55, defense: 40, heigth: 4}
-... ];
+{name: "Bulbasaur", description: "The seed on its back is filled with nutrients. The seed grows steadily larger as its body grows.", attack: 49, defense: 49, height: 0.7, type: "Grass"},
+{name: "Charmander", description: "Obviously prefers hot places. When it rains, steam is said to spout from the tip of its tail.", attack: 52, defense: 43, height: 0.6, type: "Fire"},
+{name: "Squirtle", description: "After birth, its back swells and hardens into a shell. Powerfully sprays foam from its mouth.", attack: 48, defense: 65, height: 0.5, type: "Water"},
+{name: "Caterpie", description: "For protection, it releases a horrible stench from the antennae on its head to drive away enemies.", attack: 30, defense: 35, height: 0.3, type: "Bug"},
+{name: "Pikachu", description: "It raises its tail to check its sur roundings. The tail is sometimes struck by light ning in this pose.", attack: 55, defense: 40, height: 0.4, type: "Eletric"}
+];
 
 WMD00096(mongod-3.0.7) be-mean-pokemons> db.pokemons.insert(pokemons);
 Inserted 1 record(s) in 1823ms
@@ -54,7 +54,8 @@ WMD00096(mongod-3.0.7) be-mean-pokemons> db.pokemons.find();
   "description": "The seed on its back is filled with nutrients. The seed grows steadily larger as its body grows.",
   "attack": 49,
   "defense": 49,
-  "heigth": 7
+  "height": 0.7,
+  "type": "Grass"
 }
 {
   "_id": ObjectId("564a330af3878aca0716bca0"),
@@ -62,7 +63,8 @@ WMD00096(mongod-3.0.7) be-mean-pokemons> db.pokemons.find();
   "description": "Obviously prefers hot places. When it rains, steam is said to spout from the tip of its tail.",
   "attack": 52,
   "defense": 43,
-  "heigth": 6
+  "height": 0.6,
+  "type": "Fire"
 }
 {
   "_id": ObjectId("564a330af3878aca0716bca1"),
@@ -70,7 +72,8 @@ WMD00096(mongod-3.0.7) be-mean-pokemons> db.pokemons.find();
   "description": "After birth, its back swells and hardens into a shell. Powerfully sprays foam from its mouth.",
   "attack": 48,
   "defense": 65,
-  "heigth": 5
+  "height": 0.5,
+  "type": "Water"
 }
 {
   "_id": ObjectId("564a330af3878aca0716bca2"),
@@ -78,17 +81,19 @@ WMD00096(mongod-3.0.7) be-mean-pokemons> db.pokemons.find();
   "description": "For protection, it releases a horrible stench from the antennae on its head to drive away enemies.",
   "attack": 30,
   "defense": 35,
-  "heigth": 3
+  "height": 0.3,
+  "type": "Bug"
 }
 {
   "_id": ObjectId("564a330af3878aca0716bca3"),
   "name": "Pikachu",
-  "description": "It raises its tail to check its sur roundings. The tail is sometimes struck by light ning in this pose.",
+  "description": "It raises its tail to check its sur roundings. The tail is sometimes struck by light ning in this pose. (Version 2)",
   "attack": 55,
   "defense": 40,
-  "heigth": 4
+  "height": 0.4,
+  "type": "Eletric"
 }
-Fetched 5 record(s) in 94ms
+Fetched 5 record(s) in 66ms
 ```
 
 ## Busque um pokemon a sua escolha, que acabou de ser inserido, e armazene-o em uma variável chamada `poke`;
