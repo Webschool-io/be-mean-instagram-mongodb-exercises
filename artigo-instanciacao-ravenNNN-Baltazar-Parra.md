@@ -79,11 +79,41 @@ sem bagunçar nosso escopo global deixando nosso código mais inteligivel.
 
 ## Variável Global
 
-Como se usa uma variável Global dentro de uma função?
+Para chamar uma variável global dentro de uma função, obviamente declaramos ela em escopo global, e depois chamamos ela dentro da nossa função.
+
+```
+var global = 3;
+
+function chamada() {
+  return global * 2;
+}
+
+chamada(); // 6
+```
 
 ## Variável por parâmetro
 
-O que acontece dentro da função quando um parâmetro é passado?
+Quando passamos uma variável como parâmetro para nossa função, na verdade, estamos passando o valor da variável e não ela em si, ou seja, nossos paramêtros nada mais são que valores.
+
+```
+    var valor = 5;
+    
+    function pegaValor(parametro) {
+        alert(parametro);
+    }
+    
+    pegaValor(valor); // 5
+    
+    // Passamos uma variavel como parametro
+    
+    valor = 12;
+    
+    pegaValor(valor); // 12
+    
+    // Mudamos o valor da função, alterando apenas a variável.
+```
+
+Criamos uma variável com o valor 5 e chamamos nossa função passando esta variável como parâmetro, depois alteramos o valor da nossa chamada, alterando apenas nossa variável.
 
 ## Instanciação usando uma IIFE
 
