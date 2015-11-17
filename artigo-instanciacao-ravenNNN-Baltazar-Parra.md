@@ -121,7 +121,7 @@ Até o ano de 2010, davamos o nome de self-executing anonymous function, para fu
 
 ```
     (function () {
-    console.log('E ae, meu nome é Self-Executing Anonynous Function, Prazer')
+        console.log('E ae, meu nome é Self-Executing Anonynous Function, Prazer')
     }())
 ```
 
