@@ -14,7 +14,7 @@ Segundo o Wikipedia, JavaScript é uma linguagem de programação interpretada. 
     * Avaliação em tempo de execução: JavaScript inclui a função eval que consegue executar em tempo de execução comandos da linguagem que estejam escritos em uma string.
     * Funcional: Na orientação a objetos a menor parte de um sistema é um objeto. Você pode atribuir objetos a variáveis, pode passá-los por parâmetro e ter métodos retornando objetos. Na programação funcional, a menor parte do seu sistema é uma função. Isso implica que você pode atribuir funções a variáveis, pode passá-las por parâmetro e mesmo fazer com que uma função retorne outra função.
 
-## 1. Hoisting
+## 2. Hoisting
 
 No Javascript uma variável pode ser declarada após ter sido utilizada. Em outras palavras, uma váriavel pode ser utilizada antes de ter sido declarada.
 
@@ -60,7 +60,7 @@ ReferenceError: x is not defined // Erro, x não foi declarado
 
 **Dica:** Objetos também são variáveis!
 
-## 2. Closures - Variáveis locais e globais
+## 3. Closures - Variáveis locais e globais
 
 No Javascript as variáveis pertencem ao escopo **local** ou **global**. As variáveis privadas podem ser criadas com closures.
 
