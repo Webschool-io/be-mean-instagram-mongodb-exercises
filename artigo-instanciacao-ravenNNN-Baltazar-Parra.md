@@ -93,7 +93,7 @@ chamada(); // 6
 
 ## Variável por parâmetro
 
-Quando passamos uma variável como parâmetro para nossa função, na verdade, estamos passando o valor da variável e não ela em si, ou seja, nossos paramêtros nada mais são que valores.
+Quando passamos uma variável como parâmetro para nossa função, na verdade estamos passando o valor dela, ou seja, nossos paramêtros nada mais são que valores.
 
 ```
     var valor = 5;
