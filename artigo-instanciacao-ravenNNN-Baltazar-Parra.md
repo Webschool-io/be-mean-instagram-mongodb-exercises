@@ -42,11 +42,33 @@ Obs. No caso das expressões, ela vai se comportar como as variáveis, tendo som
 
 ## Closure
 
-O que é?
+Antes de falar sobre as closures, você precisar entender o escopo das variáveis.
+O escopo nada mais é que, o ambiente onde você declarou sua variável,
+esse ambiente demarca o limite onde você pode usar sua variável.
 
-Porquê acontece e como usar?
+Simplificando, closure é uma função interna, que te permite acessar variáveis externas.
 
-Situações que você usaria:
+```
+    function zeRuela (nomeDoRuela, sobrenomeDoRuela) {
+        var chamada = "Eu sou o ";
+        
+    // Função externa, com variáveis externas.    
+    
+        function nomeInteiro () {
+            return chamada + nomeDoRuela + " " + sobrenomeDoRuela;
+        }
+            return nomeInteiro ();
+            }
+
+    // Função interna, que tem acesso as variáveis da função externa.
+    // Isso é oque chamamos de closure, Ela pode acessar tanto as variáveis,
+    // quanto os paramêtros do lado de fora.
+    
+    
+    zeRuela ("Jose", "Arruelo"); // Eu sou o Jose Arruelo
+```
+
+Ai em cima temos uma função dentro de outra função, onde a função que está dentro, tem acessos a dados da função de está fora, isso é oque podemos chamar de closure.
 
 ## Variável Global
 
