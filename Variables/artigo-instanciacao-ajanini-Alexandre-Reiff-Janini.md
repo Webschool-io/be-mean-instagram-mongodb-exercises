@@ -1,11 +1,11 @@
 # Variáveis e Funções no JavaScript: criação e instanciação
 **Autor**: [Alexandre R. Janini](https://github.com/ajanini)
 
-A declaração de varíaveis no JavaScript pode ser confusa até para programadores experientes. É fácil esquecer de declarar uma variável com o operador `var` precedendo seu nome, o que pode gerar problemas de escopo no código. Problemas similares podem ocorrer com funções.
+A declaração de variáveis no JavaScript pode ser confusa até para programadores experientes. É fácil esquecer de declarar uma variável com o operador `var` precedendo seu nome, o que pode gerar problemas de escopo no código. Problemas similares podem ocorrer com funções.
 
 ## Escopo
 
-Apesar de ser da família das linguages baseadas em C, o escopo de variáveis no JS é diferente dessas linguagens. O escopo do JavaScript não se dá por blocos, mas sim por funções. Na prática, isso significa que uma variável redeclarada dentro de um bloco `if` (por exemplo) no JS, altera o valor da mesma fora do bloco `if`, diferente do C. Veja o exemplo a seguir.
+Apesar de ser da família das linguagens baseadas em C, o escopo de variáveis no JS é diferente dessas linguagens. O escopo do JavaScript não se dá por blocos, mas sim por funções. Na prática, isso significa que uma variável redeclarada dentro de um bloco `if` (por exemplo) no JS, altera o valor da mesma fora do bloco `if`, diferente do C. Veja o exemplo a seguir.
 
 ```javascript
 var a = 1;
@@ -62,11 +62,11 @@ Isso ocorre porque no JS o escopo das variáveis se dá por funções e não por
 
 O termo *hoisting* foi cunhado por [Ben Cherry](http://twitter.com/bcherry) e define o comportamento da resolução de nomes e inicialização de valores das variáveis e funções no JavaScript.
 
-*Hoist* em inglês significa levantar/suspender com auxílio de um aparato mecânico. Quando declaramos uma varíavel no JS, ela é "elevada" para o topo do escopo.
+*Hoist* em inglês significa levantar/suspender com auxílio de um aparato mecânico. Quando declaramos uma variável no JS, ela é "elevada" para o topo do escopo.
 
 ### Hoisting de variáveis
 
-Sempre que uma variável é definida no JS, sua declaração é elevada ao topo do escopo, mas seu valor não é inicializado. Os códigos abaixo exeplificam isso.
+Sempre que uma variável é definida no JS, sua declaração é elevada ao topo do escopo, mas seu valor não é inicializado. Os códigos abaixo exemplificam isso.
 
 ```javascript
 try {
@@ -95,7 +95,7 @@ Que resulta em `undefined` impresso no console.
 
 Veja que apesar da variável `a` ter sido declarada **depois** do comando `console.log()`, a declaração foi elevada no escopo. Assim, uma exceção não é disparada e o bloco `try/catch` não cai no `catch`. **Porém**, o valor da variável não está definido durante o *hoisting* (a variável não é inicializada), imprimindo assim o `undefined` no console.
 
-Na prática, portanto, o código poderia ser escrito como abaixo, para que fique mais fácil para nós, humanos, entermos como o JavaScript trabalha com as variáveis implicitamente:
+Na prática, portanto, o código poderia ser escrito como abaixo, para que fique mais fácil para nós, humanos, entendermos como o JavaScript trabalha com as variáveis implicitamente:
 
 ```javascript
 try {
@@ -136,7 +136,7 @@ function foo() {
 }
 ```
 
-Se pensarmos de maneira linear, esperaríamos que o resultado no console seria `3`. No entanto, devido ao *hoisting*, o resultado obtido é `8`. Isso porque a função `bar` abaixo do `return` é elevada, e sobreescreve a função de mesmo nome, retornando portanto `8`.
+Se pensarmos de maneira linear, esperaríamos que o resultado no console seria `3`. No entanto, devido ao *hoisting*, o resultado obtido é `8`. Isso porque a função `bar` abaixo do `return` é elevada, e sobrescreve a função de mesmo nome, retornando portanto `8`.
 
 ***
 
@@ -305,7 +305,7 @@ ReferenceError: a is not defined
 ReferenceError: b is not defined
 ```
 
-Portanto, alteramos o valor do parâmetro dentro da IIFE, sem alterar o valor original da varíavel global usada como parâmetro.
+Portanto, alteramos o valor do parâmetro dentro da IIFE, sem alterar o valor original da variável global usada como parâmetro.
 Da mesma forma, os valores de `a` e `b`, não existem fora do escopo da IIFE.
 
 ## Bibliografia
