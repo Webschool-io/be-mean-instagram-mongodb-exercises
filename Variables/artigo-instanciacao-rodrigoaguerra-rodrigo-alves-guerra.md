@@ -28,7 +28,7 @@ Até mesmo é possível utilizar uma variável antes dela ser declarada.
 
 		y = 3; // atribuindo valor 3 a variável y
 
-		alert(x + y); // ultilização das variáveis x ,y. Saída = 7
+		alert(x + y); // utilização das variáveis x ,y. Saída = 7
 
 		var y; // declaração da variável y
 
@@ -41,7 +41,7 @@ Até mesmo é possível utilizar uma variável antes dela ser declarada.
 
 		y = 3; // atribuindo valor 3 a variável y
 
-		alert(x + y); // ultilização das variáveis x ,y . Saída = 7
+		alert(x + y); // utilização das variáveis x ,y . Saída = 7
 
 
 ## Closure
@@ -61,7 +61,7 @@ Para se obter valores de variáveis locais de uma função em qualquer parte do 
 
 ### Como usar ? 
 
-Vocẽ pode utlizar em qualquer lugar do seu código em que você ultilizaria um objeto de único método.
+Você pode utilizar em qualquer lugar do seu código em que você utilizaria um objeto de único método.
 
 ## Variável Global
 
@@ -82,7 +82,7 @@ Variável que pode ser acessada em todos os escopos do seu programa.
 
 No código acima, você percebe que a função 'escreve_nome' acessa a variável 'name', 
 que não está no escopo dessa função, mas que é uma variável global ao código em questão.
-Por isso é possível acessala dentro da função 'escreve_nome'.
+Por isso é possível acessá-la dentro da função 'escreve_nome'.
 
 ## Variável por parâmetro
 
@@ -100,7 +100,7 @@ podendo ser alterado o conteúdo do parâmetro na função sem alterar o conteú
 		alert(a); // mostrando que a variável Global não muda			
 	}
 
-	quadrado(a); // passando variável Global por parâmentro
+	quadrado(a); // passando variável Global por parâmetro
 
 ## Instanciação usando uma IIFE
 
@@ -127,7 +127,7 @@ mas uma variável declarada no escopo de um IIFE não pode ser acessada fora do 
 
 	
 
-Passando Parâmentro para a IIFE.
+Passando Parâmetro para a IIFE.
 	
 	Ex.
 	
@@ -143,4 +143,3 @@ Passando Parâmentro para a IIFE.
         escreve(resposta);
 
 Referência .: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/var ,  https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures , http://javascriptbrasil.com/2013/10/12/entenda-closures-no-javascript-com-facilidade/ , https://pt.wikipedia.org/wiki/Vari%C3%A1vel_global , http://imasters.com.br/front-end/javascript/sobre-funcoes-imediatas-javascript-iife/ .
-
