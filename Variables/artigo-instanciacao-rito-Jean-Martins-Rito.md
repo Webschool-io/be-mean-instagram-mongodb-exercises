@@ -305,19 +305,162 @@ console.log (firstName);
 
 ### Variável por parâmetro
 
-Explique o que acontece dentro da função qnd um parâmetro é passado e também explique quando uma GLOBAL é passada por parâmetro.
+
+Aqui foi meio complicado achar uma referência, mas vamos ver se consigo explicar, algo simples, de uma maneira mais simples. Acho que aqui eu me complico mais, pois saber o que acontece, nem sempre é fácil de se explicar! hehe
+
+Você pode ter funções que recebem parâmetros:
+
+```
+function somar(parametroA, parametroB){
+  soma = parametroA + parametroB;
+  console.log(soma)
+}
+
+somar(3,5);
+
+//8
+
+```
+
+Quando se passa parâmetros para a função, dentro dela, é como se fossem novas variáveis. Isso fica mais claro quando "manipulamos" uma variável global dentro da função:
+
+```
+parametroA = 4;
+parametroB = 5;
+
+function somar(parametroA, parametroB){
+  soma = parametroA + parametroB;
+  console.log("A soma de A + B = " + soma);
+  console.log("Pois aqui temos A = " + parametroA + " e B = " + parametroB);
+  parametroA = 1;
+  parametroB = 2;
+  console.log("Agora mudei os valores dentro da função. A = " + parametroA + " e B = " + parametroB);
+
+}
+
+somar(parametroA, parametroB);
+console.log("Fora da função continuamos tendo A = " + parametroA + " e B = " + parametroB);
+
+
+```
+
+Como Resultado deste código acima, temos:
+
+```
+A soma de A + B = 9
+Pois aqui temos A = 4 e B = 5
+Agora mudei os valores dentro da função. A = 1 e B = 2
+Fora da função continuamos tendo A = 4 e B = 5
+
+```
 
 ### Instanciação usando uma IIFE
 
-Explique como uma variável pode receber um valor de uma IIFE. Explique como passar uma variável por parâmetro para a IIFE e acontece com ela dentro da função.
+O termo IIFE, vem do Immediately-Invoked Function Expression, e usado para se referir a funções que são imediatamente executadas ao serem definidas.
 
-Considerações
+Há vários locais que podemos usar uma IIFE, porém o mais comum é quando queremos criar um escopo no JavaScript para que as variáveis definidas dentro da função não poluam o escopo global.
 
-Quanto mais explicado melhor.
+Isso é tudo a respeito de evitar ao máximo criar variáveis globais no JavaScript, e criar escopos quando e onde precisarmos.
 
-Lembre que isso fará parte do seu currículo como aluno e será disponilizado no sistema de vagas, ou seja, o contratante poderá ver todos seus projetos e trabalhos feitos nesse curso.
+```
+(function () {
+  'use strict'
 
-Boa sorte.
+  var sayHi = 'oi'
+  console.log(sayHi) // Aqui ele retorna oi
+}())
+
+console.log(sayHi) // Aqui ele retorna: ReferenceError: sayHi is not defined
+```
+
+Assim mantemos as variáveis todas dentro do nosso código, evitando que o JavaScript de outras pessoas alterem nossas variáveis. Como libs de terceiros ou curiosos com o DevTools aberto. Imagina alguém alterando o preço de um produto porque a variável “productPrice” é global? Não seria legal. (Um exemplo hipotético, acho que você sacou a ideia, certo?)
+
+IIFE geralmente ficam dentro de parênteses ( ), o que eles fazem basicamente é retornar qualquer coisa que você coloque dentro dele, como se fossem parâmetros de uma função.
+
+```
+(i) // undefined // Porque i não existe
+(1 + 2) // retorna 3
+
+var fn = (function () { return 'oi' }) // retorna toda a função para a variável fn
+fn() // 'oi'
+```
+
+Porém se colocarmos um () logo depois da função:
+
+```
+var fn = (function () { return 'oi' }()) // Executa a função dentro dos parênteses
+fn // 'oi' // O que é retornado pelo primeiro ( ) é o return da função
+
+
+```
+
+Desenhando um pouquinho o exemplo:
+
+![Desenhando pra mim mesmo](http://tutsmais.com.br/blog/wp-content/uploads/2015/05/Screen-Shot-2015-05-01-at-16.18.24.png)
+
+Podemos definir uma IIFE sem usar o primeiro parênteses abraçando toda a function, ou trocar o parênteses que invoca a function de lugar:
+
+
+```
+var fn = function () { return 'oi' }(); // Funciona
+
+var fn = (function () { return 'oi' }()) // Funciona e é validado pelo JSLint
+
+var fn = (function () { return 'oi' })() // Também funciona, mas não é validado pelo JSLint
+
+```
+
+Nós geralmente colocamos o primeiro parênteses como uma forma de padronizar, uma convenção. E a vantagem de usar o primeiro parênteses é que você pode executar as funções anônimas sem necessariamente atribuir o valor que ela retorna para uma variável.
+
+A maior vantagem de usar IIFEs, é porque as IIFE faz com que todo o código que está em volta do seu script não tenha acesso as variáveis que você define.
+
+Outra coisa interessante é que no segundo parênteses, onde invocamos a function, podemos passar qualquer parâmetro como se fosse qualquer outra função.
+
+```
+(function (string) {
+  console.log(string)
+}('oi'))
+
+// Log 'oi'
+
+```
+
+Podemos usar em um return, podemos definir uma função que a variável será o return da IIFE
+
+```
+var conte = (function () {
+  var numero = 0;
+
+  return function () {
+    numero = numero + 1
+
+    return numero
+  }
+}())
+
+conte() // 1
+conte() // 2
+conte() // 3
+conte() // 4
+
+```
+
+Assim por exemplo, a função é definida por uma IIFE que retorna uma function, então o valor da variável “conte” não será toda a função, porém apenas a função do return, que por sua vez tem acesso ao escopo criado dentro da IIFE.
+
+Dessa forma sempre que executamos “conte()” a função tem acesso a variável “numero” porém fora dessa função essa variável não existe.
+
+Podemos chamar essa variável numero de variável “privada” porque só temos acesso a ela dentro da nossa função IIFE, assim podemos criar métodos que manipulam os dados da variável numero.
+
+Você deve usar uma IIFE sempre que surgir a necessidade de isolar as variáveis que você precisa do escopo global. Isso é uma boa prática e é uma forma de fazer com que seu código funcione bem independente de onde ele for usado, são práticas como essa, que libs como jQuery, AngularJS, React e várias outras libs e frameworks usam.
+
+O let já funciona nos browsers mais modernos, e para alguns casos que hoje precisaríamos usar IIFE para isolar variáveis, no futuro (também conhecido como hoje) você poderá usar o let para declarar variáveis.
+
+O let está disponível no ES6. :)
+
+Acho que é isso!!! Espero não ter esquecido de nada. Ou não ter compreendido por completo.
+
+Digerindo bastante coisa neste momento!!! :)
+
 
 
 
@@ -326,3 +469,6 @@ http://tableless.com.br/elevacao-ou-javascript-hoisting/
 http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures
 http://javascriptbrasil.com/2013/10/11/escopo-de-variavel-e-hoisting-no-javascript-explicado/
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Fun%C3%A7%C3%B5es
+http://tutsmais.com.br/blog/javascript-2/o-que-e-iife-no-javascript/
+http://jstherightway.org/pt-br/
