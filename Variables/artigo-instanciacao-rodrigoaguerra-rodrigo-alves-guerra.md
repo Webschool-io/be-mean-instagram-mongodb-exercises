@@ -109,19 +109,38 @@ IIFE  ou  função imediatas, a função é executada imediatamente depois de cr
 	Ex.
 
 	(function () {
-	  console.log('Olá Mundo !') //	
+	  console.log('Olá Mundo !') // será executada imediatamente	
 	}());
 
-Uma IIFE pode retornar da função um valor para uma variável do código, 
-mas uma variável declarada no escopo de um IIFE não pode ser acessada fora de seu escopo.
-
-Passano Parâmntro para a IIFE.
+Uma IIFE pode retornar um valor para uma variável do código, 
+mas uma variável declarada no escopo de um IIFE não pode ser acessada fora do escopo IIFE.
 	
 	Ex.
 
-	(function(x) { 
-		console.log(x) 
-	})("Olá Mundo !");
+	var iife = (function() { 
+		var string = "Sou um IIFE";
+		return string; 
+	})();
+
+        alert(iife); // Saída "Sou um IIFE"
+        alert(string); // Saída 
+
+	
+
+Passando Parâmentro para a IIFE.
+	
+	Ex.
+	
+	var escreve = (function () {
+           return function (x){
+	          return alert(x) // será executada 	
+           }
+	}());
+
+        var resposta = prompt('o que quer escrever ?');
+        escreve(resposta);
+        var resposta = prompt('o que quer escrever ?');
+        escreve(resposta);
 
 Referência .: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/var ,  https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures , http://javascriptbrasil.com/2013/10/12/entenda-closures-no-javascript-com-facilidade/ , https://pt.wikipedia.org/wiki/Vari%C3%A1vel_global , http://imasters.com.br/front-end/javascript/sobre-funcoes-imediatas-javascript-iife/ .
 
