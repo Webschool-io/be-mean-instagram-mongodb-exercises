@@ -1,4 +1,4 @@
-# Artigo
+# Artigo - Instanciação no Javascript
 autor: Jean Martins Rito
 github: http://github.com/rito
 
