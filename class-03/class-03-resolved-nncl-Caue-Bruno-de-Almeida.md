@@ -1,5 +1,5 @@
 #MongoDB - Aula 03 - Exercício
-Autor: Cauê Almeida
+Autor: Cauê Bruno de Almeida
 
 # 1. Liste todos os pokemons com a altura meno que 0.5
 ```
