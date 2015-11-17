@@ -12,14 +12,14 @@ Explique o que é, o porquê acontece e como acontece com variável e função.
 Hoisting é uma característica do JavaScript onde as variáveis e funções estão disponíveis para todo o escopo onde foram declaradas, independente da ordem em que foram declaradas.
 
 Vamos ver alguns exemplos.
-´´´
+```
 console.log(a); // Dispara um erro do tipo ReferenceError
-´´´
-´´´
+```
+```
 console.log(a); // Retorna *undefined*, e não mais um erro
 
 var a;
-´´´
+```
 
 ## Closure
 
