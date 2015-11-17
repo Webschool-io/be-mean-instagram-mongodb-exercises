@@ -1,4 +1,4 @@
-# Artigo Instanciação De Variáveis
+# Artigo Instanciação
 **autor**: Rodrigo Alves Guerra
 
 ## Hoisting
