@@ -1,5 +1,5 @@
 # MongoDB - Aula 01 - Exercício
-autor: Felipe Sobral
+autor: Felipe Sobral de Souza
 
 ## Importando os restaurantes
 	felipe@felipe-pc:~$ mongoimport --db bemean --collection restaurantes --drop --file /home/felipe/Downloads/data.json
