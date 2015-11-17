@@ -3,17 +3,13 @@
 
 ## Hoisting
 
-Em JavaScript antes do nosso código ser executado,
-ele é lido por inteiro. Nessa hora, todas nossas variáveis,
-e funções são içadas até o topo do nosso escopo;
-só então a execução de fato acontece.
-Isso é o que chamamos de Hoisting.
+Em JavaScript antes do nosso código ser executado, ele é lido por inteiro. Nessa hora, todas nossas variáveis e funções,
+são içadas até o topo do nosso escopo, só então a execução de fato acontece. Isso é o que chamamos de Hoisting.
 
 Explicando melhor:
 
-Sempre que criamos uma variável, ela é içada para o topo do nosso escopo,
-antes mesmo do nosso código ser executado, ou seja,
-ele não chega a receber nenhum valor nessa fase, permanecendo indefinida.
+Sempre que criamos uma variável, ela é içada para o topo do nosso escopo, antes mesmo do nosso código ser executado, ou seja,
+ela não chega a receber nenhum valor nessa fase, permanecendo indefinida.
 
 ```
     valor = 666;
@@ -27,9 +23,8 @@ ele não chega a receber nenhum valor nessa fase, permanecendo indefinida.
 
 ```
 
-Já com funções, é um pouco diferente,
-não é somente o nome que é içado; neste caso,
-todo corpo de nossa função é levado para o topo do nosso escopo.
+Já com as declarações de funções, é um pouco diferente, não é somente o nome que é içado, neste caso todo corpo de nossa função
+é levado para o topo do nosso escopo.
 
 ```
     coisada(); // vai printar "mensagem coisada"
