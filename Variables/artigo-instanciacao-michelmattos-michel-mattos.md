@@ -12,13 +12,32 @@ Explique o que é, o porquê acontece e como acontece com variável e função.
 Hoisting é uma característica do JavaScript onde as variáveis e funções estão disponíveis para todo o escopo onde foram declaradas, independente da ordem em que foram declaradas.
 
 Vamos ver alguns exemplos.
+
 ```
+// exemplo_01.js
+
 console.log(a); // Dispara um erro do tipo ReferenceError
 ```
 ```
-console.log(a); // Retorna *undefined*, e não mais um erro
+// exemplo_02.js
+
+console.log(a); // Retorna undefined, e não mais um erro
 
 var a;
+```
+No primeiro exemplo, um `ReferenceError` é disparado pois a variável `a` não foi declarada previamente. Isso pode ser solucionado colocando um `var a;` no início do arquivo, mas graças ao hoisting, essa declaração pode ficar em qualquer lugar *daquele escopo*.
+
+```
+// exemplo_03.js
+
+console.log(a); // Retorna undefined
+
+var a = 1;
+```
+O código acima continua retornando `undefined`. O motivo é que apenas a declaração da variável fica disponível, e não a sua atribuição. Isso acontece porque o compilador javascript divide a declaração `var a = 1;` em duas: `var a;` e `a = 1;`. Então a variável `a` estará disponível para todo o escopo onde ela foi declarada, mas o valor só será atribuido à variável depois daquele ponto.
+
+```
+
 ```
 
 ## Closure
