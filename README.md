@@ -10,4 +10,4 @@ Favor sempre usar: class-X-resolved-githubuser-nome-completo-com-hifens.md
 
 O prazo final é antes de entregar o **seu** projeto final, que também não tem um prazo final, pois o curso acontecerá sem um tempo definido devido aos futuros alunos.
 
-## Obrigatório entregar **TODOS** antes do seu pto final.
+## Obrigatório entregar **TODOS** antes do seu projeto final.
