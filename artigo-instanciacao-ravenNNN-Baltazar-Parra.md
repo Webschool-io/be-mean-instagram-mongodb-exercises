@@ -51,9 +51,9 @@ Simplificando, closure é uma função interna, que te permite acessar variávei
 ```
     function zeRuela (nomeDoRuela, sobrenomeDoRuela) {
         var chamada = "Eu sou o ";
-        
+
     // Função externa, com variáveis externas.    
-    
+
         function nomeInteiro () {
             return chamada + nomeDoRuela + " " + sobrenomeDoRuela;
         }
@@ -63,8 +63,8 @@ Simplificando, closure é uma função interna, que te permite acessar variávei
     // Função interna, que tem acesso as variáveis da função externa.
     // Isso é oque chamamos de closure, Ela pode acessar tanto as variáveis,
     // quanto os paramêtros do lado de fora.
-    
-    
+
+
     zeRuela ("Jose", "Arruelo"); // Eu sou o Jose Arruelo
 ```
 
@@ -97,19 +97,19 @@ Passando nosso parâmetro por meio de uma variável, ela vai ficar responsável 
 
 ```
     var valor = 5;
-    
+
     function pegaValor(parametro) {
         alert(parametro);
     }
-    
+
     pegaValor(valor); // 5
-    
+
     // Passamos uma variavel como parametro
-    
+
     valor = 12;
-    
+
     pegaValor(valor); // 12
-    
+
     // Mudando o argumento da função.
 ```
 
@@ -128,6 +128,4 @@ Até o ano de 2010, davamos o nome de self-executing anonymous function, para fu
 Até que um cara chamado Cowboy (Ben Alman) publicou um [longo artigo](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) sobre como não concordava com esse nome,
 cunhando o termo IIFE.
 
-Como uma variável pode receber um valor de uma IIFE?
-
-Como passar uma variável por parâmetro para a IIFE? O que acontece com ela dentro da função?
+(Artigo em desenvolvimento...)
