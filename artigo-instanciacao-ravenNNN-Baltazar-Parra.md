@@ -128,4 +128,4 @@ Até o ano de 2010, davamos o nome de self-executing anonymous function, para fu
 Até que um cara chamado Cowboy (Ben Alman) publicou um [longo artigo](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) sobre como não concordava com esse nome,
 cunhando o termo IIFE.
 
-(Artigo em desenvolvimento...)
+(Artigo em Desenvolvimento...)
