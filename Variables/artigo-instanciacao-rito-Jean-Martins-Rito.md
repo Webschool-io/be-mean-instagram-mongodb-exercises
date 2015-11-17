@@ -4,7 +4,7 @@ github: http://github.com/rito
 
 Quando recebi o desafio de escrever este artigo, a princípio torci o nariz. Se estou fazendo um curso, em tese precisaria receber a teoria e depois fazer os exercícios propostos daquele conteúdo. Legal, estava tranquilo, até surgir o desafio de escrever o artigo. Como fazer um artigo, com conceitos técnicos que não vi, e que não domino?
 
-Legal, Bora escrever de um jeito que eu mesmo consiga entender, visto que muita informação existente na internet, são de técnicos, extremamente técnicos, que escrevem para outros técnicos, e se esquecem que nem todos entendem do que estão falando. 
+Legal, Bora escrever de um jeito que eu mesmo consiga entender, visto que muita informação existente na internet, são de técnicos, extremamente técnicos, que escrevem para outros técnicos, e se esquecem que nem todos entendem do que estão falando.
 Um item não entendido, ou mal explicado, pode confundir ainda mais, e até fazer pensar que a linguagem é muito complicado, ou que a pessoa nunca entenderá programação. Será que este tabu realmente é verdade?
 
 Desafio Aceito!!!
@@ -14,13 +14,13 @@ Desafio Aceito!!!
 
 Hoist em inglês significa levantar ou suspender algo através de um aparato mecânico. Em bom português, significa usar o guindaste para elevar um objeto. E é isto o que acontece em JavaScript quando declaramos uma variável ou função. Sua declaração é “elevada” para o topo do escopo.
 
-Em outras palavras, esta "Elevação" nada mais é que trazer para o início do escopo a declaração de variáveis e funções. 
+Em outras palavras, esta "Elevação" nada mais é que trazer para o início do escopo a declaração de variáveis e funções.
 
 Vamos usar um exemplo onde você queira usar uma função para juntar 2 palavras:
 
-'''
+```
 juntarPalavras("guarda", "chuva");
-'''
+```
 
 Se pensarmos numa linguagem interpretada, que vá executando o código conforme vai "lendo", linha a linha, ao chegar nesta função, teremos um erro, pois esta função não foi definida ainda, é como se você estivesse tentando executar algo que ainda não existe!
 
@@ -30,34 +30,34 @@ E para que isto não ocorra, é onde surgiu o conceito de Hosting no Javascript,
 
 Vamos a alguns exemplos:
 
-'''
+```
 > nome = 'Jean';
 > console.log(nome);
 Jean
 >
+```
 
-'''
 
 Até aqui tranquilo, vamos mudar um pouco as coisas:
 
-'''
+```
 > var nome = meunome;
 > console.log(nome);
 undefined
 //ReferenceError: meunome is not defined
-'''
+```
 Seguindo o conceito explicado acima, como vamos atribuir nome, com o valor de meunome se esta variável não existe?
 
 Agora mudando um pouco:
 
-'''
+```
 
 > var meunome;
 > console.log(nome);
 > var nome = meunome;
 undefined
 >
-'''
+```
 
 Agora apresentou UNDEFINED!!!
 
@@ -66,22 +66,22 @@ Isso acontece porque o JavaScript não obriga você a declarar variáveis, permi
 Agora o que ficou confuso é a questão da declaração e a inicialização!!!
 
 Declarar a variável meunome:
-'''
+```
 > var meunome;
 undefined
 >
-'''
+```
 
 Agora o que é iniciar o conteúdo Jean:
 
-'''
+```
 > meunome = 'Jean';
 'Jean'
 >
-'''
+```
 
 Agora com uma função:
-'''
+```
 console.log(multiplicaNumero(10,10));
 var multiplicaNumero = function(a,b) {
   return a*b;
@@ -89,11 +89,11 @@ var multiplicaNumero = function(a,b) {
 
 //TypeError: undefined is not a function
 
-'''
+```
 Ele elevou a declaração var multiplicaNumero, mas como chamamos antes de ele ser iniciado recebemos um erro.
 
 E agora se mudarmos para isto:
-'''
+```
 console.log(multiplicaNumero(10,10));
 multiplicaNumero = function(a,b) {
   return a*b;
@@ -102,19 +102,19 @@ multiplicaNumero = function(a,b) {
 
 //ReferenceError: multiplicaNumero is not defined
 
-'''
+```
 Nesse caso, o erro foi que o multiplicaNumero não foi declarado!
 
 E agora se transformarmos em uma função?? (Não sei por que, mas isso me lembrou do JavaScript Funcional!!!!)
 
-'''
+```
 console.log(multiplicaNumero(10,10));
 function multiplicaNumero (a,b) {
   return a*b;
 }
 
 //100
-'''
+```
 
 TADA!!!!
 
@@ -140,7 +140,7 @@ Quase... Dá pra ser mais claro?
 
 Vamos ver se melhora com um pouco de prática pra tirarmos novas conclusões:
 
-'''
+```
 function init() {
   var name = "Rito";
   function displayName() {
@@ -152,18 +152,18 @@ init();
 
 
 //Rito
-'''
+```
 
-A função init() cria uma variável local chamada name, e depois define uma função chamada displayName(). 
+A função init() cria uma variável local chamada name, e depois define uma função chamada displayName().
 
-displayName() é uma função aninhada (um closure) — ela é definida dentro da função init(), e está disponivel apenas dentro do corpo daquela função. 
+displayName() é uma função aninhada (um closure) — ela é definida dentro da função init(), e está disponivel apenas dentro do corpo daquela função.
 Diferente de init(), displayName() não tem variáveis locais próprias, e ao invés disso reusa a variável name declarada na função pai.
 
 Este é um exemplo de  escopo léxico : em JavaScript, o escopo de uma variável é definido por sua localização dentro do código fonte (isto é aparentemente  léxico ) e funções aninhadas têm acesso às variáveis declaradas em seu escopo externo.
 
 Agora outro exemplo:
 
-'''
+```
 function makeAdder(x) {
   return function(y) {
     return x + y;
@@ -174,7 +174,7 @@ var add5 = makeAdder(5);
 var add10 = makeAdder(10);
 
 console.log(add5(2));  
-console.log(add10(2)); 
+console.log(add10(2));
 
 
 
@@ -182,7 +182,7 @@ console.log(add10(2));
 
 //7
 //12
-'''
+```
 
 Neste exemplo definimos a função makeAdder(x) que toma um único argumento x e retorno uma nova função. A função retornada toma então um único argumento, y, e retorna então a soma de x e de y.
 
@@ -198,7 +198,7 @@ Situações onde você poderia utilizar isto são comuns em ambientes web. Muito
 
 Um exemplo prático: suponha que queremos adicionar alguns botões para ajustar o tamanho do texto de uma página. Um jeito de fazer seria especificar o tamanho da fonte no elemento body e então definir o tamanho dos outros elementos da página (os cabeçalhos, por exemplo) utilizando a unidade relativa em:
 
-'''
+```
 body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -210,13 +210,13 @@ h1 {
 h2 {
   font-size: 1.2em;
 }
-'''
+```
 
 Nossos botões interativos de tamanho de texto podem alterar a propriedade font-size do elemento body, e os ajustes serão refletidos em outros elementos graças à unidade relativa.
 
 O código JavaScript:
 
-'''
+```
 function makeSizer(size) {
   return function() {
     document.body.style.fontSize = size + 'px';
@@ -226,47 +226,46 @@ function makeSizer(size) {
 var size12 = makeSizer(12);
 var size14 = makeSizer(14);
 var size16 = makeSizer(16);
-
-
-'''
+```
 
 size12, size14 e size16 agora são funções que devem redimensionar o texto do elemento body para 12.14 e 16 pixels respectivamente. Nós podemos designá-las à botões (neste caso, links) como feito a seguir:
 
-'''
+```
 document.getElementById('size-12').onclick = size12;
 document.getElementById('size-14').onclick = size14;
 document.getElementById('size-16').onclick = size16;
-'''
+```
 
-'''
+```
 <a href="#" id="size-12">12</a>
 <a href="#" id="size-14">14</a>
 <a href="#" id="size-16">16</a>
-'''
+```
 
+Entendido?
 
 ### Variável Global
 
 Todas as variáveis declaradas fora de uma função estão no escopo global.
 Qualquer variável declarada ou inicializada fora de uma função é uma variável global, e estará portanto disponível para toda a aplicação. Por exemplo:
 
-'''
+```
 var myName = "Jean";
-'''
+```
 
 ou
-'''
+```
 firstName = "Richard";
-'''
+```
 ou
-'''
+```
 var name;
 name;
-'''
+```
 
 Se uma variável é inicializada (atribuída com um valor) sem primeiro ser declarada com a palavra chave var, ela é automaticamente adicionada ao contexto global sendo assim portanto uma variável global:
 
-'''
+```
 function showAge() {
     //age é uma variável global porque ela não foi declarada com a palavra chave var dentro da função
     age = 90;
@@ -275,32 +274,32 @@ function showAge() {
 
 showAge();
 
- 
+
 //age está no contexto global, então está disponível aqui, também
-console.log(age); 
+console.log(age);
 
 
 //90
 //90
-'''
+```
 
 Demonstração de variáveis que estão no Escopo Global mesmo que pareça o contrário:
 
-'''
+```
 //Ambas variáveis firstName estão no escopo global, mesmo que a segunda esteja dentro do bloco {}
 var firstName = "Jean";
 {
     var firstName = "Rito";
 }
- 
+
 //Para reiterar: JavaScript não tem escopo por nível de bloco
 //A segunda declaração ou firstName simplesmente redeclara e sobrescreve a primeira
 
-console.log (firstName); 
+console.log (firstName);
 
 
 //Rito
-'''
+```
 
 
 
@@ -327,4 +326,3 @@ http://tableless.com.br/elevacao-ou-javascript-hoisting/
 http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures
 http://javascriptbrasil.com/2013/10/11/escopo-de-variavel-e-hoisting-no-javascript-explicado/
-
