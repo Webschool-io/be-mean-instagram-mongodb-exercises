@@ -2,7 +2,7 @@
 **autor**: Rafael Crispim Ignácio
 
 ## Hoisting
-Este termo foi cunhado por **Ben Cherry** e é usado para explicar o comportamento do javascript na ordem das declarações e inicializações. Ela se aplica principalmente em variáveis e funções.
+Este termo foi cunhado por **Ben Cherry** e é usado para explicar o comportamento do javascript definir a prioridade das declarações e inicializações de variáveis e funções.
 
 ### Variable Hoisting
 As varíaveis tem a sua declaração elevada para o topo do escopo(hoisted), mas não a sua inicialização.
