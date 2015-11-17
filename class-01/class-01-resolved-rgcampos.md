@@ -17,4 +17,4 @@ root@bemean:/# mongo
 MongoDB shell version: 3.0.7  
 connecting to: test  
 bemean(mongod-3.0.7) test> db.restaurantes.find({}).count()  
-25359
+25359  
