@@ -1,21 +1,17 @@
 # Artigo
 **autor**: Rodrigo Alves Guerra
 
-**Prazo**: até dia 18 de Novembro de 2015
-
-Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia as variáveis, seguindo os seguintes tópicos.
-
 ## Hoisting
 
 ### O que é ?
 
-É a possibilidade de se declarar uma variável em qualquer parte do seu código, 
+É a possibilidade de se declarar uma variável ou uma função em qualquer parte do seu código, 
 sendo equivalente a declarar no início da função ou do código global.
 
 ### Porquê acontece ?
 
-As variáveis são processadas antes que o código seja executado, 
-possibilitando a declaração de uma variável em qualquer parte do código.
+As variáveis e as funções são processadas antes que o código seja executado, 
+possibilitando a declaração de uma variável ou função em qualquer parte do código.
 
 ### Como acontece com variável e função ?
 
@@ -26,26 +22,26 @@ Até mesmo é possível utilizar uma variável antes dela ser declarada.
 
 	Ex.
 
-		var x;
+		var x; // declaração da variável x 
 
-		x = 4;
+		x = 4;	// atribuindo valor 4 a variável x
 
-		y = 3;
+		y = 3; // atribuindo valor 3 a variável y
 
-		alert(x + y); 
+		alert(x + y); // ultilização das variáveis x ,y. Saída = 7
 
-		var y;
+		var y; // declaração da variável y
 
 		// È o mesmo que !
 
-		var x;
-		var y;
+		var x; // declaração da variável x
+		var y; // declaração da variável y
 
-		x = 4;
+		x = 4; // atribuindo valor 4 a variável x
 
-		y = 3;
+		y = 3; // atribuindo valor 3 a variável y
 
-		alert(x + y); 
+		alert(x + y); // ultilização das variáveis x ,y . Saída = 7
 
 
 ## Closure
@@ -65,14 +61,11 @@ Para se obter valores de variáveis locais de uma função em qualquer parte do 
 
 ### Como usar ? 
 
-Vocẽ pode utlizar em qualquer lugar em que você ultilizaria um objeto de único método.
-
-### Em que situações que você usaria ?
-
+Vocẽ pode utlizar em qualquer lugar do seu código em que você ultilizaria um objeto de único método.
 
 ## Variável Global
 
-Variável que pode ser acessada em todos os escopos do programa de computador.
+Variável que pode ser acessada em todos os escopos do seu programa.
 	
 	Ex. 
 
@@ -91,22 +84,44 @@ No código acima, você percebe que a função 'escreve_nome' acessa a variável
 que não está no escopo dessa função, mas que é uma variável global ao código em questão.
 Por isso é possível acessala dentro da função 'escreve_nome'.
 
-
-### Explique como se usa uma var Global dentro de uma função.
-
 ## Variável por parâmetro
-
-Explique o que acontece dentro da função qnd um parâmetro é passado e também explique quando uma GLOBAL é passada por parâmetro.
 
 Parâmetro é uma referência a uma variável do código que é passada para uma função, 
 seria uma cópia do conteúdo da variável que é transmitida para a função, 
 podendo ser alterado o conteúdo do parâmetro na função sem alterar o conteúdo da variável.
 
+	Ex. 
+
+	var a = 4; // 'a' variável GLOBAL
+
+	function quadrado(b){ // 'b' variável por Parâmetro 
+		b =  b * b; // modificando variável 'b' 
+		alert(b); // mostrando a modificação
+		alert(a); // mostrando que a variável Global não muda			
+	}
+
+	quadrado(a); // passando variável Global por parâmentro
 
 ## Instanciação usando uma IIFE
 
-Explique como uma variável pode receber um valor de uma IIFE.
-Explique como passar uma variável por parâmetro para a IIFE e acontece com ela dentro da função.
+IIFE  ou  função imediatas, a função é executada imediatamente depois de criada;
 
+	Ex.
 
-Referência .: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/var ,  https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures , http://javascriptbrasil.com/2013/10/12/entenda-closures-no-javascript-com-facilidade/ , https://pt.wikipedia.org/wiki/Vari%C3%A1vel_global 
+	(function () {
+	  console.log('Olá Mundo !') //	
+	}());
+
+Uma IIFE pode retornar da função um valor para uma variável do código, 
+mas uma variável declarada no escopo de um IIFE não pode ser acessada fora de seu escopo.
+
+Passano Parâmntro para a IIFE.
+	
+	Ex.
+
+	(function(x) { 
+		console.log(x) 
+	})("Olá Mundo !");
+
+Referência .: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/var ,  https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures , http://javascriptbrasil.com/2013/10/12/entenda-closures-no-javascript-com-facilidade/ , https://pt.wikipedia.org/wiki/Vari%C3%A1vel_global , http://imasters.com.br/front-end/javascript/sobre-funcoes-imediatas-javascript-iife/ .
+
