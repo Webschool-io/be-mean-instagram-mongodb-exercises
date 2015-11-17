@@ -93,7 +93,7 @@ chamada(); // 6
 
 ## Variável por parâmetro
 
-Quando passamos uma variável como parâmetro para nossa função, na verdade estamos passando o valor dela, ou seja, nossos paramêtros nada mais são que valores.
+Passando nosso parâmetro por meio de uma variável, ela vai ficar responsável em fazer o transporte do nosso argumento.
 
 ```
     var valor = 5;
@@ -110,10 +110,10 @@ Quando passamos uma variável como parâmetro para nossa função, na verdade es
     
     pegaValor(valor); // 12
     
-    // Mudamos o valor da função, alterando apenas a variável.
+    // Mudando o argumento da função.
 ```
 
-Criamos uma variável com o valor 5 e chamamos nossa função passando esta variável como parâmetro, depois alteramos o valor da nossa chamada, alterando apenas nossa variável.
+Criamos uma variável com o valor 5 e chamamos nossa função passando esta variável como parâmetro, depois alteramos nosso argumento trocando o valor da nossa variável.
 
 ## Instanciação usando uma IIFE
 
