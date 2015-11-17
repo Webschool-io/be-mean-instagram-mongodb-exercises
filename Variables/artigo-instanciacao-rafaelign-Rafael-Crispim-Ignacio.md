@@ -114,7 +114,7 @@ console.log(a);
 IIFE significa "Immediately-invoked function expression" e ela é utilizada para encapsularmos o escopo no javascript de uma forma que as declarações globais não venham a interfirir no que está dentro dela. Sua execução é feita na declaração.
 
 ```
-(function(){})();
+(function(){ ... })();
 ```
 
 Desta forma, uma variável só pode receber um valor utilizando o return dentro da função imediata, onde conseguimos exportar algum resultado que foi processado.
@@ -122,5 +122,11 @@ Desta forma, uma variável só pode receber um valor utilizando o return dentro 
 Quando passamos um parametro em uma IIFE, o estado global deste parametro será mantido mesmo que este sofra alteração dentro da função imediata, diferentemente do que ocorre quando manipulamos dentro de um método comum. Para passar um parâmetro para uma IIFE basta adicioná-lo na declaração e adicionar o valor desejado na chamada que segue a declaração.
 
 ```
-(function(**x**, **y**){ ... })(`foo`, `bar`);
+(function(x, y){
+    console.log(y, x);
+    // -> `bar foo`
+})(`foo`, `bar`);
 ```
+
+## Referências
+[http://tecnologia-simples.blogspot.com.br/2012/04/variaveis-globais-e-locais-javascript.html](http://tecnologia-simples.blogspot.com.br/2012/04/variaveis-globais-e-locais-javascript.html) [https://www.turbosite.com.br/blog/entenda-o-que-sao-closures-em-javascript](https://www.turbosite.com.br/blog/entenda-o-que-sao-closures-em-javascript) [https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures) [http://nodebr.com/cuidado-com-a-armadilha-do-escopo-de-variaveis-em-javascript/](http://nodebr.com/cuidado-com-a-armadilha-do-escopo-de-variaveis-em-javascript/) [http://imasters.com.br/front-end/javascript/sobre-funcoes-imediatas-javascript-iife/](http://imasters.com.br/front-end/javascript/sobre-funcoes-imediatas-javascript-iife/) [http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/](http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/)
