@@ -68,7 +68,14 @@ Simplificando, closure é uma função interna, que te permite acessar variávei
     zeRuela ("Jose", "Arruelo"); // Eu sou o Jose Arruelo
 ```
 
-Ai em cima temos uma função dentro de outra função, onde a função que está dentro, tem acessos a dados da função de está fora, isso é oque podemos chamar de closure.
+Ai em cima temos uma função dentro de outra função, onde a função que está dentro, tem acessos a dados da função que está fora, isso é oque podemos chamar de closure.
+
+- Beleza, e eu uso isso pra'quê?
+
+Para construir variáveis privadas ué.
+
+Uma função pode acessar todas variáveis criadas dentro dela, e com as closures podemos acessar também variáveis criadas do lado de fora,
+sem bagunçar nosso escopo global deixando nosso código mais inteligivel.
 
 ## Variável Global
 
