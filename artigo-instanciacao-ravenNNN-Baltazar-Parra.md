@@ -31,9 +31,6 @@ Já com funções, é um pouco diferente,
 não é somente o nome que é içado; neste caso,
 todo corpo de nossa função é levado para o topo do nosso escopo.
 
-No caso das expressões, ela vai se comportar como as variáveis,
-tendo somente seu nome içado.
-
 ```
     coisada(); // vai printar "mensagem coisada"
                // Porque ali em baixo eu vou criar a função
@@ -47,8 +44,7 @@ tendo somente seu nome içado.
     // Mesmo não fazendo nenhum sentido aparente.
 
 ```
-
-
+Obs. No caso das expressões, ela vai se comportar como as variáveis, tendo somente seu nome içado.
 
 ## Closure
 
