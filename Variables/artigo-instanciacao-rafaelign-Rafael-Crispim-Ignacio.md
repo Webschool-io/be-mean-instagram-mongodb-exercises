@@ -1,4 +1,4 @@
-# Artigo
+# Instâncias em Javascript
 **autor**: Rafael Crispim Ignácio
 
 ## Hoisting
