@@ -122,24 +122,22 @@ Agora o código executou sem erro porque toda declaração de função não anô
 
 Com isso aprendemos que é uma boa prática declarar e/ou iniciar variáveis e funções no início do escopo. E outra, utilizarmos funções não anônimas, e utilizando sempre o conceito de reaproveitamento! :)
 
-
-
-
+Acho que ficou um pouco mais claro pra mim. E pra você?
 
 
 ### Closure
 
 Explique o que é, o porquê acontece e como usar. Cite situações que você usaria.
 
-Variável Global
+### Variável Global
 
 Explique como se usa uma var Global dentro de uma função.
 
-Variável por parâmetro
+### Variável por parâmetro
 
 Explique o que acontece dentro da função qnd um parâmetro é passado e também explique quando uma GLOBAL é passada por parâmetro.
 
-Instanciação usando uma IIFE
+### Instanciação usando uma IIFE
 
 Explique como uma variável pode receber um valor de uma IIFE. Explique como passar uma variável por parâmetro para a IIFE e acontece com ela dentro da função.
 
@@ -150,3 +148,9 @@ Quanto mais explicado melhor.
 Lembre que isso fará parte do seu currículo como aluno e será disponilizado no sistema de vagas, ou seja, o contratante poderá ver todos seus projetos e trabalhos feitos nesse curso.
 
 Boa sorte.
+
+
+
+### Referências Bibliográficas
+http://tableless.com.br/elevacao-ou-javascript-hoisting/
+http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/
