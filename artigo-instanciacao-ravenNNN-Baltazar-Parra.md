@@ -23,8 +23,7 @@ ela não chega a receber nenhum valor nessa fase, permanecendo indefinida.
 
 ```
 
-Já com as declarações de funções, é um pouco diferente, não é somente o nome que é içado, neste caso todo corpo de nossa função
-é levado para o topo do nosso escopo.
+Já com as declarações de funções é um pouco diferente, não é somente o nome que é içado, neste caso todo corpo da nossa declaração é levado para o topo.
 
 ```
     coisada(); // vai printar "mensagem coisada"
