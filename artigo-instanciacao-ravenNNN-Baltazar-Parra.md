@@ -117,6 +117,17 @@ Criamos uma variável com o valor 5 e chamamos nossa função passando esta vari
 
 ## Instanciação usando uma IIFE
 
+Até o ano de 2010, davamos o nome de self-executing anonymous function, para funções executadas no momento em que eram definidas.
+
+```
+    (function () {
+    console.log('E ae, meu nome é Self-Executing Anonynous Function, Prazer')
+    }())
+```
+
+Até que um cara chamado Cowboy (Ben Alman) publicou um [longo artigo](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) sobre como não concordava com esse nome,
+cunhando o termo IIFE.
+
 Como uma variável pode receber um valor de uma IIFE?
 
 Como passar uma variável por parâmetro para a IIFE? O que acontece com ela dentro da função?
