@@ -1,5 +1,5 @@
 # Javascript - Instanciação
-**autor**: João Paulo Ribeiro
+**autor**: Francisross Soares de Oliveira
 
 O objetivo desse artigo é apresentar as principais formas de criar e instanciar variáveis no JavaScript. O JavaScript é uma linguagem da família de linguagem baseadas em C, mas o seu escopo funciona diferente das irmãs: C, C++ e Java.
 
