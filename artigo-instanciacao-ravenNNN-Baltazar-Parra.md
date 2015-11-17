@@ -22,8 +22,9 @@ ele não chega a receber nenhum valor nessa fase, permanecendo indefinida.
     // Como nossas variáveis são içadas antes da execução do código
     // Ela será interpretada assim
 
-    var valor;
+    var valor; // undefined
     valor = 666;
+
 ```
 
 Já com funções, é um pouco diferente,
@@ -44,6 +45,7 @@ tendo somente seu nome içado.
     // Como nas funções, são içadas o corpo e não somente o nome
     // Eu posso chamar ela em qualquer lugar do código
     // Mesmo não fazendo nenhum sentido aparente.
+
 ```
 
 
