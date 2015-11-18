@@ -1,5 +1,5 @@
 # MongoDB - Aula 03 - Exercício
-autor: Yuri Sales
+autor: Yuri Henrique Sales da Costa
 
 ###Listagem de todos Pokemons com a altura menor que 0.5 (Passo 1)
 ```
