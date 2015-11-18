@@ -193,13 +193,13 @@ alcunha = "Maria Gasolina";
 olaMaria = constroiFnOla(alcunha); // variável global passada como parâmetro
 
 olaZe(); // exibe: "Olá Zé do Caixão!"
-helloJudy(); // exibe "Olá Maria Gasolina!"
+olaMaria(); // exibe "Olá Maria Gasolina!"
 ```
 
 
 ## Instanciação usando uma IIFE
 
-Antigamente, as funções executadas no mesmo momento em que são definidas eram chamadas "self-executing anonymous function", isto é, "função anônima auto-executável". Num artigo publicado em 2010, um sujeito chamado [Ben Alman](https://github.com/cowboy), escreveu um artigo propondo denominar essas funções de "Immediately-Invoked Function Expression (IIFE)", que se traduz em português como "Definição de Função Imediatamente Executável".
+Antigamente, as funções executadas no mesmo momento em que são definidas eram chamadas "self-executing anonymous function", isto é, "função anônima auto-executável". Em 2010, um sujeito chamado [Ben Alman](https://github.com/cowboy), escreveu um artigo propondo denominar essas funções de "Immediately-Invoked Function Expression (IIFE)", que se traduz em português como "Definição de Função Imediatamente Executável".
 
 As IIFE são muito usadas em JavaScript funcional e o seu "jeitão" é o seguinte:
 
