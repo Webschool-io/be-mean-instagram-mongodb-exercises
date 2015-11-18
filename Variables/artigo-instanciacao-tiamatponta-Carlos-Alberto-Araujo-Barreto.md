@@ -21,22 +21,89 @@ Hoisting é basicamente isso, as declarações das variáveis mesmo ao longo do 
 estivessem sendo declaradas no topo, mas por recomendação é melhor manter as declarações de variáveis no topo do código.
 
 
-
-Explique o que é, o porquê acontece e como acontece com variável e função.
-
 ## Closure
 
-Explique o que é, o porquê acontece e como usar. 
-Cite situações que você usaria.
+Closure são funções que se referem a variáveis livres(https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures).
+De maneira mais simples uma closure é uma função tendo acesso ao escopo de uma função parente, mesmo
+após esta função já ter sido fechada.
+Exemplo 1:
+```
+var adicionar = (function () {
+    var cont = 0;
+    return function () {return cont += 1;}
+})();
+
+adicionar();
+adicionar();
+adicionar();
+// o contador agora tem valor 3
+```
+Exemplo 2:
+```
+function start() {
+  var nome = "Carlos";
+  function ExibeNome() {
+    alert(nome);
+  }
+  ExibeNome();
+}
+start();
+```
+Nos exemplos 1 e 2 temos o comportamento de closures através tanto de funções como de variáveis.
+
 
 ## Variável Global
 
-Explique como se usa uma var Global dentro de uma função.
+Variável global é uma variável que é visível a todo o escopo da aplicação.
+Sua utilização mais comum é para contadores, variáveis que armazenam dados de navegação
+do usuário para efeito de controle, variáveis que sejam necessárias serem acessadas de dentro das funções.
+
+Exemplo:
+```
+var n = "Alô pokemons";
+
+function digaAlo()
+{
+  alert(n);
+}
+```
+Nesta função acessamos a variável global n que está fora da função digaAlo() e exibimos em um alerta do navegador.
 
 ## Variável por parâmetro
 
-Explique o que acontece dentro da função qnd um parâmetro é passado e também explique quando uma GLOBAL é passada por parâmetro.
+Quando uma variável é passada por parâmetro é criada uma instância local daquela variável dentro da função,
+e toda modificação que esta variável sofrer internamente à função fica limitada ao escopo da função, quando retornar
+para a chamada da função o parametro terá o mesmo valor antes de chamar a função.
+Exemplo:
+```
+function soma(n1, n2)
+{
+  n1 += n2;
+  alert(n1);
+}
 
+n1 = 2;
+n2 = 3;
+
+soma(n1, n2); // Exibe o valor 5
+alert(n1); // Exibe o valor 2
+
+```
+
+Quando uma variável global é passada por parâmetro ela é referenciada localmente à função passada,
+e assim como as demais variáveis toda alteração que ela sofrer internamente só acontecerá no escopo local da função,
+ao retornar à chamada da função ela manterá seu valor anterior.
+Exemplo:
+```
+x = 5;
+function add(y) 
+{
+  y++;
+  return y;
+}
+alert(add(x)); // Exibe o valor 6
+alert(x); // Exibe o valor 5
+```
 
 ## Instanciação usando uma IIFE
 
