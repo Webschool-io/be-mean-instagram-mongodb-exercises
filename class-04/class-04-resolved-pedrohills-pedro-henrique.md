@@ -1,4 +1,3 @@
-```md
 # MongoDB - Aula 04 - Exercício
 autor: Pedro Henrique
 
@@ -285,5 +284,4 @@ Error: error: {
 > var query = {$and: [{attack: {$lt: 50}}, {type: 'água'}]}
 > db.pokemons.remove(query)
 WriteResult({ "nRemoved" : 0 })
-```
 ```
