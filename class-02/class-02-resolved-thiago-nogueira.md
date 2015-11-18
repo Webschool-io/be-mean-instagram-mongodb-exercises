@@ -1,5 +1,5 @@
 # MongoDB - Aula 02 - Exercício
-autor: Thiago Nogueira
+Autor: Thiago Nogueira
 
 ## Listagem das databases
 ```
