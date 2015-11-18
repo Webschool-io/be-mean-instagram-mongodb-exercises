@@ -1,4 +1,4 @@
-# Artigo
+# Instanciação de variáveis no Javascript
 **autor**: José Antonio Gaeta Mendes
 
 **Prazo**: até dia 18 de Novembro de 2015
