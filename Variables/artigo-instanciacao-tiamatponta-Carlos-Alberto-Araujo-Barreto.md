@@ -107,8 +107,24 @@ alert(x); // Exibe o valor 5
 
 ## Instanciação usando uma IIFE
 
-Explique como uma variável pode receber um valor de uma IIFE.
-Explique como passar uma variável por parâmetro para a IIFE e acontece com ela dentro da função.
+O termo IIFE significa "Immediately Invoked Function Expression", que representa uma função que é executada sem necessidade de uma chamada para ela.
+Um exemplo de atribuição de uma IIFE para uma variável será demonstrado a seguir:
+```
+var iife = (function() {return 1});
+var iife2 = (function() {return 2}()); // Outra maneira de declarar a IIFE
+alert(iife); // Exibe o valor 1
+alert(iife2); // Exibe o valor 2
+```
 
+Quando trabalhamos com parametros algumas mudanças devem acontecer.
+No exemplo anterior vimos uma segunda forma de declarar uma IIFE, com um "()" antes de fechar o primeiro parênteses aberto.
+Nesse "()" podemos passar parâmetros para a função, que assimo como nos demais casos
+os parâmetros passados serão tratados em escopo local à função, como será visto no exemplo a seguir:
+```
+(function(string)
+{
+  alert(string)
+}('Alô mundo'));
+```
 
 
