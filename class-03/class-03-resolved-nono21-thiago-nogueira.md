@@ -58,7 +58,7 @@ autor: Thiago Nogueira
 
 ## Liste todos Pokemons com a altura menor ou igual que 0.5 E do tipo grama
 ```
-  TNP-MacBook-Air(mongod-3.0.7) be-mean-instagram> var query = {height: {$lte: 0.5}, $and:[{type: "grama"}]}
+  TNP-MacBook-Air(mongod-3.0.7) be-mean-instagram> var query = { $and:[{type: "grama"}, {height: {$lte: 0.5}}]}
   TNP-MacBook-Air(mongod-3.0.7) be-mean-instagram> db.pokemons.find(query)
   {
   "_id": ObjectId("564513026d17278fd3fe8fb1"),
@@ -88,7 +88,7 @@ autor: Thiago Nogueira
 
 ## Liste todos Pokemons com o attack MAIOR OU IGUAL QUE 48 E com  height menor ou igual que 0.5
 ```
-  TNP-MacBook-Air(mongod-3.0.7) be-mean-instagram> var query = {$or:[{attack: {$gte: 48}}, {height: {$lte: 0.5}}]}
+  TNP-MacBook-Air(mongod-3.0.7) be-mean-instagram> var query = {$and:[{attack: {$gte: 48}}, {height: {$lte: 0.5}}]}
   TNP-MacBook-Air(mongod-3.0.7) be-mean-instagram> db.pokemons.find(query)
   {
     "_id": ObjectId("564512586d17278fd3fe8fb0"),
@@ -107,14 +107,6 @@ autor: Thiago Nogueira
     "height": 0.4
   }
   {
-    "_id": ObjectId("564513406d17278fd3fe8fb2"),
-    "name": "Charmander",
-    "description": "Esse é o cão chupando manga de fofinho",
-    "type": "fogo",
-    "attack": 52,
-    "height": 0.6
-  }
-  {
     "_id": ObjectId("564513706d17278fd3fe8fb3"),
     "name": "Squirtle",
     "description": "Ejeta água que passarinho não bebe",
@@ -122,14 +114,5 @@ autor: Thiago Nogueira
     "attack": 48,
     "height": 0.5
   }
-  {
-    "_id": ObjectId("564514956d17278fd3fe8fb4"),
-    "name": "Caterpie",
-    "description": "Larva lutadora",
-    "type": "inseto",
-    "attack": 30,
-    "height": 0.3,
-    "defense": 35
-  }
-  Fetched 5 record(s) in 5ms
+  Fetched 3 record(s) in 1ms
 ```
