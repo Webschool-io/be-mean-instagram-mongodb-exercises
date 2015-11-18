@@ -75,11 +75,11 @@ cumprimento(); //Olá Voce
 
 Analisando passo-a-passo o que acontece nesse código temos:
 
-1 - Criamos uma função chamada mensagemPersonalizada
-2 - Essa função retorna uma outra função anônima
-3 - Dentro dessa função há uma inicialização de variável chamada mensagem
-4 - Guardamos o retorno da chamada dessa função na variável cumprimento
-5 - Fim da execução da mensagemPersonalizada, é chamado o Garbage Collector para limpar o que não mais será utilizado
+1 - Criamos uma função chamada mensagemPersonalizada  
+2 - Essa função retorna uma outra função anônima  
+3 - Dentro dessa função há uma inicialização de variável chamada mensagem  
+4 - Guardamos o retorno da chamada dessa função na variável cumprimento  
+5 - Fim da execução da mensagemPersonalizada, é chamado o Garbage Collector para limpar o que não mais será utilizado  
 
 Assim, no final de tudo o que guardamos na variável ``cumprimento`` é apenas a função anônima retornada.
 Como no código abaixo:
