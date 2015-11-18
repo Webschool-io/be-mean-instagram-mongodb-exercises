@@ -54,10 +54,32 @@ Com funções, o funcionamento é o mesmo. O primeiro funciona porque a função
 
 ## Closure
 
-Explique o que é, o porquê acontece e como usar. 
-Cite situações que você usaria.
+Closure permite uma função "lembrar" o escopo onde ela foi definida, mesmo quando ela é invocada fora desse escopo. Isso acontece porque toda função tem acesso ao seu escopo e aos escopos superiores (até o escopo global).
 
+Isso permite coisas como variáveis privadas, persistir informações entre várias execuções, etc.
 
+```javascript
+// closure_01.js
+var fibonacci = (function() {
+  var valor1 = 0,
+      valor2 = 0;
+  return function() {
+    var proximo = valor1 + valor2 || 1;
+    valor1 = valor2;
+    valor2 = proximo;
+    return proximo;
+  }
+})();
+
+fibonacci(); // 1
+fibonacci(); // 1
+fibonacci(); // 2
+fibonacci(); // 3
+fibonacci(); // 5
+fibonacci(); // 8
+fibonacci(); // 13
+```
+O exemplo acima é um ótimo exemplo de quando usar um closure. Veja que a função retornada pela IIFE continua tendo acesso às variáveis `valor1` e `valor2`, mesmo após o término da execução da IIFE.
 
 ## Variável Global
 
