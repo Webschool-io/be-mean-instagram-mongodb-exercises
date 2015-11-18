@@ -59,7 +59,7 @@ Closure permite uma função "lembrar" o escopo onde ela foi definida, mesmo qua
 Isso permite coisas como variáveis privadas, persistir informações entre várias execuções, etc.
 
 ```javascript
-// closure_01.js
+// closure.js
 var fibonacci = (function() {
   var valor1 = 0,
       valor2 = 0;
@@ -83,18 +83,76 @@ O exemplo acima é um ótimo exemplo de quando usar um closure. Veja que a funç
 
 ## Variável Global
 
-Explique como se usa uma var Global dentro de uma função.
+Toda variável e função declarada fora de uma função se tornam globais, ou seja, podem ser acessadas de qualquer lugar da aplicação. Apesar de declarar variáveis e funções globais serem consideradas uma má prática, muitas bibliotecas criam, ao menos, uma variável global, usada para acessar as APIs expostas por elas (usar a global aumenta o risco de "colisões", principalmente quando são usados códigos/bibliotecas de terceiros, onde você não sabe quais variáveis globais cada um está criando).
+
+Atribuir um valor a uma variável que nunca foi declarada, fará com que a engine javascript crie a variável como global, exceto se o modo strict (`"use strict";`) for usado.
+```javascript
+// Sem o modo strict
+function multiplicar(v1, v2) {
+  resultado = v1 * v2;
+  return resultado;
+}
+
+multiplicar(2, 2); // 4
+console.log(resultado); // 4!!! A variável resultado vazou!
+```
+```javascript
+// Com o modo strict
+function multiplicar(v1, v2) {
+  "use strict";
+  resultado = v1 * v2;
+  return resultado;
+}
+
+multiplicar(2, 2); // 4
+console.log(resultado); // ReferenceError: resultado não existe
+```
 
 ## Variável por parâmetro
 
-Explique o que acontece dentro da função qnd um parâmetro é passado e também explique quando uma GLOBAL é passada por parâmetro.
+Variáveis geralmente são passadas *por valor* para uma função, ou seja, uma cópia delas é repassada para a função, protegendo os valores originais de serem alterados:
+```javascript
+function maisUm(valor) {
+  valor += 1;
+  console.log(valor);
+}
 
+var a = 1;
+maisUm(a); // 2
+console.log(a); // 1
+```
+
+Porém, variáveis do tipo `Object` ou `Array` são passadas *por referência*. Alterações em seus valores serão refletidas nos valores originais:
+```javascript
+function inserir(lista, valor) {
+  lista.push(valor);
+}
+
+var lista = [1];
+inserir(lista, 2);
+console.log(lista); // [1, 2]
+```
 
 ## Instanciação usando uma IIFE
 
 Explique como uma variável pode receber um valor de uma IIFE.
 Explique como passar uma variável por parâmetro para a IIFE e acontece com ela dentro da função.
 
+Uma IIFE pode ser usada para criar um padrão de projeto (design pattern) conhecido como **Módulo**:
+```javascript
+var $ = (function() {
+  /* código do módulo: APIs, variáveis privadas, etc */
+  return module;
+})();
+```
+
+Caso o módulo tenha dependências, elas também podem ser passadas para a IIFE:
+```javascript
+var $ = (function(moduloA, moduloB) {
+  /* código do módulo: APIs, variáveis privadas, etc */
+  return module;
+})(mod1, mod2);
+```
 
 ## Considerações
 
