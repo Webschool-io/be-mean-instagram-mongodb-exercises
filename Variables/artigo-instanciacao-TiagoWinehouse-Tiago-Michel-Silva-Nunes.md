@@ -218,6 +218,8 @@ A vantagem de usar o IIFE, é a capacidade de passar objetos geralmente instanci
 
 ## Referências Bibliográficas
 
-https://developer.mozilla.org/pt-BR/
+https://developer.mozilla.org/pt-BR
+
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures
+
 https://developer.mozilla.org/en-US/docs/Glossary/IIFE
