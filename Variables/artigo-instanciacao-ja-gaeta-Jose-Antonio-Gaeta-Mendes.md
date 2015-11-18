@@ -1,15 +1,12 @@
 # Instanciação de variáveis no Javascript
 **autor**: José Antonio Gaeta Mendes
 
-**Prazo**: até dia 18 de Novembro de 2015
-
-Explique, com teoria e código, nesse artigo como o JavaScript cria e instancia as variáveis, seguindo os seguintes tópicos.
 
 ## Hoisting
 
 Hoisting nada mais é do que o mecanismo usado por JavaScript para definir o escopo de variáveis e funções. Todavia, seu comportamento costuma confundir o iniciante, tornando-se essencial o perfeito entendimento do seu funcionamento para utilizar plenamente este que é um dos aspectos mais expressivos e poderosos da linguagem.
 
-A palavra Hoist, em inglês, significa "elevar, alçar, erguer", no sentido, por exemplo, de um guindaste no porto que suspende a carga. Em JavaScript, o sentido é de "elevar" o escopo da variável ou função.
+A palavra Hoist, em inglês, significa "elevar, alçar, erguer", no sentido, por exemplo, de um guindaste no porto que suspende a carga. Em JavaScript, o sentido é de "mover para o topo" o escopo da variável ou função.
 
 Diferentemente das linguagens que seguem o estilo de C, onde o escopo é definido a nível de bloco, em JavaScript, o escopo é definido a nível de função... e é daí que vem toda a confusão.
 
