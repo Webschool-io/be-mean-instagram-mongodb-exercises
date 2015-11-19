@@ -1,4 +1,4 @@
-# MongoDB - Aula 02 - Exercício
+# MongoDB - Aula 04 - Exercício
 autor: Rafael Crispim Ignácio
 
 ## **Adicionar** 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
@@ -429,3 +429,8 @@ WriteResult({
 be-mean-instagram> db.pokemons.find(query)
 Fetched 0 record(s) in 0ms
 ```
+
+## Esse item não está no vídeo e se você fizer significa que você lê as coisas, nesse exercício demonstre qual a diferença entre os operadores `$ne` e `$not`.
+As diferenças são as seguintes:
+- $ne: não aceita regex e é utilizado para verificação de conteudo
+- $not: aceita regex e é utilizado junto a outros operadores
