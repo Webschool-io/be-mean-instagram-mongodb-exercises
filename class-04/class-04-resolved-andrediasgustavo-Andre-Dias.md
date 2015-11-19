@@ -1,7 +1,7 @@
 # MongoDB - Aula 04 - Exercício
 autor: André Dias
 
-## **Adicionar** 2 ataques ao mesmo tempo para os seguintes pokemons: hitmonlee, magneton, haunter e machamp(troquei por que na minha collection não tem aqueles pokemons).
+**Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: hitmonlee, magneton, haunter e machamp(troquei por que na minha collection não tem aqueles pokemons).**
 
 ```
 andre-dias-skywalker(mongod-3.0.7) be-mean-pokemons> var query = {$or : [{nome: /hitmonlee/i},{nome: /magneton/i},{nome: /haunter/i},{nome : /machamp/i}]}
@@ -16,7 +16,7 @@ WriteResult({
 })
 ```
 
-## **Adicionar** 1 movimento em todos os pokemons: `desvio`.##
+**Adicionar 1 movimento em todos os pokemons: `desvio`.**
 
 ```
 andre-dias-skywalker(mongod-3.0.7) be-mean-pokemons> var query = {}
@@ -31,7 +31,7 @@ WriteResult({
 })
 ```
 
-## **Adicionar** o pokemon `AindaNaoExisteMon` caso ele não exista com todos os dados com o valor `null` e a descrição: "Sem maiores informações".##
+**Adicionar o pokemon `AindaNaoExisteMon` caso ele não exista com todos os dados com o valor `null` e a descrição: "Sem maiores informações".**
 
 ```
 andre-dias-skywalker(mongod-3.0.7) be-mean-pokemons> var query = {nome : /AindaNaoExisteMon/i}
@@ -49,7 +49,7 @@ WriteResult({
 
 ```
 
-## Pesquisar todos o pokemons que possuam o ataque `investida` e mais um que você adicionou, escolha seu pokemon favorito.##
+**Pesquisar todos o pokemons que possuam o ataque `investida` e mais um que você adicionou, escolha seu pokemon favorito.**
 
 ```
 andre-dias-skywalker(mongod-3.0.7) be-mean-pokemons> var query = {moves : {$in : [/investida/i, /telecinese/i]}}
@@ -228,7 +228,7 @@ Fetched 13 record(s) in 4ms
 
 ```
 
-## Pesquisar **todos** os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.##
+** Pesquisar todos os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.**
 
 ```
 andre-dias-skywalker(mongod-3.0.7) be-mean-pokemons> var query = {moves : {$in : [/cabeçada/i, /jab/i]}}
@@ -298,7 +298,7 @@ andre-dias-skywalker(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
 Fetched 4 record(s) in 1ms
 ```
 
-## Pesquisar **todos** os pokemons que não são do tipo `Lutador`.##
+**Pesquisar todos os pokemons que não são do tipo `Lutador`.**
 
 ```
 andre-dias-skywalker(mongod-3.0.7) be-mean-pokemons> var query = {type : {$not : /lutador/i}}
@@ -453,7 +453,7 @@ andre-dias-skywalker(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
 Fetched 12 record(s) in 2ms
 
 ```
-## Pesquisar **todos** os pokemons que tenham o ataque `investida` **E** tenham a defesa **não menor ou igual** a 49.##
+**Pesquisar todos os pokemons que tenham o ataque `investida` E tenham a defesa não menor ou igual a 49.**
 
 ```
 andre-dias-skywalker(mongod-3.0.7) be-mean-pokemons> var query = {$and : [{moves: "investida"}, {attack : {$not : {$lte: 49}}}]}
@@ -632,7 +632,7 @@ Fetched 13 record(s) in 12ms
 
 ```
 
-## Remova **todos** os pokemons do tipo água e com attack menor que 50.
+**Remova todos os pokemons do tipo psiquico e com attack menor que 60.**
 
 ```
 andre-dias-skywalker(mongod-3.0.7) be-mean-pokemons> var query = {$and : [{type: /psiquico/i}, {attack : {$lt : 60}}]}
