@@ -108,7 +108,7 @@ não importa o quão longe esteja dela",
 }
 Fetched 5 record(s) in 4ms
 
-## Pidgey (passo 6)
+## Pikachu (passo 6)
 
 Alex(D:\mongodb\bin\mongod.exe-3.0.7) be-mean-pokemons> var query = {name:"Pidgey"}
 Alex(D:\mongodb\bin\mongod.exe-3.0.7) be-mean-pokemons> var poke = db.pokemons.findOne(query)
@@ -122,37 +122,16 @@ Alex(D:\mongodb\bin\mongod.exe-3.0.7) be-mean-pokemons> poke
     "height": "0,3m"
 }
 
-## Atualização do Pidgey (passo 6)
+## Atualização do Pikachu (passo 6)
 
-Alex(D:\mongodb\bin\mongod.exe-3.0.7) be-mean-pokemons> var query = {name:"Pidge
-y"}
-Alex(D:\mongodb\bin\mongod.exe-3.0.7) be-mean-pokemons> var poke = db.pokemons.f
-indOne(query)
-Alex(D:\mongodb\bin\mongod.exe-3.0.7) be-mean-pokemons> poke
-{
-    "_id": ObjectId("564bec214b6d7ef94f2db0dd"),
-    "name": "Pidgey",
-    "description": "Volta pra casa mesmo bebado. Esse poke é doidão.",
-    "attack": 45,
-    "defense": 40,
-    "height": "0,3m"
 }
-Alex(D:\mongodb\bin\mongod.exe-3.0.7) be-mean-pokemons> poke.description = "Esse
- pokemon é zica, acha sua casa mesmo quando esta bebado"
-Esse pokemon é zica, acha sua casa mesmo quando esta bebado
-Alex(D:\mongodb\bin\mongod.exe-3.0.7) be-mean-pokemons> db.pokemons.save(poke)
-Updated 1 existing record(s) in 5ms
-WriteResult({
-    "nMatched": 1,
-    "nUpserted": 0,
-    "nModified": 1
-})
+Alex(D:\mongodb\bin\mongod.exe-3.0.7) be-mean-pokemons> poke.description = "Manja onde fica sua casa mesmo bebado"
+Manja onde fica sua casa mesmo bebado
 Alex(D:\mongodb\bin\mongod.exe-3.0.7) be-mean-pokemons> poke
 {
     "_id": ObjectId("564bec214b6d7ef94f2db0dd"),
     "name": "Pidgey",
-    "description": "Esse pokemon é zica, acha sua casa mesmo quando esta bebado"
-,
+    "description": "Manja onde fica sua casa mesmo bebado",
     "attack": 45,
     "defense": 40,
     "height": "0,3m"
