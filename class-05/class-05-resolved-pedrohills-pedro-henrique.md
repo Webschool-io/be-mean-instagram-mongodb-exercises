@@ -422,19 +422,19 @@ E:\>mongoimport --db be-mean -c restaurantes --drop --file E:/mongodb/restaurant
 > db.pokemons.group({
 ...         initial: {total: 0},
 ...         reduce: function(current, result){
+...                 result.total++;
 ...                 current.types.forEach(function(type){
 ...                         if(result[type]){
 ...                                 result[type]++;
 ...                         } else {
 ...                                 result[type] = 1;
 ...                         }
-...                         result.total++
 ...                 });
 ...         }
 ... });
 [
         {
-                "total" : 915,
+                "total" : 610,
                 "fire" : 47,
                 "water" : 105,
                 "normal" : 78,
