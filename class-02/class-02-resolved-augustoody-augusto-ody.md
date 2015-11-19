@@ -1,5 +1,5 @@
 # MongoDB - Aula 02 - Exercício
-autor: Augusto
+autor: Augusto Ody
 
 ## Listagem das databases (passo 2)
 ```
