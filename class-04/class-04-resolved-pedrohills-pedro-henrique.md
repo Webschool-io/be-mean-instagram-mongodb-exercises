@@ -285,3 +285,11 @@ Error: error: {
 > db.pokemons.remove(query)
 WriteResult({ "nRemoved" : 0 })
 ```
+
+## Extra pra quem é malandrão
+## Esse item não está no vídeo e se você fizer significa que você lê as coisas, nesse exercício demonstre qual a diferença entre os operadores `$ne` e `$not`.
+
+O operador `$ne` se refere a uma condição que não é atendida. Por exemplo, eu poderia retornar da minha collection pokemons, todos os pokemons que não são do tipo elétrico... e por ai vai...
+
+Já o operador `$not` tem a função de negar a condição, inclusive pode ser utilizada com o operador `$ne` pra fazer pegadinha do malandro. '-'
+Se por acaso utilizarmos o operador `$not` no exemplo anterior, iriamos retornar todos os pokemons do tipo elétrico. :)
