@@ -127,7 +127,7 @@ c:\MongoDB\Server\3.0\bin>mongoimport --db test --collection pokemons --drop --f
 
 # As primeiras 3 paginas com .limit() e .skip() de pokemons (5 em 5)
 
-> db.pokemons.find({}, {name:1}).limit(10).skip(0)
+> db.pokemons.find({}, {name:1}).limit(10).skip(10*0)
 { "_id" : ObjectId("564b1dad25337263280d0479"), "name" : "Rattata" }
 { "_id" : ObjectId("564b1dad25337263280d047a"), "name" : "Charmander" }
 { "_id" : ObjectId("564b1dad25337263280d047b"), "name" : "Charmeleon" }
@@ -138,28 +138,28 @@ c:\MongoDB\Server\3.0\bin>mongoimport --db test --collection pokemons --drop --f
 { "_id" : ObjectId("564b1dad25337263280d0480"), "name" : "Butterfree" }
 { "_id" : ObjectId("564b1dad25337263280d0481"), "name" : "Spearow" }
 { "_id" : ObjectId("564b1dad25337263280d0482"), "name" : "Kakuna" }
-> db.pokemons.find({}, {name:1}).limit(10).skip(1)
-{ "_id" : ObjectId("564b1dad25337263280d047a"), "name" : "Charmander" }
-{ "_id" : ObjectId("564b1dad25337263280d047b"), "name" : "Charmeleon" }
-{ "_id" : ObjectId("564b1dad25337263280d047e"), "name" : "Caterpie" }
-{ "_id" : ObjectId("564b1dad25337263280d047f"), "name" : "Metapod" }
-{ "_id" : ObjectId("564b1dad25337263280d047c"), "name" : "Wartortle" }
-{ "_id" : ObjectId("564b1dad25337263280d047d"), "name" : "Blastoise" }
-{ "_id" : ObjectId("564b1dad25337263280d0480"), "name" : "Butterfree" }
-{ "_id" : ObjectId("564b1dad25337263280d0481"), "name" : "Spearow" }
-{ "_id" : ObjectId("564b1dad25337263280d0482"), "name" : "Kakuna" }
-{ "_id" : ObjectId("564b1dae25337263280d0484"), "name" : "Magnemite" }
-> db.pokemons.find({}, {name:1}).limit(10).skip(2)
-{ "_id" : ObjectId("564b1dad25337263280d047b"), "name" : "Charmeleon" }
-{ "_id" : ObjectId("564b1dad25337263280d047e"), "name" : "Caterpie" }
-{ "_id" : ObjectId("564b1dad25337263280d047f"), "name" : "Metapod" }
-{ "_id" : ObjectId("564b1dad25337263280d047c"), "name" : "Wartortle" }
-{ "_id" : ObjectId("564b1dad25337263280d047d"), "name" : "Blastoise" }
-{ "_id" : ObjectId("564b1dad25337263280d0480"), "name" : "Butterfree" }
-{ "_id" : ObjectId("564b1dad25337263280d0481"), "name" : "Spearow" }
-{ "_id" : ObjectId("564b1dad25337263280d0482"), "name" : "Kakuna" }
+> db.pokemons.find({}, {name:1}).limit(10).skip(10*1)
 { "_id" : ObjectId("564b1dae25337263280d0484"), "name" : "Magnemite" }
 { "_id" : ObjectId("564b1dae25337263280d0483"), "name" : "Farfetchd" }
+{ "_id" : ObjectId("564b1dae25337263280d0485"), "name" : "Magneton" }
+{ "_id" : ObjectId("564b1dae25337263280d0486"), "name" : "Doduo" }
+{ "_id" : ObjectId("564b1dae25337263280d0487"), "name" : "Seel" }
+{ "_id" : ObjectId("564b1dae25337263280d0488"), "name" : "Dodrio" }
+{ "_id" : ObjectId("564b1dae25337263280d0489"), "name" : "Dewgong" }
+{ "_id" : ObjectId("564b1dae25337263280d048a"), "name" : "Gastly" }
+{ "_id" : ObjectId("564b1dae25337263280d048b"), "name" : "Cloyster" }
+{ "_id" : ObjectId("564b1dae25337263280d048c"), "name" : "Muk" }
+> db.pokemons.find({}, {name:1}).limit(10).skip(10*2)
+{ "_id" : ObjectId("564b1daf25337263280d048d"), "name" : "Poliwag" }
+{ "_id" : ObjectId("564b1daf25337263280d048e"), "name" : "Poliwhirl" }
+{ "_id" : ObjectId("564b1daf25337263280d048f"), "name" : "Poliwrath" }
+{ "_id" : ObjectId("564b1daf25337263280d0490"), "name" : "Abra" }
+{ "_id" : ObjectId("564b1daf25337263280d0491"), "name" : "Kadabra" }
+{ "_id" : ObjectId("564b1daf25337263280d0492"), "name" : "Machop" }
+{ "_id" : ObjectId("564b1daf25337263280d0493"), "name" : "Machoke" }
+{ "_id" : ObjectId("564b1daf25337263280d0495"), "name" : "Bellsprout" }
+{ "_id" : ObjectId("564b1daf25337263280d0494"), "name" : "Machamp" }
+{ "_id" : ObjectId("564b1daf25337263280d0496"), "name" : "Ivysaur" }
 
 # Group ou Aggregate contando a quantidade de pokemons de cada tipo
 Professor, tentei fazer por aggregate para ficar diferente com o exemplo que o senhor passou na aula. Apesar de ter feito, não consegui colocar a variavel total, exibindo o total de pokemons que foram exibidos.
