@@ -1,5 +1,5 @@
 # MongoDB - Aula 03 - Exercício
-autor: Augusto
+autor: Augusto Ody
 
 ## Listagem de todos os pokemons com a altura MENOR QUE 0.5 (passo 1)
 ```
