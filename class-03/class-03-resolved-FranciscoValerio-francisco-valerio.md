@@ -1,93 +1,52 @@
-# MongoDB - Artigo
-autor: **Francisco Henrique Ruiz Valério**
+# MongoDB - Aula 03 - Exercício
+autor: Francisco Henrique Ruiz Valério
 
-## Hoisting
+## Liste todos Pokemons com a altura menor que 0.5
 
-Em JavaScript, uma variável/função pode ser declarada depois de ter sido usada.
-Hoisting é um comportamento padrão de JavaScript de mover todas as declarações para o topo do escopo atual (para o topo do script atual ou a função atual).
+	> var query = { height: { $lt: 0.5 } }
+	> db.pokemons.find(query)
+	{ "_id" : ObjectId("5642a51855b599c8d14a4759"), "name" : "Pidgey", "description" : "Passarin normal", "type" : "normal", "attack" : 20, "defense" : 20, "height" : 0.3 }
+	{ "_id" : ObjectId("5642a6cd55b599c8d14a475e"), "name" : "Diglett", "description" : "Pareçe um dedo", "type" : "ground", "attack" : 30, "defense" : 20, "height" : 0.2 }
+	>
 
-Exemplo:
-
-<!DOCTYPE html>
-<html>
-	<body>
-
-	<p id="hoisting"></p>
-
-	<script>
-		myHoisting();
+## Liste todos Pokemons com a altura maior ou igual que 0.5
 	
-		function myHoisting(){
-			x = 25; // Inicializando 25 para x
+	> var query = { height: { $gte: 0.5 } }
+	> db.pokemons.find(query)
+	{ "_id" : ObjectId("5642a49655b599c8d14a4758"), "name" : "Charmaleon", "description" : "Acho que é sim um camaleão de fuego", "type" : "fogo", "attack" : 30, "defense" : 30, "height" : 1.1 }
+	{ "_id" : ObjectId("5642a57f55b599c8d14a475a"), "name" : "Alakazam", "description" : "Pisicoloco", "type" : "psychic", "attack" : 30, "defense" : 20, "height" : 1.5 }
+	{ "_id" : ObjectId("5642a5cf55b599c8d14a475b"), "name" : "Sandshrew", "description" : "Tatu bola", "type" : "ground", "attack" : 40, "defense" : 40, "height" : 0.6 }
+	{ "_id" : ObjectId("5642a63f55b599c8d14a475c"), "name" : "Dragonite", "description" : "Dragão gordo", "type" : "dragon", "attack" : 70, "defense" : 40, "height" : 2.2 }
+	{ "_id" : ObjectId("5642a69455b599c8d14a475d"), "name" : "Metapod", "description" : "Esperando evoluir mais demora em", "type" : "grama", "attack" : 0.5, "defense" : 30, "height" : 0.5 }
+	{ "_id" : ObjectId("5642a82455b599c8d14a475f"), "name" : "Beedrill", "description" : "Abelha lokona", "type" : "inseto", "attack" : 50, "defense" : 20, "height" : 0.4 }
+	>
+	
+## Liste todos Pokemons com a altura menor ou igual que 0.5 E do tipo grama
+		
+	> var query = { $and : [ { height: { $lte: 0.5 } }, { type: 'grama' } ] }
+	> db.pokemons.find(query)
+	{ "_id" : ObjectId("5642a69455b599c8d14a475d"), "name" : "Metapod", "description" : "Esperando evoluir mais demora em", "type" : "grama", "attack" : 0.5, "defense" : 30, "height" : 0.5 }
+	>
 
-			element = document.getElementById("hoisting"); // procurando um elemento
-			element.innerHTML = x;                         // mostrando x no elemento
+## Liste todos Pokemons com o name 'Pikachu' OU com attack menor ou igual que 0.5
 
-			var x; // Declarando a variavel x
-		}
-	</script>
+	> var query = { $or: [ { name: 'Pikachu' }, { attack: { $lte: 0.5 } } ] }
+	> db.pokemons.find(query)
+	{ "_id" : ObjectId("5642a69455b599c8d14a475d"), "name" : "Metapod", "description" : "Esperando evoluir mais demora em", "type" : "grama", "attack" : 0.5, "defense" : 30, "height" : 0.5 }
+	>
 
-	</body>
-</html> 
 
-## Closure
+## Liste todos Pokemons com o attack MAIOR OU IGUAL QUE 48 E com height menor ou igual que 0.5
 
-Variáveis de JavaScript	podem pertecer ao escopo **GLOBAL** e **LOCAL**.
-
-Variável com escopo LOCAL: A função pode acessar todas variáveis definidas dentro dela, ou seja outra função e/ou uma windows object não tem acesso a essa variável.
-Exemplo:
-
-function sampleVariableLocal() {
-    var z = 6; // isto e uma variavel local
-    return z * 2;
-}
-
-Variável com escopo GLOBAL: É a variável declarada fora de qualquer função, com isso a mesma fica visível para qualquer função do script como para a windows object também.
-Exemplo:
-
-var a = 2; // isto e uma variavel global
-function sampleVariableGlobal(valor) {
-    return valor * a;
-}
-
-**Observação: Variáveis criadas sem a palavras VAR, são sempre globais, mesmo sendo criadas dentro de uma função.**
+	> var query = { $and: [ { attack: { $gte:48 } }, { height: { $lte: 0.5 } } ] }
+	> db.pokemons.find(query)
+	{ "_id" : ObjectId("5642a82455b599c8d14a475f"), "name" : "Beedrill", "description" : "Abelha lokona", "type" : "inseto", "attack" : 50, "defense" : 20, "height" : 0.4 }
+	>
 
 	
-## Variável Global
-
-Uma variável **GLOBAL** pode ser usada dentro de uma função como se fosse uma variável qualquer, lembrando que ao alterar o valor dessa variável em um função para o restante do código aquela variável estará com o seu valor alterado.
-Exemplo de uso:
-
-var nome = "Francisco Valério";
-
-function retornaAutor(){
-	return 'Autor: ' + nome;
-}
 
 
-## Variável por parâmetro
 
-Quando uma variável é passada como parâmetro para uma função, é como se fosse uma nova variável ou seja as alterações feitas dentro do escopo dessa função somente serão visíveis no próprio escopo. Caso seja passada uma variável GLOBAL como parâmetro o mesmo acontece.
-O valor das variáveis passadas como parâmetro somente irão receber o valor alterado dentro da função caso as mesmas sejam retornadas por referência. Assim o ponteiro da memória onde está sendo alterado os valores não é trocado para um ponteiro novo.
-
-## Instanciação usando uma IIFE
-
-IIFE geralmente ficam dentro de parênteses (), o que eles fazem basicamente é retornar qualquer coisa que você coloque dentro dele, como se fossem parâmetros de uma função.
-var funcao = function () { return 'oi' }(); 
-
-Uma variável pode receber o valor de uma IIFE apenas pelo seu retorno/resultado. 
-
-Para passar um parâmetro para uma IIFE basta utilizar o segundo parâmetro da mesma ou seja:
-Outra coisa interessante é que no segundo parênteses, onde invocamos a function, podemos passar qualquer parâmetro como se fosse qualquer outra função.
-
-( function (string) {
-  console.log( string )
-}( 'teste' ) )
- 
-//resultado Log: 'teste'
-
-Você deve usar uma IIFE sempre que surgir a necessidade de isolar as variáveis que você precisa do escopo global. 
-Isso é uma boa prática e é uma forma de fazer com que seu código funcione bem independente de onde ele for usado.
 
 
 
