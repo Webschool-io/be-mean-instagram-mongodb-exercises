@@ -1,5 +1,5 @@
 # MongoDB - Aula 03 - Exercício
-autor: Kirmayr Tomaz
+autor: Matheus Joveliano
 
 ## Liste todos Pokemons com a altura menor que 0.5
 
