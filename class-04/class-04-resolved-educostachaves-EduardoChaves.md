@@ -1,5 +1,5 @@
 # MongoDB - Aula 04 / 05 - Exercício
-autor: Augusto Ody
+autor: Eduardo Chaves
 
 ## **Adicionar** 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
 ```
@@ -111,5 +111,5 @@ WriteResult({
 > var query = {$and: [{type: /água/i}, {attack: {lt: 50}}]}
 > db.pokemons.remove(query)
 WriteResult({ "nRemoved" : 0 })
-> 
+>
 ```
