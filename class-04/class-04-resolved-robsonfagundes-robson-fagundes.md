@@ -95,52 +95,81 @@ WriteResult({
 	db.pokemons.find(query)
 
 ```
+{
+  "_id": ObjectId("56427fedb892b212ddd6ec90"),
+  "name": "Pikachu",
+  "description": "Rato elétrico bem fofinho",
+  "type": "electric",
+  "attack": 55,
+  "height": 0.4,
+  "movesAttack": [
+    "eletric ball",
+    "thunder invested"
+  ],
+  "moves": [
+    "desvio"
+  ]
+}
+{
+  "_id": ObjectId("564285dd576657b5d00592c8"),
+  "name": "Charmander",
+  "description": "The flame that burns at the tip of its tail is an indication of its emotions.",
+  "type": "Fire",
+  "attack": 60,
+  "height": 0.2,
+  "movesAttack": [
+    "tail fire",
+    "burns fiercely"
+  ],
+  "moves": [
+    "desvio"
+  ]
+}
+Fetched 2 record(s) in 6ms
 ```
-Updated 7 existing record(s) in 4ms
-WriteResult({
-  "nMatched": 7,
-  "nUpserted": 0,
-  "nModified": 7
-})
+
 ```
 
 ## 5. Pesquisar **todos** os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.
 
 ```js
 	
-	var query = {moves: {$all: [/burns fiercely/i, /tail fire/i]}}
+	var query = {movesAttack: {$all: [/burns fiercely/i, /tail fire/i]}}
 	db.pokemons.find(query)
 
 ```
 ```
-Updated 7 existing record(s) in 4ms
-WriteResult({
-  "nMatched": 7,
-  "nUpserted": 0,
-  "nModified": 7
-})
+{
+  "_id": ObjectId("564285dd576657b5d00592c8"),
+  "name": "Charmander",
+  "description": "The flame that burns at the tip of its tail is an indication of its emotions.",
+  "type": "Fire",
+  "attack": 60,
+  "height": 0.2,
+  "movesAttack": [
+    "tail fire",
+    "burns fiercely"
+  ],
+  "moves": [
+    "desvio"
+  ]
+}
+Fetched 1 record(s) in 2ms
 ```
 
 ## 6. Pesquisar **todos** os pokemons que não são do tipo `elétrico`.
 
 ```js
 
-	var query = {type: {$not: /eletric/i}}
+	var query = {type: {$not: /electric/i}}
 	db.pokemons.find(query)
 
 ```
 ```
-Updated 7 existing record(s) in 4ms
-WriteResult({
-  "nMatched": 7,
-  "nUpserted": 0,
-  "nModified": 7
-})
+Fetched 7 record(s) in 6ms
 ```
 
 ## 7. Pesquisar **todos** os pokemons que tenham o ataque `investida` **E** tenham a defesa **não menor ou igual** a 49.
-
-**Se você não tiver Pokemons com valores de `defense` então faça a query para o campo `attack`, como feito abaixo:**
 
 ```js
 
@@ -149,12 +178,23 @@ WriteResult({
 
 ```
 ```
-Updated 7 existing record(s) in 4ms
-WriteResult({
-  "nMatched": 7,
-  "nUpserted": 0,
-  "nModified": 7
-})
+{
+  "_id": ObjectId("564285dd576657b5d00592c8"),
+  "name": "Charmander",
+  "description": "The flame that burns at the tip of its tail is an indication of its emotions.",
+  "type": "Fire",
+  "attack": 60,
+  "height": 0.2,
+  "movesAttack": [
+    "tail fire",
+    "burns fiercely"
+  ],
+  "moves": [
+    "desvio"
+  ]
+}
+Fetched 1 record(s) in 2ms
+
 ```
 
 ## 8. Remova **todos** os pokemons do tipo água E com attack menor que 50.
@@ -163,6 +203,10 @@ WriteResult({
 
 	var query = {$and: [ {type: /água/i}, {attack: {$lt: 50}} ]}
 	db.pokemons.remove(query)
+
+	var query = {$and: [ {type: /Water/i}, {attack: {$lt: 50}} ]}
+	db.pokemons.remove(query)
+
 
 ```
 ```
