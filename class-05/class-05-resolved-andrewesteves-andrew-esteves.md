@@ -1,5 +1,5 @@
 # MongoDB - Aula 05 - Exercício
-autor: Andrew Esteves
+autor: Eduardo Chaves
 
 ## 1. Importar as collections restaurantes e pokemons
 
