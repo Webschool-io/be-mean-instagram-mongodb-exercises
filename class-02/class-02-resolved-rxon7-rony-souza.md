@@ -85,7 +85,7 @@ db.pokemons.insert(pokemons)
 ``` 
 db.pokemons.find()
 
-butu-desktop(mongod-2.4.14) be-mean-pokemons> db.pokemons.find()
+rxon7-desktop(mongod-2.4.14) be-mean-pokemons> db.pokemons.find()
 {
   "_id": ObjectId("5650de483a708d4d1c44e60e"),
   "name": "Sandshrew",
