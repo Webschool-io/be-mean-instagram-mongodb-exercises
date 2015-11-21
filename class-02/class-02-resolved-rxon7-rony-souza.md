@@ -4,11 +4,22 @@ Author: Rony Souza
 ## Listando as Databases (passo 2)
 ```
 show dbs
+
+rxon7-desktop(mongod-2.4.14) be-mean-teste> show dbs
+be-mean           → 0.203GB
+be-mean-teste     → 0.203GB
+test              → 0.203GB
+local             → 0.078GB
+
 ```
 
 ## Listando Collections
 ```
 show collections(passo 3)
+rxon7-desktop(mongod-2.4.14) be-mean-pokemons> show collections
+system.indexes → 0.000MB / 0.008MB
+
+
 ```
 
 ## Cadastrando Pokemons(passo 4)
