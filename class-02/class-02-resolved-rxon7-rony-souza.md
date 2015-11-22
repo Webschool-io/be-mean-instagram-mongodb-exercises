@@ -174,6 +174,8 @@ rxon7-desktop(mongod-2.4.14) be-mean-pokemons> db.pokemons.findOne(query)
   "attack": 40,
   "defense": 40,
   "heigth": 0.6
+  
+ }
 
 ```
 
