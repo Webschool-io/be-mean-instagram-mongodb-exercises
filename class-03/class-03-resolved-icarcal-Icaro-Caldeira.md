@@ -1,8 +1,8 @@
 # MongoDB - Aula 03 - Exercício
-autor: Icaro Caldeira Carreira (https://github.com/icarcal)
+autor: Icaro Caldeira (https://github.com/icarcal)
 
 ## Liste todos Pokemons com a altura menor que 0.5; (passo 1)
-```
+```js
 > var query = {height: {$lt:0.5}}
 > db.pokemons.find(query)
 > {
@@ -19,7 +19,7 @@ autor: Icaro Caldeira Carreira (https://github.com/icarcal)
 
 ## Liste todos Pokemons com a altura maior ou igual que 0.5; (passo 2)
 
-```
+```js
 > var query = {height: {$gte:0.5}}
 > db.pokemons.find(query)
 > {
@@ -62,7 +62,7 @@ autor: Icaro Caldeira Carreira (https://github.com/icarcal)
 ```
 ## Liste todos Pokemons com a altura menor ou igual que 0.5 E do tipo fire; (passo 3)
 
-```
+```js
 > var query1 = {height: {$lte:0.5}}
 > var query2 = {type: "fire"}
 > var query = {$and: [query1, query2]}
@@ -88,7 +88,7 @@ autor: Icaro Caldeira Carreira (https://github.com/icarcal)
 
 ## Liste todos Pokemons com name 'Pikachu' OU com attack menor ou igual que 0.5 (passo 4)
 
-```
+```js
 > var query1 = {name: "Pikachu"}
 > var query2 = {attack: {$lte: 0.5}}
 > var query = {$or: [query1, query2]}
@@ -106,7 +106,7 @@ autor: Icaro Caldeira Carreira (https://github.com/icarcal)
 
 ## Liste todos Pokemons com attack maior ou igual que 48 E com height menor ou igual que 0.5 (passo 5)
 
-```
+```js
 > var query1 = {attack: {$gte: 48}}
 > var query2 = {height: {$lte: 0.5}}
 > var query = {$and: [query1, query2]}

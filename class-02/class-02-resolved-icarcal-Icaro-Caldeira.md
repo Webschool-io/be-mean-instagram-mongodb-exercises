@@ -1,16 +1,16 @@
 # MongoDB - Aula 02 - Exercício
-autor: Icaro Caldeira Carreira (https://github.com/icarcal)
+autor: Icaro Caldeira (https://github.com/icarcal)
 
 ## Criando o database
 
-```
+```js
 > use be-mean-pokemons
 switched to db be-mean-pokemons
 ```
 
 ## Listando databases no meu servidor
 
-```
+```js
 > show dbs
 be-mean           0.078GB
 be-mean-pokemons  0.078GB
@@ -28,7 +28,7 @@ system.indexes
 
 ## Inserindo pokemons
 
-```
+```js
 > db.pokemons.insert({name: "Charmander", description: "The flame at the tip of its tail makes a sound as it burns. You can only hear it in quiet places.", attack: 52, defense: 43, height: 6})
 WriteResult({ "nInserted" : 1 })
 > db.pokemons.insert({name: "Charmeleon", description: "When it swings its burning tail, it elevates the temperature to unbearably high levels.", attack: 64, defense: 58, height: 11})
@@ -43,7 +43,7 @@ WriteResult({ "nInserted" : 1 })
 
 ## Listando pokemons
 
-```
+```js
 > db.pokemons.find()
 { "_id" : ObjectId("5647d5d3ae7ee0ffc22ce47a"), "name" : "Charmander", "description" : "The flame at the tip of its tail makes a sound as it burns. You can only hear it in quiet places.", "attack" : 52, "defense" : 43, "height" : 6 }
 { "_id" : ObjectId("5647d5d3ae7ee0ffc22ce47b"), "name" : "Charmeleon", "description" : "When it swings its burning tail, it elevates the temperature to unbearably high levels.", "attack" : 64, "defense" : 58, "height" : 11 }
@@ -54,7 +54,7 @@ WriteResult({ "nInserted" : 1 })
 
 ## Buscando pokemon
 
-```
+```js
 > var query = {name: "Charizard"}
 > var poke = db.pokemons.find(query)
 > poke
@@ -69,7 +69,7 @@ WriteResult({ "nInserted" : 1 })
 ```
 
 ## Alterando Pokemon
-```
+```js
 > var query = {name: "Charizard"}
 > var poke = db.pokemons.findOne(query)
 > poke.description
