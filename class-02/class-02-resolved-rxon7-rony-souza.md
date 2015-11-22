@@ -1,5 +1,5 @@
 # MongoDB - Aula 02 - Exercício
-Author: Rony Souza
+Autor: Rony Souza
 
 ## Listando as Databases (passo 2)
 ```
@@ -81,7 +81,7 @@ rxon7-desktop(mongod-2.4.14) be-mean-pokemons> pokemons
 db.pokemons.insert(pokemons)
 ```
 
-## Listagem dos Pokemons(passo 6)
+## Listagem dos Pokemons(passo 5)
 ``` 
 db.pokemons.find()
 
@@ -173,12 +173,12 @@ rxon7-desktop(mongod-2.4.14) be-mean-pokemons> db.pokemons.find()
 
 ```
 
-## Procurando Pokemon Arceus
+## Procurando Pokemon Arceus(passo 6)
 ``` 
 var poke = db.pokemons.findOne({name: "Arceus"})
 ```
 
-## Atualização da propiedade para Fight
+## Atualização da propiedade para Fight(passo 7)
 ``` 
 poke.description = "Fight"
 db.pokemons.save(poke)
