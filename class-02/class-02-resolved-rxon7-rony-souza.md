@@ -13,9 +13,9 @@ local             → 0.078GB
 
 ```
 
-## Listando Collections
+## Listando Collections(passo 3)
 ```
-show collections(passo 3)
+show collections
 
 rxon7-desktop(mongod-2.4.14) be-mean-pokemons> show collections
 system.indexes → 0.000MB / 0.008MB
@@ -81,7 +81,7 @@ rxon7-desktop(mongod-2.4.14) be-mean-pokemons> pokemons
 db.pokemons.insert(pokemons)
 ```
 
-## Listagem dos Pokemons
+## Listagem dos Pokemons(passo 6)
 ``` 
 db.pokemons.find()
 
