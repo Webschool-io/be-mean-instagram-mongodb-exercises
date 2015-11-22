@@ -135,14 +135,11 @@ Fetched 20 record(s) in 5ms -- More[true]
 
 ```
 
-## Procurando Pokemon Bulbasauro(passo 6)
+## Buscar pokemon e armazenar na variavel poke(passo 6)
 ``` 
 rxon7-desktop(mongod-2.4.14) be-mean-pokemons> var query = {name: "Bulbasauro"}
-rxon7-desktop(mongod-2.4.14) be-mean-pokemons> query
-{
-  "name": "Bulbasauro"
-}
-rxon7-desktop(mongod-2.4.14) be-mean-pokemons> db.pokemons.find(query)
+rxon7-desktop(mongod-2.4.14) be-mean-pokemons> var poke = db.pokemons.findOne(query)
+rxon7-desktop(mongod-2.4.14) be-mean-pokemons> poke
 {
   "_id": ObjectId("5651e87f460fd1a91b124347"),
   "name": "Bulbasauro",
@@ -150,8 +147,11 @@ rxon7-desktop(mongod-2.4.14) be-mean-pokemons> db.pokemons.find(query)
   "attack": 40,
   "defense": 40,
   "heigth": 0.6
+
 }
 Fetched 1 record(s) in 27ms
+
+
 
 ```
 
