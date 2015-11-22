@@ -146,3 +146,5 @@ amanda-Inspiron-7520(mongod-2.4.9) be-mean-pokemons> poke
 }
 
 ```
+
+Augusto Ody - MongoDB - Exercicio 01, 02, 03 e 04 resolvido
