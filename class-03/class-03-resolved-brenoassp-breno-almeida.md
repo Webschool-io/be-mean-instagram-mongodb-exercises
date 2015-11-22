@@ -22,7 +22,7 @@ breno-Inspiron-3437(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
 Fetched 1 record(s) in 1ms
 
 
-## Liste todos Pokemons com a altura **maior ou igual que** 0.5
+## Liste todos Pokemons com a altura **maior ou igual que** 0.5;
 
 breno-Inspiron-3437(mongod-3.0.7) be-mean-pokemons> query = {height: {$gte: 0.5}}
 {
@@ -70,7 +70,7 @@ breno-Inspiron-3437(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
 Fetched 4 record(s) in 4ms
 
 
-## Liste todos Pokemons com a altura **menor ou igual que** 0.5 **E** do tipo grama
+## Liste todos Pokemons com a altura **menor ou igual que** 0.5 **E** do tipo grama;
 
 breno-Inspiron-3437(mongod-3.0.7) be-mean-pokemons> query = {$and: [{height: {$lte: 0.5}}, {'type': 'grama'}]}
 {
@@ -88,7 +88,7 @@ breno-Inspiron-3437(mongod-3.0.7) be-mean-pokemons> query = {$and: [{height: {$l
 breno-Inspiron-3437(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
 Fetched 0 record(s) in 0ms
 
-## Liste todos Pokemons com o name `Pikachu` **OU** com attack **menor ou igual que** 0.5
+## Liste todos Pokemons com o name `Pikachu` **OU** com attack **menor ou igual que** 0.5;
 
 breno-Inspiron-3437(mongod-3.0.7) be-mean-pokemons> query = {$or: [{attack: {$lte: 0.5}}, {'name': 'Pikachu'}]}
 {
@@ -106,7 +106,8 @@ breno-Inspiron-3437(mongod-3.0.7) be-mean-pokemons> query = {$or: [{attack: {$lt
 breno-Inspiron-3437(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
 Fetched 0 record(s) in 1ms
 
-## Liste todos Pokemons com o attack **MAIOR OU IGUAL QUE** 48 **E** com  height **menor ou igual que** 0.5
+
+## Liste todos Pokemons com o attack **MAIOR OU IGUAL QUE** 48 **E** com  height **menor ou igual que** 0.5;
 
 breno-Inspiron-3437(mongod-3.0.7) be-mean-pokemons> query = {$and: [{attack: {$gte: 48}}, {height: {$lte: 0.5}}]}
 {
