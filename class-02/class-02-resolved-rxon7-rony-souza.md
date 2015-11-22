@@ -154,21 +154,6 @@ Fetched 1 record(s) in 27ms
 
 
 ```
-
-## Atualização da propiedade description(passo 7)
-``` 
-rxon7-desktop(mongod-2.4.14) be-mean-pokemons> var query = {name: "Bulbasauro"}
-rxon7-desktop(mongod-2.4.14) be-mean-pokemons> var poke = db.pokemons.findOne(query)
-rxon7-desktop(mongod-2.4.14) be-mean-pokemons> poke
-{
-  "_id": ObjectId("5651e87f460fd1a91b124347"),
-  "name": "Bulbasauro",
-  "description": "Tatu boladao",
-  "attack": 40,
-  "defense": 40,
-  "heigth": 0.6
-}
-``` 
 ## Atualização da propiedade description(passo 7)
 ``` 
 rxon7-desktop(mongod-2.4.14) be-mean-pokemons> poke.description
