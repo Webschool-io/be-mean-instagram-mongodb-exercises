@@ -18,6 +18,7 @@ local             → 0.078GB
 show collections
 
 rxon7-desktop(mongod-2.4.14) be-mean-pokemons> show collections
+pokemons       → 0.002MB / 0.008MB
 system.indexes → 0.000MB / 0.008MB
 
 
