@@ -27,8 +27,8 @@ system.indexes → 0.000MB / 0.008MB
 ## Cadastrando Pokemons(passo 4)
 ```
 var pokemons = [
-	
-	{name: "Sandshrew", description: "Tatu boladao", attack: 40, defense: 40, heigth: 0.6},
+
+	{name: "Bulbasauro", description: "Tatu boladao", attack: 40, defense: 40, heigth: 0.6},
 	{'name':'Weedle','description':'Minhoca louca','type':'bug', attack: 30, defense: 10, height: 0.3},
 	{name: "Raichu", description: "Eletrico", attack: 50, defense: 30, heigth: 0.8}, 
 	{'name':'Rapidash','description':'On fire!','type':'fire', attack: 80, defense: 30, height: 1.7},
@@ -175,9 +175,24 @@ rxon7-desktop(mongod-2.4.14) be-mean-pokemons> db.pokemons.find()
 
 ```
 
-## Procurando Pokemon Raichu(passo 6)
+## Procurando Pokemon Bulbasauro(passo 6)
 ``` 
-var poke = db.pokemons.findOne({name: "Raichu"})
+rxon7-desktop(mongod-2.4.14) be-mean-pokemons> var query = {name: "Bulbasauro"}
+rxon7-desktop(mongod-2.4.14) be-mean-pokemons> query
+{
+  "name": "Bulbasauro"
+}
+rxon7-desktop(mongod-2.4.14) be-mean-pokemons> db.pokemons.find(query)
+{
+  "_id": ObjectId("5651e87f460fd1a91b124347"),
+  "name": "Bulbasauro",
+  "description": "Tatu boladao",
+  "attack": 40,
+  "defense": 40,
+  "heigth": 0.6
+}
+Fetched 1 record(s) in 27ms
+
 ```
 
 ## Atualização da propiedade para Fight(passo 7)
