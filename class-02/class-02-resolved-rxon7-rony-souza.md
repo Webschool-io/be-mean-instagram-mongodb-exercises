@@ -76,6 +76,7 @@ rxon7-desktop(mongod-2.4.14) be-mean-pokemons> pokemons
 
 
 ```
+#### Inserindo no BD
 ```
 
 db.pokemons.insert(pokemons)
