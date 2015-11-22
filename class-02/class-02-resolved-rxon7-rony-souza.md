@@ -165,16 +165,7 @@ Pokemon Hacker/aluno
 rxon7-desktop(mongod-2.4.14) be-mean-pokemons> db.pokemons.save(poke)
 Updated 1 existing record(s) in 126ms
 
-``` 
-rxon7-desktop(mongod-2.4.14) be-mean-pokemons> poke
-{
-  "_id": ObjectId("5651e87f460fd1a91b124347"),
-  "name": "Bulbasauro",
-  "description": "Pokemon Hacker/aluno",
-  "attack": 40,
-  "defense": 40,
-  "heigth": 0.6
-}
+
 rxon7-desktop(mongod-2.4.14) be-mean-pokemons> db.pokemons.findOne(query)
 {
   "_id": ObjectId("5651e87f460fd1a91b124347"),
