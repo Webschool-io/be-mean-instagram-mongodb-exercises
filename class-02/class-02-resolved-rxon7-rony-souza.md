@@ -173,7 +173,7 @@ rxon7-desktop(mongod-2.4.14) be-mean-pokemons> db.pokemons.find()
 
 ```
 
-## Procurando Pokemon Arceus(passo 6)
+## Procurando Pokemon Raichu(passo 6)
 ``` 
 var poke = db.pokemons.findOne({name: "Raichu"})
 ```
