@@ -274,3 +274,29 @@
 	  "ok": 1
 	}
 ```
+
+## 6. Realizar 3 counts na pokemons -> count -- todos -> count só tipo fogo -> count só quem tem defesa maior 70
+```
+	MacBook-de-Carlos(mongod-3.0.5) be-mean> db.pokemons.count()
+	610
+	MacBook-de-Carlos(mongod-3.0.5) be-mean> var query = {types: {$in: [/fire/i]}}
+	MacBook-de-Carlos(mongod-3.0.5) be-mean> query
+	{
+	  "types": {
+	    "$in": [
+	      /fire/i
+	    ]
+	  }
+	}
+	MacBook-de-Carlos(mongod-3.0.5) be-mean> db.pokemons.find(query).count()
+	47
+	MacBook-de-Carlos(mongod-3.0.5) be-mean> var query = {defense: {$gt: 70}}
+	MacBook-de-Carlos(mongod-3.0.5) be-mean> query
+	{
+	  "defense": {
+	    "$gt": 70
+	  }
+	}
+	MacBook-de-Carlos(mongod-3.0.5) be-mean> db.pokemons.find(query).count()
+	250
+```
