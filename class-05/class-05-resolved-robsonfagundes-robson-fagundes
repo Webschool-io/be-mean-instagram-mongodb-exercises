@@ -285,7 +285,6 @@ Dell-3500(mongod-3.0.7) be-mean-pokemons> db.pokemons.aggregate([
 ```
 
 ## 6. Realizar 3 counts na pokemons.
-
 -> .count -- todos
 -> .count -- só tipo fogo
 -> .count -- só de quantos tem a defesa maior que 70
@@ -302,6 +301,5 @@ Dell-3500(mongod-3.0.7) be-mean-pokemons> db.pokemons.count({defense: {$gt: 70},
 
 Dell-3500(mongod-3.0.7) be-mean-pokemons> db.pokemons.count({types: 'fire', defense: {$gte: 70}})
 19
-
 ```
 
