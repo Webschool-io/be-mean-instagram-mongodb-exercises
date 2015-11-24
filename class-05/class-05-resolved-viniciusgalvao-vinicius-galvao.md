@@ -5,7 +5,7 @@ autor: Vinícius Galvão
 ```js
 ➜  ~  mongoimport --host 127.0.0.1 --db be-mean --collection restaurantes --drop --file ~/Downloads/restaurantes.json   
 2015-11-24T01:19:57.659-0300    connected to: 127.0.0.1
-2015-11-24T01:19:57.659-0300    dropping: be-mean.pokemons
+2015-11-24T01:19:57.659-0300    dropping: be-mean.restaurantes
 2015-11-24T01:19:57.659-0300    imported 25359 documents
 
 ➜  ~  mongoimport --host 127.0.0.1 --db be-mean --collection pokemons --drop --file ~/Downloads/pokemons.json   
