@@ -2,8 +2,9 @@
 autor: Gustavo Prado
 
 ##1 - Adicionar 2 ataques ao mesmo tempo para mais de um pokemon
-	```
-	```
+
+
+```
 	var query = {name: {$in: [/pikachu/i,/heatran/i]}}
 	db.pokemons.find(query);
 	{ 
@@ -44,11 +45,11 @@ autor: Gustavo Prado
 		"name" : "heatran", 
 		"moves" : [ "Investida", "Picada de Tanajura", "Ataque1", "Ataque2"]
 	}
+```
 
 ##2 - Adicionar 1 Movimento em todos os pokemons: `desvio`.
 	
-	```
-	```
+```
 	var query = {};
 	var mod = {$push: {moves: 'Desvio'}};
 	var options = {multi: true};
@@ -99,13 +100,13 @@ autor: Gustavo Prado
 		"moves" : [ "Investida", "Picada de Tanajura","Ataque1", "Ataque2", "Desvio" ] 
 	}
 
-	```
-	```
+
+```
 
 ##3 - Adicionar** o pokemon `AindaNaoExisteMon` caso ele não exista com todos os dados com o valor `null` e a descrição: `Sem maiores informações`.
 
-	```
-	```
+```
+
 	var mod = {$set: {name: 'naoExiste'},$setOnInsert: {description: 'Sem Maiores Informações',type: null,attack: null, defense: null, height: null}};
 	var options = { "upsert" : true };
 	var query = {name: /existe/i};
@@ -119,12 +120,12 @@ autor: Gustavo Prado
 	var query = {name: /naoExiste/i};
 	db.pokemons.find(query)
 	{ "_id" : ObjectId("564f16aa80ac1ec50f141c5e"), "name" : "naoExiste", "description" : "Sem Maiores Informações", "type" : null, "attack" : null, "defense" : null, "height" : null }
-	```
+```
 
 ##4 - Pesquisar todos os pokemons que possuam o ataque `investida` e mais um que você adicionou, escolha seu pokemon favorito
 
-	```
-	```
+```
+
 	var query = {moves: {$in: [/investida/i,/desvio/i]}};
 	db.pokemons.find(query);
 	{ 
@@ -173,13 +174,12 @@ autor: Gustavo Prado
 		"moves" : [ "Investida", "Picada de Tanajura", "Desvio", "Ataque1", "Ataque2" ] 
 	}
 	
-	```
-	```
+
+```
 
 ##5 - Pesquisar todos os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.
 
-	```
-	```
+```
 	var query = {moves: {$all: [/grito da cindel/i,/investida/i]}};
 	var campos = {name: 1,moves: 1};
 	db.pokemons.find(query,campos);
@@ -187,13 +187,13 @@ autor: Gustavo Prado
 		"_id" : ObjectId("5647233fddd3df0aacc81f7a"), 
 		"name" : "bouffalant", "moves" : [ "Investida", "Grito da Cindel", "Desvio" ] 
 	}
-	```
-	```
+
+```
 
 ##6 - Pesquisar todos os pokemons que não são do tipo `eletric`.
 
-	```
-	```
+
+```
 	var query = {type: {$not: /eletric/i}};
 	var campos = {name: 1, type: 1};
 	db.pokemons.find(query,campos);
@@ -240,13 +240,13 @@ autor: Gustavo Prado
 		"name" : "naoExiste", 
 		"type" : null 
 	}
-	```
-	```
+
+```
 
 ##7 - Pesquisar todos os pokemons que tenham o ataque `investida` **E** tenham a defesa **não menor ou igual** a 49.
 
-	```
-	```
+
+```
 	var query = {$and: [{moves: /investida/i},{defense: {$gte: 500}}]};
 	var campos = {name: 1, moves: 1, defense: 1};
 	db.pokemons.find(query,campos);
@@ -270,12 +270,12 @@ autor: Gustavo Prado
 	}
 
 
-	```
-	```
+```
+
 ##8 - Remova todos os pokemons de um determinado tipo e com attack menor que 600.
 
-	```
-	```
+
+```
 	var query = {$and: [{type: /tipo test/i},{attack: {$lt: 600}}]};
 	var campos = {name: 1, type: 1, attack: 1};
 	db.pokemons.find(query,campos);
@@ -284,5 +284,4 @@ autor: Gustavo Prado
 	WriteResult({ "nRemoved" : 1 });
 	db.pokemons.find(query,campos);
 
-	```
-	```
+```
