@@ -98,7 +98,7 @@ Fetched 1 record(s) in 1ms
 
 ```
 ## Listagem pokemons attack >= 48 e height <= 0.5
-```
+``
 MacBook-Pro-de-Aguinaldo(mongod-3.1.9) be-mean-pokemons> var q = {$and: [{attack: {$gte: 48}}, {height: {$lte: 0.5}}]}
 MacBook-Pro-de-Aguinaldo(mongod-3.1.9) be-mean-pokemons> db.pokemons.find(q)
 {
