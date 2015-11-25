@@ -70,6 +70,20 @@ MacBook-Pro-de-Uilian-Nunes(mongod-3.0.3) be-mean-pokemons> var pokemons = [{
 ... "type": "Flying", 
 ... "attack": 80, 
 ... "height": 1.5 
+... },
+... {
+... "name":"Cacnea",
+... "description":"Cacnea is a Grass type Pokémon introduced in Generation 3. It is known as the Cactus Pokémon.",
+... "type": "Grass", 
+... "attack": 85, 
+... "height": 0.4 
+... },
+... {
+... "name":"Pikachu",
+... "description":"Rato elétrico bem fofinho.",
+... "type": "electric", 
+... "attack": 55, 
+... "height": 0.4 
 ... }]
 
 MacBook-Pro-de-Uilian-Nunes(mongod-3.0.3) be-mean-pokemons> db.pokemons.insert(pokemons)
@@ -77,7 +91,7 @@ Inserted 1 record(s) in 2979ms
 BulkWriteResult({
   "writeErrors": [ ],
   "writeConcernErrors": [ ],
-  "nInserted": 6,
+  "nInserted": 8,
   "nUpserted": 0,
   "nMatched": 0,
   "nModified": 0,
@@ -139,7 +153,23 @@ MacBook-Pro-de-Uilian-Nunes(mongod-3.0.3) be-mean-pokemons> db.pokemons.find()
   "attack": 80,
   "height": 1.5
 }
-Fetched 6 record(s) in 38ms
+{
+  "_id": ObjectId("564fb465010a0d37f0f2516e"),
+  "name": "Cacnea",
+  "description": "Cacnea is a Grass type Pokémon introduced in Generation 3. It is known as the Cactus Pokémon.",
+  "type": "Grass",
+  "attack": 85,
+  "height": 0.4
+}
+{
+  "_id": ObjectId("5654f3f1cd1bdd189cd39d6e"),
+  "name": "Pikachu",
+  "description": "Rato elétrico bem fofinho",
+  "type": "electric",
+  "attack": 55,
+  "height": 0.4
+}
+Fetched 8 record(s) in 8ms
 
 ```
 
