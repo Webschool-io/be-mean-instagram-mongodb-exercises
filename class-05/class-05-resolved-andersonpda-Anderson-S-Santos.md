@@ -136,216 +136,56 @@ Mac-mini-de-Anderson(mongod-3.0.7) be-mean-pokemons> db.pokemons.distinct("types
 ## 4. As primeiras 3 páginas com .limit() e .skip() de pokemons (5 em 5)
 
 ```
-Mac-mini-de-Anderson(mongod-3.0.7) be-mean-pokemons> db.pokemons.find({}).limit(5).skip(0)
+Mac-mini-de-Anderson(mongod-3.0.7) be-mean-pokemons> db.pokemons.find({}, { name: 1, _id: 0 }).limit(5).skip(5 * 0)
+Mac-mini-de-Anderson(mongod-3.0.7) be-mean-pokemons> db.pokemons.find({}, { name: 1, _id: 0 }).limit(5).skip(5 * 0)
 {
-  "_id": ObjectId("564a7c362c153ed825a69055"),
-  "attack": 45,
-  "created": "2013-11-03T15:05:41.299457",
-  "defense": 40,
-  "height": "3",
-  "hp": 40,
-  "name": "Pidgey",
-  "speed": 56,
-  "types": [
-    "normal",
-    "flying"
-  ]
+  "name": "Pidgey"
 }
 {
-  "_id": ObjectId("564a7c362c153ed825a69054"),
-  "attack": 90,
-  "created": "2013-11-03T15:05:41.297180",
-  "defense": 40,
-  "height": "10",
-  "hp": 65,
-  "name": "Beedrill",
-  "speed": 75,
-  "types": [
-    "poison",
-    "bug"
-  ]
+  "name": "Beedrill"
 }
 {
-  "_id": ObjectId("564a7c362c153ed825a69056"),
-  "attack": 60,
-  "created": "2013-11-03T15:05:41.301609",
-  "defense": 55,
-  "height": "11",
-  "hp": 63,
-  "name": "Pidgeotto",
-  "speed": 71,
-  "types": [
-    "normal",
-    "flying"
-  ]
+  "name": "Pidgeotto"
 }
 {
-  "_id": ObjectId("564a7c362c153ed825a69057"),
-  "attack": 80,
-  "created": "2013-11-03T15:05:41.303569",
-  "defense": 75,
-  "height": "15",
-  "hp": 83,
-  "name": "Pidgeot",
-  "speed": 101,
-  "types": [
-    "normal",
-    "flying"
-  ]
+  "name": "Pidgeot"
 }
 {
-  "_id": ObjectId("564a7c362c153ed825a69058"),
-  "attack": 81,
-  "created": "2013-11-03T15:05:41.308092",
-  "defense": 60,
-  "height": "7",
-  "hp": 55,
-  "name": "Raticate",
-  "speed": 97,
-  "types": [
-    "normal"
-  ]
+  "name": "Raticate"
 }
 
-Mac-mini-de-Anderson(mongod-3.0.7) be-mean-pokemons> db.pokemons.find({}).limit(5).skip(1)
+Mac-mini-de-Anderson(mongod-3.0.7) be-mean-pokemons> db.pokemons.find({}, { name: 1, _id: 0 }).limit(5).skip(5 * 1)
 {
-  "_id": ObjectId("564a7c362c153ed825a69054"),
-  "attack": 90,
-  "created": "2013-11-03T15:05:41.297180",
-  "defense": 40,
-  "height": "10",
-  "hp": 65,
-  "name": "Beedrill",
-  "speed": 75,
-  "types": [
-    "poison",
-    "bug"
-  ]
+  "name": "Fearow"
 }
 {
-  "_id": ObjectId("564a7c362c153ed825a69056"),
-  "attack": 60,
-  "created": "2013-11-03T15:05:41.301609",
-  "defense": 55,
-  "height": "11",
-  "hp": 63,
-  "name": "Pidgeotto",
-  "speed": 71,
-  "types": [
-    "normal",
-    "flying"
-  ]
+  "name": "Pikachu"
 }
 {
-  "_id": ObjectId("564a7c362c153ed825a69057"),
-  "attack": 80,
-  "created": "2013-11-03T15:05:41.303569",
-  "defense": 75,
-  "height": "15",
-  "hp": 83,
-  "name": "Pidgeot",
-  "speed": 101,
-  "types": [
-    "normal",
-    "flying"
-  ]
+  "name": "Ekans"
 }
 {
-  "_id": ObjectId("564a7c362c153ed825a69058"),
-  "attack": 81,
-  "created": "2013-11-03T15:05:41.308092",
-  "defense": 60,
-  "height": "7",
-  "hp": 55,
-  "name": "Raticate",
-  "speed": 97,
-  "types": [
-    "normal"
-  ]
+  "name": "Arbok"
 }
 {
-  "_id": ObjectId("564a7c362c153ed825a69059"),
-  "attack": 90,
-  "created": "2013-11-03T15:05:41.312310",
-  "defense": 65,
-  "height": "12",
-  "hp": 65,
-  "name": "Fearow",
-  "speed": 100,
-  "types": [
-    "normal",
-    "flying"
-  ]
+  "name": "Poliwhirl"
 }
 
-Mac-mini-de-Anderson(mongod-3.0.7) be-mean-pokemons> db.pokemons.find({}).limit(5).skip(2)
+Mac-mini-de-Anderson(mongod-3.0.7) be-mean-pokemons> db.pokemons.find({}, { name: 1, _id: 0 }).limit(5).skip(5 * 2)
 {
-  "_id": ObjectId("564a7c362c153ed825a69056"),
-  "attack": 60,
-  "created": "2013-11-03T15:05:41.301609",
-  "defense": 55,
-  "height": "11",
-  "hp": 63,
-  "name": "Pidgeotto",
-  "speed": 71,
-  "types": [
-    "normal",
-    "flying"
-  ]
+  "name": "Raichu"
 }
 {
-  "_id": ObjectId("564a7c362c153ed825a69057"),
-  "attack": 80,
-  "created": "2013-11-03T15:05:41.303569",
-  "defense": 75,
-  "height": "15",
-  "hp": 83,
-  "name": "Pidgeot",
-  "speed": 101,
-  "types": [
-    "normal",
-    "flying"
-  ]
+  "name": "Poliwrath"
 }
 {
-  "_id": ObjectId("564a7c362c153ed825a69058"),
-  "attack": 81,
-  "created": "2013-11-03T15:05:41.308092",
-  "defense": 60,
-  "height": "7",
-  "hp": 55,
-  "name": "Raticate",
-  "speed": 97,
-  "types": [
-    "normal"
-  ]
+  "name": "Abra"
 }
 {
-  "_id": ObjectId("564a7c362c153ed825a69059"),
-  "attack": 90,
-  "created": "2013-11-03T15:05:41.312310",
-  "defense": 65,
-  "height": "12",
-  "hp": 65,
-  "name": "Fearow",
-  "speed": 100,
-  "types": [
-    "normal",
-    "flying"
-  ]
+  "name": "Kadabra"
 }
 {
-  "_id": ObjectId("564a7c362c153ed825a6905a"),
-  "attack": 55,
-  "created": "2013-11-03T15:05:41.317235",
-  "defense": 40,
-  "height": "4",
-  "hp": 35,
-  "name": "Pikachu",
-  "speed": 90,
-  "types": [
-    "electric"
-  ]
+  "name": "Machop"
 }
 ```
 
