@@ -2,15 +2,11 @@
 autor: Clayton Fidelis
 
 ## Breve introdução mongoimport e mongoexport
-    <dl>
-      <dt>mongoexport</dt>
-      <dd>Serve para exportar os dados de uma coleção para um arquivo json.</dd>
+  **mongoexport**: Serve para exportar os dados de uma coleção para um arquivo json.
 
-      <dt>mongoimport</dt>
-      <dd>Serve para importar os dados de um arquivo json para uma coleção.</dd>
-    </dl>
+  **mongoimport**: Serve para importar os dados de um arquivo json para uma coleção.
 
-    ![Rlly](http://img4.wikia.nocookie.net/__cb20121224013155/adventuretimewithfinnandjake/images/b/be/Rlly.jpg )
+![Rlly](http://img4.wikia.nocookie.net/__cb20121224013155/adventuretimewithfinnandjake/images/b/be/Rlly.jpg )
 
 ## Importando os restaurantes
 
