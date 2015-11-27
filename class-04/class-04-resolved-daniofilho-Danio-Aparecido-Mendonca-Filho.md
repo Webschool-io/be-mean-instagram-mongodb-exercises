@@ -1,8 +1,8 @@
 # MongoDB - Aula 04 - Exercício
 autor: Dânio Filho
 
-## **Adicionar** 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
-```
+## **Adicionar** 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander. ##
+```js
 var query = { $or: [{ name: /pikachu/i}, {name: /squirtle/i}, {name: /bulbassauro/i}, {name: /charmander/i }] }
 var atks = ['Raio Poderoso', 'Chute matador', 'Paralisia Mental']
 var mod = { $pushAll: {moves: atks}}
@@ -20,7 +20,7 @@ WriteResult({
 
 ## **Adicionar** 1 movimento em todos os pokemons: `desvio`.##
 
-```
+```js
 var query = {}
 var atks = ['Desvio']
 var mod = { $pushAll: {moves: atks} }
@@ -38,14 +38,14 @@ WriteResult({
 
 ## **Adicionar** o pokemon `AindaNaoExisteMon` caso ele não exista com todos os dados com o valor `null` e a descrição: "Sem maiores informações".##
 
-```
+```js
 var query = {name: /AindaNaoExisteMon/i}
 var mod = {
   $setOnInsert: {
 	name: "NaoExisteMon",
-	type: null, 
-	attack: null, 
-	height: null, 
+	type: null,
+	attack: null,
+	height: null,
 	moves: [],
 	description: "Sem maiores informações"
   }
@@ -65,7 +65,7 @@ WriteResult({
 
 ## Pesquisar todos o pokemons que possuam o ataque `investida` e mais um que você adicionou, escolha seu pokemon favorito.##
 
-```
+```js
 var query = { moves: { $all: [/investida/i, /paralisia mental/i] }}
 db.pokemons.find(query)
 
@@ -153,7 +153,7 @@ Fetched 5 record(s) in 6ms
 
 ## Pesquisar **todos** os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.##
 
-```
+```js
 var query = { moves: { $all: [/desvio/i, /raio poderoso/i, /chute matador/i, /paralisia mental/i] }}
 db.pokemons.find(query)
 
@@ -243,7 +243,7 @@ Fetched 5 record(s) in 3ms
 
 ## Pesquisar **todos** os pokemons que não são do tipo `elétrico`.##
 
-```
+```js
 var query = { type: { $ne: 'electric'} }
 db.pokemons.find(query)
 
@@ -336,7 +336,7 @@ Fetched 6 record(s) in 5ms
 
 ## Pesquisar **todos** os pokemons que tenham o ataque `investida` **E** tenham a defesa **não menor ou igual** a 49.##
 
-```
+```js
 var query =  {
   $and: [
     {
@@ -408,9 +408,9 @@ Fetched 3 record(s) in 2ms
 ```
 
 
-## Remova **todos** os pokemons do tipo água e com attack menor que 50.
+## Remova **todos** os pokemons do tipo água e com attack menor que 50. ##
 
-```
+```js
 var query = {
 	$and: [
 		{ attack: { $lt: 50 } },
@@ -449,3 +449,27 @@ db.pokemons.find(query)
 Fetched 0 record(s) in 1ms
 
 ```
+
+## Esse item não está no vídeo e se você fizer significa que você lê as coisas, nesse exercício demonstre qual a diferença entre os operadores $ne e $not. ##
+
+O `$not` é usado para operações lógicas, juntamente com uma expressão.
+
+**Exemplo:**
+
+*Retorna todos os resultados onde o preço **não** é maior que 10*
+
+`{ preco: { $not: { $gt: 10 } } }`
+
+o ```$not``` sempre é usado para negar uma **expressão**.
+
+Obs: Os resultados também incluem itens que não possuem este campo.
+
+Já o `$ne` é usado para verificar valores dentro de **campos** diretamente.
+
+**Exemplo:**
+
+*Selecione todos os itens onde o campo preço **não é igual** a 10.*
+
+`{preco: {$ne: 10} }`
+
+Obs: Os resultados também incluem itens onde este campo não existe.

@@ -9,11 +9,10 @@ Andrew:bemean andrewesteves$ mongoimport --host 127.0.0.1 --db be-mean --collect
 2015-11-19T17:44:53.315-0300  dropping: be-mean.restaurantes
 2015-11-19T17:44:55.180-0300  imported 25359 documents
 
-mongoimport --host 127.0.0.1 --db be-mean --collection pokemons --drop --file pokemons.json
-Andrew:bemean andrewesteves$ mongoimport --host 127.0.0.1 --db be-mean --collection pokemons --drop --file pokemons.json
-2015-11-19T17:46:00.352-0300  connected to: 127.0.0.1
-2015-11-19T17:46:00.353-0300  dropping: be-mean.pokemons
-2015-11-19T17:46:00.379-0300  imported 620 documents
+Andrew:Desktop andrewesteves$ mongoimport --host 127.0.0.1 --db be-mean --collection pokemons --drop --file pokemons.json
+2015-11-23T21:41:30.665-0300  connected to: 127.0.0.1
+2015-11-23T21:41:30.666-0300  dropping: be-mean.pokemons
+2015-11-23T21:41:30.710-0300  imported 610 documents
 
 ```
 
@@ -113,24 +112,24 @@ Andrew(mongod-3.0.4) be-mean> db.restaurantes.distinct('cuisine');
 ## 3. Distinct por `types` na pokemons
 
 ```
-db.pokemons.distinct('types')
+db.pokemons.distinct('types');
 [
-  "flying",
   "normal",
+  "fire",
+  "water",
   "bug",
+  "flying",
   "poison",
   "electric",
-  "water",
-  "fighting",
-  "psychic",
-  "grass",
-  "fairy",
-  "fire",
-  "rock",
-  "ice",
-  "ground",
   "steel",
   "ghost",
+  "ice",
+  "psychic",
+  "fighting",
+  "grass",
+  "ground",
+  "fairy",
+  "rock",
   "dark",
   "dragon"
 ]
@@ -142,254 +141,342 @@ db.pokemons.distinct('types')
 ```
 db.pokemons.find({}).limit(5).skip(5 * 0);
 {
-  "_id": ObjectId("564a7c362c153ed825a69055"),
-  "attack": 45,
-  "created": "2013-11-03T15:05:41.299457",
-  "defense": 40,
+  "_id": ObjectId("564b1dad25337263280d0479"),
+  "attack": 56,
+  "created": "2013-11-03T15:05:41.305777",
+  "defense": 35,
   "height": "3",
-  "hp": 40,
-  "name": "Pidgey",
-  "speed": 56,
-  "types": [
-    "normal",
-    "flying"
-  ]
-}
-{
-  "_id": ObjectId("564a7c362c153ed825a69056"),
-  "attack": 60,
-  "created": "2013-11-03T15:05:41.301609",
-  "defense": 55,
-  "height": "11",
-  "hp": 63,
-  "name": "Pidgeotto",
-  "speed": 71,
-  "types": [
-    "normal",
-    "flying"
-  ]
-}
-{
-  "_id": ObjectId("564a7c362c153ed825a69057"),
-  "attack": 80,
-  "created": "2013-11-03T15:05:41.303569",
-  "defense": 75,
-  "height": "15",
-  "hp": 83,
-  "name": "Pidgeot",
-  "speed": 101,
-  "types": [
-    "normal",
-    "flying"
-  ]
-}
-{
-  "_id": ObjectId("564a7c362c153ed825a69058"),
-  "attack": 81,
-  "created": "2013-11-03T15:05:41.308092",
-  "defense": 60,
-  "height": "7",
-  "hp": 55,
-  "name": "Raticate",
-  "speed": 97,
+  "hp": 30,
+  "name": "Rattata",
+  "speed": 72,
   "types": [
     "normal"
   ]
 }
 {
-  "_id": ObjectId("564a7c362c153ed825a69059"),
-  "attack": 90,
-  "created": "2013-11-03T15:05:41.312310",
-  "defense": 65,
-  "height": "12",
-  "hp": 65,
-  "name": "Fearow",
-  "speed": 100,
+  "_id": ObjectId("564b1dad25337263280d047b"),
+  "attack": 64,
+  "created": "2013-11-03T15:05:41.273462",
+  "defense": 58,
+  "height": "11",
+  "hp": 58,
+  "name": "Charmeleon",
+  "speed": 80,
   "types": [
-    "normal",
-    "flying"
+    "fire"
+  ]
+}
+{
+  "_id": ObjectId("564b1dad25337263280d047a"),
+  "attack": 52,
+  "created": "2013-11-03T15:05:41.271082",
+  "defense": 43,
+  "height": "6",
+  "hp": 39,
+  "name": "Charmander",
+  "speed": 65,
+  "types": [
+    "fire"
+  ]
+}
+{
+  "_id": ObjectId("564b1dad25337263280d047c"),
+  "attack": 63,
+  "created": "2013-11-03T15:05:41.280718",
+  "defense": 80,
+  "height": "10",
+  "hp": 59,
+  "name": "Wartortle",
+  "speed": 58,
+  "types": [
+    "water"
+  ]
+}
+{
+  "_id": ObjectId("564b1dad25337263280d047d"),
+  "attack": 83,
+  "created": "2013-11-03T15:05:41.282985",
+  "defense": 100,
+  "height": "16",
+  "hp": 79,
+  "name": "Blastoise",
+  "speed": 78,
+  "types": [
+    "water"
   ]
 }
 Fetched 5 record(s) in 6ms
 
 db.pokemons.find({}).limit(5).skip(5 * 1)
 {
-  "_id": ObjectId("564a7c362c153ed825a69054"),
-  "attack": 90,
-  "created": "2013-11-03T15:05:41.297180",
-  "defense": 40,
-  "height": "10",
-  "hp": 65,
-  "name": "Beedrill",
-  "speed": 75,
+  "_id": ObjectId("564b1dad25337263280d047e"),
+  "attack": 30,
+  "created": "2013-11-03T15:05:41.285736",
+  "defense": 35,
+  "height": "3",
+  "hp": 45,
+  "name": "Caterpie",
+  "speed": 45,
+  "types": [
+    "bug"
+  ]
+}
+{
+  "_id": ObjectId("564b1dad25337263280d0480"),
+  "attack": 45,
+  "created": "2013-11-03T15:05:41.290411",
+  "defense": 50,
+  "height": "11",
+  "hp": 60,
+  "name": "Butterfree",
+  "speed": 70,
+  "types": [
+    "flying",
+    "bug"
+  ]
+}
+{
+  "_id": ObjectId("564b1dad25337263280d047f"),
+  "attack": 20,
+  "created": "2013-11-03T15:05:41.288107",
+  "defense": 55,
+  "height": "7",
+  "hp": 50,
+  "name": "Metapod",
+  "speed": 30,
+  "types": [
+    "bug"
+  ]
+}
+{
+  "_id": ObjectId("564b1dad25337263280d0481"),
+  "attack": 60,
+  "created": "2013-11-03T15:05:41.310402",
+  "defense": 30,
+  "height": "3",
+  "hp": 40,
+  "name": "Spearow",
+  "speed": 70,
+  "types": [
+    "normal",
+    "flying"
+  ]
+}
+{
+  "_id": ObjectId("564b1dae25337263280d0483"),
+  "attack": 65,
+  "created": "2013-11-03T15:05:41.439497",
+  "defense": 55,
+  "height": "8",
+  "hp": 52,
+  "name": "Farfetchd",
+  "speed": 60,
+  "types": [
+    "normal",
+    "flying"
+  ]
+}
+Fetched 5 record(s) in 9ms
+
+db.pokemons.find({}).limit(5).skip(5 * 2)
+{
+  "_id": ObjectId("564b1dad25337263280d0482"),
+  "attack": 25,
+  "created": "2013-11-03T15:05:41.294947",
+  "defense": 50,
+  "height": "6",
+  "hp": 45,
+  "name": "Kakuna",
+  "speed": 35,
   "types": [
     "poison",
     "bug"
   ]
 }
 {
-  "_id": ObjectId("564a7c362c153ed825a6905a"),
-  "attack": 55,
-  "created": "2013-11-03T15:05:41.317235",
-  "defense": 40,
-  "height": "4",
-  "hp": 35,
-  "name": "Pikachu",
-  "speed": 90,
+  "_id": ObjectId("564b1dae25337263280d0484"),
+  "attack": 35,
+  "created": "2013-11-03T15:05:41.435237",
+  "defense": 70,
+  "height": "3",
+  "hp": 25,
+  "name": "Magnemite",
+  "speed": 45,
   "types": [
+    "steel",
     "electric"
   ]
 }
 {
-  "_id": ObjectId("564a7c362c153ed825a6905b"),
-  "attack": 60,
-  "created": "2013-11-03T15:05:41.313816",
-  "defense": 44,
-  "height": "20",
-  "hp": 35,
-  "name": "Ekans",
-  "speed": 55,
-  "types": [
-    "poison"
-  ]
-}
-{
-  "_id": ObjectId("564a7c362c153ed825a6905c"),
-  "attack": 90,
-  "created": "2013-11-03T15:05:41.318944",
-  "defense": 55,
-  "height": "8",
-  "hp": 60,
-  "name": "Raichu",
-  "speed": 110,
-  "types": [
-    "electric"
-  ]
-}
-{
-  "_id": ObjectId("564a7c362c153ed825a6905d"),
+  "_id": ObjectId("564b1dae25337263280d0486"),
   "attack": 85,
-  "created": "2013-11-03T15:05:41.315504",
-  "defense": 69,
-  "height": "35",
-  "hp": 60,
-  "name": "Arbok",
-  "speed": 80,
+  "created": "2013-11-03T15:05:41.441502",
+  "defense": 45,
+  "height": "14",
+  "hp": 35,
+  "name": "Doduo",
+  "speed": 75,
   "types": [
-    "poison"
-  ]
-}
-Fetched 5 record(s) in 6ms
-
-db.pokemons.find({}).limit(5).skip(5 * 2)
-{
-  "_id": ObjectId("564a7c372c153ed825a6905e"),
-  "attack": 50,
-  "created": "2013-11-03T15:05:41.388462",
-  "defense": 40,
-  "height": "6",
-  "hp": 40,
-  "name": "Poliwag",
-  "speed": 90,
-  "types": [
-    "water"
+    "normal",
+    "flying"
   ]
 }
 {
-  "_id": ObjectId("564a7c372c153ed825a6905f"),
-  "attack": 65,
-  "created": "2013-11-03T15:05:41.390744",
-  "defense": 65,
-  "height": "10",
-  "hp": 65,
-  "name": "Poliwhirl",
-  "speed": 90,
-  "types": [
-    "water"
-  ]
-}
-{
-  "_id": ObjectId("564a7c372c153ed825a69060"),
-  "attack": 95,
-  "created": "2013-11-03T15:05:41.393388",
+  "_id": ObjectId("564b1dae25337263280d0485"),
+  "attack": 60,
+  "created": "2013-11-03T15:05:41.437483",
   "defense": 95,
-  "height": "13",
-  "hp": 90,
-  "name": "Poliwrath",
+  "height": "10",
+  "hp": 50,
+  "name": "Magneton",
   "speed": 70,
   "types": [
-    "fighting",
+    "steel",
+    "electric"
+  ]
+}
+{
+  "_id": ObjectId("564b1dae25337263280d0487"),
+  "attack": 45,
+  "created": "2013-11-03T15:05:41.445749",
+  "defense": 55,
+  "height": "11",
+  "hp": 65,
+  "name": "Seel",
+  "speed": 45,
+  "types": [
     "water"
-  ]
-}
-{
-  "_id": ObjectId("564a7c372c153ed825a69061"),
-  "attack": 20,
-  "created": "2013-11-03T15:05:41.396006",
-  "defense": 15,
-  "height": "9",
-  "hp": 25,
-  "name": "Abra",
-  "speed": 90,
-  "types": [
-    "psychic"
-  ]
-}
-{
-  "_id": ObjectId("564a7c372c153ed825a69062"),
-  "attack": 35,
-  "created": "2013-11-03T15:05:41.398045",
-  "defense": 30,
-  "height": "13",
-  "hp": 40,
-  "name": "Kadabra",
-  "speed": 105,
-  "types": [
-    "psychic"
   ]
 }
 Fetched 5 record(s) in 4ms
+
 ```
 
 ## 5. Group ou Aggregate contando a quantidade de pokemons de cada tipo
 
 ```
 db.pokemons.group({
-  initial: {total: 0},
-  reduce: function(curr, result) {
-    curr.types.forEach(function(type) {
-      if (result[type]) {
-        result[type]++;
-      } else {
-        result[type] = 1;
-      }
-      result.total++;
-    });
-  }
+   initial: {total: 0},
+   reduce: function(curr, result) {
+     curr.types.forEach(function(type) {
+       if (result[type]) {
+         result[type]++;
+       } else {
+         result[type] = 1;
+       }
+       result.total++;
+     });
+   }
 });
 [
   {
-    "total": 934,
-    "normal": 79,
-    "flying": 81,
+    "total": 915,
+    "normal": 78,
+    "fire": 47,
+    "water": 105,
+    "bug": 61,
+    "flying": 77,
     "poison": 54,
-    "bug": 58,
-    "electric": 47,
-    "water": 101,
-    "fighting": 42,
-    "psychic": 61,
-    "grass": 70,
-    "fairy": 31,
-    "fire": 53,
-    "rock": 42,
-    "ice": 28,
-    "ground": 53,
-    "steel": 35,
+    "steel": 37,
+    "electric": 40,
     "ghost": 34,
-    "dark": 35,
-    "dragon": 30
+    "ice": 24,
+    "psychic": 62,
+    "fighting": 38,
+    "grass": 75,
+    "ground": 51,
+    "fairy": 28,
+    "rock": 46,
+    "dark": 38,
+    "dragon": 20
   }
 ]
+
+db.pokemons.aggregate([
+  {$unwind: '$types'},
+  {$group: {
+    _id: '$types',
+    count: {$sum: 1}
+  }}
+]);
+{
+  "result": [
+    {
+      "_id": "fairy",
+      "count": 28
+    },
+    {
+      "_id": "fighting",
+      "count": 38
+    },
+    {
+      "_id": "psychic",
+      "count": 62
+    },
+    {
+      "_id": "dark",
+      "count": 38
+    },
+    {
+      "_id": "ground",
+      "count": 51
+    },
+    {
+      "_id": "grass",
+      "count": 75
+    },
+    {
+      "_id": "electric",
+      "count": 40
+    },
+    {
+      "_id": "steel",
+      "count": 37
+    },
+    {
+      "_id": "rock",
+      "count": 46
+    },
+    {
+      "_id": "flying",
+      "count": 77
+    },
+    {
+      "_id": "fire",
+      "count": 47
+    },
+    {
+      "_id": "ice",
+      "count": 24
+    },
+    {
+      "_id": "bug",
+      "count": 61
+    },
+    {
+      "_id": "poison",
+      "count": 54
+    },
+    {
+      "_id": "ghost",
+      "count": 34
+    },
+    {
+      "_id": "dragon",
+      "count": 20
+    },
+    {
+      "_id": "water",
+      "count": 105
+    },
+    {
+      "_id": "normal",
+      "count": 78
+    }
+  ],
+  "ok": 1
+}
+
 ```
 
 ## 6. Realizar 3 counts na pokemons
@@ -402,12 +489,12 @@ db.pokemons.group({
 
 ```
 db.pokemons.count()
-620
+610
 
 db.pokemons.count({ types: 'fire' })
-53
+47
 
 db.pokemons.count({ defense: {$gt: 70} })
-263
+250
 
 ```
