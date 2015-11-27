@@ -1,4 +1,4 @@
-# MongoDB - Aula 04 - Exercício
+# MongoDB - Aula 05 - Exercício
 autor: Miller Barros
 
 ## 1. Importar as collections restaurantes e pokemons.
@@ -340,6 +340,50 @@ miller-nt(mongod-3.0.7) be-mean> db.pokemons.find().limit(5).skip(5 * 2)
 }
 Fetched 5 record(s) in 3ms
 ```
+
+## 5 . Group ou Aggregate contando a quantidade de pokemons de cada tipo
+```
+miller-nt(mongod-3.0.7) be-mean> var group = {
+...     initial: {types: {}, count: 0},
+...     reduce: function(curr, result){
+...         curr.types.forEach(function(type){
+...             if(result.types[type]){
+...                 result.types[type]++;
+...             }else{
+...                 result.types[type] = 1;
+...             }
+...             result.count++;
+...         });
+...     }
+... }
+miller-nt(mongod-3.0.7) be-mean> db.pokemons.group(group)
+[
+  {
+    "types": {
+      "poison": 54,
+      "bug": 58,
+      "normal": 79,
+      "flying": 81,
+      "electric": 47,
+      "water": 101,
+      "fighting": 42,
+      "psychic": 61,
+      "grass": 70,
+      "fairy": 31,
+      "fire": 53,
+      "rock": 42,
+      "ice": 28,
+      "ground": 53,
+      "steel": 35,
+      "ghost": 34,
+      "dark": 35,
+      "dragon": 30
+    },
+    "count": 934
+  }
+]
+```
+
 ## 6. Realizar 3 counts na pokemons.
 ```
 miller-nt(mongod-3.0.7) be-mean> db.pokemons.find({types: 'fire'}).count()
