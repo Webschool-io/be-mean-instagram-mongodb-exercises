@@ -3,20 +3,22 @@ autor: Joao Paulo Henrique Siqueira
 
 ## **Adicionar** 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
 ```
-var query = {$or:[{name:/pikachu/i}, {name:/squirtle/i}, {name:/bulbassauro/i}, {name:/charmander/i}]}
+var query = {name: /Pikachu/i}
+var mod = {$pushAll:{moves:['esfera eletrica', ' investida do trovão']}};
+db.pokemons.update(query,mod)
 
-var mod = {$pushAll:{moves:["ataque de fúria","ataque rápido"]}}
 
+var query = { name: /Squirtle/i}
+var mod = {$pushAll:{moves:['raio de gelo', 'giro rápido']}}
+db.pokemons.update(query,mod)
 
-var options = {multi:true}
+var query = {name: /Bulbassauro/i}
+var mod = {$pushAll:{moves:['raio solar', 'dança das pétalas']}}
+db.pokemons.update(query,mod)
 
-db.pokemons.update(query,mod,options)
-Updated 4 existing record(s) in 3ms
-WriteResult({
-  "nMatched": 4,
-  "nUpserted": 0,
-  "nModified": 4
-})
+var query = {name:/Charmander/i}
+var mod = {$pushAll:{moves:['brasas',  'encarar']}}
+db.pokemons.update(query,mod)
 
 
 ```
@@ -49,6 +51,7 @@ var query = {"name": /AindaNaoExisteMon/i}
 var mod = {setOnInsert:{"name":"AindaNaoExisteMon"
 	,attack:null
 	,defense:null
+	,type:null
 	,height:null
 	,"description":"Sem maiores descrições"
 	}}
@@ -68,37 +71,9 @@ WriteResult({
 
 ## Pesquisar todos o pokemons que possuam o ataque `investida` e mais um que você adicionou, escolha seu pokemon favorito.##
 ```
+ var query = {moves:{$in:['investida', 'brasas']}}
+db.pokemons.find(query);
 
- var query = {moves:{$all:['investida','furia']} }
- db.pokemons.find(query)	
-
-{
-  "_id": ObjectId("5642af03ef0bc6adde3ae402"),
-  "name": "Charmander",
-  "description": "Esse é o cão chupando manga de fofinho",
-  "type": "fogo",
-  "attack": 52,
-  "height": 0.6,
-  "moves": [
-    "desvio",
-    "investida",
-    "furia"
-  ]
-}
-{
-  "_id": ObjectId("5642af35ef0bc6adde3ae403"),
-  "name": "Squirtle",
-  "description": "Ejeta agua que passarinho não bebe",
-  "type": "agua",
-  "attack": 48,
-  "height": 0.5,
-  "active": true,
-  "moves": [
-    "desvio",
-    "investida",
-    "furia"
-  ]
-}
 {
   "_id": ObjectId("5642b4066aeb57418bf00ea8"),
   "nome": "Caterpie",
@@ -108,102 +83,37 @@ WriteResult({
   "height": 0.3,
   "defense": 35,
   "moves": [
-    "desvio",
-    "investida",
-    "furia"
-  ]
-}
-{
-  "_id": ObjectId("564f1cc667a7e09ab46aed0b"),
-  "active": true,
-  "name": "NaoExisteMon",
-  "attack": null,
-  "defense": null,
-  "height": null,
-  "description": "Sem maiores informações",
-  "moves": [
-    "desvio",
-    "investida",
-    "furia"
-  ]
-}
-{
-  "_id": ObjectId("564f204d67a7e09ab46aed0c"),
-  "evolui": false,
-  "name": "Raichu",
-  "attack": 61,
-  "defense": 62,
-  "height": 1.5,
-  "description": "Rato eletrico amarelo",
-  "moves": [
-    "desvio",
-    "investida",
-    "furia"
-  ]
+    "investida"
+  ],
+  "active": true
 }
 {
   "_id": ObjectId("5642ac818e669fee4a0ba12b"),
   "name": "Pikachu",
   "description": "Rato elétrico bem fofinho",
   "type": "eletric",
-  "attack": 55,
-  "height": 0.4,
-  "active": true,
-  "evolui": false,
-  "moves": [
-    "desvio",
-    "investida",
-    "furia"
-  ]
-}
-{
-  "_id": ObjectId("564f32bf67a7e09ab46aed0d"),
-  "name": "AindaNaoExisteMon",
-  "attack": null,
-  "defense": null,
-  "height": null,
-  "description": "Sem maiores informações",
-  "moves": [
-    "investida",
-    "furia"
-  ]
-}
-Fetched 7 record(s) in 4ms
-
-## Pesquisar **todos** os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.##
-```
-var query = { moves: { $in: [/ataque rápido
-/i] }}
-db.pokemons.find(query)
-
-{
-  "_id": ObjectId("5642ac818e669fee4a0ba12b"),
-  "name": "Pikachu",
-  "description": "Rato elétrico bem fofinho",
-  "type": "eletric",
-  "attack": 55,
+  "attack": 120,
   "height": 0.4,
   "active": true,
   "evolui": false,
   "moves": [
     "investida",
     "ataque de fúria",
-    "ataque rápido"
+    "ataque rápido",
+    "esfera eletrica",
+    " investida do trovão"
   ]
 }
 {
-  "_id": ObjectId("564fc53d10fc1478a0915a95"),
-  "name": "Bulbassauro",
+  "_id": ObjectId("564fba16b485edb26742988e"),
+  "name": "Dratini",
   "active": true,
-  "type": "grama",
   "attack": 60,
   "defense": 20,
   "height": 2.1,
-  "description": "Chicoteador",
+  "description": "Sem maiores informações",
   "moves": [
-    "investida",
-    "ataque de fúria",
-    "ataque rápido"
+    "investida"
   ]
 }
 {
@@ -218,7 +128,26 @@ db.pokemons.find(query)
   "moves": [
     "investida",
     "ataque de fúria",
-    "ataque rápido"
+    "ataque rápido",
+    "raio de gelo",
+    "giro rápido"
+  ]
+}
+{
+  "_id": ObjectId("564fc53d10fc1478a0915a95"),
+  "name": "Bulbassauro",
+  "active": true,
+  "type": "grama",
+  "attack": 60,
+  "defense": 20,
+  "height": 2.1,
+  "description": "Chicoteador",
+  "moves": [
+    "investida",
+    "ataque de fúria",
+    "ataque rápido",
+    "raio solar",
+    "dança das pétalas"
   ]
 }
 {
@@ -233,10 +162,38 @@ db.pokemons.find(query)
   "moves": [
     "investida",
     "ataque de fúria",
-    "ataque rápido"
+    "ataque rápido",
+    "brasas",
+    "encarar"
   ]
 }
-Fetched 4 record(s) in 1ms
+
+
+```
+
+## Pesquisar **todos** os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.##
+```
+var query = {moves:{$all:[/'investida'/i, /'brasas'/i]}}
+
+db.pokemons.find(query)
+
+{
+  "_id": ObjectId("565067d910fc1478a0915a97"),
+  "name": "Charmander",
+  "active": true,
+  "type": "fogo",
+  "attack": 62,
+  "defense": 50,
+  "height": 2.8,
+  "description": "Dragao de fogo",
+  "moves": [
+    "investida",
+    "ataque de fúria",
+    "ataque rápido",
+    "brasas",
+    "encarar"
+  ]
+}
 
 ```
 
@@ -304,7 +261,8 @@ db.pokemons.find(query)
 
 ## Pesquisar **todos** os pokemons que tenham o ataque `investida` **E** tenham a defesa **não menor ou igual** a 49.##
 ```
- var query = {$and:[{moves:{$in:[/investida/i]}},{defense:{$gte:49}}]}
+ var query = {$and:[{moves:{$in:[/investida/i]}},{defense:
+{$not:{$lte:49}}]}
 	
  db.pokemons.find(query)
 
@@ -354,9 +312,6 @@ db.pokemons.find(query)
 }
 Fetched 3 record(s) in 3ms
 
-
-
-
 ```
 
 ## Remova **todos** os pokemons do tipo água e com attack menor que 50.
@@ -371,3 +326,17 @@ WriteResult({
 
 
 ```
+
+
+
+## Diferença entre operadores '$ne' e '$not'
+
+```
+A principal diferença entre esses operadores é $ne precisa que os documentos tenham aquele campo, diferente do $not.
+
+$ne não aceita regex!;
+$not aceita.
+
+
+```
+
