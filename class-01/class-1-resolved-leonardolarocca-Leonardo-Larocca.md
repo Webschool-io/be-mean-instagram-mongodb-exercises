@@ -1,5 +1,5 @@
 # MongoDB - Aula 01 - Exercício
-autor: Leonardo Larocca
+ Autor: Leonardo Larocca
 
 ## Importando os restaurantes
 
