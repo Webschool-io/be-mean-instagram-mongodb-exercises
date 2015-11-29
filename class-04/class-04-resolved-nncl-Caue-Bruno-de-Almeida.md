@@ -441,7 +441,7 @@ Fetched 8 record(s) in 4ms
 ## 7. Pesquisar todos pokemons que tenham o ataque `investida` **E** tenham defesa **não menor ou igual** a 49.
 
 ```
-var query = { $and : [{ attack : {$in : [/investida/i ]}, defense : {$lte : 49} }] }
+var query = { $and : [{ attack : {$in : [/investida/i ]}, attack : {$not : {$lte : 49}} }] }
 
 be-mean-pokemons> db.pokemons.find(query)
 Fetched 0 record(s) in 0ms
@@ -454,4 +454,16 @@ var query = { $and : [ {type : 'water'}, {attack : {$lt : 50}} ] }
 
 be-mean-pokemons> db.pokemons.find(query)
 Fetched 0 record(s) in 0ms
+
+be-mean-pokemons> db.pokemons.remove(query)
+Removed 0 record(s) in 577ms
+WriteResult({
+  "nRemoved": 0
+})
 ```
+
+## 9. Esse item não está no vídeo e se você fizer significa que você lê as coisas, nesse exercício demonstre qual a diferença entre os operadores $ne e $not.
+
+O `$not` nega a expressão que você vai escrever. Então é tipo um `if (!true)`.
+
+Já o `$ne` vai recuperar os documentos cujo o valor seja diferente do passado como parâmetro.
