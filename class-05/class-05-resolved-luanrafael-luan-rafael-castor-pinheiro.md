@@ -135,28 +135,6 @@ ubuntu-luan(mongod-3.0.7) be-mean> db.pokemons.distinct('types')
 
 ## 4. As primeiras 3 páginas com .limit() e .skip() de pokemons (5 em 5)
 ```
-ubuntu-luan(mongod-3.0.7) be-mean> db.pokemons.find({},{name: 1}).limit(5).skip(0)
-{
-  "_id": ObjectId("564b1dad25337263280d0479"),
-  "name": "Rattata"
-}
-{
-  "_id": ObjectId("564b1dad25337263280d047a"),
-  "name": "Charmander"
-}
-{
-  "_id": ObjectId("564b1dad25337263280d047b"),
-  "name": "Charmeleon"
-}
-{
-  "_id": ObjectId("564b1dad25337263280d047c"),
-  "name": "Wartortle"
-}
-{
-  "_id": ObjectId("564b1dad25337263280d047d"),
-  "name": "Blastoise"
-}
-Fetched 5 record(s) in 33ms
 ubuntu-luan(mongod-3.0.7) be-mean> db.pokemons.find({},{name: 1}).limit(5).skip(1)
 {
   "_id": ObjectId("564b1dad25337263280d047a"),
@@ -178,8 +156,16 @@ ubuntu-luan(mongod-3.0.7) be-mean> db.pokemons.find({},{name: 1}).limit(5).skip(
   "_id": ObjectId("564b1dad25337263280d047e"),
   "name": "Caterpie"
 }
-Fetched 5 record(s) in 1ms
-ubuntu-luan(mongod-3.0.7) be-mean> db.pokemons.find({},{name: 1}).limit(5).skip(2)
+Fetched 5 record(s) in 3ms
+ubuntu-luan(mongod-3.0.7) be-mean> db.pokemons.find({},{name: 1}).limit(5).skip(5*0)
+{
+  "_id": ObjectId("564b1dad25337263280d0479"),
+  "name": "Rattata"
+}
+{
+  "_id": ObjectId("564b1dad25337263280d047a"),
+  "name": "Charmander"
+}
 {
   "_id": ObjectId("564b1dad25337263280d047b"),
   "name": "Charmeleon"
@@ -192,6 +178,32 @@ ubuntu-luan(mongod-3.0.7) be-mean> db.pokemons.find({},{name: 1}).limit(5).skip(
   "_id": ObjectId("564b1dad25337263280d047d"),
   "name": "Blastoise"
 }
+Fetched 5 record(s) in 1ms
+ubuntu-luan(mongod-3.0.7) be-mean> cls
+
+ubuntu-luan(mongod-3.0.7) be-mean> db.pokemons.find({},{name: 1}).limit(5).skip(5*0)
+{
+  "_id": ObjectId("564b1dad25337263280d0479"),
+  "name": "Rattata"
+}
+{
+  "_id": ObjectId("564b1dad25337263280d047a"),
+  "name": "Charmander"
+}
+{
+  "_id": ObjectId("564b1dad25337263280d047b"),
+  "name": "Charmeleon"
+}
+{
+  "_id": ObjectId("564b1dad25337263280d047c"),
+  "name": "Wartortle"
+}
+{
+  "_id": ObjectId("564b1dad25337263280d047d"),
+  "name": "Blastoise"
+}
+Fetched 5 record(s) in 0ms
+ubuntu-luan(mongod-3.0.7) be-mean> db.pokemons.find({},{name: 1}).limit(5).skip(5*1)
 {
   "_id": ObjectId("564b1dad25337263280d047e"),
   "name": "Caterpie"
@@ -200,7 +212,42 @@ ubuntu-luan(mongod-3.0.7) be-mean> db.pokemons.find({},{name: 1}).limit(5).skip(
   "_id": ObjectId("564b1dad25337263280d047f"),
   "name": "Metapod"
 }
-Fetched 5 record(s) in 3ms
+{
+  "_id": ObjectId("564b1dad25337263280d0480"),
+  "name": "Butterfree"
+}
+{
+  "_id": ObjectId("564b1dad25337263280d0481"),
+  "name": "Spearow"
+}
+{
+  "_id": ObjectId("564b1dad25337263280d0482"),
+  "name": "Kakuna"
+}
+Fetched 5 record(s) in 1ms
+ubuntu-luan(mongod-3.0.7) be-mean> db.pokemons.find({},{name: 1}).limit(5).skip(5*2)
+{
+  "_id": ObjectId("564b1dae25337263280d0483"),
+  "name": "Farfetchd"
+}
+{
+  "_id": ObjectId("564b1dae25337263280d0484"),
+  "name": "Magnemite"
+}
+{
+  "_id": ObjectId("564b1dae25337263280d0485"),
+  "name": "Magneton"
+}
+{
+  "_id": ObjectId("564b1dae25337263280d0486"),
+  "name": "Doduo"
+}
+{
+  "_id": ObjectId("564b1dae25337263280d0487"),
+  "name": "Seel"
+}
+Fetched 5 record(s) in 1ms
+
 
 ```
 
