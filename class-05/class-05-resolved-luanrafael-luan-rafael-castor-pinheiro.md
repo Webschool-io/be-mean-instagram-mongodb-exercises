@@ -135,52 +135,6 @@ ubuntu-luan(mongod-3.0.7) be-mean> db.pokemons.distinct('types')
 
 ## 4. As primeiras 3 páginas com .limit() e .skip() de pokemons (5 em 5)
 ```
-ubuntu-luan(mongod-3.0.7) be-mean> db.pokemons.find({},{name: 1}).limit(5).skip(1)
-{
-  "_id": ObjectId("564b1dad25337263280d047a"),
-  "name": "Charmander"
-}
-{
-  "_id": ObjectId("564b1dad25337263280d047b"),
-  "name": "Charmeleon"
-}
-{
-  "_id": ObjectId("564b1dad25337263280d047c"),
-  "name": "Wartortle"
-}
-{
-  "_id": ObjectId("564b1dad25337263280d047d"),
-  "name": "Blastoise"
-}
-{
-  "_id": ObjectId("564b1dad25337263280d047e"),
-  "name": "Caterpie"
-}
-Fetched 5 record(s) in 3ms
-ubuntu-luan(mongod-3.0.7) be-mean> db.pokemons.find({},{name: 1}).limit(5).skip(5*0)
-{
-  "_id": ObjectId("564b1dad25337263280d0479"),
-  "name": "Rattata"
-}
-{
-  "_id": ObjectId("564b1dad25337263280d047a"),
-  "name": "Charmander"
-}
-{
-  "_id": ObjectId("564b1dad25337263280d047b"),
-  "name": "Charmeleon"
-}
-{
-  "_id": ObjectId("564b1dad25337263280d047c"),
-  "name": "Wartortle"
-}
-{
-  "_id": ObjectId("564b1dad25337263280d047d"),
-  "name": "Blastoise"
-}
-Fetched 5 record(s) in 1ms
-ubuntu-luan(mongod-3.0.7) be-mean> cls
-
 ubuntu-luan(mongod-3.0.7) be-mean> db.pokemons.find({},{name: 1}).limit(5).skip(5*0)
 {
   "_id": ObjectId("564b1dad25337263280d0479"),
