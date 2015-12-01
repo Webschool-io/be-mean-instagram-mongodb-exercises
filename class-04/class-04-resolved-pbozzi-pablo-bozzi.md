@@ -1,7 +1,7 @@
 # MongoDB - Aula 04 - Exercício
 autor: **PABLO BOZZI FLORES OLIVEIRA**
 
-## Todos os pokemons
+## 1. Todos os pokemons
 ```
 mean(mongod-3.0.7) be-mean> var query={}
 mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
@@ -80,7 +80,7 @@ mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
 Fetched 6 record(s) in 18ms
 ```
 
-## Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pickachu, Squirtle, Bulbassauro e Charmander
+## 2. Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pickachu, Squirtle, Bulbassauro e Charmander
 ```
 mean(mongod-3.0.7) be-mean> var query={$or:[{name:/pikachu/i},{name:/squirtle/i},{name:/bulbassauro/i},{name:/charmander/i}]};
 mean(mongod-3.0.7) be-mean> var mod={$pushAll:{moves:['ataque1','ataque2']}};
@@ -141,7 +141,7 @@ mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
 Fetched 3 record(s) in 2ms
 ```
 
-## Adicionar 1 movimento em todos os pokemons: desvio
+## 3. Adicionar 1 movimento em todos os pokemons: desvio
 ```
 mean(mongod-3.0.7) be-mean> var query={}
 mean(mongod-3.0.7) be-mean> var mod={$push:{moves:'desvio'}}
@@ -241,7 +241,7 @@ mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
 Fetched 6 record(s) in 4ms
 ```
 
-## Adicionar o pokemon AindaNaoExisteMon caso ele não exista com todos os dados com valor null e a descrição: Sem maiores informações
+## 4. Adicionar o pokemon AindaNaoExisteMon caso ele não exista com todos os dados com valor null e a descrição: Sem maiores informações
 ```
 mean(mongod-3.0.7) be-mean> var query={name:/AindaNaoExisteMon/i}
 mean(mongod-3.0.7) be-mean> var mod={$setOnInsert:{name:'AindaNaoExisteMon',attack:null,height:null,defense:null,moves:null,description:'Sem maiores informações'}}
@@ -267,7 +267,7 @@ mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
 Fetched 1 record(s) in 1ms
 ```
 
-## Pesquisar todos os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito
+## 5. Pesquisar todos os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito
 ```
 mean(mongod-3.0.7) be-mean> var query={moves:{$in:['ataque1','ataque2']}}
 mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
@@ -322,7 +322,7 @@ mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
 Fetched 3 record(s) in 2ms
 ```
 
-## Pesquisar todos os pokemons que não são do tipo 'elétrico'
+## 6. Pesquisar todos os pokemons que não são do tipo 'elétrico'
 ```
 mean(mongod-3.0.7) be-mean> var query={type:{$not:/eletric/i}}
 mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
@@ -408,7 +408,7 @@ mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
 Fetched 6 record(s) in 2ms
 ```
 
-## Pesquisar todos os pokemons que tenham o ataque 'investida' e tenham a defesa não menor ou igual a 49
+## 7. Pesquisar todos os pokemons que tenham o ataque 'investida' e tenham a defesa não menor ou igual a 49
 ```
 mean(mongod-3.0.7) be-mean> var query={$and:[{moves:{$in:[/investida/i]}},{defense:{$gt:49}}]}
 mean(mongod-3.0.7) be-mean> query
@@ -432,7 +432,7 @@ mean(mongod-3.0.7) be-mean> db.pokemons.find(query)
 Fetched 0 record(s) in 0ms
 ```
 
-## Remova todos os pokemons do tipo 'água' e com ataque menor que 50
+## 8. Remova todos os pokemons do tipo 'água' e com ataque menor que 50
 ```
 mean(mongod-3.0.7) be-mean> var query={$and:[{type:/água/i},{attack:{$lt:50}}]}
 mean(mongod-3.0.7) be-mean> query
@@ -454,3 +454,28 @@ WriteResult({
   "nRemoved": 1
 })
 ```
+
+## 9. Diferença entre os operadores `$ne` e `$not`
+
+O operador `$not` é o operador lógico **NÃO**, logo ele nega uma expressão. 
+Sintaxe: { <campo>: { $not: { <expressão> } } }
+Ex:
+
+### 9.1. Quantidade de pokemons cuja defesa NÃO é menor que 75
+```
+mean(mongod-3.0.7) be-mean> db.pokemons.count({defense:{$not:{$lt:75}}})
+244
+```
+
+Logo 244 de 610 pokemons possuem defesa maior ou igual a 75.
+
+Já o operador `$ne` seleciona os documentos onde o valor do campo não é igual (**!=**) ao valor especificado.
+Sintaxe: db.pokemons.find( { <campo>: { $ne: <valor> } } )
+
+### 9.2. Quantidade de pokemons cuja defesa é diferente de 75
+```
+mean(mongod-3.0.7) be-mean> db.pokemons.count({defense:{$ne:75}})
+590
+```
+
+Logo 590 de 610 pokemons possuem defesa diferente de 75.
