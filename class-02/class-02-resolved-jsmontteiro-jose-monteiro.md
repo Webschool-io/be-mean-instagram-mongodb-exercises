@@ -5,23 +5,25 @@ autor: José Maria monteiro Junior
 use be-mean-pokemons
 
 ## Listagem das databases (passo 2)
+```
 show dbs
 be-mean-pokemons  → 0.078GB
 be-mean-instagram → 0.078GB
 be-mean-teste     → 0.078GB
 local             → 0.078GB
 be-mean           → 0.078GB
-
+```
 
 ## Listagem das coleções (passo 3)
-
+```
 show collections
 pokemons       → 0.027MB / 0.039MB
 system.indexes → 0.000MB / 0.008MB
-
+```
 
 ## Cadastro dos pokemons (passo 4)
 
+```
 var pokemons = [{"name": "Bulbasaur", "description": "The seed on its back is filled with nutrients. The seed grows steadily larger as its body grows.", "type": "poison/grass", "attack": 49, "height": 7, "defense": 49},
 {"name": "Ivysaur", "description": "The bulb on its back grows as it absorbs nutrients. The bulb gives off a pleasant aroma when it blooms.", "type": "poison/grass", "attack": 62, "height": 10, "defense": 63},
 {"name": "Venusaur", "description": "It is able to con vert sunlight into energy. As a result, it is more powerful in the summertime.", "type": "poison/grass", "attack": 82, "height": 20, "defense": 83},
@@ -124,10 +126,10 @@ var pokemons = [{"name": "Bulbasaur", "description": "The seed on its back is fi
 {"name": "Voltorb", "description": "It was discovered when POK BALLS were introduced. It is said that there is some connection.", "type": "electric", "attack": 30, "height": 5, "defense": 50}]
 
 db.pokemons.save(pokemons)
-
+```
 
 ## Lista dos pokemons (passo 5)
-
+```
 db.pokemons.find()
 {
   "_id": ObjectId("5660887d6cd102947b0c1598"),
@@ -174,11 +176,13 @@ db.pokemons.find()
   "height": 11,
   "defense": 58
 }
+
+```
 ...........
 
 
 ## Buscar Pokemon (passo 6)
-
+```
 var poke = db.pokemons.findOne({"name":"Charizard"})
 poke
 {
@@ -190,10 +194,10 @@ poke
   "height": 17,
   "defense": 78
 }
-
+```
 
 ## Atualização do Pokemon (passo 7)
-
+```
 db.pokemons.update(poke,{$set:{"description":"A porra do pokemon mais foda de todos"}})
 Updated 1 existing record(s) in 1ms
 WriteResult({
@@ -212,6 +216,7 @@ db.pokemons.findOne({"name":"Charizard"})
   "height": 17,
   "defense": 78
 }
+```
 
 
 
