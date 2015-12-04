@@ -359,7 +359,7 @@ mean(mongod-3.0.7) be-mean> db.pokemons.find().limit(5).skip(5*2)
 Fetched 5 record(s) in 2ms
 ```
 
-## 5 . Group ou Aggregate contando a quantidade de pokemons de cada tipo
+## 5. Group ou Aggregate contando a quantidade de pokemons de cada tipo
 ### 5.1. Group
 ```js
 mean(mongod-3.0.7) be-mean> db.pokemons.group({
@@ -398,6 +398,93 @@ mean(mongod-3.0.7) be-mean> db.pokemons.group({
     "dragon": 20
   }
 ]
+```
+### 5.2. Aggregate
+```js
+mean(mongod-3.0.7) be-mean> db.pokemons.aggregate([
+...     {$unwind: '$types'},
+...     {$group: {
+...         _id: '$types',
+...         count:{$sum:1}
+...     }}
+... ]);
+{
+  "result": [
+    {
+      "_id": "fairy",
+      "count": 28
+    },
+    {
+      "_id": "psychic",
+      "count": 62
+    },
+    {
+      "_id": "fighting",
+      "count": 38
+    },
+    {
+      "_id": "dark",
+      "count": 38
+    },
+    {
+      "_id": "ground",
+      "count": 51
+    },
+    {
+      "_id": "grass",
+      "count": 75
+    },
+    {
+      "_id": "electric",
+      "count": 40
+    },
+    {
+      "_id": "steel",
+      "count": 37
+    },
+    {
+      "_id": "rock",
+      "count": 46
+    },
+    {
+      "_id": "flying",
+      "count": 77
+    },
+    {
+      "_id": "fire",
+      "count": 47
+    },
+    {
+      "_id": "ice",
+      "count": 24
+    },
+    {
+      "_id": "bug",
+      "count": 61
+    },
+    {
+      "_id": "poison",
+      "count": 54
+    },
+    {
+      "_id": "ghost",
+      "count": 34
+    },
+    {
+      "_id": "dragon",
+      "count": 20
+    },
+    {
+      "_id": "water",
+      "count": 105
+    },
+    {
+      "_id": "normal",
+      "count": 78
+    }
+  ],
+  "ok": 1
+}
 ```
 
 ## 6. Realizar 3 counts na pokemons.

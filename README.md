@@ -1,5 +1,11 @@
 # MongoDb - Exercícios
 
+## O Envio
+
+Caso você faça um `pull` antes de fazer o seu `Pull Request` por favor **COMMMITE APENAS SEU ARQUIVO, NÃO FAÇA `git add .`!!**
+
+**Faça: `git add nome_do_meu_arquivo.md`**
+
 ## Padrão do arquivo
 
 Favor sempre usar: class-X-resolved-githubuser-nome-completo-com-hifens.md
