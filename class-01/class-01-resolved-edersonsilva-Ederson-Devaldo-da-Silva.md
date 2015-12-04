@@ -1,5 +1,5 @@
 # MongoDB - Aula 01 - Exercício
-autor: EDERSON DEVALDO DA SILVA
+autor: Ederson Devaldo da Silva
 
 ## Importando os restaurantes
 ```
@@ -13,4 +13,4 @@ mongoimport --host=127.0.0.1 -d be-mean -c restaurantes --drop --file restaurant
 ```
 > db.restaurantes.find({}).count()
 25359
-``
+```
