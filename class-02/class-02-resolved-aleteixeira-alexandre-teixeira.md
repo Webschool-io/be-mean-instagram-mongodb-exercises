@@ -40,20 +40,20 @@ switched to db be-mean-pokemons
 
 ```
     var pokens = [
-            {name: "Charizard", description: "Fire", attack: 84, defense: 78, heigth: 1.70},
-            {name:'Gengar',description:'Fantasma bolado',atack:30,defense:55,height:0.5},
-            {name: "Butterfree", description: "Flying", attack: 45, defense: 50, heigth: 1.09},
-            {name:'Alakazam',description:'Macumbeiro',atack:40,defense:20,height:0.8},
-            {name: "Pidgeot", description: "Flying", attack: 80, defense: 75, heigth: 1.50},
-            {name:'Salamancer',description:'Dragao crazy',atack:300,defense:140,height:3.0},
-            {name:'Infernape',description:'Macaco em chamas',atack:300,defense:130,height:1.0},
-            {'name':'Onyx','description':'Pedra no formato fálico','type': 'preda', attack: 200, height: 50 },
-            {name: "Rattatá", description: "Normal", attack: 56, defense: 35, heigth: 0.30},
-            {'name':'Ratata','description':'The Better - PowerFull','type': 'terra', attack: 10000, height: 15 }
+            {name: "Charizard", description: "Dragão Voador guspidor de fogo", type: "Fogo", attack: 84, defense: 78, height: 1.70},
+            {name: "Squirtle", description: "Tartaruga Azul", type: "Água", attack: 48 , defense: 65 , height: 0.51},
+            {name: "Caterpie", description: "Bixinho/Larva verde feinho", type: "Fogo", attack: 30, defense:  35, height: 0.30},
+            {name: "Pikachu", description: "Pestinha Amarela", type: "Elétrico", attack: 55, defense: 40, height: 0.41},
+            {name: "Lugia", description: "Chavier dos Pokemons", type: "Telepático/Voador", attack: 90, defense: 130, height: 5.21},
+            {name: "Kyurem", description: "Dragão de Gelo imune a fogo", type: "Dragão/Gelo", attack: 130, defense: 90, height: 3.00},
+            {name: "Dialga", description: "Dragão Temporal de Aço", type: "Aço/Dragão", attack: 120, defense: 120, height: 5.41},
+            {name: "Bulbasaur", description: "Bichinho verde", type: "Grama", attack: 49, defense: 49, height: 0.71},
+            {name: "Victreebel", description: "Mato..rs", type: "Grama", attack: 105, defense: 65, height: 1.7},
+            {name: "Litwick", description: "Vla monstro!!!", type: "Fantasma/fogo", attack: 30, defense: 55, height: 0.3}
     ]
 
-  db.pokemons.insert(pokens)
- Inserted 1 record(s) in 7ms
+be-mean-pokemons> db.pokemons.insert(pokens)
+Inserted 1 record(s) in 30ms
 BulkWriteResult({
   "writeErrors": [ ],
   "writeConcernErrors": [ ],
@@ -66,6 +66,7 @@ BulkWriteResult({
 })
 
 
+
 ```
 
 
@@ -73,123 +74,132 @@ BulkWriteResult({
 
 ```
 be-mean-pokemons> db.pokemons.find()
-
 {
-  "_id": ObjectId("564747b3962d90a43db33c61"),
+  "_id": ObjectId("5648c94d001565661f1fc504"),
   "name": "Charizard",
-  "description": "Fire",
+  "description": "Dragão Voador guspidor de fogo",
+  "type": "Fogo",
   "attack": 84,
   "defense": 78,
-  "heigth": 1.7
+  "height": 1.7
 }
 {
-  "_id": ObjectId("564747b3962d90a43db33c62"),
-  "name": "Gengar",
-  "description": "Fantasma bolado",
-  "atack": 30,
-  "defense": 55,
-  "height": 0.5
+  "_id": ObjectId("5648c94d001565661f1fc505"),
+  "name": "Squirtle",
+  "description": "Tartaruga Azul",
+  "type": "Água",
+  "attack": 48,
+  "defense": 65,
+  "height": 0.51
 }
 {
-  "_id": ObjectId("564747b3962d90a43db33c63"),
-  "name": "Butterfree",
-  "description": "Flying",
-  "attack": 45,
-  "defense": 50,
-  "heigth": 1.09
+  "_id": ObjectId("5648c94d001565661f1fc506"),
+  "name": "Caterpie",
+  "description": "Bixinho/Larva verde feinho",
+  "type": "Fogo",
+  "attack": 30,
+  "defense": 35,
+  "height": 0.3
 }
 {
-  "_id": ObjectId("564747b3962d90a43db33c64"),
-  "name": "Alakazam",
-  "description": "Macumbeiro",
-  "atack": 40,
-  "defense": 20,
-  "height": 0.8
+  "_id": ObjectId("5648c94d001565661f1fc507"),
+  "name": "Pikachu",
+  "description": "Pestinha Amarela",
+  "type": "Elétrico",
+  "attack": 55,
+  "defense": 40,
+  "height": 0.41
 }
 {
-  "_id": ObjectId("564747b3962d90a43db33c65"),
-  "name": "Pidgeot",
-  "description": "Flying",
-  "attack": 80,
-  "defense": 75,
-  "heigth": 1.5
+  "_id": ObjectId("5648c94d001565661f1fc508"),
+  "name": "Lugia",
+  "description": "Chavier dos Pokemons",
+  "type": "Telepático/Voador",
+  "attack": 90,
+  "defense": 130,
+  "height": 5.21
 }
 {
-  "_id": ObjectId("564747b3962d90a43db33c66"),
-  "name": "Salamancer",
-  "description": "Dragao crazy",
-  "atack": 300,
-  "defense": 140,
+  "_id": ObjectId("5648c94d001565661f1fc509"),
+  "name": "Kyurem",
+  "description": "Dragão de Gelo imune a fogo",
+  "type": "Dragão/Gelo",
+  "attack": 130,
+  "defense": 90,
   "height": 3
 }
 {
-  "_id": ObjectId("564747b3962d90a43db33c67"),
-  "name": "Infernape",
-  "description": "Macaco em chamas",
-  "atack": 300,
-  "defense": 130,
-  "height": 1
+  "_id": ObjectId("5648c94d001565661f1fc50a"),
+  "name": "Dialga",
+  "description": "Dragão Temporal de Aço",
+  "type": "Aço/Dragão",
+  "attack": 120,
+  "defense": 120,
+  "height": 5.41
 }
 {
-  "_id": ObjectId("564747b3962d90a43db33c68"),
-  "name": "Onyx",
-  "description": "Pedra no formato fálico",
-  "type": "preda",
-  "attack": 200,
-  "height": 50
+  "_id": ObjectId("5648c94d001565661f1fc50b"),
+  "name": "Bulbasaur",
+  "description": "Bichinho verde",
+  "type": "Grama",
+  "attack": 49,
+  "defense": 49,
+  "height": 0.71
 }
 {
-  "_id": ObjectId("564747b3962d90a43db33c69"),
-  "name": "Rattatá",
-  "description": "Normal",
-  "attack": 56,
-  "defense": 35,
-  "heigth": 0.3
+  "_id": ObjectId("5648c94d001565661f1fc50c"),
+  "name": "Victreebel",
+  "description": "Mato..rs",
+  "type": "Grama",
+  "attack": 105,
+  "defense": 65,
+  "height": 1.7
 }
 {
-  "_id": ObjectId("564747b3962d90a43db33c6a"),
-  "name": "Ratata",
-  "description": "The Better - PowerFull",
-  "type": "terra",
-  "attack": 10000,
-  "height": 15
+  "_id": ObjectId("5648c94d001565661f1fc50d"),
+  "name": "Litwick",
+  "description": "Vla monstro!!!",
+  "type": "Fantasma/fogo",
+  "attack": 30,
+  "defense": 55,
+  "height": 0.3
 }
-Fetched 10 record(s) in 5ms
+Fetched 10 record(s) in 4ms
+
 
 ```
 
 ## 6. Busque o pokemons a sua escolha, pelo nome, e armazene-o em uma variável chamada `poke`;
 
 ```
-    var query  = {"name":"Ratata"}
+be-mean-pokemons> var query  = {"name":"Dialga"}
+be-mean-pokemons> var poke = db.pokemons.findOne(query)
+be-mean-pokemons> poke
+{
+  "_id": ObjectId("5648c94d001565661f1fc50a"),
+  "name": "Dialga",
+  "description": "Dragão Temporal de Aço",
+  "type": "Aço/Dragão",
+  "attack": 120,
+  "defense": 120,
+  "height": 5.41
+}
 
-    var poke = db.pokemons.findOne(query)
-
-    alexandre-System-Product-Name(mongod-3.0.7) be-mean-pokemons> poke
-    {
-      "_id": ObjectId("56474cccc94b7d95f36a6353"),
-      "name": "Ratata",
-      "description": "The Better - PowerFull",
-      "type": "terra",
-      "attack": 10000,
-      "height": 15
-    }
 ```
 
 ## Atualizar o Poke
 
 ```
-alexandre-System-Product-Name(mongod-3.0.7) be-mean-pokemons> poke.description
-The Better - PowerFull
-
-alexandre-System-Product-Name(mongod-3.0.7) be-mean-pokemons> poke.description = "O melhor - Fodão"
-O melhor - Fodão
-
-alexandre-System-Product-Name(mongod-3.0.7) be-mean-pokemons> db.pokemons.save(poke)
-Updated 1 existing record(s) in 33ms
+be-mean-pokemons> poke.description
+Dragão Temporal de Aço
+be-mean-pokemons> poke.description = "Dragão de Aço que viaja no tempo"
+Dragão de Aço que viaja no tempo
+be-mean-pokemons> db.pokemons.save(poke)
+Updated 1 existing record(s) in 2ms
 WriteResult({
   "nMatched": 1,
   "nUpserted": 0,
   "nModified": 1
 })
+
 ```
