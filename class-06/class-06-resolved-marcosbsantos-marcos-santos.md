@@ -306,4 +306,6 @@ db.pokemons.createIndex({attack:1,defense:1})
   },
   "ok": 1
 }
+
+
  
