@@ -1,22 +1,26 @@
 ```md
 # MongoDB - Aula 02 - Exercício
+```
 autor: JOSÉ CARLOS DA SILVA DE CARVALHO	
-
+```
 ## Listagem das databases (passo 2)
+```
 carlos-pc(mongod-2.4.9) be-mean-pokemons> show dbs
 be-mean-pokemons   0.203GB
 local              0.078GB
 be-mean-instagram  0.203GB
 database           0.203GB
 bemean             0.203GB
-
+```
 ## Listagem das coleções (passo 3)
+```
 carlos-pc(mongod-2.4.9) be-mean-pokemons> show collections
 pokemons        0.000MB / 0.012MB
 system.indexes  0.000MB / 0.008MB
-
+```
 ## Cadastro dos pokemons (passo 4)
-carlos-pc(mongod-2.4.9) be-mean-pokemons> db.pokemons.insert({name: "Hitmonlee", description: "Lutador com chute potente", attack: 120, defence: 80, height: 1.5})
+```
+carlos-pc(mongod-2.4.9) be-mean-pokemons> db.pokemons.insert({name: 'Hitmonlee', description: "Lutador com chute potente", attack: 120, defence: 80, height: 1.5})
 Inserted 1 record(s) in 1ms
 carlos-pc(mongod-2.4.9) be-mean-pokemons> db.pokemons.insert({name: "Raichu", description: "Rato gigante, a evolução do pickachu", attack: 90, defence: 50, height: 0.8})
 Inserted 1 record(s) in 1ms
@@ -30,9 +34,10 @@ carlos-pc(mongod-2.4.9) be-mean-pokemons> db.pokemons.insert({name: "Exeggcute",
 Inserted 1 record(s) in 1ms
 carlos-pc(mongod-2.4.9) be-mean-pokemons> db.pokemons.insert({name: "Cubone", description: "Bixinho de pelúcia com uma caveira na cabeça", attack: 30, defence: 40, height: 0.4})
 Inserted 1 record(s) in 1ms
-
+```
 
 ## Lista dos pokemons (passo 5)
+```
 carlos-pc(mongod-2.4.9) be-mean-pokemons> db.pokemons.find()
 '{
   "_id": ObjectId("565fb437096fb0ddd2aaac99"),
@@ -44,9 +49,10 @@ carlos-pc(mongod-2.4.9) be-mean-pokemons> db.pokemons.find()
 }'
 ...outros 6 aqui
 Fetched 7 record(s) in 4ms
-
+```
 
 ## Sandshrew (passo 6)
+```
 carlos-pc(mongod-2.4.9) be-mean-pokemons> var poke = db.pokemons.findOne({name: "Sandshrew"})
 
 
