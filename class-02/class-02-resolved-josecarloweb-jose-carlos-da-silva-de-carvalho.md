@@ -34,14 +34,14 @@ Inserted 1 record(s) in 1ms
 
 ## Lista dos pokemons (passo 5)
 carlos-pc(mongod-2.4.9) be-mean-pokemons> db.pokemons.find()
-'{
+{
   "_id": ObjectId("565fb437096fb0ddd2aaac99"),
   "name": "Hitmonlee",
   "description": "Lutador com chute potente",
   "attack": 120,
   "defence": 80,
   "height": 1.5
-}'
+}
 ...outros 6 aqui
 Fetched 7 record(s) in 4ms
 
