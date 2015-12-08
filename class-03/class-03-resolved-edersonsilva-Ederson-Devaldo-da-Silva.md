@@ -81,7 +81,9 @@ Fetched 0 record(s) in 1ms
 ## Listando pokemons com o attack MAIOR OU IGUAL QUE 48 E com height MENOR OU IGUAL QUE 0.5
 
 ```
-
+codevops(mongod-3.0.6) be-mean-pokemons> var query = {$and: [{attack: {$gte: 48}},{height: {$lte: 0.5}}]}
+codevops(mongod-3.0.6) be-mean-pokemons> db.pokemons.find(query)
+Fetched 0 record(s) in 1ms
 ```
 
 
