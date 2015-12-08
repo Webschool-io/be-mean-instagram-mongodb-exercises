@@ -45,10 +45,8 @@ carlos-pc(mongod-2.4.9) be-mean-pokemons> db.pokemons.find()
 ...outros 6 aqui
 Fetched 7 record(s) in 4ms
 
-
 ## Sandshrew (passo 6)
 carlos-pc(mongod-2.4.9) be-mean-pokemons> var poke = db.pokemons.findOne({name: "Sandshrew"})
-
 
 ## Atualização do Sandshrew (passo 7	)
 carlos-pc(mongod-2.4.9) be-mean-pokemons> poke.description = "Uma nova descrição para o pokemon"
