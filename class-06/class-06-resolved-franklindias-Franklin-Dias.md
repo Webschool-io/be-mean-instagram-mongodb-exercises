@@ -235,60 +235,98 @@ db.pokemons.getIndexes()
 
 #### Refazendo query
 ```javascript
-db.pokemons.find(query).explain('executionStats').executionStats
+db.pokemons.find({$and: [{hp:55 }, {speed:35}]}).explain('executionStats')
 {
-  "executionSuccess": true,
-  "nReturned": 4,
-  "executionTimeMillis": 17,
-  "totalKeysExamined": 4,
-  "totalDocsExamined": 4,
-  "executionStages": {
-    "stage": "FETCH",
-    "nReturned": 4,
-    "executionTimeMillisEstimate": 0,
-    "works": 5,
-    "advanced": 4,
-    "needTime": 0,
-    "needFetch": 0,
-    "saveState": 0,
-    "restoreState": 0,
-    "isEOF": 1,
-    "invalidates": 0,
-    "docsExamined": 4,
-    "alreadyHasObj": 0,
-    "inputStage": {
-      "stage": "IXSCAN",
-      "nReturned": 4,
-      "executionTimeMillisEstimate": 0,
-      "works": 5,
-      "advanced": 4,
-      "needTime": 0,
-      "needFetch": 0,
-      "saveState": 0,
-      "restoreState": 0,
-      "isEOF": 1,
-      "invalidates": 0,
-      "keyPattern": {
-        "hp": 1,
-        "speed": 1
-      },
-      "indexName": "hp_1_speed_1",
-      "isMultiKey": false,
-      "direction": "forward",
-      "indexBounds": {
-        "hp": [
-          "[40.0, 40.0]"
-        ],
-        "speed": [
-          "[55.0, 55.0]"
-        ]
-      },
-      "keysExamined": 4,
-      "dupsTested": 0,
-      "dupsDropped": 0,
-      "seenInvalidated": 0,
-      "matchTested": 0
-    }
-  }
+	"cursor" : "BtreeCursor hp_1_speed_1",
+	"isMultiKey" : false,
+	"n" : 3,
+	"nscannedObjects" : 3,
+	"nscanned" : 3,
+	"nscannedObjectsAllPlans" : 3,
+	"nscannedAllPlans" : 3,
+	"scanAndOrder" : false,
+	"indexOnly" : false,
+	"nYields" : 0,
+	"nChunkSkips" : 0,
+	"millis" : 0,
+	"indexBounds" : {
+		"hp" : [
+			[
+				55,
+				55
+			]
+		],
+		"speed" : [
+			[
+				35,
+				35
+			]
+		]
+	},
+	"allPlans" : [
+		{
+			"cursor" : "BtreeCursor hp_1_speed_1",
+			"isMultiKey" : false,
+			"n" : 3,
+			"nscannedObjects" : 3,
+			"nscanned" : 3,
+			"scanAndOrder" : false,
+			"indexOnly" : false,
+			"nChunkSkips" : 0,
+			"indexBounds" : {
+				"hp" : [
+					[
+						55,
+						55
+					]
+				],
+				"speed" : [
+					[
+						35,
+						35
+					]
+				]
+			}
+		}
+	],
+	"server" : "localhost.localdomain:27017",
+	"filterSet" : false,
+	"stats" : {
+		"type" : "FETCH",
+		"works" : 4,
+		"yields" : 0,
+		"unyields" : 0,
+		"invalidates" : 0,
+		"advanced" : 3,
+		"needTime" : 0,
+		"needFetch" : 0,
+		"isEOF" : 1,
+		"alreadyHasObj" : 0,
+		"forcedFetches" : 0,
+		"matchTested" : 0,
+		"children" : [
+			{
+				"type" : "IXSCAN",
+				"works" : 4,
+				"yields" : 0,
+				"unyields" : 0,
+				"invalidates" : 0,
+				"advanced" : 3,
+				"needTime" : 0,
+				"needFetch" : 0,
+				"isEOF" : 1,
+				"keyPattern" : "{ hp: 1.0, speed: 1.0 }",
+				"isMultiKey" : 0,
+				"boundsVerbose" : "field #0['hp']: [55.0, 55.0], field #1['speed']: [35.0, 35.0]",
+				"yieldMovedCursor" : 0,
+				"dupsTested" : 0,
+				"dupsDropped" : 0,
+				"seenInvalidated" : 0,
+				"matchTested" : 0,
+				"keysExamined" : 3,
+				"children" : [ ]
+			}
+		]
+	}
 }
 ```
