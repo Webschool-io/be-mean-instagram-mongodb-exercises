@@ -300,4 +300,4 @@ autor: Fabio Magalhães
 
 	$not - ele faz a negação do campo informado ou seja, trata como booleano por exemplo:
 	var query = {attack: {$not: {$ne: 30}}};
-	db.pokemons.find(query);	//ira retornar todos os pokemons que tiverem o ataque igual a 30 pois foi feita uma negação da condição anterior.
+	db.pokemons.find(query);	//ira retornar todos os pokemons que tiverem o ataque igual a 30 pois foi feita uma negação da condição anterior. 
