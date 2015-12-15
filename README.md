@@ -2,7 +2,7 @@
 
 ## O Envio
 
-Caso você faça um `pull` antes de fazer o seu `Pull Request` por favor **COMMMITE APENAS SEU ARQUIVO, NÃO FAÇA `git add .`!!**
+Caso você faça um `pull` antes de fazer o seu `Pull Request` por favor **COMITE APENAS SEU ARQUIVO, NÃO FAÇA `git add .`!!**
 
 **Faça: `git add nome_do_meu_arquivo.md`**
 

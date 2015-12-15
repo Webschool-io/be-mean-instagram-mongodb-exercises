@@ -1,0 +1,279 @@
+#MongoDB - Aula 06 - Exercícios
+autor: Luan da Silva Oliveira
+
+##1. Fazer uma query para o campo `name` utilizando `explain` para ver o resultado da busca
+```
+luanoliveira(mongod-3.0.7) be-mean> db.pokemons.find({ name: /rattata/i }).explain("executionStats")
+{
+  "queryPlanner": {
+    "plannerVersion": 1,
+    "namespace": "be-mean.pokemons",
+    "indexFilterSet": false,
+    "parsedQuery": {
+      "name": /rattata/i
+    },
+    "winningPlan": {
+      "stage": "COLLSCAN",
+      "filter": {
+        "name": /rattata/i
+      },
+      "direction": "forward"
+    },
+    "rejectedPlans": [ ]
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 1,
+    "executionTimeMillis": 0,
+    "totalKeysExamined": 0,
+    "totalDocsExamined": 610,
+    "executionStages": {
+      "stage": "COLLSCAN",
+      "filter": {
+        "name": /rattata/i
+      },
+      "nReturned": 1,
+      "executionTimeMillisEstimate": 0,
+      "works": 612,
+      "advanced": 1,
+      "needTime": 610,
+      "needFetch": 0,
+      "saveState": 4,
+      "restoreState": 4,
+      "isEOF": 1,
+      "invalidates": 0,
+      "direction": "forward",
+      "docsExamined": 610
+    }
+  },
+  "serverInfo": {
+    "host": "luanoliveira",
+    "port": 27017,
+    "version": "3.0.7",
+    "gitVersion": "6ce7cbe8c6b899552dadd907604559806aa2e9bd"
+  },
+  "ok": 1
+}
+```
+
+##2. Criar um `index` um para o campo `name`
+```
+luanoliveira(mongod-3.0.7) be-mean> db.pokemons.createIndex({ name: 1 })
+{
+  "createdCollectionAutomatically": false,
+  "numIndexesBefore": 1,
+  "numIndexesAfter": 2,
+  "ok": 1
+}
+```
+
+##3. Refazer a query para o campo `name` utilizando `explain` para ver o resultado da busca
+```
+luanoliveira(mongod-3.0.7) be-mean> db.pokemons.find({ name: /rattata/i }).explain("executionStats")
+{
+  "queryPlanner": {
+    "plannerVersion": 1,
+    "namespace": "be-mean.pokemons",
+    "indexFilterSet": false,
+    "parsedQuery": {
+      "name": /rattata/i
+    },
+    "winningPlan": {
+      "stage": "FETCH",
+      "inputStage": {
+        "stage": "IXSCAN",
+        "filter": {
+          "name": /rattata/i
+        },
+        "keyPattern": {
+          "name": 1
+        },
+        "indexName": "name_1",
+        "isMultiKey": false,
+        "direction": "forward",
+        "indexBounds": {
+          "name": [
+            "[\"\", {})",
+            "[/rattata/i, /rattata/i]"
+          ]
+        }
+      }
+    },
+    "rejectedPlans": [ ]
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 1,
+    "executionTimeMillis": 1,
+    "totalKeysExamined": 610,
+    "totalDocsExamined": 1,
+    "executionStages": {
+      "stage": "FETCH",
+      "nReturned": 1,
+      "executionTimeMillisEstimate": 0,
+      "works": 611,
+      "advanced": 1,
+      "needTime": 609,
+      "needFetch": 0,
+      "saveState": 4,
+      "restoreState": 4,
+      "isEOF": 1,
+      "invalidates": 0,
+      "docsExamined": 1,
+      "alreadyHasObj": 0,
+      "inputStage": {
+        "stage": "IXSCAN",
+        "filter": {
+          "name": /rattata/i
+        },
+        "nReturned": 1,
+        "executionTimeMillisEstimate": 0,
+        "works": 610,
+        "advanced": 1,
+        "needTime": 609,
+        "needFetch": 0,
+        "saveState": 4,
+        "restoreState": 4,
+        "isEOF": 1,
+        "invalidates": 0,
+        "keyPattern": {
+          "name": 1
+        },
+        "indexName": "name_1",
+        "isMultiKey": false,
+        "direction": "forward",
+        "indexBounds": {
+          "name": [
+            "[\"\", {})",
+            "[/rattata/i, /rattata/i]"
+          ]
+        },
+        "keysExamined": 610,
+        "dupsTested": 0,
+        "dupsDropped": 0,
+        "seenInvalidated": 0,
+        "matchTested": 1
+      }
+    }
+  },
+  "serverInfo": {
+    "host": "luanoliveira",
+    "port": 27017,
+    "version": "3.0.7",
+    "gitVersion": "6ce7cbe8c6b899552dadd907604559806aa2e9bd"
+  },
+  "ok": 1
+}
+```
+
+##4. Fazer uma query para dois campos juntos utilizando `explain` para ver o resultado da busca
+```
+luanoliveira(mongod-3.0.7) be-mean> db.pokemons.find({ defense: 45, attack: 60 }).explain('executionStats').executionStats
+{
+  "executionSuccess": true,
+  "nReturned": 2,
+  "executionTimeMillis": 0,
+  "totalKeysExamined": 0,
+  "totalDocsExamined": 610,
+  "executionStages": {
+    "stage": "COLLSCAN",
+    "filter": {
+      "$and": [
+        {
+          "attack": {
+            "$eq": 60
+          }
+        },
+        {
+          "defense": {
+            "$eq": 45
+          }
+        }
+      ]
+    },
+    "nReturned": 2,
+    "executionTimeMillisEstimate": 0,
+    "works": 612,
+    "advanced": 2,
+    "needTime": 609,
+    "needFetch": 0,
+    "saveState": 4,
+    "restoreState": 4,
+    "isEOF": 1,
+    "invalidates": 0,
+    "direction": "forward",
+    "docsExamined": 610
+  }
+}
+```
+
+##5. Criar um `index` para esses dois campos juntos
+```
+luanoliveira(mongod-3.0.7) be-mean> db.pokemons.createIndex({ defense: 1, attack: 1 })
+{
+  "createdCollectionAutomatically": false,
+  "numIndexesBefore": 2,
+  "numIndexesAfter": 3,
+  "ok": 1
+}
+```
+
+##6. Refazer a query para os dois campos juntos utilizando `explain` para ver o resultado da busca
+```
+luanoliveira(mongod-3.0.7) be-mean> db.pokemons.find({ defense: 45, attack: 60 }).explain('executionStats').executionStats
+{
+  "executionSuccess": true,
+  "nReturned": 2,
+  "executionTimeMillis": 0,
+  "totalKeysExamined": 2,
+  "totalDocsExamined": 2,
+  "executionStages": {
+    "stage": "FETCH",
+    "nReturned": 2,
+    "executionTimeMillisEstimate": 0,
+    "works": 3,
+    "advanced": 2,
+    "needTime": 0,
+    "needFetch": 0,
+    "saveState": 0,
+    "restoreState": 0,
+    "isEOF": 1,
+    "invalidates": 0,
+    "docsExamined": 2,
+    "alreadyHasObj": 0,
+    "inputStage": {
+      "stage": "IXSCAN",
+      "nReturned": 2,
+      "executionTimeMillisEstimate": 0,
+      "works": 3,
+      "advanced": 2,
+      "needTime": 0,
+      "needFetch": 0,
+      "saveState": 0,
+      "restoreState": 0,
+      "isEOF": 1,
+      "invalidates": 0,
+      "keyPattern": {
+        "defense": 1,
+        "attack": 1
+      },
+      "indexName": "defense_1_attack_1",
+      "isMultiKey": false,
+      "direction": "forward",
+      "indexBounds": {
+        "defense": [
+          "[45.0, 45.0]"
+        ],
+        "attack": [
+          "[60.0, 60.0]"
+        ]
+      },
+      "keysExamined": 2,
+      "dupsTested": 0,
+      "dupsDropped": 0,
+      "seenInvalidated": 0,
+      "matchTested": 0
+    }
+  }
+}
+```

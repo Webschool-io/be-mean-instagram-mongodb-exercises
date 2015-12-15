@@ -86,7 +86,7 @@ autor: Jefferson Daniel (https://github.com/jeffersondanielss)
 
 1. **Adicionar** 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
 
-´´´
+``` 
   var query = { 
     $or: [
       { name: /pikachu/i },
@@ -151,11 +151,11 @@ autor: Jefferson Daniel (https://github.com/jeffersondanielss)
       "coronhada"
     ]
   }
-´´´
+```
 
 2. **Adicionar** 1 movimento em todos os pokemons: `desvio`.
 
-´´´
+```
   var query = {}
 
   var mod = { $push: { moves: 'desvio' } }
@@ -270,11 +270,11 @@ autor: Jefferson Daniel (https://github.com/jeffersondanielss)
       "desvio"
     ]
   }
-´´´
+```
 
 3. **Adicionar** o pokemon `AindaNaoExisteMon` caso ele não exista com todos os dados com o valor `null` e a descrição: "Sem maiores informações".
 
-´´´
+```
   var query = { name: /AindaNaoExisteMon/i }
   var mod = {
     $set: { active: true },
@@ -308,11 +308,11 @@ autor: Jefferson Daniel (https://github.com/jeffersondanielss)
     "height" : null,
     "description" : "sem maiores informações"
   }
-´´´
+```
 
 4. Pesquisar todos o pokemons que possuam o ataque `investida` e mais um que você adicionou, escolha seu pokemon favorito.
 
-´´´
+```
   var query = { moves: { $all: [ 'investida', 'spray de pimenta' ] } }
   db.pokemons.find( query ).pretty()
 
@@ -364,11 +364,11 @@ autor: Jefferson Daniel (https://github.com/jeffersondanielss)
     ]
   }
 
-´´´
+```
 
 5. Pesquisar **todos** os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.
 
-´´´
+```
   var query = { moves: { $all: [ 'coronhada', 'spray de pimenta' ] } }
   db.pokemons.find( query ).pretty()
 
@@ -419,11 +419,11 @@ autor: Jefferson Daniel (https://github.com/jeffersondanielss)
       "desvio"
     ]
   }
-´´´
+```
 
 6. Pesquisar **todos** os pokemons que não são do tipo `elétrico`.
 
-´´´
+```
   var query = { type: { $not: /eletric/i } }
   db.pokemons.find( query ).pretty()
 
@@ -508,18 +508,18 @@ autor: Jefferson Daniel (https://github.com/jeffersondanielss)
     "description" : "sem maiores informações"
   }
 
-´´´
+```
 
 7. Pesquisar **todos** pokemons que tenham o ataque `investida` **E** tenham a defesa **não menor ou igual** a 49.
 
-´´´
+```
 var query = { $and: [ { moves: 'investida' }, { defense: { $gte: 49 } } ] }
 db.pokemons.find( query ).pretty()
-´´´
+```
 
 8. Remova **todos** os pokemons do tipo água e com attack menor que 50.
 
-´´´
+```
   var query = { $and: [ { type: /água/i }, { attack: { $lte: 50 } } ] }
   db.pokemons.find( query ).pretty()
 
@@ -539,4 +539,4 @@ db.pokemons.find( query ).pretty()
       "desvio"
     }
   }
-´´´
+```
