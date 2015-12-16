@@ -322,7 +322,7 @@ Seleciona os documentos que `não` correspondem a expressão informada ou que `n
 
 **Exemplo:**
 
-`db.pokemons.find({attack: {$lt: 50}})`
+`db.pokemons.find({attack: {$not: {$lt: 50}}})`
 * o valor do campo `type` é maior ou igual a **50** ou
 * o campo não existe
 
