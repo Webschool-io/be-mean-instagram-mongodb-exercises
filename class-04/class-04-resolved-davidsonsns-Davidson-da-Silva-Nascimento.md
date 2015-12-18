@@ -308,7 +308,7 @@ Seleciona os documentos onde o valor do campo `não` é igual ao valor especific
 
 **Exemplo:**
 
-`db.pokemons.find({type: "Grama"})`
+`db.pokemons.find({type: {$ne: "Grama"}})`
 * irá selecionar todos os documentos da coleção `pokemons` cujo valor do campo `type` seja igual a **Grama** ou
 * o campo não existe
 
