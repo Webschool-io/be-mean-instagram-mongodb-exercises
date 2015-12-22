@@ -557,3 +557,90 @@ Removed 1 record(s) in 1ms
 WriteResult({
   "nRemoved": 1
 })
+
+## Demonstre qual a diferença entre os operadores $ne e $not.
+
+MacBook-Pro(mongod-3.0.7) be-mean> var query = {name: {$ne: 'pikachu' }}
+MacBook-Pro(mongod-3.0.7) be-mean> var mod = {name:1, _id:0}
+MacBook-Pro(mongod-3.0.7) be-mean> db.pokemons.find(query, mod)
+{
+  "name": "Rattata"
+}
+{
+  "name": "Caterpie"
+}
+{
+  "name": "Metapod"
+}
+{
+  "name": "Wartortle"
+}
+{
+  "name": "Blastoise"
+}
+{
+  "name": "Butterfree"
+}
+{
+  "name": "Charmeleon"
+}
+{
+  "name": "Spearow"
+}
+{
+  "name": "Farfetchd"
+}
+{
+  "name": "Kakuna"
+}
+{
+  "name": "Charmander"
+}
+{
+  "name": "Magneton"
+}
+{
+  "name": "Doduo"
+}
+{
+  "name": "Magnemite"
+}
+{
+  "name": "Seel"
+}
+{
+  "name": "Dewgong"
+}
+{
+  "name": "Dodrio"
+}
+{
+  "name": "Gastly"
+}
+{
+  "name": "Poliwag"
+}
+{
+  "name": "Poliwhirl"
+}
+
+# Possivel realizar operações lógicas como abaixo, que realiza a negação de valores abaixo de 200 para defesa.
+MacBook-Pro(mongod-3.0.7) be-mean> var query = {defense: {$not: {$lt:200 }}}
+MacBook-Pro(mongod-3.0.7) be-mean> var mod = {name:1, _id:0}
+MacBook-Pro(mongod-3.0.7) be-mean> db.pokemons.find(query, mod)
+{
+  "name": "Shuckle"
+}
+{
+  "name": "Regirock"
+}
+{
+  "name": "Steelix"
+}
+Fetched 3 record(s) in 1ms
+
+
+
+
+
+
