@@ -525,7 +525,7 @@ WriteResult({
 ```
 $ne: retorna os documentos onde o valor do campo não é igual, ou seja diferente, isso inclui documentos que não contêm o campo e não suporta REGEX.
 
-$not: Realiza uma lógica NOT. Retorna objetos que não correspondem ao operador de negação. Isto inclui documentos que não contêm o campo e suporta REGEX.
+$not: É uma lógica NOT. Retorna objetos que não correspondem ao operador de negação. Isto inclui documentos que não contêm o campo e suporta REGEX.
 
 ```
 
