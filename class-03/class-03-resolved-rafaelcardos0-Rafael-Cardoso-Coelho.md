@@ -1,4 +1,4 @@
-# MongoDB - Aula 02 - Exercício
+# MongoDB - Aula 03 - Exercício
 autor: RAFAEL CARDOSO COELHO
 
 ## 1. Listar todos os pokemons com altura menor que 0.5
