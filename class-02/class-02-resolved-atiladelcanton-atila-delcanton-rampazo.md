@@ -1,5 +1,5 @@
 ###MongoDB - Aula 02 - Exercício
-Autor: Átila Delcanton
+Autor: Átila Delcanton Rampazo
 
 ##Criando database
 ```
