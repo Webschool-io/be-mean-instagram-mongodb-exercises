@@ -161,6 +161,7 @@ Autor: Paulo Roberto
 ```
 ## 3. Consulta por 2 campos sem indice.
 ```
+> db.pokemons.createIndex({defense:1, attack:1})
 > db.pokemons.find({defense:{$gte:40}, attack:{$gt:10}}).limit(1).explain('executionStats').executionStats
 {
         "executionSuccess" : true,
@@ -215,36 +216,8 @@ Autor: Paulo Roberto
 ```
 ## 4. Após criação de indice composto.
 ```
-> db.pokemons.createIndex({defense:1, height:1})
-{
-        "createdCollectionAutomatically" : false,
-        "numIndexesBefore" : 2,
-        "numIndexesAfter" : 3,
-        "ok" : 1
-}
-> db.pokemons.dropIndex({name:1})
-{ "nIndexesWas" : 3, "ok" : 1 }
-> db.pokemons.getIndexes()
-[
-        {
-                "v" : 1,
-                "key" : {
-                        "_id" : 1
-                },
-                "name" : "_id_",
-                "ns" : "be-mean.pokemons"
-        },
-        {
-                "v" : 1,
-                "key" : {
-                        "defense" : 1,
-                        "height" : 1
-                },
-                "name" : "defense_1_height_1",
-                "ns" : "be-mean.pokemons"
-        }
-]
-> db.pokemons.find({defense:{$gte:40}, attack:{$gt:10}}).limit(1).explain('executionStats').executionStats
+> db.pokemons.find({defense:{$gte:40}, attack:{$gt:10}}).limit(1).expl
+ain('executionStats').executionStats
 {
         "executionSuccess" : true,
         "nReturned" : 1,
@@ -266,11 +239,6 @@ Autor: Paulo Roberto
                 "limitAmount" : 1,
                 "inputStage" : {
                         "stage" : "FETCH",
-                        "filter" : {
-                                "attack" : {
-                                        "$gt" : 10
-                                }
-                        },
                         "nReturned" : 1,
                         "executionTimeMillisEstimate" : 0,
                         "works" : 1,
@@ -297,9 +265,9 @@ Autor: Paulo Roberto
                                 "invalidates" : 0,
                                 "keyPattern" : {
                                         "defense" : 1,
-                                        "height" : 1
+                                        "attack" : 1
                                 },
-                                "indexName" : "defense_1_height_1",
+                                "indexName" : "defense_1_attack_1",
                                 "isMultiKey" : false,
                                 "isUnique" : false,
                                 "isSparse" : false,
@@ -310,8 +278,8 @@ Autor: Paulo Roberto
                                         "defense" : [
                                                 "[40.0, 1.#INF]"
                                         ],
-                                        "height" : [
-                                                "[MinKey, MaxKey]"
+                                        "attack" : [
+                                                "(10.0, 1.#INF]"
                                         ]
                                 },
                                 "keysExamined" : 1,
