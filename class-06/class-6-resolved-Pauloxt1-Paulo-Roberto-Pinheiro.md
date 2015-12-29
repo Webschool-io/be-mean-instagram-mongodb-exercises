@@ -161,7 +161,6 @@ Autor: Paulo Roberto
 ```
 ## 3. Consulta por 2 campos sem indice.
 ```
-> db.pokemons.createIndex({defense:1, attack:1})
 > db.pokemons.find({defense:{$gte:40}, attack:{$gt:10}}).limit(1).explain('executionStats').executionStats
 {
         "executionSuccess" : true,
@@ -216,8 +215,8 @@ Autor: Paulo Roberto
 ```
 ## 4. Após criação de indice composto.
 ```
-> db.pokemons.find({defense:{$gte:40}, attack:{$gt:10}}).limit(1).expl
-ain('executionStats').executionStats
+> db.pokemons.createIndex({defense:1, attack:1})
+> db.pokemons.find({defense:{$gte:40}, attack:{$gt:10}}).limit(1).explain('executionStats').executionStats
 {
         "executionSuccess" : true,
         "nReturned" : 1,
