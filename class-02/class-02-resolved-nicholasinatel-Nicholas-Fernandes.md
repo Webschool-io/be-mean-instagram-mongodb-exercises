@@ -1,14 +1,19 @@
 # MongoDB - Aula 02 - Exercício
 autor: Nicholas Fernandes de Almeida Paolillo
 ## Criar database própria (passo 1)
-Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-instagram> use be-mean-pokemons
+```
+use be-mean-pokemons
 switched to db be-mean-pokemons
+```
 ## Listagem das databases (passo 2)
+```
 Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-pokemons> show dbs
 be-mean           → 0.004GB
 be-mean-instagram → 0.000GB
 local             → 0.000GB
+```
 ## Cadastro dos pokemons (passo 4)
+```
 var pokemon = {'name':'venusaur','description':'Dinossauro Mutante Gigante pai, ancestral das tartarugas ninjas','type': 'leaf', attack: 82, height: 20 , 'defense':83}
 db.pokemons.save(pokemon)
 Inserted 1 record(s) in 285ms
@@ -52,18 +57,24 @@ Inserted 1 record(s) in 2ms
 WriteResult({
   "nInserted": 1
 })
+```
 ## A volta do passo 2 Listagem das databases (passo 2)
+```
 Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-pokemons> show dbs
 be-mean           → 0.004GB
 be-mean-instagram → 0.000GB
 be-mean-pokemons  → 0.000GB
 local             → 0.000GB
+```
 ## Listagem das coleções (passo 3)
-Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-pokemons> show collections
+```
+be-mean-pokemons> show collections
 pokemnos → 0.000MB / 0.016MB
 pokemons → 0.001MB / 0.035MB
 ## Lista dos pokemons (passo 5)
-Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-pokemons> db.pokemons.find()
+```
+```
+be-mean-pokemons> db.pokemons.find()
 {
   "_id": ObjectId("56785f5db851c1d5742cb994"),
   "name": "venusaur",
@@ -127,10 +138,16 @@ Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-pokemons> db.pokemons.find()
   "height": 8,
   "defense": 48
 }
+```
 ## QUERY pelo pokemon(passo 6)
-Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-pokemons> var query = {"attack":90}
-Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-pokemons> var poke = db.pokemons.findOne(query)
-Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-pokemons> poke
+```
+be-mean-pokemons> var query = {"attack":90}
+```
+```
+be-mean-pokemons> var poke = db.pokemons.findOne(query)
+```
+```
+be-mean-pokemons> poke
 {
   "_id": ObjectId("56786266b851c1d5742cb99a"),
   "name": "raichu",
@@ -140,12 +157,18 @@ Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-pokemons> poke
   "height": 8,
   "defense": 55
 }
+```
 ## Mudança de Habilidade (passo 7)
-Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-pokemons> poke.defense
+```
+be-mean-pokemons> poke.defense
 55
-Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-pokemons> poke.defense = 60
+```
+```
+be-mean-pokemons> poke.defense = 60
 60
-Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-pokemons> poke
+```
+```
+be-mean-pokemons> poke
 {
   "_id": ObjectId("56786266b851c1d5742cb99a"),
   "name": "raichu",
@@ -155,11 +178,14 @@ Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-pokemons> poke
   "height": 8,
   "defense": 60
 }
+```
 ## Salvando no database as mudanças (passo 8)
-Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-pokemons> db.pokemons.save(poke)
+```
+be-mean-pokemons> db.pokemons.save(poke)
 Updated 1 existing record(s) in 3ms
 WriteResult({
   "nMatched": 1,
   "nUpserted": 0,
   "nModified": 1
 })
+```
