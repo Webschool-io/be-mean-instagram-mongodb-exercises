@@ -10,6 +10,8 @@ Caso você faça um `pull` antes de fazer o seu `Pull Request` por favor **COMIT
 
 Favor sempre usar: class-X-resolved-githubuser-nome-completo-com-hifens.md
 
+    class-01-resolved-suissa-Jean-Carlo-Nascimento.md
+
 **NENHUM ARQUIVO FORA DESSE PADRÃO SERÁ ACEITO!!!**
 
 ## Prazo
