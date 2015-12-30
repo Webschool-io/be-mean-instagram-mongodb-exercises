@@ -7,7 +7,7 @@ switched to db be-mean-pokemons
 ```
 ## Listagem das databases (passo 2)
 ```
-Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-pokemons> show dbs
+be-mean-pokemons> show dbs
 be-mean           → 0.004GB
 be-mean-instagram → 0.000GB
 local             → 0.000GB
@@ -60,7 +60,7 @@ WriteResult({
 ```
 ## A volta do passo 2 Listagem das databases (passo 2)
 ```
-Nicholass-MacBook-Pro(mongod-3.2.0) be-mean-pokemons> show dbs
+be-mean-pokemons> show dbs
 be-mean           → 0.004GB
 be-mean-instagram → 0.000GB
 be-mean-pokemons  → 0.000GB
