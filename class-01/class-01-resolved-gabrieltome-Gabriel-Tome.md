@@ -19,7 +19,7 @@ connected to: 127.0.0.1
 
 ## Contando os restaurantes
 
-  ```
+```
 Gabriel-Tome(mongod-2.6.8) be-mean> db.restaurantes.find({}).count()
 25359
-  ```
+```
