@@ -2,7 +2,8 @@
 Autor: Rodrigo A Valente
 
 ## 1. Importar as collections restaurantes e pokemons.
-```rvalente@fedora23:Development/mongo $ mongoimport --db be-mean --collection restaurantes --drop --file data.json --port 27017
+```js
+rvalente@fedora23:Development/mongo $ mongoimport --db be-mean --collection restaurantes --drop --file data.json --port 27017
 2015-12-30T17:49:28.367-0300    connected to: localhost:27017
 2015-12-30T17:49:28.367-0300    dropping: be-mean.restaurantes
 2015-12-30T17:49:29.399-0300    imported 25359 documents
@@ -13,7 +14,7 @@ rvalente@fedora23:Development/mongo $ mongoimport --db be-mean --collection poke
 ```
 
 ## 2. Distinct por `cuisine` na restaurantes.
-```
+```js
 rvalente/mongodb(mongod-3.2.0) be-mean> db.restaurantes.distinct('cuisine').sort()
 [
   "Afghan",
@@ -105,7 +106,7 @@ rvalente/mongodb(mongod-3.2.0) be-mean> db.restaurantes.distinct('cuisine').sort
 ```
 
 ## 3. Distinct por types na pokemons.
-```
+```js
 rvalente/mongodb(mongod-3.2.0) be-mean> db.pokemons.distinct('types').sort()
 [
   "bug",
@@ -130,7 +131,7 @@ rvalente/mongodb(mongod-3.2.0) be-mean> db.pokemons.distinct('types').sort()
 ```
 
 ## 4. As primeiras 3 páginas com .limit() e .skip() de pokemons (5 em 5)
-```
+```js
 rvalente/mongodb(mongod-3.2.0) be-mean> db.pokemons.find().limit(5).skip(5 * 0)
 {
   "_id": ObjectId("564b1dad25337263280d047a"),
@@ -341,7 +342,7 @@ rvalente/mongodb(mongod-3.2.0) be-mean> db.pokemons.find().limit(5).skip(5 * 2)
 ```
 
 ## 5. Group ou Aggregate contando a quantidade de pokemons de cada tipo
-```
+```js
 rvalente/mongodb(mongod-3.2.0) be-mean> db.pokemons.group({
 ... initial: {total: 0},
 ... reduce: function(current, result) {
@@ -381,7 +382,7 @@ rvalente/mongodb(mongod-3.2.0) be-mean> db.pokemons.group({
 ```
 
 ## 6. Realizar 3 counts na collections pokemons.
-```
+```js
 rvalente/mongodb(mongod-3.2.0) be-mean> db.pokemons.count({types: 'ice'})
 24
 
