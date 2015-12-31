@@ -1,29 +1,21 @@
 # MongoDB - Aula 02 - Exercício
-autor: Breno Almeida dos Santos Rodrigues Machado
+autor: Gustavo Gomes da Fé
 
-## Crie uma database chamada be-mean-pokemons;
-    '''
+## Crie uma database chamada be-mean-pokemons;    
 	> use be-mean-pokemons
-	switched to db be-mean-pokemons
-    '''
+	switched to db be-mean-pokemons    
 
-## Liste quais databases você possui nesse servidor;
-    '''
+## Liste quais databases você possui nesse servidor;    
 	be-mean                   → 0.004GB
 	be-mean-instagram         → 0.000GB
 	be-mean-teste             → 0.000GB
 	fidelizzi_api_development → 0.000GB
-	local                     → 0.000GB
-    '''
+	local                     → 0.000GB    
 
-## Liste quais coleções você possui nessa database;
-    '''
+## Liste quais coleções você possui nessa database;    
 	be-mean-pokemons> show collections
-	
-    '''
 
-## Insira pelo menos 5 pokemons A SUA ESCOLHA utilizando o mesmo padrão de campos utilizado: name, description, attack, defense e height;
-    '''
+## Insira pelo menos 5 pokemons A SUA ESCOLHA utilizando o mesmo padrão de campos utilizado: name, description, attack, defense e height;    
 	Gustavos-Air(mongod-3.2.0) be-mean-pokemons> var pokemon = {'name':'Butterfree','description':'Butterfree has a superior ability to search for delicious honey from flowers. It can even search out, extract, and carry honey from flowers that are blooming over six miles from its nest.','type':'bug/flying',attack: 45, height: 11, defense: 50}
 	Gustavos-Air(mongod-3.2.0) be-mean-pokemons> db.pokemons.insert(pokemon)
 	Inserted 1 record(s) in 67ms
@@ -57,11 +49,9 @@ autor: Breno Almeida dos Santos Rodrigues Machado
 	Inserted 1 record(s) in 13ms
 	WriteResult({
 	  "nInserted": 1
-	})
-    '''
+	})    
 
-## Liste os pokemons existentes na sua coleção;
-    '''
+## Liste os pokemons existentes na sua coleção;    
 	Gustavos-Air(mongod-3.2.0) be-mean-pokemons> db.pokemons.find()
 	{
 	  "_id": ObjectId("5647ed127c289526011c473e"),
@@ -109,15 +99,15 @@ autor: Breno Almeida dos Santos Rodrigues Machado
 	  "defense": 87
 	}
 	Fetched 5 record(s) in 1ms
-    '''
+    
 
 # Busque o pokemons a sua escolha, pelo nome, e armazene-o em uma variável chamada `poke`;
-    '''
+    
 	Gustavos-Air(mongod-3.2.0) be-mean-pokemons> var poke = db.pokemons.findOne({'name':'Buterfree'})	
-    '''
+    
 
 # Modifique sua `description` e salvê-o
-    '''
+    
 	Gustavos-Air(mongod-3.2.0) be-mean-pokemons> db.pokemons.save(pokemon)
 	Updated 1 existing record(s) in 3ms
 	WriteResult({
@@ -125,4 +115,4 @@ autor: Breno Almeida dos Santos Rodrigues Machado
 	  "nUpserted": 0,
 	  "nModified": 1
 	})
-    '''
+    
