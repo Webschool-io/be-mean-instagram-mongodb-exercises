@@ -1,4 +1,4 @@
-# MongoDB - Aula 04 - Exercício
+# MongoDB - Aula 05 - Exercício
 Autor: Rodrigo A Valente
 
 ## 1. Importar as collections restaurantes e pokemons.
