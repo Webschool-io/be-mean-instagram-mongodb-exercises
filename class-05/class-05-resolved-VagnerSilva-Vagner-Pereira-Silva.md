@@ -169,7 +169,40 @@ connecting to: be-mean
 ## Apresentar quantidade de pokemons de cada `type` (group ou aggregate)
 
 ```js
+db.pokemons.aggregate([
+	{
+		$project: {types:1, _id:0}
+	},
+	{
+		$unwind: '$types'
+	},
+	{
+		$group:{
+			_id:'$types',
+			qnt: {$sum: 1}
+		}
+	}
 
+	]);
+	
+{ "_id" : "dark", "qnt" : 35 }
+{ "_id" : "water", "qnt" : 101 }
+{ "_id" : "normal", "qnt" : 79 }
+{ "_id" : "fairy", "qnt" : 31 }
+{ "_id" : "grass", "qnt" : 70 }
+{ "_id" : "electric", "qnt" : 47 }
+{ "_id" : "flying", "qnt" : 81 }
+{ "_id" : "poison", "qnt" : 54 }
+{ "_id" : "bug", "qnt" : 58 }
+{ "_id" : "psychic", "qnt" : 61 }
+{ "_id" : "fighting", "qnt" : 42 }
+{ "_id" : "fire", "qnt" : 53 }
+{ "_id" : "rock", "qnt" : 42 }
+{ "_id" : "ice", "qnt" : 28 }
+{ "_id" : "ground", "qnt" : 53 }
+{ "_id" : "steel", "qnt" : 35 }
+{ "_id" : "ghost", "qnt" : 34 }
+{ "_id" : "dragon", "qnt" : 30 }
 
 
 ```
@@ -177,5 +210,13 @@ connecting to: be-mean
 ## Realizar 3 counts na pokemons.
 
 ```js
+
+> db.pokemons.count({'types':'water'})
+101
+> db.pokemons.count({'types':'fire'})
+53
+> db.pokemons.count()
+620
+>
 
 ```
