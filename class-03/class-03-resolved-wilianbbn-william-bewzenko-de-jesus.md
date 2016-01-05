@@ -86,7 +86,31 @@ Fetched 1 record(s) in 2ms
 ```
 ## Liste todos Pokemons com o attack **MAIOR OU IGUAL QUE** 48 **E** com  height **menor ou igual que** 0.5
 ```
-> var query = { $and: [{attack: { $gte: 48 }},{attack: { $lte: 0.5 }}]}
+> var query = { $and: [{attack: { $gte: 48 }},{height: { $lte: 0.5 }}]}
 > db.pokemons.find(query)
-Fetched 0 record(s) in 1ms
+{
+  "_id": ObjectId("568af9afe5c2ef5322619bac"),
+  "name": "Pikachu",
+  "description": "Rato elétrico bem fofinho",
+  "type": "electric",
+  "attack": 55,
+  "height": 0.4
+}
+{
+  "_id": ObjectId("568afb7de5c2ef5322619bad"),
+  "name": "Bulbassauro",
+  "description": "Chicote de trepadeira",
+  "type": "grama",
+  "attack": 49,
+  "height": 0.4
+}
+{
+  "_id": ObjectId("568afb7de5c2ef5322619baf"),
+  "name": "Squirtle",
+  "description": "Ejeta àgua que passarinho não bebe",
+  "type": "àgua",
+  "attack": 48,
+  "height": 0.5
+}
+Fetched 3 record(s) in 3ms
 ```
