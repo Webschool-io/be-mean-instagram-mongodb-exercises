@@ -1,9 +1,9 @@
 
-```md
 # MongoDB - Aula 03 - Exercício
 autor: William Bewzenko de Jesus
 
 ## Liste todos Pokemons com a altura **menor que** 0.5;
+```
 var query = {height: {$lt: 0.5}}
 > db.pokemons.find(query)
 {
@@ -32,8 +32,9 @@ var query = {height: {$lt: 0.5}}
   "defense": 35
 }
 Fetched 3 record(s) in 2ms
-
+```
 ## Liste todos Pokemons com a altura **maior ou igual que** 0.5
+```
 > var query = {height: {$gte: 0.5}}
 > db.pokemons.find(query)
 {
@@ -53,8 +54,9 @@ Fetched 3 record(s) in 2ms
   "height": 0.5
 }
 Fetched 2 record(s) in 1ms
-
+```
 ## Liste todos Pokemons com a altura **menor ou igual que** 0.5 **E** do tipo grama
+```
 > var query = {$and: [{height: {$lte: 0.5}, type: 'grama'}]}
 > db.pokemons.find(query)
 {
@@ -66,9 +68,10 @@ Fetched 2 record(s) in 1ms
   "height": 0.4
 }
 Fetched 1 record(s) in 2ms
-
+```
 
 ## Liste todos Pokemons com o name `Pikachu` **OU** com attack **menor ou igual que** 0.5
+```
 > var query = { $or: [{name: 'Pikachu'}, {attack: { $lte: 0.5 }}]}
 > db.pokemons.find(query)
 {
@@ -80,8 +83,9 @@ Fetched 1 record(s) in 2ms
   "height": 0.4
 }
 Fetched 1 record(s) in 2ms
-
+```
 ## Liste todos Pokemons com o attack **MAIOR OU IGUAL QUE** 48 **E** com  height **menor ou igual que** 0.5
+```
 > var query = { $and: [{attack: { $gte: 48 }},{attack: { $lte: 0.5 }}]}
 > db.pokemons.find(query)
 Fetched 0 record(s) in 1ms
