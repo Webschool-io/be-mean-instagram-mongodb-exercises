@@ -4,7 +4,7 @@
 
 Caso você faça um `pull` antes de fazer o seu `Pull Request` por favor **COMITE APENAS SEU ARQUIVO, NÃO FAÇA `git add .`!!**
 
-**Faça: `git add nome_do_meu_arquivo.md`**
+**Faça: `git add nome_do_meu_arquivo.md` depois o `git commit -m 'SEU NOME - MongoDB - Exercício XX resolvido'` e finalize enviando seu arquivo com `git push origin master`**
 
 ## Padrão do arquivo
 
