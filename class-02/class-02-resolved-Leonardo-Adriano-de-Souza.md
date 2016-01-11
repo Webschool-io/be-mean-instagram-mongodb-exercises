@@ -107,7 +107,7 @@ wall-e(mongod-3.2.0) be-mean-pokemons> db.pokemons.find()
 Fetched 7 record(s) in 190ms
 ```
 
-## Pikachu (passo 6)
+## Porygon (passo 6)
 ```
 wall-e(mongod-3.2.0) be-mean-pokemons> var query = {name:'Porygon'}
 wall-e(mongod-3.2.0) be-mean-pokemons> var poke = db.pokemons.findOne(query)
@@ -122,7 +122,7 @@ wall-e(mongod-3.2.0) be-mean-pokemons> poke
 }
 ```
 
-## Atualização do Pikachu (passo 6)
+## Atualização do Porygon (passo 6)
 ```
 wall-e(mongod-3.2.0) be-mean-pokemons> poke.attack = 100
 100
