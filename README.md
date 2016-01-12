@@ -4,11 +4,14 @@
 
 Caso você faça um `pull` antes de fazer o seu `Pull Request` por favor **COMITE APENAS SEU ARQUIVO, NÃO FAÇA `git add .`!!**
 
-**Faça: `git add nome_do_meu_arquivo.md`**
+**Faça:**
+- `git add nome_do_meu_arquivo.md`
+- `git commit -m 'SEU NOME - MongoDB - Exercício XX resolvido'`
+- `git push origin master`
 
 ## Padrão do arquivo
 
-Favor sempre usar: class-X-resolved-githubuser-nome-completo-com-hifens.md
+Favor sempre usar: **class-X-resolved-githubuser-nome-completo-com-hifens.md**
 
     class-01-resolved-suissa-Jean-Carlo-Nascimento.md
 
