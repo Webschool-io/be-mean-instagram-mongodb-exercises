@@ -13,7 +13,7 @@ Welder-Mint(mongod-3.2.0) be-mean> qry
       /pikachu/i,
       /squirtle/i,
       /bulbasaur/i,
-      /charmander/i
+      /charmander/i 
     ]
   }
 }
