@@ -437,7 +437,7 @@ Welder-Mint(mongod-3.2.1) be-mean> d.find({"attack":64,"defense":58}).explain("e
     "version": "3.2.1",
     "gitVersion": "a14d55980c2cdc565d4704a7e3ad37e4e535c1b2"
   },
-  "ok": 1
+  "ok": 1 
 }
 ```
 
