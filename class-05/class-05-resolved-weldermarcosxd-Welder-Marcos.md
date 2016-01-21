@@ -234,7 +234,7 @@ Welder-Mint(mongod-3.2.0) be-mean> d.group({
     "dark": 38,
     "dragon": 20
   }
-]
+] 
 
 ```
 
