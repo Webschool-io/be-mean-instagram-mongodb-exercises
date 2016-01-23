@@ -2,13 +2,15 @@
 	autor: Alan Siqueira
 
 ## Selecionando o banco be-mean-pokemons criado na aula 02 (passo 1)
-
+```
 DESKTOP-JV9Q1A8(mongodb\bin\mongod.exe-3.0.4) pokemons> use pokemons
 switched to db pokemons
+```
 
 ## Listagem de todos os Pokemons com a altura menor que 0.5 (passo 2)
-	
-  DESKTOP-JV9Q1A8(mongodb\bin\mongod.exe-3.0.4) pokemons> var query = {height: {$lt: 0.5}}
+
+```
+DESKTOP-JV9Q1A8(mongodb\bin\mongod.exe-3.0.4) pokemons> var query = {height: {$lt: 0.5}}
 DESKTOP-JV9Q1A8(mongodb\bin\mongod.exe-3.0.4) pokemons> db.pokemons.find(query)
 {
   "_id": ObjectId("567b40ed4527a432ae8ac232"),
@@ -36,9 +38,11 @@ DESKTOP-JV9Q1A8(mongodb\bin\mongod.exe-3.0.4) pokemons> db.pokemons.find(query)
   "defense": 35
 }
 Fetched 3 record(s) in 13ms
+```
 
 ## Listagem de todos os Pokemons com a altura maior ou igual que 0.5 (passo 3)
 
+```
 DESKTOP-JV9Q1A8(mongodb\bin\mongod.exe-3.0.4) pokemons> var query = {height: {$gte: 0.5}}
 DESKTOP-JV9Q1A8(mongodb\bin\mongod.exe-3.0.4) pokemons> db.pokemons.find(query)
 {
@@ -116,3 +120,4 @@ DESKTOP-JV9Q1A8(mongodb\bin\mongod.exe-3.0.4) pokemons> db.pokemons.find(query)
   "height": 0.5
 }
 Fetched 3 record(s) in 13ms
+```
