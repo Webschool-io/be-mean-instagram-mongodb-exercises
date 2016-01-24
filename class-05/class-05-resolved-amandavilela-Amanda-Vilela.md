@@ -249,7 +249,7 @@ amanda-Inspiron-7520(mongod-2.4.9) be-mean> db.pokemons.group({
 
 ```
 
-## 6. Realizar 3 counts na pokemons.
+## 6. Realizar 3 counts nos pokemons.
 
 ```
 
