@@ -4,11 +4,11 @@ Author: Gabriel Kalani
 ##Importação dos restaurantes
 
 ```
-gkal19:~/workspace $ mongoimport --db be-mean --collection restaurantes --drop --file restaurantes.json l
-2015-12-22T19:54:03.216-0200    connected to: 127.0.0.1
-2015-11-10T23:26:14.541-0200	dropping: be-mean.restaurantes
-2015-11-10T23:26:17.538-0200	[#####################...] be-mean.restaurantes 10.3 MB/11.3 MB (91.3%)
-2015-11-10T23:26:17.888-0200	imported 25359 documents
+gkal19:~/workspace $ mongoimport --db db --collection restaurantes --drop --file restaurantes.json
+connected to: 127.0.0.1
+2016-01-27T16:55:28.456+0000 dropping: db.restaurantes
+2016-01-27T16:55:29.308+0000 check 9 25359
+2016-01-27T16:55:29.409+0000 imported 25359 objects
 ```
 
 ##Contagem de Restaurantes
