@@ -4,7 +4,7 @@ autor: Maurício Júnior
 
 ## Listagem das databases (passo 2)
     use be-mean-pokemons
-    switched to db mongodb-teste
+    switched to db be-mean-pokemons
         
     show dbs
     be-mean           → 0.078GB
