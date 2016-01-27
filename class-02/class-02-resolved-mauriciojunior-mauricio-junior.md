@@ -95,19 +95,47 @@ autor: Maurício Júnior
     }
     Fetched 6 record(s) in 4ms
 
-## Pikachu (passo 6)
-    var query = {'name':'Psyduck'}
-    var pokemon =db.pokemons.findOne(query)
+## Pokemon (passo 6)
+    mauriciojunior(mongod-3.0.6) be-mean-pokemons> var query = {"name": "Arbok"}
+    mauriciojunior(mongod-3.0.6) be-mean-pokemons> var poke = db.pokemons.findOne(query)
+    mauriciojunior(mongod-3.0.6) be-mean-pokemons> poke
+    {
+      "_id": ObjectId("56a831d6b2fc786bc75bc6dd"),
+      "name": "Arbok",
+      "description": "Arbok is a serpent like Pokémon with purple scales all over its body.",
+      "attack": 65,
+      "defense": 79,
+      "height": 35
+    }
 
-## Atualização do Pikachu (passo 6)
-    pokemon.description = "Pato doido feito o batiman"
-    Pato doido feito o batiman
 
-    db.pokemons.save(pokemon)
-    Updated 1 existing record(s) in 84ms
+## Atualização do Pokemon (passo 6)
+    mauriciojunior(mongod-3.0.6) be-mean-pokemons> poke.description = 'It has a large hood just below its head.'
+    It has a large hood just below its head.
+    mauriciojunior(mongod-3.0.6) be-mean-pokemons> poke
+    {
+      "_id": ObjectId("56a831d6b2fc786bc75bc6dd"),
+      "name": "Arbok",
+      "description": "It has a large hood just below its head.",
+      "attack": 65,
+      "defense": 79,
+      "height": 35
+    }
+    mauriciojunior(mongod-3.0.6) be-mean-pokemons> db.pokemons.save(poke)
+    Updated 1 existing record(s) in 2ms
     WriteResult({
       "nMatched": 1,
       "nUpserted": 0,
       "nModified": 1
     })
+    mauriciojunior(mongod-3.0.6) be-mean-pokemons> db.pokemons.findOne(query)
+    {
+      "_id": ObjectId("56a831d6b2fc786bc75bc6dd"),
+      "name": "Arbok",
+      "description": "It has a large hood just below its head.",
+      "attack": 65,
+      "defense": 79,
+      "height": 35
+    }
+
 
