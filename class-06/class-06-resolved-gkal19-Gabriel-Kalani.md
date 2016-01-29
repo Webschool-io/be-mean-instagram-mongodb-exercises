@@ -1,6 +1,7 @@
 #MongoDB - Aula 06 - Exercício
 autor: Gabriel Kalani
 
+
 1 - Fazer uma query para o campo `name` utilizando `explain` para ver o resultado da busca
 
 ```js
