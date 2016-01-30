@@ -157,5 +157,5 @@ autor: Guilherme Felipe de Sousa
 ## Atualização do Pokemon
 
     > p.description = 'A famosa sogra!!! (cascavel)'
-    > db.pokemons.save(poke)
+    > db.pokemons.save(p)
     WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
