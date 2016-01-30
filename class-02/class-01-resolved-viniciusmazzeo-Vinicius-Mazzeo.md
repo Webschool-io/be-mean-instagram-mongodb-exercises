@@ -3,24 +3,28 @@ autor Vinicius Mazzeo
 
 ## Importando os restaurantes
 
-'''
+```
 >use be-mean-pokemons
 switched to db be-mean-pokemons
-
+```
 ## Listagem das databases(passo 2)
 
-
-## Listagem das coleções(passo 3)
+```
 > show dbs
 be-mean            0.004GB
 be-mean-instagram  0.000GB
 be-mean-teste      0.000GB
 local              0.000GB
-
-
+```
+## Listagem das coleções(passo 3)
+```
 > show collections
 
+```
+
 ## Cadastro dos pokemons(passo 4)
+
+```
 
 > var pokemon ={'name':'Charizar','description':'Charizard flies around the sky in search of powerful opponents.','type':'Fogo', attack:70, height:1.7}
 > db.pokemons.insert(pokemon)
@@ -42,7 +46,12 @@ WriteResult({ "nInserted" : 1 })
 > db.pokemons.insert(pokemon)
 WriteResult({ "nInserted" : 1 })
 
+```
+
 ## Listagem dos pokemons(passo 5)
+
+```
+
 > var lista = db.pokemons.find()
 
 > lista
@@ -92,9 +101,11 @@ WriteResult({ "nInserted" : 1 })
 	"height" : 1.9 
 }
 
+```
+
 ## pokemons(passo 6)
 
-
+```
 
 > var updatepoke = {name: 'Charizar'}
 > var poke = db.pokemons.findOne(updatepoke)
@@ -109,7 +120,11 @@ WriteResult({ "nInserted" : 1 })
 	"defense" : 79
 }
 
+```
+
 ## Atualização de Pokemon (passo 7)
+
+```
 
 > poke.description = 'Dragãozinho do capiroto'
 Dragãozinho do capiroto
@@ -167,13 +182,5 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 }
 
 
-'''
+```
 
-## Contando os restaurantes
-
-'''
-
-db.restaurantes.find({}).count()
-25359
-
-'''
