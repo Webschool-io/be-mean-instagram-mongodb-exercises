@@ -145,7 +145,7 @@ ubuntu-vm(mongod-3.0.9) be-mean-pokemons> p
 }
 ```
 
-## Alterando descrição do pokemon (passo 6)
+## Alterando descrição do pokemon (passo 7)
 ```
 ubuntu-vm(mongod-3.0.9) be-mean-pokemons> p.description = 'Criatura lendária';
 Criatura lendária
