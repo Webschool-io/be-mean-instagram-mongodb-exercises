@@ -16,9 +16,19 @@ be-mean-instagram  0.000GB
 be-mean-teste      0.000GB
 local              0.000GB
 ```
-## Listagem das coleções(passo 3)
+## Listagem menor ou igual que 0.5 E do type grama(passo 3)
 ```
-> show collections
+> var query = {$and: [{height: {$lte: 0.5}}, {type: 'grama'}]}
+> db.pokemons.find(query)
+{ 
+	"_id" : ObjectId("56aab61325214ae4c33db932"), 
+	"name" : "Bulbassauro", 
+	"description" : "Chicote de trepadeira", 
+	"type" : "grama", 
+	"attack" : 49, 
+	"height" : 0.4 
+}
+ 
 
 ```
 
@@ -30,7 +40,7 @@ local              0.000GB
 > db.pokemons.insert(pokemon)
 WriteResult({ "nInserted" : 1 })
 
-> var pokemon ={'name':'Clastoise','description':'Blastoise has water spouts that protrude from its shell. ','type':'Água', attack:68, defense:85, height:1.6}
+> var pokemon ={'name':'Blastoise','description':'Blastoise has water spouts that protrude from its shell. ','type':'Água', attack:68, defense:85, height:1.6}
 > db.pokemons.insert(pokemon)
 WriteResult({ "nInserted" : 1 })
 
