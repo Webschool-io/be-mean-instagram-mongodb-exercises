@@ -1,3 +1,6 @@
+# MongoDB - Aula 05 - Exercício
+autor: Eduardo Pinheiro Quaresma Castro
+
 ## 01. Importar as collections restaurantes e pokemons
 ```js
 mongoimport --db be-mean --collection restaurantes --drop --file restaurantes.json
