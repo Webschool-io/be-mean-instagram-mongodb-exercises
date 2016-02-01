@@ -1,5 +1,5 @@
 # MongoDb - Aula 02 - Exercício
-Autor: Bruno Henrique C. da Silva
+Autor: Igor Rotondo Bagliotti
 
 ## Criar database chamada be-mean-pokemons
 
