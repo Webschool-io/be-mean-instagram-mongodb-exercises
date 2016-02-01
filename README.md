@@ -1,4 +1,8 @@
-# MongoDb - Exercícios
+# [Slack da Webschool](https://webschool-slack.herokuapp.com/)
+- Coloque um email para login( hotmail não funciona )
+- Após isso, clique em Webschool para entrar no link do slack
+- Coloque o email que você digitou antes e crie uma senha
+- Entre no channel `be-mean-instagram`
 
 ## O Envio
 
