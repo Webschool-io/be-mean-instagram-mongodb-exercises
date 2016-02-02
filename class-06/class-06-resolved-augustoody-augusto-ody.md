@@ -164,15 +164,7 @@ db.pokemons.find(query).explain('executionStats')
 
 ## 4. Query para dois campos **sem** `índice`
 ```js
-<<<<<<< HEAD
 var query = {defense: {$gte: 20}, attack: {$gte: 100} }
-=======
-<<<<<<< HEAD
-var query = {defense: {$gte: 20}, attack: {$gte: 100} }
-=======
-var query = {name: 'Golem', attack: 120 }
->>>>>>> 31c9f03c9889e4be08f0d88b04dcca98c5c02d67
->>>>>>> d360bcd8480da7ee02050d038b02780221194099
 db.pokemons.find(query).explain('executionStats')
 {
 	"queryPlanner" : {
@@ -183,36 +175,17 @@ db.pokemons.find(query).explain('executionStats')
 			"$and" : [
 				{
 					"attack" : {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d360bcd8480da7ee02050d038b02780221194099
 						"$gte" : 100
 					}
 				},
 				{
 					"defense" : {
 						"$gte" : 20
-<<<<<<< HEAD
-=======
-=======
-						"$eq" : 120
-					}
-				},
-				{
-					"name" : {
-						"$eq" : "Golem"
->>>>>>> 31c9f03c9889e4be08f0d88b04dcca98c5c02d67
->>>>>>> d360bcd8480da7ee02050d038b02780221194099
 					}
 				}
 			]
 		},
 		"winningPlan" : {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d360bcd8480da7ee02050d038b02780221194099
 			"stage" : "COLLSCAN",
 			"filter" : {
 				"$and" : [
@@ -229,43 +202,11 @@ db.pokemons.find(query).explain('executionStats')
 				]
 			},
 			"direction" : "forward"
-<<<<<<< HEAD
-=======
-=======
-			"stage" : "KEEP_MUTATIONS",
-			"inputStage" : {
-				"stage" : "FETCH",
-				"filter" : {
-					"attack" : {
-						"$eq" : 120
-					}
-				},
-				"inputStage" : {
-					"stage" : "IXSCAN",
-					"keyPattern" : {
-						"name" : 1
-					},
-					"indexName" : "name_1",
-					"isMultiKey" : false,
-					"direction" : "forward",
-					"indexBounds" : {
-						"name" : [
-							"[\"Golem\", \"Golem\"]"
-						]
-					}
-				}
-			}
->>>>>>> 31c9f03c9889e4be08f0d88b04dcca98c5c02d67
->>>>>>> d360bcd8480da7ee02050d038b02780221194099
 		},
 		"rejectedPlans" : [ ]
 	},
 	"executionStats" : {
 		"executionSuccess" : true,
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d360bcd8480da7ee02050d038b02780221194099
 		"nReturned" : 126,
 		"executionTimeMillis" : 6,
 		"totalKeysExamined" : 0,
@@ -298,76 +239,6 @@ db.pokemons.find(query).explain('executionStats')
 			"invalidates" : 0,
 			"direction" : "forward",
 			"docsExamined" : 610
-<<<<<<< HEAD
-=======
-=======
-		"nReturned" : 1,
-		"executionTimeMillis" : 0,
-		"totalKeysExamined" : 1,
-		"totalDocsExamined" : 1,
-		"executionStages" : {
-			"stage" : "KEEP_MUTATIONS",
-			"nReturned" : 1,
-			"executionTimeMillisEstimate" : 0,
-			"works" : 2,
-			"advanced" : 1,
-			"needTime" : 0,
-			"needFetch" : 0,
-			"saveState" : 0,
-			"restoreState" : 0,
-			"isEOF" : 1,
-			"invalidates" : 0,
-			"inputStage" : {
-				"stage" : "FETCH",
-				"filter" : {
-					"attack" : {
-						"$eq" : 120
-					}
-				},
-				"nReturned" : 1,
-				"executionTimeMillisEstimate" : 0,
-				"works" : 2,
-				"advanced" : 1,
-				"needTime" : 0,
-				"needFetch" : 0,
-				"saveState" : 0,
-				"restoreState" : 0,
-				"isEOF" : 1,
-				"invalidates" : 0,
-				"docsExamined" : 1,
-				"alreadyHasObj" : 0,
-				"inputStage" : {
-					"stage" : "IXSCAN",
-					"nReturned" : 1,
-					"executionTimeMillisEstimate" : 0,
-					"works" : 2,
-					"advanced" : 1,
-					"needTime" : 0,
-					"needFetch" : 0,
-					"saveState" : 0,
-					"restoreState" : 0,
-					"isEOF" : 1,
-					"invalidates" : 0,
-					"keyPattern" : {
-						"name" : 1
-					},
-					"indexName" : "name_1",
-					"isMultiKey" : false,
-					"direction" : "forward",
-					"indexBounds" : {
-						"name" : [
-							"[\"Golem\", \"Golem\"]"
-						]
-					},
-					"keysExamined" : 1,
-					"dupsTested" : 0,
-					"dupsDropped" : 0,
-					"seenInvalidated" : 0,
-					"matchTested" : 0
-				}
-			}
->>>>>>> 31c9f03c9889e4be08f0d88b04dcca98c5c02d67
->>>>>>> d360bcd8480da7ee02050d038b02780221194099
 		}
 	},
 	"serverInfo" : {
@@ -382,15 +253,7 @@ db.pokemons.find(query).explain('executionStats')
 
 ## 5. Criar índice para `dois campos` juntos
 ```js
-<<<<<<< HEAD
 db.pokemons.createIndex({defense: 1, attack: 1})
-=======
-<<<<<<< HEAD
-db.pokemons.createIndex({defense: 1, attack: 1})
-=======
-db.pokemons.createIndex({name: 1, attack: 1})
->>>>>>> 31c9f03c9889e4be08f0d88b04dcca98c5c02d67
->>>>>>> d360bcd8480da7ee02050d038b02780221194099
 {
 	"createdCollectionAutomatically" : false,
 	"numIndexesBefore" : 2,
@@ -401,15 +264,7 @@ db.pokemons.createIndex({name: 1, attack: 1})
 
 ## 6. Query para os `dois campos` **com** índice
 ```js
-<<<<<<< HEAD
 var query = {defense: {$gte: 20}, attack: {$gte: 100} }
-=======
-<<<<<<< HEAD
-var query = {defense: {$gte: 20}, attack: {$gte: 100} }
-=======
-var query = {name: 'Golem', attack: 120 }
->>>>>>> 31c9f03c9889e4be08f0d88b04dcca98c5c02d67
->>>>>>> d360bcd8480da7ee02050d038b02780221194099
 db.pokemons.find(query).explain('executionStats')
 {
 	"queryPlanner" : {
@@ -420,27 +275,12 @@ db.pokemons.find(query).explain('executionStats')
 			"$and" : [
 				{
 					"attack" : {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d360bcd8480da7ee02050d038b02780221194099
 						"$gte" : 100
 					}
 				},
 				{
 					"defense" : {
 						"$gte" : 20
-<<<<<<< HEAD
-=======
-=======
-						"$eq" : 120
-					}
-				},
-				{
-					"name" : {
-						"$eq" : "Golem"
->>>>>>> 31c9f03c9889e4be08f0d88b04dcca98c5c02d67
->>>>>>> d360bcd8480da7ee02050d038b02780221194099
 					}
 				}
 			]
@@ -450,10 +290,6 @@ db.pokemons.find(query).explain('executionStats')
 			"inputStage" : {
 				"stage" : "IXSCAN",
 				"keyPattern" : {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d360bcd8480da7ee02050d038b02780221194099
 					"defense" : 1,
 					"attack" : 1
 				},
@@ -466,31 +302,10 @@ db.pokemons.find(query).explain('executionStats')
 					],
 					"attack" : [
 						"[100.0, inf.0]"
-<<<<<<< HEAD
-=======
-=======
-					"name" : 1,
-					"attack" : 1
-				},
-				"indexName" : "name_1_attack_1",
-				"isMultiKey" : false,
-				"direction" : "forward",
-				"indexBounds" : {
-					"name" : [
-						"[\"Golem\", \"Golem\"]"
-					],
-					"attack" : [
-						"[120.0, 120.0]"
->>>>>>> 31c9f03c9889e4be08f0d88b04dcca98c5c02d67
->>>>>>> d360bcd8480da7ee02050d038b02780221194099
 					]
 				}
 			}
 		},
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d360bcd8480da7ee02050d038b02780221194099
 		"rejectedPlans" : [ ]
 	},
 	"executionStats" : {
@@ -541,87 +356,6 @@ db.pokemons.find(query).explain('executionStats')
 					]
 				},
 				"keysExamined" : 210,
-<<<<<<< HEAD
-=======
-=======
-		"rejectedPlans" : [
-			{
-				"stage" : "KEEP_MUTATIONS",
-				"inputStage" : {
-					"stage" : "FETCH",
-					"filter" : {
-						"attack" : {
-							"$eq" : 120
-						}
-					},
-					"inputStage" : {
-						"stage" : "IXSCAN",
-						"keyPattern" : {
-							"name" : 1
-						},
-						"indexName" : "name_1",
-						"isMultiKey" : false,
-						"direction" : "forward",
-						"indexBounds" : {
-							"name" : [
-								"[\"Golem\", \"Golem\"]"
-							]
-						}
-					}
-				}
-			}
-		]
-	},
-	"executionStats" : {
-		"executionSuccess" : true,
-		"nReturned" : 1,
-		"executionTimeMillis" : 0,
-		"totalKeysExamined" : 1,
-		"totalDocsExamined" : 1,
-		"executionStages" : {
-			"stage" : "FETCH",
-			"nReturned" : 1,
-			"executionTimeMillisEstimate" : 0,
-			"works" : 3,
-			"advanced" : 1,
-			"needTime" : 0,
-			"needFetch" : 0,
-			"saveState" : 0,
-			"restoreState" : 0,
-			"isEOF" : 1,
-			"invalidates" : 0,
-			"docsExamined" : 1,
-			"alreadyHasObj" : 0,
-			"inputStage" : {
-				"stage" : "IXSCAN",
-				"nReturned" : 1,
-				"executionTimeMillisEstimate" : 0,
-				"works" : 2,
-				"advanced" : 1,
-				"needTime" : 0,
-				"needFetch" : 0,
-				"saveState" : 0,
-				"restoreState" : 0,
-				"isEOF" : 1,
-				"invalidates" : 0,
-				"keyPattern" : {
-					"name" : 1,
-					"attack" : 1
-				},
-				"indexName" : "name_1_attack_1",
-				"isMultiKey" : false,
-				"direction" : "forward",
-				"indexBounds" : {
-					"name" : [
-						"[\"Golem\", \"Golem\"]"
-					],
-					"attack" : [
-						"[120.0, 120.0]"
-					]
-				},
-				"keysExamined" : 1,
->>>>>>> 31c9f03c9889e4be08f0d88b04dcca98c5c02d67
->>>>>>> d360bcd8480da7ee02050d038b02780221194099
 				"dupsTested" : 0,
 				"dupsDropped" : 0,
 				"seenInvalidated" : 0,
