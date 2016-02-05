@@ -9,6 +9,8 @@ autor: Manoel Ricardo De Azevedo
     2016-02-05T00:11:29.785-0200    imported 25359 documents
 
 ## Contando os restaurantes
-
-  db.restaurantes.find({}).count()
-  25359
+    
+    ```
+    db.restaurantes.find({}).count()
+    25359
+    ```
