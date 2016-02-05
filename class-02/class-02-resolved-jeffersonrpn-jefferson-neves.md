@@ -26,12 +26,12 @@ local     → 0.078GB
 ## Insert data
 
 ```
-> var pkmn1 = { name: "Bulbasaur", description: "BULBASAUR can be seen napping in bright sunlight. There is a seed on its back. By soaking up the suns rays, the seed grows progressively larger.", attack: 49, defense: 49, height: "7" }
-> var pkmn2 = { name: "Charmander", description: "The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when CHARMANDER is happy, and blazes when it is enraged.", attack: 52, defense: 43, height: "6" }
-> var pkmn3 = { name: "Squirtle", description: "Its shell is not just for protection. Its rounded shape and the grooves on its surface minimize resistance in water, enabling SQUIRTLE to swim at high speeds.", attack: 48, defense: 65, height: "5" }
-> var pkmn4 = { name: "Butterfree", description: "It has a superior ability to search for delicious honey from flowers. It can seek, extract, and carry honey from flowers blooming over six miles away.", attack: 45, defense: 50, height: "11" }
-> var pkmn5 = { name: "Pidgeotto", description: "PIDGEOTTO claims a large area as its own territory. This POKMON flies around, patrolling its living space. If its territory is violated, it shows no mercy in thoroughly punishing the foe with its sharp claws.", attack: 60, defense: 55, height: "11" }
-> var pkmn6 = { name: "Pikachu", description: "Whenever PIKACHU comes across something new, it blasts it with a jolt of electricity. If you come across a blackened berry, its evidence that this POKEMON mistook the intensity of its charge.", attack: 55, defense: 40, height: "4" }
+> var pkmn1 = { name: "Bulbasaur", description: "BULBASAUR can be seen napping in bright sunlight. There is a seed on its back. By soaking up the suns rays, the seed grows progressively larger.", attack: 49, defense: 49, height: 0.7, type: "grass" }
+> var pkmn2 = { name: "Charmander", description: "The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when CHARMANDER is happy, and blazes when it is enraged.", attack: 52, defense: 43, height: 0.6, type: "fire" }
+> var pkmn3 = { name: "Squirtle", description: "Its shell is not just for protection. Its rounded shape and the grooves on its surface minimize resistance in water, enabling SQUIRTLE to swim at high speeds.", attack: 48, defense: 65, height: 0.5, type: "water" }
+> var pkmn4 = { name: "Butterfree", description: "It has a superior ability to search for delicious honey from flowers. It can seek, extract, and carry honey from flowers blooming over six miles away.", attack: 45, defense: 50, height: 1.1, type: "insect" }
+> var pkmn5 = { name: "Pidgeotto", description: "PIDGEOTTO claims a large area as its own territory. This POKMON flies around, patrolling its living space. If its territory is violated, it shows no mercy in thoroughly punishing the foe with its sharp claws.", attack: 60, defense: 55, height: 1.1, type: "flying" }
+> var pkmn6 = { name: "Pikachu", description: "Whenever PIKACHU comes across something new, it blasts it with a jolt of electricity. If you come across a blackened berry, its evidence that this POKEMON mistook the intensity of its charge.", attack: 55, defense: 40, height: 0.4, type: "electric" }
 
 > db.pokemons.save(pkmn1)
 Inserted 1 record(s) in 347ms
