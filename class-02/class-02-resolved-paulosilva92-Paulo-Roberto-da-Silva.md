@@ -105,7 +105,7 @@ Autor: Paulo Roberto da Silva
 
     ```
     paulo(mongod-3.2.1) be-mean-pokemons> var query = ({'name': 'Grimer'})
-    paulo(mongod-3.2.1) be-mean-pokemons> var poke = db.pokemons.find(query)
+    paulo(mongod-3.2.1) be-mean-pokemons> var poke = db.pokemons.findOne(query)
     paulo(mongod-3.2.1) be-mean-pokemons>poke
     {
 
@@ -124,5 +124,11 @@ Autor: Paulo Roberto da Silva
 
     ```
     paulo(mongod-3.2.1) be-mean-pokemons> poke.description = 'descricao alterada'
+    descricao alterada
     paulo(mongod-3.2.1) be-mean-pokemons> db.pokemons.save(poke)
-    WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+    Updated 1 existing record(s) in 4ms
+    WriteResult({
+      "nMatched": 1,
+      "nUpserted": 0,
+      "nModified": 0
+    })
