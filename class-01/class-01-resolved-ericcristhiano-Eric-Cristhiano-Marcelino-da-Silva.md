@@ -1,5 +1,5 @@
 # MongoDB - Aula 01 - Exercício
-autor: Eric Cristhiano
+autor: Eric Cristhiano Marcelino da Silva
 
 ## Importando os restaurantes
 

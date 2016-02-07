@@ -1,5 +1,5 @@
 # MongoDB - Aula 04 - Exercício
-autor: Eric Cristhiano
+autor: Eric Cristhiano Marcelino da Silva
 
 ## **Adicionar** 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
 ```
