@@ -127,8 +127,6 @@ darkSide(mongod-2.6.3) be-mean-pokemons> db.pokemons.find()
 }
 Fetched 6 record(s) in 2ms
 ```
-
-
 # Busque pokemons pelo nome e armazene em uma variável(passo 5)
 
 ```
@@ -147,7 +145,6 @@ darkSide(mongod-2.6.3) be-mean-pokemons> poke
 
 
 # Alteração da descrição do Pokemon(passo 6)
-
 ```
 darkSide(mongod-2.6.3) be-mean-pokemons> var query = {"nome":"Pedrinho"}
 darkSide(mongod-2.6.3) be-mean-pokemons> var poke = db.pokemons.findOne(poke)
@@ -191,7 +188,3 @@ darkSide(mongod-2.6.3) be-mean-pokemons> poke
 }
 darkSide(mongod-2.6.3) be-mean-pokemons> 
 ```
-
-
-
-
