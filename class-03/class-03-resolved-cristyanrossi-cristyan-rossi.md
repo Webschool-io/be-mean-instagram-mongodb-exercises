@@ -19,8 +19,8 @@ Fetched 2 record(s) in 3ms
 ##2. Liste todos Pokemons com a altura maior ou igual que 4.0;
 
 var query = {height: {$lte: 4.0}}
-
 db.pokemons.find(query)
+
     {
     "_id": ObjectId("56abaa3b9cae02d3cf9535b2"),
     "name": "Rattata",
@@ -43,6 +43,7 @@ Fetched 4 record(s) in 3ms
 
 var query = {$and: [{height: {$lte: 4.5}}, {type: 'roedor'}]}
 db.pokemons.find(query)
+
     {
     "_id": ObjectId("56abaa3b9cae02d3cf9535b2"),
     "name": "Rattata",
@@ -57,6 +58,7 @@ Fetched 1 record(s) in 1ms
 
 var query = {$or: [{name: 'Kakuna'i},{attack: 10}]}
 db.pokemons.find(query)
+
     {
     "_id": ObjectId("56acf7347cea4eaf5a4d9a54"),
     "name": "Pidgeotto",
@@ -100,7 +102,7 @@ Fetched 4 record(s) in 3ms
 
 var query = {$and: [{attack: {$gte: 30}},{height: {$lte: 4.0}}]}
 db.pokemons.find(query)
-Fetched 0 record(s) in 0ms
+
     {
     "_id": ObjectId("56acf7347cea4eaf5a4d9a53"),
     "name": "Charizard",
