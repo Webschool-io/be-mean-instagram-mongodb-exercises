@@ -21,15 +21,26 @@ local              0.078GB
 ```
 
 ## Listagem das coleções (passo 3)
+<<<<<<< HEAD
+´´´
+=======
 ```
+>>>>>>> 31cbd6d5ad6cdc5109761c4048ba449b5d34c343
 MongoDB shell version: 3.2.1
 connecting to: be-mean-pokemons
 Mongo-Hacker 0.0.4
 show collections
+<<<<<<< HEAD
+´´´
+
+##  Inserir Pokemons (passo 4)
+´´´
+=======
 ```
 
 ## Inserir Pokemons (passo 4)
 ```
+>>>>>>> 31cbd6d5ad6cdc5109761c4048ba449b5d34c343
 var pokemon = [{name:'Charizard', description: 'Dragão voador', type: 'inseto', attack: 30, height: 90.5, defense: 80},{name: 'Pidgeotto', description: 'Passáro voador', type: 'ave', attack: 10, height: 30, defense: 25},{name:'Kakuna', description: 'inseto imóvel', type: 'inseto', attack: 03, height: 10, defense: 09},{name:'Rattata', description: 'rato perigoso', type: 'roedor', attack: 10, height: 3.5, defense: 05 },{name:'Vulpix', description: 'raposa filhote', type: 'canino', attack: 10, height: 4.5, defense: 06}]
 db.pokemons.insert(pokemon)
 Inserted 1 record(s) in 2ms
@@ -45,8 +56,13 @@ BulkWriteResult({
 })
 ```
 
+<<<<<<< HEAD
+##  Lista dos pokemons (passo 5)
+´´´
+=======
 ## Lista dos pokemons (passo 5)
 ```
+>>>>>>> 31cbd6d5ad6cdc5109761c4048ba449b5d34c343
 db.pokemons.find()
 {
     "_id": ObjectId("56acf7347cea4eaf5a4d9a53"),
@@ -96,7 +112,11 @@ db.pokemons.find()
 Fetched 05 record(s) in 3ms
 ```
 
+<<<<<<< HEAD
+##  Lista dos pokemons (passo 6)
+=======
 ## Lista dos pokemons (passo 6)
+>>>>>>> 31cbd6d5ad6cdc5109761c4048ba449b5d34c343
 ```
 var query = {"name":"Vulpix"}
 {
@@ -114,10 +134,17 @@ poke
     "height": 4.5,
     "defense": 6
 }
+<<<<<<< HEAD
+´´´
+
+##  Atualização do Pokemon (passo 7)
+´´´
+=======
 ```
 
 ## Atualização do Pokemon (passo 7)
 ```
+>>>>>>> 31cbd6d5ad6cdc5109761c4048ba449b5d34c343
 var poke = db.pokemons.findOne(query)
 poke
 {
@@ -150,6 +177,9 @@ db.pokemons.findOne(query)
     "height": 4.5
     "defense": 6
 }
+<<<<<<< HEAD
+´´´
+=======
 ```
 
 
@@ -161,3 +191,4 @@ db.pokemons.findOne(query)
 
 
 
+>>>>>>> 31cbd6d5ad6cdc5109761c4048ba449b5d34c343
