@@ -1,4 +1,3 @@
-```md
 #MongoDB - Aula 04 - Exercício
 autor: Cristyan Rossi
 
