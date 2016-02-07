@@ -1,5 +1,5 @@
 # MongoDB - Aula 03 - Exercício
-autor: Eric Cristhiano
+autor: Eric Cristhiano Marcelino da Silva
 
 ## Liste todos Pokemons com a altura **menor que** 0.5;
 ```

@@ -1,5 +1,6 @@
 # MongoDB - Aula 06 - Exercício
 **autor:** Eric Cristhiano Marcelino da Silva
+
 ## 1. Fazer uma query para o campo `name` utilizando `explain` para ver o resultado da busca
 ```js
 db.pokemons.find({ name: /scizor/i }).explain('executionStats').executionStats
