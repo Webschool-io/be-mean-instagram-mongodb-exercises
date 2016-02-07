@@ -1,5 +1,5 @@
 # MongoDb - Aula 02 - Exercício
-Autor: Bruno Henrique C. da Silva
+Autor: Paulo Roberto da Silva
 
 ## Criar database chamada be-mean-pokemons
 
@@ -104,51 +104,25 @@ Autor: Bruno Henrique C. da Silva
 ## Buscar um pokemon
 
     ```
-    paulo(mongod-3.2.1) be-mean-pokemons> var query = ({'name': 'Nidorina'})
-    paulo(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
+    paulo(mongod-3.2.1) be-mean-pokemons> var query = ({'name': 'Grimer'})
+    paulo(mongod-3.2.1) be-mean-pokemons> var poke = db.pokemons.find(query)
+    paulo(mongod-3.2.1) be-mean-pokemons>poke
     {
-      "_id": ObjectId("56b784d94a6ae70439c45bce"),
-      "name": "Nidorina",
-      "description": "When NIDORINA are with their friends or family, they keep their barbs tucked away to prevent hurting each other.",
+
+      "_id": ObjectId("56b784d94a6ae70439c45bcd"),
+      "name": "Grimer",
+      "description": "descricao alterada",
       "type": "veneno",
-      "attack": 62,
-      "defense": 67,
-      "height": 8
+      "attack": 80,
+      "defense": 50,
+      "height": 9
     }
+    Fetched 1 record(s) in 2ms
     ```
 
 ## Editar a description do pokemon escolhido
 
     ```
-    paulo(mongod-3.2.1) be-mean-pokemons> var query = {'name':'Grimer'};
-    paulo(mongod-3.2.1) be-mean-pokemons> p = db.pokemons.findOne(query)
-    {
-      "_id": ObjectId("56b784d94a6ae70439c45bcd"),
-      "name": "Grimer",
-      "description": "Appears in filthy areas. Thrives by sucking up polluted sludge that is pumped out of factories.",
-      "type": "veneno",
-
-      "attack": 80,
-      "defense": 50,
-      "height": 9
-    }
-    paulo(mongod-3.2.1) be-mean-pokemons> p.description = "descricao alterada"
-    descricao alterada
-    paulo(mongod-3.2.1) be-mean-pokemons> p
-    {
-      "_id": ObjectId("56b784d94a6ae70439c45bcd"),
-      "name": "Grimer",
-      "description": "descricao alterada",
-      "type": "veneno",
-
-      "attack": 80,
-      "defense": 50,
-      "height": 9
-    }
-    paulo(mongod-3.2.1) be-mean-pokemons> db.pokemons.save(p);
-    Updated 1 existing record(s) in 3ms
-    WriteResult({
-      "nMatched": 1,
-      "nUpserted": 0,
-      "nModified": 1
-    })
+    paulo(mongod-3.2.1) be-mean-pokemons> poke.description = 'descricao alterada'
+    paulo(mongod-3.2.1) be-mean-pokemons> db.pokemons.save(poke)
+    WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })

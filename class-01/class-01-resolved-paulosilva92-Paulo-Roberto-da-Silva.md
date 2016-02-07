@@ -1,5 +1,5 @@
 # MongoDB - Aula 01 - Exercício
-autor: JOAO PAULO SANTOS DE ARAUJO
+autor: Paulo Roberto da Silva
 
 ## Importando os restaurantes
 
