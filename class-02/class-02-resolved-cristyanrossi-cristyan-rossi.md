@@ -151,13 +151,3 @@ db.pokemons.findOne(query)
     "defense": 6
 }
 ```
-
-
-
-
-
-
-
-
-
-
