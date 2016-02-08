@@ -1,7 +1,7 @@
 #MongoDB - Aula 03 - Exercício
 autor: Cristyan Rossi
 
-##1. Liste todos Pokemons com a altura menor que 4.0;
+## Liste todos Pokemons com a altura menor que 4.0;
 
 > var query = {height: {$lt: 4.0}}
 > db.pokemons.find(query)
@@ -16,7 +16,7 @@ autor: Cristyan Rossi
     }
 Fetched 2 record(s) in 3ms
 
-##2. Liste todos Pokemons com a altura maior ou igual que 4.0;
+## Liste todos Pokemons com a altura maior ou igual que 4.0;
 
 > var query = {height: {$lte: 4.0}}
 > db.pokemons.find(query)
@@ -39,7 +39,7 @@ Fetched 2 record(s) in 3ms
     }
 Fetched 4 record(s) in 3ms
 
-##3. Liste todos Pokemons com a altura menor ou igual que 3.5 E do tipo roedor;
+## Liste todos Pokemons com a altura menor ou igual que 3.5 E do tipo roedor;
 
 > var query = {$and: [{height: {$lte: 4.5}}, {type: 'roedor'}]}
 > db.pokemons.find(query)
@@ -54,7 +54,7 @@ Fetched 4 record(s) in 3ms
     }
 Fetched 1 record(s) in 1ms
 
-##4. Liste todos Pokemons com o name `Kakuna` OU com attack menor ou igual que 10;
+## Liste todos Pokemons com o name `Kakuna` OU com attack menor ou igual que 10;
 
 > var query = {$or: [{name: 'Kakuna'i},{attack: 10}]}
 > db.pokemons.find(query)
@@ -97,7 +97,7 @@ Fetched 1 record(s) in 1ms
     }
 Fetched 4 record(s) in 3ms
 
-##5. Liste todos Pokemons com o attack MAIOR OU IGUAL QUE 48 E com  height menor ou igual que 4.0;
+## Liste todos Pokemons com o attack MAIOR OU IGUAL QUE 48 E com  height menor ou igual que 4.0;
 
 
 > var query = {$and: [{attack: {$gte: 30}},{height: {$lte: 4.0}}]}
