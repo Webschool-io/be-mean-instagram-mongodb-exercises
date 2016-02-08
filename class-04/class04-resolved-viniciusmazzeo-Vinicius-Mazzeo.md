@@ -1,8 +1,9 @@
-# MongoDb - Aula 03 - Exercício
+# MongoDb - Aula 04 - Exercício
 autor Vinicius Mazzeo
 
 ## Adicionar 2 ataques ao mesmo tempo(passo 1)
 
+```
  var query = {name: /pikachu/i}
  var attacks = ['Ataque Relampango', 'ataque rápido', 'choque do trovão']
  var mod = {$pushAll: {moves: attacks}}
