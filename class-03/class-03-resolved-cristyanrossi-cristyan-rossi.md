@@ -1,4 +1,4 @@
-#MongoDB - Aula 04 - Exercício
+#MongoDB - Aula 03 - Exercício
 autor: Cristyan Rossi
 
 ##1. Liste todos Pokemons com a altura menor que 4.0;
