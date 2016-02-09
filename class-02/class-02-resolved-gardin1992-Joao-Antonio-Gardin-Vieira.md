@@ -236,3 +236,21 @@ WriteResult({
   "nModified": 1
 })
 ```
+
+
+###Correção
+Exportando pokemons
+```
+mongoexport --db be-mean-instagram --collection pokemons --type=json --out=pokemons.json
+2016-02-09T04:03:56.394-0200	connected to: localhost
+2016-02-09T04:03:56.396-0200	exported 14 records
+```
+Importado pokemons
+```
+ mongoexport --db be-mean-instagram --collection pokemons --type=json --out=pokemons.json
+2016-02-09T04:03:56.394-0200	connected to: localhost
+2016-02-09T04:03:56.396-0200	exported 14 records
+Tto(mongod-3.2.1) be-mean-pokemons> show collections
+pokemons → 0.002MB / 0.016MB
+```
+
