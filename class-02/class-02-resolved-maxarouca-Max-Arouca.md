@@ -3,6 +3,8 @@ autor: Max Arouca
 
 ## Listagem das databases (passo 2)
 
+````javascript
+
 MacMax(mongod-3.0.7) be-mean-instagram> use be-mean-pokemons
 switched to db be-mean-pokemons
 MacMax(mongod-3.0.7) be-mean-pokemons> db.pokemons.insert({name:'', description:''})
@@ -16,13 +18,19 @@ be-mean-pokemons   0.078GB
 be-mean            0.078GB
 local              0.078GB
 
+````
+
 ## Listagem das coleções (passo 3)
 
+````javascript
 MacMax(mongod-3.0.7) be-mean-pokemons> show collections
 pokemons        0.000MB / 0.008MB
 system.indexes  0.000MB / 0.008MB
+````
 
 ## Cadastro dos pokemons (passo 4)
+
+````javascript
 
 var pokemon = {'name':'Wigglytuff','description':'Wigglytuff has large, saucerlike eyes','type': 'fairy', attack: 40, height: 1.0 }
 
@@ -44,7 +52,11 @@ var pokemon = {'name':'Misdreavus','description':'Misdreavus frightens people wi
 
 db.pokemons.save(pokemon)
 
+````
+
 ## Lista dos pokemons (passo 5)
+
+````javascript
 
 be-mean-pokemons> db.pokemons.find()
 {
@@ -93,9 +105,11 @@ be-mean-pokemons> db.pokemons.find()
   "height": 0.7
 }
 
-
+````
 
 ## Pikachu (passo 6)
+
+````javascript
 
 MacMax(mongod-3.0.7) be-mean-pokemons> var query = {name: "Misdreavus"}
 MacMax(mongod-3.0.7) be-mean-pokemons> var p = db.pokemons.findOne(query)
@@ -109,9 +123,11 @@ MacMax(mongod-3.0.7) be-mean-pokemons> p
   "height": 0.7
 }
 
-
+````
 
 ## Atualização do Pikachu (passo 6)
+
+````javascript
 
 MacMax(mongod-3.0.7) be-mean-pokemons> p.description = "The Pokémon apparently uses its red spheres to absorb the fearful feelings of foes and turn them into nutrition"
 The Pokémon apparently uses its red spheres to absorb the fearful feelings of foes and turn them into nutrition
@@ -125,4 +141,4 @@ MacMax(mongod-3.0.7) be-mean-pokemons> p
   "height": 0.7
 }
 
-
+````

@@ -212,149 +212,16 @@ db.pokemons.find({}, {name:1, _id: 0}).limit(5).skip(10)
     "ghost" : 31
   }
 ]
-
-db.pokemons.aggregate(
-    { $unwind: "$types" } , 
-    {
-    $group: {
-        _id: {'tipo': "$types"},
-        total: { $sum: 1}
-
-    }
-    }
-)
-
-{
-  "result": [
-    {
-      "_id": {
-        "tipo": "fairy"
-      },
-      "total": 28
-    },
-    {
-      "_id": {
-        "tipo": "psychic"
-      },
-      "total": 62
-    },
-    {
-      "_id": {
-        "tipo": "fighting"
-      },
-      "total": 38
-    },
-    {
-      "_id": {
-        "tipo": "dark"
-      },
-      "total": 38
-    },
-    {
-      "_id": {
-        "tipo": "ground"
-      },
-      "total": 51
-    },
-    {
-      "_id": {
-        "tipo": "grass"
-      },
-      "total": 75
-    },
-    {
-      "_id": {
-        "tipo": "electric"
-      },
-      "total": 40
-    },
-    {
-      "_id": {
-        "tipo": "steel"
-      },
-      "total": 37
-    },
-    {
-      "_id": {
-        "tipo": "rock"
-      },
-      "total": 46
-    },
-    {
-      "_id": {
-        "tipo": "flying"
-      },
-      "total": 77
-    },
-    {
-      "_id": {
-        "tipo": "fire"
-      },
-      "total": 47
-    },
-    {
-      "_id": {
-        "tipo": "ice"
-      },
-      "total": 24
-    },
-    {
-      "_id": {
-        "tipo": "bug"
-      },
-      "total": 61
-    },
-    {
-      "_id": {
-        "tipo": "poison"
-      },
-      "total": 54
-    },
-    {
-      "_id": {
-        "tipo": "ghost"
-      },
-      "total": 34
-    },
-    {
-      "_id": {
-        "tipo": "dragon"
-      },
-      "total": 20
-    },
-    {
-      "_id": {
-        "tipo": "water"
-      },
-      "total": 105
-    },
-    {
-      "_id": {
-        "tipo": "normal"
-      },
-      "total": 78
-    }
-  ],
-  "ok": 1
-}
-
-
 ```
 
 ## 6. Realizar 3 counts na pokemons.
 
--> .count -- todos
 
-MacMax(mongod-3.0.7) be-mean> db.pokemons.count({})
-610
+``` JavaScript
+db.pokemons.count({}) // todos
 
--> .count -- só tipo fogo
+db.pokemons.count({types: 'fire'}) // só tipo fogo
 
-MacMax(mongod-3.0.7) be-mean> db.pokemons.count({types: "fire"})
-47
+db.pokemons.count({defense: {$gt: 70}}) // só de quantos tem a defesa maior que 70
 
--> .count -- só de quantos tem a defesa maior que 70
-
-MacMax(mongod-3.0.7) be-mean> db.pokemons.count({defense: { $gte: 70}})
-295
-
+```
