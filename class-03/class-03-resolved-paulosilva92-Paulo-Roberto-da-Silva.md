@@ -2,7 +2,7 @@
 Autor: Paulo Roberto da Silva
 
 ## Listagem pokemons height < 0.5
-```
+```js
 paulo(mongod-3.2.1) be-mean-pokemons> var query = {height : {$lt:0.5}}
 paulo(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query);
 Fetched 0 record(s) in 1ms
@@ -10,7 +10,7 @@ Fetched 0 record(s) in 1ms
 
 
 ## Listagem pokemons height >= 0.5
-```
+```js
 paulo(mongod-3.2.1) be-mean-pokemons> var query = {height : {$gte:0.5}}
 paulo(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query);
 {
@@ -61,7 +61,7 @@ paulo(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query);
 Fetched 5 record(s) in 5ms
 ```
 ## Listagem pokemons height <= 0.5 e type "grama"
-```
+```js
 paulo(mongod-3.2.1) be-mean-pokemons> var query = {$and: [{height:{$lte:0.5}},{type:'grama'}]}
 paulo(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
 Fetched 0 record(s) in 1ms
@@ -75,7 +75,7 @@ Fetched 0 record(s) in 1ms
 ```
 
 ## Listagem pokemons attack >= 48 e height <= 0.5
-```
+```js
 paulo(mongod-3.2.1) be-mean-pokemons> var query = {$or : [{attack: {$gte: 48}}, {height: {$lte: 0.5}}]}
 paulo(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
 {

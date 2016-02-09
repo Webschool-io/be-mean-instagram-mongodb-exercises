@@ -26,7 +26,7 @@ paulo(mongod-3.2.1) be-mean-teste> show collections
 
 ## Criar cinco pokemons
 
-```
+```js
 var pokemons = [
 {'name': 'Butterfree', 'description': 'Its wings, covered with poisonous powders, repel water.', 'type': 'inseto', 'attack': 45, 'defense': 50, 'height': 11},
 {'name': 'Arbok', 'description': 'The frightening patterns on its belly have been studied. Six variations have been confirmed.', 'type': 'veneno', 'attack': 85, 'defense': 69, 'height': 35},
@@ -50,7 +50,7 @@ BulkWriteResult({
 
 ## Listar todos os pokemons
 
-```
+```js
 paulo(mongod-3.2.1) be-mean-pokemons> db.pokemons.find()
 {
 "_id": ObjectId("56b784d94a6ae70439c45bca"),
@@ -103,7 +103,7 @@ paulo(mongod-3.2.1) be-mean-pokemons> db.pokemons.find()
 
 ## Buscar um pokemon
 
-```
+```js
 paulo(mongod-3.2.1) be-mean-pokemons> var query = ({'name': 'Grimer'})
 paulo(mongod-3.2.1) be-mean-pokemons> var poke = db.pokemons.findOne(query)
 paulo(mongod-3.2.1) be-mean-pokemons>poke
@@ -122,7 +122,7 @@ Fetched 1 record(s) in 2ms
 
 ## Editar a description do pokemon escolhido
 
-```
+```js
 paulo(mongod-3.2.1) be-mean-pokemons> poke.description = 'descricao alterada'
 descricao alterada
 paulo(mongod-3.2.1) be-mean-pokemons> db.pokemons.save(poke)
