@@ -4,6 +4,7 @@ Autor: João Paulo Costa Marra
 
 ## Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
 
+```
 Jota-PC(mongod-3.2.1) be-mean-pokemons> var query = {name: /Pikachu/i}
 Jota-PC(mongod-3.2.1) be-mean-pokemons> var mod = {$pushAll: {moves: ['esfera elétrica', 'i
 nvestida trovão']}}
@@ -40,10 +41,11 @@ WriteResult({
   "nUpserted": 0,
   "nModified": 1
 })
-
+```
 
 ## Adicionar 1 movimento em todos os pokemons: desvio.
 
+```
 Jota-PC(mongod-3.2.1) be-mean-pokemons> var query = {}
 Jota-PC(mongod-3.2.1) be-mean-pokemons> var mod = {$push: {moves: 'desvio'}}
 Jota-PC(mongod-3.2.1) be-mean-pokemons> var options = {multi: true}
@@ -54,10 +56,11 @@ WriteResult({
   "nUpserted": 0,
   "nModified": 5
 })
-
+```
 
 ## Adicionar o pokemon AindaNaoExisteMon caso ele não exista com todos os dados com o valor null e a descrição: "Sem maiores informações".
 
+```
 Jota-PC(mongod-3.2.1) be-mean-pokemons> var query = {name: /AindaNaoExisteMon/i}
 Jota-PC(mongod-3.2.1) be-mean-pokemons> var mod = {$setOnInsert:
                                                       {
@@ -78,10 +81,11 @@ WriteResult({
   "nModified": 0,
   "_id": ObjectId("56b8ffca0c0dd5daab6897d7")
 })
-
+```
 
 ## Pesquisar todos o pokemons que possuam o ataque investida e mais um que você adicionou, escolha seu pokemon favorito.
 
+```
 Jota-PC(mongod-3.2.1) be-mean-pokemons> var query = {moves: {$in: [/investida/i, /esfera el
 étrica/i]}}
 Jota-PC(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
@@ -100,10 +104,11 @@ Jota-PC(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
   ]
 }
 Fetched 1 record(s) in 7ms
-
+```
 
 ## Pesquisar todos os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.
 
+```
 Jota-PC(mongod-3.2.1) be-mean-pokemons> var query = {moves: {$all: [/investida trovão/i, /esfera elétrica/i]}}
 Jota-PC(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
 {
@@ -121,9 +126,11 @@ Jota-PC(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
   ]
 }
 Fetched 1 record(s) in 7ms
+```
 
 ## Pesquisar todos os pokemons que não são do tipo elétrico.
 
+```
 Jota-PC(mongod-3.2.1) be-mean-pokemons> var query = {type: {$not: /elétrico/i}}
 Jota-PC(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
 {
@@ -190,20 +197,23 @@ Jota-PC(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
   "description": "Sem maiores informações"
 }
 Fetched 5 record(s) in 28ms
-
+```
 
 ## Pesquisar todos pokemons que tenham o ataque investida E tenham a defesa não menor ou igual a 49.
 
+```
 Jota-PC(mongod-3.2.1) be-mean-pokemons> var query = {$and: [ {moves: {$in: ['investida']}}, {attack: {$not: {$lte: 49}}} ]}
 Jota-PC(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
 Fetched 0 record(s) in 1ms
-
+```
 
 ## Remova todos os pokemons do tipo água e com attack menor que 50.
 
+```
 Jota-PC(mongod-3.2.1) be-mean-pokemons> var query = {$and: [ {type: /água/i}, {attack: {$lt: 50}} ]}
 Jota-PC(mongod-3.2.1) be-mean-pokemons> db.pokemons.remove(query)
 Removed 1 record(s) in 1ms
 WriteResult({
   "nRemoved": 1
 })
+```
