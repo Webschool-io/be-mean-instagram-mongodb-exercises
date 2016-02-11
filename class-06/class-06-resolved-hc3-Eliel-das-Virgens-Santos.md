@@ -1,3 +1,9 @@
+# MongoDB - Aula 06 - Exercício
+User: [hc3](https://github.com/hc3)
+Autor: Eliel das Virgens Santos
+
+
+
 1#Fazer uma query para o campo name utilizando explain para ver o resultado da busca
 ```
 darkSide(mongod-2.6.3) be-mean-pokemons> var query = {"name": "Rattata"}
