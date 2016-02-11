@@ -3,29 +3,29 @@ Autor: Hebert Porto
 
 ## Passo 1
 
-    '''javascript
+    ```
     vagrant-ubuntu-trusty-64(mongod-2.4.9) use be-mean-pokemons
     switched to db be-mean-pokemons
-    '''
+    ```
 ## Passo 2 
 
-    '''javascript
+    ```
     vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean-pokemons> show dbs
     be-mean → 0.203GB
     local   → 0.078GB
     test    → 0.203GB
-    '''
+    ```
 
 ## Passo 3
 
-    '''javascript
+    ```
     vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean-pokemons> db.collections
     be-mean-pokemons.collections
-    '''
+    ```
 
 ## Passo 4
 
-    '''javascript
+    '```
     vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean-pokemons> db.pokemons.insert({name: "Charizard", description: "Sinistros de dia e de noite", type: "ghost", attack: 132 , defens
                                                              db.pokemons.insert({name: "Charizard", description: "Sinistros de dia e de noite", type: "ghost", attack: 132 , defens
     e: 2121,height: 2 })
@@ -51,7 +51,7 @@ Autor: Hebert Porto
 
 ## Passo 5
 
-    '''javascript
+    ```
     vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean-pokemons> db.pokemons.find()
     {
       "_id": ObjectId("56bb392384277bd0550d32bf"),
@@ -99,7 +99,7 @@ Autor: Hebert Porto
       "height": 21
     }
     Fetched 5 record(s) in 12ms
-    '''
+    ```
 
 ## Passo 6
 
@@ -109,9 +109,9 @@ Autor: Hebert Porto
     '''
 
 ## Passo 7
-    '''javascript
+    ```
     vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean-pokemons> poke.description = "Nova Description"
     Nova Description
     vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean-pokemons> db.pokemons.save(poke)
     Updated 1 existing record(s) in 2ms
-    '''
+    ```
