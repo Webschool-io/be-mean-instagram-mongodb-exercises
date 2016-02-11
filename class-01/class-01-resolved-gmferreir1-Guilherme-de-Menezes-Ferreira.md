@@ -8,7 +8,7 @@ mongoimport --db be-mean --collection restaurantes --drop --file restaurantes.js
 2016-02-10T15:16:09.946-0200	connected to: localhost
 2016-02-10T15:16:09.947-0200	dropping: be-mean.restaurantes
 2016-02-10T15:16:11.316-0200	imported 25359 documents
-
+```
 
 ## Contando os restaurantes
 
