@@ -58,8 +58,11 @@ WriteResult({
   "nUpserted": 0,
   "nModified": 14
 })
+```
 
 ## **Adicionar** o pokemon `AindaNaoExisteMon` caso ele não exista com todos os dados com o valor `null` e a descrição: "Sem maiores informações".##
+
+```
 Tto(mongod-3.2.1) be-mean-pokemons> var query = {name: /AindaNaoExisteMon/i}
 Tto(mongod-3.2.1) be-mean-pokemons> var mod = {$setOnInsert: {name: "AindaNaoExisteMon", attack: null, defense: null, height: null, description: "Sem maiores informações"}}
 Tto(mongod-3.2.1) be-mean-pokemons> var options = {upsert: true}
@@ -71,8 +74,11 @@ WriteResult({
   "nModified": 0,
   "_id": ObjectId("56bae50cb45aafdd957c6476")
 })
+```
 
 ## Pesquisar todos o pokemons que possuam o ataque `investida` e mais um que você adicionou, escolha seu pokemon favorito.##
+
+```
 Tto(mongod-3.2.1) be-mean-pokemons> var query = {moves: { $in: [/investida/i, /roar/i]}}
 Tto(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
 {
@@ -89,10 +95,11 @@ Tto(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
   ]
 }
 Fetched 1 record(s) in 3ms
-
-
+```
 
 ## Pesquisar **todos** os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.##
+
+```
 Tto(mongod-3.2.1) be-mean-pokemons> var query = {moves: { $in: [/desvio/i]}}
 Tto(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
 {
@@ -216,9 +223,11 @@ Tto(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
   ]
 }
 Fetched 10 record(s) in 7ms
-
+```
 
 ## Pesquisar **todos** os pokemons que não são do tipo `elétrico`.##
+
+```
 Tto(mongod-3.2.1) be-mean-pokemons> var query = {$nor: [{type: /eletric/i}]}
 Tto(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
 {
@@ -388,41 +397,23 @@ Tto(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
   "description": "Sem maiores informações"
 }
 Fetched 14 record(s) in 10ms
-
+```
 
 ## Pesquisar **todos** os pokemons que tenham o ataque `investida` **E** tenham a defesa **não menor ou igual** a 49.##
+
+```
 Tto(mongod-3.2.1) be-mean-pokemons> var query = { $and: [ {defese: { $gte: 49 } }, { moves: { $in: [/investida/i] } } ] }
 Tto(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
 Fetched 0 record(s) in 1ms
+```
 
 ## Remova **todos** os pokemons do tipo água e com attack menor que 50.
+
+```
 Tto(mongod-3.2.1) be-mean-pokemons> var query = { $and: [ {attack: { $lt: 50 } }, { type: /watter/i } ] }
 Tto(mongod-3.2.1) be-mean-pokemons> db.pokemons.remove( query )
 Removed 0 record(s) in 2ms
 WriteResult({
   "nRemoved": 0
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
