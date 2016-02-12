@@ -22,7 +22,7 @@ test               0.000GB
 
 ```
 
-## Insira pelo menos 5 pokemons A SUA ESCOLHA
+## Insira pelo menos 5 pokemons A SUA ESCOLHA;
 ```
 
 > var pokemons = [
@@ -45,7 +45,7 @@ BulkWriteResult({ "writeErrors" : [ ],
 })
 ```
 
-## Liste os pokemons existentes na sua coleção
+## Liste os pokemons existentes na sua coleção;
 
 ```
 
@@ -100,7 +100,7 @@ BulkWriteResult({ "writeErrors" : [ ],
 
 ```
 
-## Busque o pokemons a sua escolha, pelo nome, e armazene-o em uma variável chamada `poke`
+## Busque o pokemons a sua escolha, pelo nome, e armazene-o em uma variável chamada `poke`;
 
 ```
 
@@ -118,7 +118,7 @@ BulkWriteResult({ "writeErrors" : [ ],
 
 ```
 
-## Modifique sua `description` e salvê-o
+## Modifique sua `description` e salvê-o;
 
 ```
 > poke.description = 'BLASTOISEEEEEEEE!!!!!!!!!!!!!!!!!!!!!!!!!'
