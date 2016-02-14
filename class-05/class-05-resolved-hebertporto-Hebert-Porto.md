@@ -1,7 +1,7 @@
 ## MongoDb - Aula 05 - Exercício Resolvido - Hebert Porto
 Autor: Hebert Porto
 
-### 1 
+### 1 - Importar as collections restaurantes e pokemons
 ```js
 vagrant@vagrant-ubuntu-trusty-64:/vagrant/node_apps/be-mean-instagram/Apostila/module-mongodb/src/data$ mongoimport --host 127.0.0.1 --db be-mean --collection pokemons --drop
  --file pokemons.json
@@ -11,7 +11,7 @@ Sat Feb 13 12:33:31.614 check 9 610
 Sat Feb 13 12:33:31.618 imported 610 objects
 ```
 
-### 2
+### 2 - Fazer um distinct por `cuisine` na collection restaurantes
 ```js
 vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean> db.restaurantes.distinct('cuisine')
 [
@@ -103,7 +103,7 @@ vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean> db.restaurantes.distinct('cuisin
 ]
 ```
 
-### 3
+### 3 - Fazer um distinct por `types` na collection pokemons
 ```js
 vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean> db.pokemons.distinct('types')
 [
@@ -128,7 +128,7 @@ vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean> db.pokemons.distinct('types')
 ]
 ```
 
-### 4
+### 4 - Apresentar as primeiras 3 páginas da collection pokemons (5 em 5)
 ```js
 vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean> db.pokemons.find().limit(5).skip(5*0)
 {
@@ -340,7 +340,7 @@ vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean> db.pokemons.find().limit(5).skip
 Fetched 5 record(s) in 12ms
 ```
 
-### 5
+### 5 - Apresentar quantidade de pokemons de cada `type` (group ou aggregate)
 ```js
 vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean> db.pokemons.aggregate([
 ... {$unwind: '$types'},
@@ -429,12 +429,22 @@ vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean> db.pokemons.aggregate([
 }
 ```
 
-### 6
+### 6 - Realizar 3 counts na pokemons.
+
+1. count -- todos
 ```js
 vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean> db.pokemons.count()
 610
+```
+
+2. count -- só tipo fogo
+```js
 vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean> db.pokemons.count({types: 'ghost'})
 34
+```
+
+3. count -- só de quantos tem a defesa maior que 70
+```js
 vagrant-ubuntu-trusty-64(mongod-2.4.9) be-mean> db.pokemons.count({defense: { $gt: 70 }})
 250
 ```
