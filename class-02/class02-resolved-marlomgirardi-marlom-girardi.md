@@ -31,7 +31,7 @@ dell-marlom(mongod-3.0.9) be-mean-pokemons> show collections
 
 ```
 
-##Cadastro
+##Cadastro de pokemons
 ```
 dell-marlom(mongod-3.0.9) be-mean-pokemons> var pokemons = [{'name':'Pikachu','description':'It raises its tail to check its sur roundings. The tail is sometimes struck by light ning in this pose.',attack: 55, defense: 40, height: 0.4},{'name':'Sandshrew','description':'To protect itself from attackers, it curls up into a ball. It lives in arid regions with minimal rainfall.',attack: 75, defense: 85, height: 0.6},{'name':'Nidoran','description':'Although small, its venomous barbs render this POKMON dangerous. The female has smaller horns.',attack: 47, defense: 52, height: 0.4},{'name':'Clefairy','description':'Adored for their cute looks and playfulness. They are thought to be rare, as they do not appear often.',attack: 45, defense: 48, height: 0.6},{'name':'Vulpix','description':'If it is attacked by an enemy that is stronger than itself, it feigns injury to fool the enemy and escapes.',attack: 41, defense: 40, height: 0.6}]
 
@@ -49,7 +49,7 @@ BulkWriteResult({
 })
 ```
 
-##Lista de todos os pokemons
+##Lista dos pokemons
 ```
 dell-marlom(mongod-3.0.9) be-mean-pokemons> db.pokemons.find()
 {
@@ -92,10 +92,10 @@ dell-marlom(mongod-3.0.9) be-mean-pokemons> db.pokemons.find()
   "defense": 40,
   "height": 0.6
 }
-Fetched 5 record(s) in 1ms
+Fetched 5 record(s) in 2ms
 ```
 
-##Query para buscar
+##Pokemon
 ```
 var query = {name:'Nidoran'}
 > var poke = db.pokemons.find(query)
@@ -103,14 +103,14 @@ var query = {name:'Nidoran'}
 { "_id" : ObjectId("564921350910df3d8696d70d"), "name" : "Rapidash", "description" : "Ta pegando fogo bixo!", "type" : "fire", "attack" : 80, "defense" : 30, "height" : 1.7 }
 ```
 
-##Atualizando a descrição
+##Atualização do Pokemon
 ```
 dell-marlom(mongod-3.0.9) be-mean-pokemons> var query = {name:'Rapidash'}
 dell-marlom(mongod-3.0.9) be-mean-pokemons> var poke = db.pokemons.findOne(query)
 dell-marlom(mongod-3.0.9) be-mean-pokemons> poke.description = 'Hakuna matata'
 Hakuna matata
 dell-marlom(mongod-3.0.9) be-mean-pokemons> db.pokemons.save(poke)
-Updated 1 existing record(s) in 0ms
+Updated 1 existing record(s) in 1ms
 WriteResult({
   "nMatched": 1,
   "nUpserted": 0,
