@@ -19,7 +19,6 @@
     cerberus(mongod-2.6.11) be-mean> db.restaurantes.find({}).count()
     25359
 
-
 ```
 
 
