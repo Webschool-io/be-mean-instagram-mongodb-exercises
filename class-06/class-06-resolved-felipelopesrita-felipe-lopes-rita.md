@@ -3,6 +3,7 @@ User: https://github.com/felipelopesrita
 Autor: Felipe José Lopes Rita
 
 # Fazer uma query para o campo name utilizando `explain` para ver o resultado da busca
+```js
 StarKiller(mongod-3.2.0) be-mean> db.pokemons.find({name:"Pikachu"}).explain('executionStats').executionStats
 {
   "executionSuccess": true,
@@ -31,8 +32,10 @@ StarKiller(mongod-3.2.0) be-mean> db.pokemons.find({name:"Pikachu"}).explain('ex
     "docsExamined": 610
   }
 }
+```
 
 # Criar um `index` um para o campo `name`.
+```js
 StarKiller(mongod-3.2.0) be-mean> db.pokemons.createIndex({name:1})
 {
   "createdCollectionAutomatically": false,
@@ -40,8 +43,10 @@ StarKiller(mongod-3.2.0) be-mean> db.pokemons.createIndex({name:1})
   "numIndexesAfter": 2,
   "ok": 1
 }
+```
 
 # Refazer a query para o campo `name` utilizando `explain` para ver o resultado da busca.
+```js
 db.pokemons.find({name:"Pikachu"}).explain('executionStats').executionStats
 {
   "executionSuccess": true,
@@ -97,8 +102,9 @@ db.pokemons.find({name:"Pikachu"}).explain('executionStats').executionStats
     }
   }
 }
-
+```
 # Fazer uma query para dois campos juntos utilizando `explain` para ver o resultado da busca.
+```js
 StarKiller(mongod-3.2.0) be-mean> db.pokemons.find({name:"Pikachu", attack: {$gt: 50} }).explain('executionStats').executionStats
 {
   "executionSuccess": true,
@@ -136,8 +142,10 @@ StarKiller(mongod-3.2.0) be-mean> db.pokemons.find({name:"Pikachu", attack: {$gt
     "docsExamined": 610
   }
 }
+```
 
 # Criar um `index` para esses dois campos juntos.
+```js
 StarKiller(mongod-3.2.0) be-mean> db.pokemons.createIndex({name:1, attack:1});
 {
   "createdCollectionAutomatically": false,
@@ -145,8 +153,10 @@ StarKiller(mongod-3.2.0) be-mean> db.pokemons.createIndex({name:1, attack:1});
   "numIndexesAfter": 2,
   "ok": 1
 }
+```
 
 # Refazer a query para os dois campos juntos utilizando `explain` para ver o resultado da busca.
+```js
 StarKiller(mongod-3.2.0) be-mean> db.pokemons.find({name:"Pikachu", attack: {$gt: 50} }).explain('executionStats').executionStats
 {
   "executionSuccess": true,
@@ -206,3 +216,4 @@ StarKiller(mongod-3.2.0) be-mean> db.pokemons.find({name:"Pikachu", attack: {$gt
     }
   }
 }
+```
