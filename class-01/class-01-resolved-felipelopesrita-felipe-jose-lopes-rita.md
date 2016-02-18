@@ -9,7 +9,7 @@ autor: Felipe José Lopes Rita
     2016-02-04T14:57:10.787-0200	dropping: be-mean.restaurante
     2016-02-04T14:57:13.783-0200	[########################] be-mean.restaurante	11.3 MB/11.3 MB (100.0%)
     2016-02-04T14:57:13.794-0200	[########################] be-mean.restaurante	11.3 MB/11.3 MB (100.0%)
-    2016-02-04T14:57:13.795-0200	imported 0 documents
+    2016-02-04T14:57:13.795-0200	imported 25359 documents
 
     ```
 
