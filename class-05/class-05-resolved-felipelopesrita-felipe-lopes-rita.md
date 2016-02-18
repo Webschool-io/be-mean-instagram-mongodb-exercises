@@ -6,6 +6,7 @@ Autor: Felipe José Lopes Rita
 Feito :p
 
 # Distinct por `cuisine` na restaurantes.
+```js
 StarKiller(mongod-3.2.0) be-mean> db.restaurantes.distinct('cuisine')
 [
   "Hamburgers",
@@ -94,8 +95,10 @@ StarKiller(mongod-3.2.0) be-mean> db.restaurantes.distinct('cuisine')
   "Californian",
   "Chilean"
 ]
+```
 
 # Distinct por `types` na pokemons.
+```js
 StarKiller(mongod-3.2.0) be-mean> db.pokemons.distinct('types')
 [
   "grass",
@@ -117,24 +120,26 @@ StarKiller(mongod-3.2.0) be-mean> db.pokemons.distinct('types')
   "dragon",
   "dark"
 ]
+```
 
 # As primeiras 3 pág. com .limit() e .skip() de pokemons (5 em 5).
+```js
 StarKiller(mongod-3.2.0) be-mean> db.pokemons.find({}).limit(5).skip(5 * 0)
 StarKiller(mongod-3.2.0) be-mean> db.pokemons.find({}).limit(5).skip(5 * 1)
 StarKiller(mongod-3.2.0) be-mean> db.pokemons.find({}).limit(5).skip(5 * 2)
+```
 
 # Group ou Aggregate contando a quantidade de pokemons de cada tipo
+```js
 StarKiller(mongod-3.2.0) be-mean> db.pokemons.group({
 	initial: { },
 	reduce: function( current, result ) {
-	
 		current.types.forEach(function(tipo){
 			if( result[tipo] )
 				result[tipo] += 1;
 			else
 				result[tipo] = 1;
 		})
-			
 	}
 })
 
@@ -160,11 +165,14 @@ StarKiller(mongod-3.2.0) be-mean> db.pokemons.group({
     "dark": 32
   }
 ]
+```
 
 # Realizar 3 counts na pokemons.
+```js
 StarKiller(mongod-3.2.0) be-mean> db.pokemons.count()
 610
 StarKiller(mongod-3.2.0) be-mean> db.pokemons.count({types: 'rock'})
 46
 StarKiller(mongod-3.2.0) be-mean> db.pokemons.count({types: 'fire'})
 44
+```
