@@ -2,6 +2,7 @@
 autor: Felipe José Lopes Rita
 
 ## Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro, Charmander
+```js
 StarKiller(mongod-3.2.0) be-mean-instagram> query = { $or:[ {name: /pikachu/i}, {name:/squirtle/i}, {name: /bulbassauro/i}, {name: /charmander/i} ] }
 {
   "$or": [
@@ -40,8 +41,10 @@ WriteResult({
   "nUpserted": 0,
   "nModified": 4
 })
+```
 
 ## **Adicionar** 1 movimento em todos os pokemons: `desvio`.##
+```js
 StarKiller(mongod-3.2.0) be-mean-instagram> var mod = { $push:{ moves:'desvio' } }
 StarKiller(mongod-3.2.0) be-mean-instagram> var options = {multi: true}
 StarKiller(mongod-3.2.0) be-mean-instagram> db.pokemons.update({}, mod, options)
@@ -51,10 +54,10 @@ WriteResult({
   "nUpserted": 0,
   "nModified": 9
 })
-
-
+```
 
 ## **Adicionar** o pokemon `AindaNaoExisteMon` caso ele não exista com todos os dados com o valor `null` e a descrição: "Sem maiores informações".##
+```js
 StarKiller(mongod-3.2.0) be-mean-instagram> mod = { $setOnInsert: { name: 'AindaNaoExisteMon', description: 'Sem maiores informações', type: null, attack: null, height:null, moves: null } }
 {
   "$setOnInsert": {
@@ -76,8 +79,10 @@ WriteResult({
   "nModified": 0,
   "_id": ObjectId("56bb5169a654f3d15d16ef85")
 })
+```
 
 ## Pesquisar todos o pokemons que possuam o ataque `investida` e mais um que você adicionou, escolha seu pokemon favorito.##
+```js
 StarKiller(mongod-3.2.0) be-mean-instagram> var query = { moves: { $all:['Investida', 'Choque do Trovão'] } }
 StarKiller(mongod-3.2.0) be-mean-instagram> db.pokemons.find(query)
 {
@@ -95,8 +100,10 @@ StarKiller(mongod-3.2.0) be-mean-instagram> db.pokemons.find(query)
   ]
 }
 Fetched 1 record(s) in 3ms
+```
 
 ## Pesquisar **todos** os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.##
+```js
 StarKiller(mongod-3.2.0) be-mean-instagram> var query = { moves: { $in: ['Choque do Trovão'] } }
 StarKiller(mongod-3.2.0) be-mean-instagram> db.pokemons.find(query)
 {
@@ -114,8 +121,10 @@ StarKiller(mongod-3.2.0) be-mean-instagram> db.pokemons.find(query)
   ]
 }
 Fetched 1 record(s) in 2ms
+```
 
 ## Pesquisar **todos** os pokemons que não são do tipo `elétrico`.##
+```js
 StarKiller(mongod-3.2.0) be-mean-instagram> var query = { type: { $not: /elétrico/i } }
 StarKiller(mongod-3.2.0) be-mean-instagram> db.pokemons.find(query)
 {
@@ -212,8 +221,9 @@ StarKiller(mongod-3.2.0) be-mean-instagram> db.pokemons.find(query)
   "moves": null
 }
 Fetched 8 record(s) in 9ms
-
+```
 ## Pesquisar **todos** os pokemons que tenham o ataque `investida` **E** tenham a defesa **não menor ou igual** a 49.##
+```js
 var query = {
 	$and: [
 		{ moves: { $in: ['Investida'] } },
@@ -276,3 +286,4 @@ Removed 1 record(s) in 4ms
 WriteResult({
   "nRemoved": 1
 })
+```
