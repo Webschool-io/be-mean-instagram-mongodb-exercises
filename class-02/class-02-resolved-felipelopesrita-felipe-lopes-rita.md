@@ -8,7 +8,6 @@ be-mean           → 0.008GB
 be-mean-instagram → 0.000GB
 local             → 0.000GB
 ```
-
 ## Listagem das coleções (passo 3)
 ```
 StarKiller(mongod-3.2.0) be-mean-pokemons> db.createCollection("pokemons")
