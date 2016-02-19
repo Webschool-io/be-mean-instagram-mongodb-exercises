@@ -14,8 +14,10 @@ cerberus(mongod-2.6.11) be-mean-pokemons> show dbs
 admin             → (empty)
 be-mean           → 0.078GB
 be-mean-instagram → 0.078GB
+be-mean-pokemons  → 0.078GB
 be-mean-teste     → 0.078GB
 local             → 0.078GB
+
 ```
 
 ## Liste quais coleções você possui nessa database
