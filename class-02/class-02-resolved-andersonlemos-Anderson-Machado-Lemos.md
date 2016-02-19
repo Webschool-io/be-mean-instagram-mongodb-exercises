@@ -124,7 +124,7 @@ cerberus(mongod-2.6.11) be-mean-pokemons> poke = db.pokemons.findOne(query)
   "height": 0.4
 }
 ```
-## Modifique sua description e salvê-o
+## Modifique sua description e salve-o
 
 ```
 cerberus(mongod-2.6.11) be-mean-pokemons> poke.description = "Own"
