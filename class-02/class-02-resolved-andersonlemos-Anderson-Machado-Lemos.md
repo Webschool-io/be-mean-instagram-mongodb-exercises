@@ -16,7 +16,6 @@ be-mean           → 0.078GB
 be-mean-instagram → 0.078GB
 be-mean-teste     → 0.078GB
 local             → 0.078GB
-
 ```
 
 ## Liste quais coleções você possui nessa database
@@ -54,11 +53,8 @@ cerberus(mongod-2.6.11) be-mean-pokemons> var pokemon = {'name':'Arbok','descrip
 
 cerberus(mongod-2.6.11) be-mean-pokemons> db.pokemons.insert(pokemon)
 Inserted 1 record(s) in 0ms
-
 ```
-
 ## Liste os pokemons existentes na sua coleção
-
 
 ```
 cerberus(mongod-2.6.11) be-mean-pokemons> db.pokemons.find()
@@ -112,7 +108,6 @@ cerberus(mongod-2.6.11) be-mean-pokemons> db.pokemons.find()
 }
 Fetched 6 record(s) in 4ms
 ```
-
 ## Busque o pickachu e armazene-o em uma variável chamada poke
 
 ```
@@ -126,9 +121,7 @@ cerberus(mongod-2.6.11) be-mean-pokemons> poke = db.pokemons.findOne(query)
   "defense": 20,
   "height": 0.4
 }
-
 ```
-
 ## Modifique sua description e salvê-o
 
 ```
@@ -147,6 +140,4 @@ cerberus(mongod-2.6.11) be-mean-pokemons> poke
   "defense": 20,
   "height": 0.4
 }
-
-
 ```
