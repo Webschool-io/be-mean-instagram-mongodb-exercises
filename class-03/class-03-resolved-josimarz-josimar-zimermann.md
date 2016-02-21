@@ -1,9 +1,8 @@
 # MongoDB - Aula 03 - Exercício
-autor: Josimar Zimermann
+**Autor**: Josimar Zimermann - [josimarz](https://github.com/josimarz)
 
 ## Listar todos os Pokemon com a altura menor que 0.5
 
-	```
 	nightwolf(mongod-3.2.1) be-mean-pokemons> var query = {height: {$lt: .5}}
 	nightwolf(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
 	{
@@ -26,11 +25,9 @@ autor: Josimar Zimermann
 	}
 	Fetched 2 record(s) in 2ms
 	nightwolf(mongod-3.2.1) be-mean-pokemons>
-	```
 
 ## Listar todos os Pokemon com a altura maior que ou igual a 0.5
 
-	```
 	nightwolf(mongod-3.2.1) be-mean-pokemons> var query = {height: {$gte: .5}}
 	nightwolf(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
 	{
@@ -170,11 +167,9 @@ autor: Josimar Zimermann
 	}
 	Fetched 15 record(s) in 7ms
 	nightwolf(mongod-3.2.1) be-mean-pokemons>
-	```
 
-## Listar todos os Pokemon com a altura menor que ou igual a 0.5 e do tipo grama
+##Listar todos os Pokemon com a altura menor que ou igual a 0.5 e do tipo grama
 
-	```
 	nightwolf(mongod-3.2.1) be-mean-pokemons> var query = {$and: [{type: "Grass"}, {height: {$lte: .5}}]}
 	nightwolf(mongod-3.2.1) be-mean-pokemons> query
 	{
@@ -201,11 +196,9 @@ autor: Josimar Zimermann
 	}
 	Fetched 1 record(s) in 1ms
 	nightwolf(mongod-3.2.1) be-mean-pokemons>
-	```
 
-## Listar todos os Pokemon com 'name' igual a 'Pikachu' ou com 'attack' menor que ou igual a 0.5
+## Listar todos os Pokemon com `name` igual a 'Pikachu' ou com `attack` menor que ou igual a 0.5
 
-	```
 	nightwolf(mongod-3.2.1) be-mean-pokemons> var query = {$or: [{name: "Pikachu"}, {attack: {$lte: .5}}]}
 	nightwolf(mongod-3.2.1) be-mean-pokemons> query
 	{
@@ -232,11 +225,9 @@ autor: Josimar Zimermann
 	}
 	Fetched 1 record(s) in 2ms
 	nightwolf(mongod-3.2.1) be-mean-pokemons>
-	```
 
-## Listar todos os Pokemon com 'attack' maior que ou igual a 48 e com 'height' menor que ou igual a 0.5
+## Listar todos os Pokemon com `attack` maior que ou igual a 48 e com `height` menor que ou igual a 0.5
 
-	```
 	nightwolf(mongod-3.2.1) be-mean-pokemons> var query = {$and: [{attack: {$gte: 48}}, {height: {$lte: .5}}]}
 	nightwolf(mongod-3.2.1) be-mean-pokemons> query
 	{
@@ -265,4 +256,3 @@ autor: Josimar Zimermann
 	}
 	Fetched 1 record(s) in 1ms
 	nightwolf(mongod-3.2.1) be-mean-pokemons>
-	```
