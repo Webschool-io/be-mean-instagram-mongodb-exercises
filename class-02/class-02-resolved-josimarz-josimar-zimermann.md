@@ -1,17 +1,14 @@
 # MongoDB - Aula 02 - Exercício
-autor: Josimar Zimermann
+**Autor**: Josimar Zimermann - [josimarz](https://github.com/josimarz)
 
-## Criar banco de dados denominado 'be-mean-pokemons'
+## Criar banco de dados denominado `be-mean-pokemons`
 
-	```
 	nightwolf(mongod-3.2.1) be-mean-instagram> use be-mean-pokemons
 	switched to db be-mean-pokemons
 	nightwolf(mongod-3.2.1) be-mean-pokemons>
-	```
 
 ## Listar todos os bancos de dados presentes no servidor
 
-	```
 	nightwolf(mongod-3.2.1) be-mean-pokemons> show dbs
 	Loc8r             → 0.000GB
 	be-mean           → 0.004GB
@@ -19,18 +16,14 @@ autor: Josimar Zimermann
 	local             → 0.000GB
 	mean-dev          → 0.000GB
 	nightwolf(mongod-3.2.1) be-mean-pokemons>
-	```
 
-## Listar todas as coleções do banco de dados 'be-mean-pokemons'
+## Listar todas as coleções do banco de dados `be-mean-pokemons`
 
-	```
 	nightwolf(mongod-3.2.1) be-mean-pokemons> show collections
 	nightwolf(mongod-3.2.1) be-mean-pokemons>
-	```
 
-## Inserir Pokemons (pelo menos 5)
+## Inserir Pokemon (pelo menos 5)
 
-	```
 	nightwolf(mongod-3.2.1) be-mean-pokemons> var pokemon = {
 	... name: "Sandslash",
 	... description: "Sandslash's body is covered by tough spikes, which are hardened sections of its hide. Once a year, the old spikes fall out, to be replaced with new spikes that grow out from beneath the old ones.",
@@ -242,7 +235,7 @@ autor: Josimar Zimermann
 	nightwolf(mongod-3.2.1) be-mean-pokemons>
 	```
 
-## Listar todos os Pokemons na coleção 'pokemons'
+## Listar todos os Pokemons na coleção `pokemons`
 
 	```
 	nightwolf(mongod-3.2.1) be-mean-pokemons> db.pokemons.find()
@@ -394,7 +387,7 @@ autor: Josimar Zimermann
 	nightwolf(mongod-3.2.1) be-mean-pokemons>
 	```
 
-## Selecionar um Pokemon e guardar na variável 'poke'
+## Selecionar um Pokemon e guardar na variável `poke`
 
 	```
 	nightwolf(mongod-3.2.1) be-mean-pokemons> var query = {name: 'Gyarados'}
@@ -410,11 +403,9 @@ autor: Josimar Zimermann
 	  "height": 6.5
 	}
 	nightwolf(mongod-3.2.1) be-mean-pokemons>
-	```
 
-## Atualizar a descrição do Pokemon armazenado na variável 'poke' e salvar na coleção
+## Atualizar a descrição do Pokemon armazenado na variável `poke` e salvar na coleção
 
-	```
 	nightwolf(mongod-3.2.1) be-mean-pokemons> poke.description = "When Magikarp evolves into Gyarados, its brain cells undergo a structural transformation. It is said that this transformation is to blame for this Pokémon's wildly violent nature."
 	When Magikarp evolves into Gyarados, its brain cells undergo a structural transformation. It is said that this transformation is to blame for this Pokémon's wildly violent nature.
 	nightwolf(mongod-3.2.1) be-mean-pokemons> db.pokemons.save(poke)
@@ -425,4 +416,3 @@ autor: Josimar Zimermann
 	  "nModified": 1
 	})
 	nightwolf(mongod-3.2.1) be-mean-pokemons>
-	```
