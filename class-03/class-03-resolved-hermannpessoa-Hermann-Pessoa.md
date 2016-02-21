@@ -1,4 +1,4 @@
-# MongoDB - Aula 02 - Exercício
+# MongoDB - Aula 03 - Exercício
 autor: HERMANN PESSOA
 
 ## Listagem pokemons com altura menor que 5
