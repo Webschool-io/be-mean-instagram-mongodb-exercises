@@ -1,3 +1,6 @@
+#MongoDB - Aula 02 - Ecercicio
+Autor: Sóstenes freitas de andrade
+
 1:
 BlackArch(mongod-3.2.1) test> use be-mean-pokemons
 
@@ -17,6 +20,15 @@ pokemon  → 0.000MB / 0.031MB
 pokemons → 0.001MB / 0.035MB
 
 4:
+BlackArch(mongod-3.2.1) be-mean-pokemons> dbb.pokemons.insert([
+{"name":"darkrai","attack":200.0,"defense":120.0,"height":10.0,"description":"Melhor pokemon ever"}
+{"name":"charizard","attack":150.0,"defense":50.0,"height":89.0}
+{"name":"umbreon","attack":77.0,"defense":55.0,"height":44.0}
+{"name":"vaporeon","attack":87.0,"defense":29.0,"height":54.0}
+{"name":"mew","attack":200.0,"defense":209.0,"height":4.0}
+{"name":"mewtwo","attack":300.0,"defense":290.0,"height":40.0}
+{"name":"arceus","attack":400.0,"defense":390.0,"height":400.0}
+]
 
 BlackArch(mongod-3.2.1) be-mean-pokemons> db.pokemons.find()
 {
@@ -70,14 +82,20 @@ BlackArch(mongod-3.2.1) be-mean-pokemons> db.pokemons.find()
               "height": 400
 }
 {
-      "_id": ObjectId("56c64cca04e657a13e0cd711"),
-        "name": "darkrai"
-}
 Fetched 8 record(s) in 2ms
 
 6:
 
 BlackArch(mongod-3.2.1) be-mean-pokemons> var query = {"name":"darkrai"}
+BlackArch(mongod-3-2-1) be-mean-pokemons> query
+{
+      "_id": ObjectId("56c64b4304e657a13e0cd708"),
+        "name": "darkrai",
+          "attack": 200,
+            "defense": 120,
+              "height": 10,
+                "description": "Melhor pokemon ever"
+}
 BlackArch(mongod-3.2.1) be-mean-pokemons> var poke = db.pokemons.findOne(query)
 
 7:
