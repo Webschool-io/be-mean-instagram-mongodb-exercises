@@ -144,7 +144,7 @@ cerberus(mongod-2.6.11) be-mean-pokemons> db.pokemons.find(query)
 }
 Fetched 3 record(s) in 2ms
 ```
-## Liste todos os Pokemons com o attack **maior ou igual que** 48 **E** com height **menor ou igual que ** 0.5
+## Liste todos os Pokemons com o attack **maior ou igual que** 48 **E** com height **menor ou igual que** 0.5
 ```
 cerberus(mongod-2.6.11) be-mean-pokemons> var query = {$and:[{attack:{$gte:48}},{height:{$lte:0.5}}]}
 cerberus(mongod-2.6.11) be-mean-pokemons> db.pokemons.find(query)
