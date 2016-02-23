@@ -144,3 +144,26 @@ cerberus(mongod-2.6.11) be-mean-pokemons> db.pokemons.find(query)
 }
 Fetched 3 record(s) in 2ms
 ```
+## Liste todos os Pokemons com o attack **maior ou igual que** 48 **E** com height **menor ou igual que ** 0.5
+```
+cerberus(mongod-2.6.11) be-mean-pokemons> var query = {$and:[{attack:{$gte:48}},{height:{$lte:0.5}}]}
+cerberus(mongod-2.6.11) be-mean-pokemons> db.pokemons.find(query)
+{
+"_id": ObjectId("56c894f4df2db116b3534bc1"),
+"name": "Butterfree",
+"description": "   Butterfree has a superior ability to search for delicious honey from flowers. It can even search out, extract, and carry honey from flowers that are blooming over six miles from its nest. ",
+"attack": 50,
+"defense": 20,
+"height": 0.5
+}
+{
+"_id": ObjectId("56c897d1df2db116b3534bc5"),
+"name": "Pikachu",
+"description": "Whenever Pikachu comes across something new, it blasts it with a jolt of electricity. If you come across a blackened berry, its evidence that this Pokémon mistook the intensity of its charge.",
+"attack": 49,
+"defense": 40,
+"height": 0.4
+}
+Fetched 2 record(s) in 5ms
+
+```
