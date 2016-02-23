@@ -6,10 +6,13 @@ autor: Sóstenes freitas de andrade
     ```
      mongoimport --db be_mean --collection restaurantes --drop --file restaurantes.json
 
-    	2016-02-18T17:35:04.835-0200	connected to: localhost
-	2016-02-18T17:35:04.835-0200	dropping: be_mean.restaurantes
-	2016-02-18T17:35:06.505-0200	Failed: error processing document #16211: unexpected EOF
-	2016-02-18T17:35:06.505-0200	imported 0 documents
+    	2016-02-23T00:35:04.835-0200	   connected to: localhost
+	2016-02-23T00:35:04.835-0200	   dropping: be-mean.restaurantes
+	2016-02-23T00:35:06.505-0200	   imported 25359 documents
+
+
+
+
 
     ```
 
@@ -17,7 +20,7 @@ autor: Sóstenes freitas de andrade
 
     ```
     BlackArch(mongod-3.2.1) be_mean> db.restaurantes.find({}).count()
-    10000
+    25359 
 
 
     ```
