@@ -23,7 +23,7 @@ BlackArch(mongod-3.2.1) be-mean-pokemons> show collections
 
 ```
 ##Cadastro dos pokemons 
-...
+```
 BlackArch(mongod-3.2.1) be-mean-pokemons> dbb.pokemons.insert([
 
 {"name":"darkrai","attack":200.0,"defense":120.0,"height":10.0,"description":"Melhor pokemon ever"}
