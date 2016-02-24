@@ -7,6 +7,7 @@ BlackArch(mongod-3.2.1) be-mean-pokemons>
 
 #Listando databases (passo 2)
 BlackArch(mongod-3.2.1) be-mean-pokemons> show dbs
+
 be-mean-instagram → 0.000GB
 be-mean-pokemons  → 0.000GB
 be_mean           → 0.002GB
@@ -16,10 +17,12 @@ test              → 0.000GB
 #Listando collections da database be-mean-pokemons (passo 3)
 
 BlackArch(mongod-3.2.1) be-mean-pokemons> show collections
+
 BlackArch(mongod-3.2.1) be-mean-pokemons> 
 
 #Cadastro dos pokemons (passo 4)
 BlackArch(mongod-3.2.1) be-mean-pokemons> dbb.pokemons.insert([
+
 {"name":"darkrai","attack":200.0,"defense":120.0,"height":10.0,"description":"Melhor pokemon ever"}
 {"name":"charizard","attack":150.0,"defense":50.0,"height":89.0}
 {"name":"umbreon","attack":77.0,"defense":55.0,"height":44.0}
