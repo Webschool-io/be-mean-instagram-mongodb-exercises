@@ -1,26 +1,29 @@
 #MongoDB - Aula 02 - Ecercicio
 Autor: Sóstenes freitas de andrade
 
-#Criando database (passo 1)
+##Criando database 
+```
 BlackArch(mongod-3.2.1) test> use be-mean-pokemons
+switched to db be-mean-pokemons
 BlackArch(mongod-3.2.1) be-mean-pokemons>
-
-#Listando databases (passo 2)
+```
+##Listando databases 
+```
 BlackArch(mongod-3.2.1) be-mean-pokemons> show dbs
-
 be-mean-instagram → 0.000GB
 be-mean-pokemons  → 0.000GB
 be_mean           → 0.002GB
 local             → 0.000GB
 test              → 0.000GB
-
-#Listando collections da database be-mean-pokemons (passo 3)
-
+```
+##Listando collections da database be-mean-pokemons 
+```
 BlackArch(mongod-3.2.1) be-mean-pokemons> show collections
 
-BlackArch(mongod-3.2.1) be-mean-pokemons> 
 
-#Cadastro dos pokemons (passo 4)
+```
+##Cadastro dos pokemons 
+...
 BlackArch(mongod-3.2.1) be-mean-pokemons> dbb.pokemons.insert([
 
 {"name":"darkrai","attack":200.0,"defense":120.0,"height":10.0,"description":"Melhor pokemon ever"}
@@ -31,8 +34,9 @@ BlackArch(mongod-3.2.1) be-mean-pokemons> dbb.pokemons.insert([
 {"name":"mewtwo","attack":300.0,"defense":290.0,"height":40.0}
 {"name":"arceus","attack":400.0,"defense":390.0,"height":400.0}
 ]
-
-#Lista de todos os pokemons da collections pokemons (passo 5)
+```
+#Lista de todos os pokemons da collections pokemons 
+```
 BlackArch(mongod-3.2.1) be-mean-pokemons> db.pokemons.find()
 {
       "_id": ObjectId("56c64b4304e657a13e0cd708"),
@@ -87,23 +91,23 @@ BlackArch(mongod-3.2.1) be-mean-pokemons> db.pokemons.find()
 {
 Fetched 8 record(s) in 2ms
 
-
-#Query para buscar um pokemon (passo 6)
+```
+#Query para buscar um pokemon 
+```
 BlackArch(mongod-3.2.1) be-mean-pokemons> var query = {"name":"darkrai"}
 BlackArch(mongod-3-2-1) be-mean-pokemons> query
 {
       "_id": ObjectId("56c64b4304e657a13e0cd708"),
-        "name": "darkrai",
-          "attack": 200,
-            "defense": 120,
-              "height": 10,
-                "description": "Melhor pokemon ever"
+      "name": "darkrai",
+      "attack": 200,
+      "defense": 120,
+      "height": 10,
+      "description": "Melhor pokemon ever"
 }
 BlackArch(mongod-3.2.1) be-mean-pokemons> var poke = db.pokemons.findOne(query)
-
-#Atualização do Pokemon selecionado (passo 7)
-
-
+```
+#Atualização do Pokemon selecionado 
+```
 
 BlackArch(mongod-3.2.1) be-mean-pokemons> poke.description = "Melhor pokemon ever"
 Melhor pokemon ever
@@ -114,4 +118,4 @@ WriteResult({
       "nUpserted": 0,
       "nModified": 0
 })
-
+```
