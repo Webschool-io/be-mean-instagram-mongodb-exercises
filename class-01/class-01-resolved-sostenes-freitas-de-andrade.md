@@ -6,9 +6,11 @@ autor: Sóstenes freitas de andrade
     ```
      mongoimport --db be_mean --collection restaurantes --drop --file restaurantes.json
 
-    	2016-02-23T00:35:04.835-0200	   connected to: localhost
-	2016-02-23T00:35:04.835-0200	   dropping: be-mean.restaurantes
-	2016-02-23T00:35:06.505-0200	   imported 25359 documents
+    	2016-02-24T13:35:04.835-0200	   connected to: localhost
+	2016-02-24T13:35:04.835-0200	   dropping: be-mean.restaurantes
+	2016-02-24T13:35:40.765-0300       [####################....] be-mean.restaurantes 9.8 MB/11.4 MB (86.2%)
+        2016-11-24T13:35:41.437-0300       [########################] be-mean.restaurantes 11.4 MB/11.4 MB (100.0%)
+	2016-02-24T13:35:56.505-0200	   imported 25359 documents
 
 
 
