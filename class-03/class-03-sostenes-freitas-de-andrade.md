@@ -1,15 +1,11 @@
 # MongoDB - Aula 03 - Exercicio
-Autor: Sóstenes Freitas de Andrade
+Autor: Sóstenes Freitas de Andrade usuario:(sostenesfreitas)
 
 
 ## Liste todos Pokemons com a altura menor que 0.5;
 ```
 BlackArch(mongod-3.2.1) be-mean-pokemons> query = {"height":{$lt:0.5}}
-{
-      "height": {
-              "$lt": 0.5
-                }
-}
+
 BlackArch(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
 {
       "_id": ObjectId("56cc5195935d3f5fe428cc50"),
@@ -38,72 +34,64 @@ Fetched 3 record(s) in 3ms
 ```
 BlackArch(mongod-3.2.1) be-mean-pokemons> var query = {"height":{$gte:0.5}}
 BlackArch(mongod-3.2.1) be-mean-pokemons> query
-{
-      "height": {
-              "$gte": 0.5
-                }
-}
+
 BlackArch(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
 {
       "_id": ObjectId("56c64b4304e657a13e0cd708"),
-        "name": "darkrai",
-          "attack": 200,
-            "defense": 120,
-              "height": 10,
-                "description": "Melhor pokemon ever"
+      "name": "darkrai",
+      "attack": 200,
+      "defense": 120,
+      "height": 10,
+      "description": "Melhor pokemon ever"
 }
 {
       "_id": ObjectId("56c64b6904e657a13e0cd709"),
-        "name": "charizard",
-          "attack": 150,
-            "defense": 50,
-              "height": 89
+      "name": "charizard",
+      "attack": 150,
+      "defense": 50,
+      "height": 89
 }
 {
       "_id": ObjectId("56c64baa04e657a13e0cd70c"),
-        "name": "umbreon",
-          "attack": 77,
-            "defense": 55,
-              "height": 44
+      "name": "umbreon",
+      "attack": 77,
+      "defense": 55,
+      "height": 44
 }
 {
       "_id": ObjectId("56c64bde04e657a13e0cd70d"),
-        "name": "vaporeon",
-          "attack": 87,
-            "defense": 29,
-              "height": 54
+      "name": "vaporeon",
+      "attack": 87,
+      "defense": 29,
+      "height": 54
 }
 {
       "_id": ObjectId("56c64bf304e657a13e0cd70e"),
-        "name": "mew",
-          "attack": 200,
-            "defense": 209,
-              "height": 4
+      "name": "mew",
+      "attack": 200,
+      "defense": 209,
+      "height": 4
 }
 {
       "_id": ObjectId("56c64c0404e657a13e0cd70f"),
-        "name": "mewtwo",
-          "attack": 300,
-            "defense": 290,
-              "height": 40
+      "name": "mewtwo",
+      "attack": 300,
+      "defense": 290,
+      "height": 40
 }
 {
       "_id": ObjectId("56c64c2904e657a13e0cd710"),
-        "name": "arceus",
-          "attack": 400,
-            "defense": 390,
-              "height": 400
+      "name": "arceus",
+      "attack": 400,
+      "defense": 390,
+      "height": 400
 }
 Fetched 7 record(s) in 2ms
 ```
-## Liste todos Pokemons com a altura **menor ou igual que** 0.5 **E** attack igual a 55
+## Liste todos Pokemons com a altura **menor ou igual que** 0.5 **E** attack maior ou igual a 55
 ```
-BlackArch(mongod-3.2.1) be-mean-pokemons> query = {$and: [ { height: {$lte: 0.5} }, { attack: 55 } ] }
-{
-      "height": {
-              "$lte": 0.5
-                }
-}
+BlackArch(mongod-3.2.1) be-mean-pokemons> query = {$and: [ { height: {$lte: 0.5} }, { attack: {$gte: 55 } } ] }
+
 BlackArch(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
 {
       "_id": ObjectId("56cc5195935d3f5fe428cc50"),
