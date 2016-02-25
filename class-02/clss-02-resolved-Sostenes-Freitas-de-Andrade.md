@@ -26,12 +26,12 @@ BlackArch(mongod-3.2.1) be-mean-pokemons> show collections
 ```
 BlackArch(mongod-3.2.1) be-mean-pokemons> var pokes = [
 
-{"name":"darkrai","attack":200.0,"defense":120.0,"height":10.0,"description":"Melhor pokemon ever"}
-{"name":"charizard","attack":150.0,"defense":50.0,"height":89.0}
-{"name":"umbreon","attack":77.0,"defense":55.0,"height":44.0}
-{"name":"vaporeon","attack":87.0,"defense":29.0,"height":54.0}
-{"name":"mew","attack":200.0,"defense":209.0,"height":4.0}
-{"name":"mewtwo","attack":300.0,"defense":290.0,"height":40.0}
+{"name":"darkrai","attack":200.0,"defense":120.0,"height":10.0},
+{"name":"charizard","attack":150.0,"defense":50.0,"height":89.0},
+{"name":"umbreon","attack":77.0,"defense":55.0,"height":44.0},
+{"name":"vaporeon","attack":87.0,"defense":29.0,"height":54.0},
+{"name":"mew","attack":200.0,"defense":209.0,"height":4.0},
+{"name":"mewtwo","attack":300.0,"defense":290.0,"height":40.0},
 {"name":"arceus","attack":400.0,"defense":390.0,"height":400.0}
 ]
 
