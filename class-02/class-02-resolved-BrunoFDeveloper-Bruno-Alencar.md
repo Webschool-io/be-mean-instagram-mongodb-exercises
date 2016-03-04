@@ -1,5 +1,5 @@
 # MongoDb - Aula 02 - Exercício
-Autor: Bruno Henrique C. da Silva
+Autor: Bruno Alencar
 
 ## Criar database chamada be-mean-pokemons
 
@@ -138,8 +138,7 @@ Autor: Bruno Henrique C. da Silva
 ## Editar a description do pokemon escolhido
 
     ```
-    poke.description = "Squirtle's shell is not merely used for protection"
-    "Squirtle's shell is not merely used for protection"
+    poke.description = "Change here"
 
     db.pokemons.save(poke);
     Updated 1 existing record(s) in 3ms
