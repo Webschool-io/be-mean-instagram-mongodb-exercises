@@ -2,7 +2,7 @@
 Autor: Thiago de Carvalho
 
 ##1. Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
-´´´
+```
 megazord(mongod-3.2.3) be-mean-pokemon> var query = {
   "$or": [
     {
@@ -42,9 +42,9 @@ WriteResult({
   "nModified": 4
 })
 
-´´´
+```
 ##2. Adicionar 1 movimento em todos os pokemons: desvio.
-´´´
+```
 
 megazord(mongod-3.2.3) be-mean-pokemon> var query = {}
 
@@ -67,9 +67,9 @@ WriteResult({
 })
 
 
-´´´
+```
 ##3. Adicionar o pokemon AindaNaoExisteMon caso ele não exista com todos os dados com o valor null e a descrição: "Sem maiores informações".
-´´´
+```
 megazord(mongod-3.2.3) be-mean-pokemon> var query = {name: /AindaNaoExisteMon/i}
 
 megazord(mongod-3.2.3) be-mean-pokemon> var mod = {
@@ -96,9 +96,9 @@ WriteResult({
   "id": ObjectId("56d9ff0852163b03af90eba6")
 })
 
-´´´
+```
 ##4. Pesquisar todos o pokemons que possuam o ataque investida e mais um que você adicionou, escolha seu pokemon favorito.
-´´´
+```
 megazord(mongod-3.2.3) be-mean-pokemon> var query = {
   "moves": {
     "$all": [
@@ -110,9 +110,9 @@ megazord(mongod-3.2.3) be-mean-pokemon> var query = {
 
 megazord(mongod-3.2.3) be-mean-pokemon> db.pokemons.find(query)
 
-´´´
+```
 ##5. Pesquisar todos os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.
-´´´
+```
 megazord(mongod-3.2.3) be-mean-pokemon> var query = {
   "moves": {
     "$all": [
@@ -124,9 +124,9 @@ megazord(mongod-3.2.3) be-mean-pokemon> var query = {
 
 megazord(mongod-3.2.3) be-mean-pokemon> db.pokemons.find(query)
 
-´´´
+```
 ##6. Pesquisar todos os pokemons que não são do tipo elétrico.
-´´´
+```
 megazord(mongod-3.2.3) be-mean-pokemon> var query = {
   "type": {
     "$ne": "elétrico"
@@ -135,9 +135,9 @@ megazord(mongod-3.2.3) be-mean-pokemon> var query = {
 
 megazord(mongod-3.2.3) be-mean-pokemon> db.pokemons.find(query)
 
-´´´
+```
 ##7. Pesquisar todos pokemons que tenham o ataque investida E tenham a defesa não menor ou igual a 49.
-´´´
+```
 megazord(mongod-3.2.3) be-mean-pokemon> var query = {
   "$and": [
     {
@@ -152,9 +152,9 @@ megazord(mongod-3.2.3) be-mean-pokemon> var query = {
 }
 
 megazord(mongod-3.2.3) be-mean-pokemon> db.pokemons.find(query);
-´´´
+```
 ##8. Remova todos os pokemons do tipo água e com attack menor que 50.
-´´´
+```
 megazord(mongod-3.2.3) be-mean-pokemon> var query = {
   "$and": [
     {
@@ -170,4 +170,4 @@ megazord(mongod-3.2.3) be-mean-pokemon> var query = {
 
 megazord(mongod-3.2.3) be-mean-pokemon> db.pokemons.remove(query);
 
-´´´
+```
