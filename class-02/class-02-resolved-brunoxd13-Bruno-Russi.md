@@ -2,7 +2,7 @@
 # MongoDB - Aula 02 - Exercício
 autor: Bruno Russi Lautenschlager
 
-## Listagem das databases (passo 2)
+## Listagem das databases
 
 ```
 > use be-mean-pokemons
@@ -17,7 +17,7 @@ local               0.078GB
 screencast_restful  0.078GB
 ```
 
-## Listagem das coleções (passo 3)
+## Listagem das coleções
 
 ```
 > show collections
@@ -25,7 +25,7 @@ system.indexes
 teste
 ```
 
-## Cadastro dos pokemons (passo 4)
+## Cadastro dos pokemons
 
 ```
 var pokemons = [
@@ -84,7 +84,7 @@ var pokemons = [
  })
 ```
 
-## Lista dos pokemons (passo 5)
+## Lista dos pokemons
 
 ```
 > db.pokemons.find()
@@ -96,7 +96,7 @@ var pokemons = [
 
 ```
 
-## Pokemon (passo 6)
+## Pokemon
 
 ```
 > var query = {"name": "SanoMom"}
@@ -113,7 +113,7 @@ var pokemons = [
 }
 ```
 
-## Atualização do Pokemon (passo 7)
+## Atualização do Pokemon
 
 ```
 > var query = {"name": "SanoMom"}
