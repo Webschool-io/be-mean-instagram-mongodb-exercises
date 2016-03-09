@@ -1,4 +1,4 @@
-# MondoDB - Aula01 - Exercício
+# MongoDB - Aula01 - Exercício
 
 autor: Jeferson Ferreira
 
