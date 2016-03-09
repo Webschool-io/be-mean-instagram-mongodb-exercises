@@ -4,7 +4,7 @@ Autor: Jeferson Ferreira
 
 ## Listagem das databases (passo 2)
 
-```shell
+``` shell
 MacBook-Pro-de-finacio(mongod-3.3.1) be-mean-teste> use be-mean-pokemons
 
 switched to db be-mean-pokemons
@@ -18,13 +18,13 @@ local         → 0.000GB
 ```
 ## Listagem das coleções (passo 3)
 
-```
+``` shell
 MacBook-Pro-de-finacio(mongod-3.3.1) be-mean-pokemons> show collections
 
 MacBook-Pro-de-finacio(mongod-3.3.1) be-mean-pokemons> 
 ```
 ## Cadastro dos pokemons (passo 4)
-```
+``` shell
 MacBook-Pro-de-finacio(mongod-3.3.1) be-mean-pokemons> var primeape = {'name':'primeape','description':'When Primeape becomes furious, its blood circulation is boosted','type':'fighting', 'attack':'105','height':'10'}
 
 MacBook-Pro-de-finacio(mongod-3.3.1) be-mean-pokemons> db.pokemons.insert(primeape)
@@ -86,7 +86,7 @@ WriteResult({
 })
 ```
 ## Lista dos pokemons (passo 5)
-```
+``` shell
 MacBook-Pro-de-finacio(mongod-3.3.1) be-mean-pokemons> db.pokemons.find()
 {
   "_id": ObjectId("56dc2d3579e3f37dd50de6a6"),
@@ -155,7 +155,7 @@ MacBook-Pro-de-finacio(mongod-3.3.1) be-mean-pokemons> db.pokemons.find()
 Fetched 9 record(s) in 6ms
 ```
 ## Pokemons (passo 6)
-```
+``` shell
 var queryBusca = {'name':'Bulbassauro'}
 MacBook-Pro-de-finacio(mongod-3.3.1) be-mean-pokemons> var poke = db.pokemons.findOne(queryBusca)
 MacBook-Pro-de-finacio(mongod-3.3.1) be-mean-pokemons> poke
@@ -169,7 +169,7 @@ MacBook-Pro-de-finacio(mongod-3.3.1) be-mean-pokemons> poke
 }
 ```
 ## Atualização do Pokemon (Passo 7)
-```
+``` shell
 MacBook-Pro-de-finacio(mongod-3.3.1) be-mean-pokemons> poke.description
 Chicote de trepadeira
 MacBook-Pro-de-finacio(mongod-3.3.1) be-mean-pokemons> poke.description = "Chicote de trepadeira/Jeferson"
