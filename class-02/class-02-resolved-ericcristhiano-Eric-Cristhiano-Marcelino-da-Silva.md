@@ -1,5 +1,5 @@
 # MongoDB - Aula 02 - Exercício
-autor: Eric Cristhiano
+autor: Eric Cristhiano Marcelino da Silva
 
 ## Listagem das databases (passo 2)
 ```

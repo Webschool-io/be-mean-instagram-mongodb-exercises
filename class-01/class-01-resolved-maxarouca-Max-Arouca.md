@@ -13,8 +13,8 @@ $ mongoimport --db be-mean --collection restaurantes --drop --file ./restaurante
 
 ## Contando os restaurantes
 
-```
+````
 MacMax(mongod-3.0.7) be-mean> db.restaurantes.find({}).count()
 25359
 
-```
+````
