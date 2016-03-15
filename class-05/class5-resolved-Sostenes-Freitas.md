@@ -3,8 +3,12 @@ autor: Sóstenes Freitas de Andrade usuario:(sostenesfreitas)
 ## 1. Importar as collections restaurantes e pokemons.
 
 ```
-> mongoimport --host 127.0.0.1 --db be-mean --collection pokemons --drop --file C:\aulas-mongo\pokemons.
-json
+BlackArch(mongod-3.2.1) be-mean> mongoimport --host 127.0.0.1 -db be-mean -collection restaurantes --drop --file restaurantes.json 
+2016-02-10T09:25:54.025-0200    connected to: localhost
+2016-02-10T09:25:54.025-0200    dropping: be-mean.restaurantes
+2016-02-10T09:25:54.728-0200    imported 25359 documents
+
+BlackArch(mongod-3.2.1) be-mean> mongoimport --host 127.0.0.1 --db be-mean --collection pokemons --drop --file pokemons.json
 connected to: 127.0.0.1
 2015-11-27T13:09:03.868-0300 dropping: be-mean.pokemons
 2015-11-27T13:09:04.123-0300 check 9 610
@@ -91,7 +95,7 @@ BlackArch(mongod-3.2.1) be-mean> db.restaurantes.distinct('cuisine')
   "Iranian",
   "Cajun",
   "Scandinavian",
-  "Polynesia",                                                                                                                       "Australian",
+  "Polynesia",                                                                                                     "Australian",
   "Hotdogs/Pretzels",
   "Southwestern",
   "Nuts/Confectionary",
@@ -128,7 +132,7 @@ BlackArch(mongod-3.2.1) be-mean> db.pokemons.distinct('types')
 ```
 ## 4. As primeiras 3 páginas com .limit() e .skip() de pokemons (5em 5)
 ```
-BlackArch(mongod-3.2.1) be-mean> db.pokemons.find().limit(5).skip(1)
+BlackArch(mongod-3.2.1) be-mean> db.pokemons.find().limit(5).skip(5 * 1)
 {
       "_id": ObjectId("564b1dad25337263280d047a"),
       "attack": 52,
@@ -195,7 +199,7 @@ BlackArch(mongod-3.2.1) be-mean> db.pokemons.find().limit(5).skip(1)
                ]
 }
 Fetched 5 record(s) in 2ms
-BlackArch(mongod-3.2.1) be-mean> db.pokemons.find().limit(5).skip(2)
+BlackArch(mongod-3.2.1) be-mean> db.pokemons.find().limit(5).skip(5 * 2)
 {
       "_id": ObjectId("564b1dad25337263280d047c"),
       "attack": 63,
@@ -262,7 +266,7 @@ BlackArch(mongod-3.2.1) be-mean> db.pokemons.find().limit(5).skip(2)
                ]
 }
 Fetched 5 record(s) in 2ms
-BlackArch(mongod-3.2.1) be-mean> db.pokemons.find().limit(5).skip(3)
+BlackArch(mongod-3.2.1) be-mean> db.pokemons.find().limit(5).skip(5 * 3)
 {
       "_id": ObjectId("564b1dad25337263280d047e"),
       "attack": 30,
@@ -333,7 +337,13 @@ Fetched 5 record(s) in 1ms
 ```
 #5. Group ou Aggregate contando a quantidade de pokemons de cada tipo
 ```
-be-mean> db.pokemons.group({ initial: {total: 0}, reduce:function(curr, result){ curr.types.forEach(function(type){ if (result[type]){ result[type]++; }else{ result[type] = 1; } result.total++; }); } });
+be-mean> db.pokemons.group({ 
+                              initial: {total: 0}, reduce:function(curr, result){                    
+                                      curr.types.forEach(function(type){ if (result[type])
+                                           {  result[type]++;
+                                            }else{ 
+                                                  result[type] = 1; 
+                                            } result.total++; }); } });
 [
   {
           "total": 915,
