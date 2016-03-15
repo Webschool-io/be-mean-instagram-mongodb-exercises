@@ -3,21 +3,13 @@ autor: Anderson Machado Lemos
 
 ## **Adicionar** 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander. ##
 ```
-var query = {name: /Pikachu/i}
-var mod = {$pushAll:{moves:['esfera eletrica', ' investida do trovão']}};
-db.pokemons.update(query, mod)
+var query = {$or: [{name: /pikachu/i},{name: /squirtle/i},{name: /bulbassauro/i},{name: /charmander/i}]}
+var attacks = ['ataque rápido', 'bola elétrica']
+var mod = {$pushAll: {attacks : attacks }}
+var opt = {multi: true}
 
-var query = {name: /Squirtle/i}
-var mod = {$pushAll:{moves:['raio', 'giro']}}
-db.pokemons.update(query, mod)
+db.pokemons.update(query, mod, opt)
 
-var query = {name: /Bulbassauro/i}
-var mod = {$pushAll:{moves:['raio', 'teste']}}
-db.pokemons.update(query, mod)
-
-var query = {name: /Charmander/i}
-var mod = {$pushAll:{moves:['brasas',  'encarar']}}
-db.pokemons.update(query, mod)
 ```
 ## **Adicionar** 1 movimento em todos os pokemons: `desvio`.##
 ```
