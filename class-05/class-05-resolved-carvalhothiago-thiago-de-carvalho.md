@@ -5,6 +5,11 @@ Autor: Thiago de Carvalho
 
 # Importar as collections `restaurantes` e `pokemons`.
 ```
+thiago@megazord:~$ mongoimport --db be-mean --collection restaurantes --host=127.0.0.1 --drop --file restaurantes.json
+2016-03-15T17:09:18.559-0200	connected to: 127.0.0.1
+2016-03-15T17:09:18.561-0200	dropping: be-mean.restaurantes
+2016-03-15T17:09:18.610-0200	imported 25359 documents
+
 thiago@megazord:~$ mongoimport --db be-mean --collection pokemons --host=127.0.0.1 --drop --file pokemons.json
 2016-03-08T20:51:36.765-0300	connected to: 127.0.0.1
 2016-03-08T20:51:36.766-0300	dropping: be-mean.pokemons
