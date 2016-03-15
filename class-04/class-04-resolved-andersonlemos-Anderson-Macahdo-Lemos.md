@@ -9,7 +9,6 @@ var mod = {$pushAll: {attacks : attacks }}
 var opt = {multi: true}
 
 db.pokemons.update(query, mod, opt)
-
 ```
 ## **Adicionar** 1 movimento em todos os pokemons: `desvio`.##
 ```
