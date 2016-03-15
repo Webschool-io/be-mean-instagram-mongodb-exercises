@@ -4,60 +4,20 @@ autor: Laércio Bernardo
 ## Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
 
 ```
-var query = {name:/pikachu/i}
+var query = {name:{$in:[/pikachu/i,/squirtle/i,/bulbassaur/i]}}
 
 var mod = {$push:{moves:{$each:['Ataque Rápido','Esquivar']}}}
 
-db.pokemons.update(query,mod)
+var opt = {multi:true}
 
-Updated 1 existing record(s) in 3ms
+db.pokemons.update(query,mod,opt)
+
+Updated 3 existing record(s) in 15ms
 WriteResult({
-  "nMatched": 1,
+  "nMatched": 3,
   "nUpserted": 0,
-  "nModified": 1
+  "nModified": 3
 })
-
-var query = {name:/squirtle/i}
-
-var mod = {$push:{moves:{$each:['Ataque Rápido','Esquivar']}}}
-
-db.pokemons.update(query,mod)
-
-Updated 1 existing record(s) in 3ms
-
-WriteResult({
-  "nMatched": 1,
-  "nUpserted": 0,
-  "nModified": 1
-})
-
-var query = {name:/bulbassauro/i}
-
-var mod = {$push:{moves:{$each:['Ataque Rápido','Esquivar']}}}
-
-db.pokemons.update(query,mod)
-
-Updated 1 existing record(s) in 3ms
-WriteResult({
-  "nMatched": 1,
-  "nUpserted": 0,
-  "nModified": 1
-})
-
-var query = {name:/charmander/i}
-
-var mod = {$push:{moves:{$each:['Ataque Rápido','Esquivar']}}}
- 
-db.pokemons.update(query,mod)
-
-Updated 1 existing record(s) in 24ms
-
-WriteResult({
-  "nMatched": 1,
-  "nUpserted": 0,
-  "nModified": 1
-})
- 
 ```
 
 ## Adicionar 1 movimento em todos os pokemons: `desvio`.
