@@ -2,7 +2,7 @@
 autor: Deyves Carvalho
 
 ## **Adicionar** 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
-
+```
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> var query = {name: /butterfree/i}
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> var mod = {$pushAll: {moves:['voacao doica', 'raio laser']}}
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> db.pokemons.update(query, mod)
@@ -25,19 +25,19 @@ deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> var query = {name: /alakazam/i}
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> var mod = {$pushAll: {moves:['zoa mentes', 'muda cabeças']}}
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> db.pokemons.update(query, mod)
 Updated 1 existing record(s) in 1ms
-
+```
 
 ## **Adicionar** 1 movimento em todos os pokemons: `desvio`.##
-
+```
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> var mod = {$push: {moves: 'desvio'}}
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> var options = {multi: true}
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> db.pokemons.update(query, mod, options)
 Updated 6 existing record(s) in 2ms
+```
 
 
-
-## **Adicionar** o pokemon `AindaNaoExisteMon` caso ele não exista com todos os dados com o valor `null` e a descrição: "Sem maiores informações".##
-
+## **Adicionar** o pokemon 'AindaNaoExisteMon' caso ele não exista com todos os dados com o valor 'null' e a descrição: "Sem maiores informações".##
+```
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> var query = {name: /AindaNaoExisteMon/i}
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> var mod = {$setOnInsert: {name: 'AindaNaoExisteMon', type: null, attack: null, defense: null, height: null, description: 'Sem maiores informações'}}
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> var options = {upsert: true}
@@ -55,10 +55,10 @@ deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> db.pokemons.find(query)
   "type": null
 }
 Fetched 1 record(s) in 3ms
+```
 
-
-## Pesquisar todos o pokemons que possuam o ataque `investida` e mais um que você adicionou, escolha seu pokemon favorito.##
-
+## Pesquisar todos o pokemons que possuam o ataque 'investida' e mais um que você adicionou, escolha seu pokemon favorito.##
+```
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> var query = {
 ... moves: {$in: [/investida/i, /magia porra/i]}}
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> db.pokemons.find(query)
@@ -152,9 +152,9 @@ deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> db.pokemons.find(query)
 }
 Fetched 6 record(s) in 230ms
 
-
+```
 ## Pesquisar **todos** os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.##
-
+```
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> var query = {
 ... moves: {$all: [/investida/i, /magia porra/i]}}
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> db.pokemons.find(query)
@@ -205,9 +205,9 @@ deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> db.pokemons.find(query)
   "name": "Alakazam"
 }
 Fetched 3 record(s) in 216ms
-
-## Pesquisar **todos** os pokemons que não são do tipo `elétrico`.##
-
+```
+## Pesquisar **todos** os pokemons que não são do tipo 'elétrico'.##
+```
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> var query = {type: {$not: /eletrico/i}
 ... }
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> db.pokemons.find(query)
@@ -310,9 +310,9 @@ deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> db.pokemons.find(query)
 }
 Fetched 7 record(s) in 6ms
 
-
-## Pesquisar **todos** os pokemons que tenham o ataque `investida` **E** tenham a defesa **não menor ou igual** a 49.##
-
+```
+## Pesquisar **todos** os pokemons que tenham o ataque 'investida' **E** tenham a defesa **não menor ou igual** a 49.##
+```
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> var query = {$and: [ {moves: {$in: ['investida']}}, {attack: {$not: {$lte: 49}}}]}
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> db.pokemons.find(query)
 {
@@ -329,9 +329,10 @@ deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> db.pokemons.find(query)
 }
 Fetched 1 record(s) in 221ms
 
-
+```
 ## Remova **todos** os pokemons do tipo água e com attack menor que 50.
-
+```
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> var query = {$and: [ {type: /agua/i}, {attack: {$lt: 50}}]}
 deyves-dev-NE56R(mongod-2.4.9) be-mean-pokemons> db.pokemons.remove(query)
 Removed 0 record(s) in 1ms
+```
