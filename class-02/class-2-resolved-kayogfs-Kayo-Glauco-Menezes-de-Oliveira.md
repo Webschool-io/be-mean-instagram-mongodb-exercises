@@ -10,21 +10,21 @@ autor: Kayo glauco
 
 ## Exibir os bancos no servidor
     
-    ```
-    > show databases
+```
+> show databases
 
-    ```
+```
 
 ## Exibir as coleções no banco
 
-    ```
-    > show collections
+```
+> show collections
 
-    ```
+```
 
 ## Inserindo 5 pokemons
 
-    ```
+```
 	
     > db.pokemons.insert({'name':'Hoothoot', 'description':'Coruja da hora', 'attack':20, 'defense': 20, height:0.7})
     Inserted 1 record(s) in 2ms
@@ -56,12 +56,12 @@ autor: Kayo glauco
       "nInserted": 1
     })
 	
-    ```
+```
     
 ## Listar os pokemons na coleção
 
     
-    ```
+```
 	
     > db.pokemons.find()
     {
@@ -106,11 +106,11 @@ autor: Kayo glauco
     }
     Fetched 5 record(s) in 2ms
 	
-    ```
+```
 
 ## Consultar pokemon
 
-    ```
+```
     > var poke = db.pokemons.findOne({'name':'Crobat'})
     > poke
     {
@@ -122,11 +122,11 @@ autor: Kayo glauco
       "height": 1.8
     }
 
-    ```
+```
 
 ## Alterar a description do pokemon
 
-    ```
+```
     > poke.description = 'Mascote assassino do batman'
     > db.pokemons.save(poke)
     Updated 1 existing record(s) in 1ms
@@ -137,6 +137,6 @@ autor: Kayo glauco
     })
 
 
-    ```
+```
     
 
