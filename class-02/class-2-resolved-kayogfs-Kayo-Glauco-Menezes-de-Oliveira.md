@@ -3,10 +3,10 @@ autor: Kayo glauco
 
 ## Criar o banco
 
-    ```
-    > use be-mean-pokemons
+```
+> use be-mean-pokemons
 
-    ```
+```
 
 ## Exibir os bancos no servidor
     
