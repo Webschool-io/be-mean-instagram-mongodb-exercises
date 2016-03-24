@@ -16,13 +16,12 @@ on
 ## Contando os restaurantes
 
 ...
+
 C:\Program Files\MongoDB\Server\3.2\bin>mongo
 MongoDB shell version: 3.2.4
 connecting to: test
 
- use be-mean
+use be-mean
 switched to db be-mean
- db.restaurantes.find({}).count()
+db.restaurantes.find({}).count()
 25359
-
-...
