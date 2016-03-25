@@ -2,23 +2,23 @@
 User: https://github.com/jacksonfraga
 Autor: Jackson de Fraga
 
-# Criar uma database
-'''
+## Criar uma database
+```
 use be-mean-pokemons
-'''
+```
 
-# Listar databases
-'''
+## Listar databases
+```
 show dbs
-'''
+```
 
-# Listar coleções na base atual
-'''
+## Listar coleções na base atual
+```
 show collections
-'''
+```
 
-# Inserir 5 pokemons
-'''
+## Inserir 5 pokemons
+```
 var pokemon = { name : 'Pikachu', description: 'Rato elétrico bem fofinho', type: 'eletric', attack: 55, defense: 35, height: 0.4 }
 db.pokemons.insert(pokemon)
 
@@ -36,21 +36,21 @@ db.pokemons.insert(pokemon)
 
 pokemon = { name : 'Pinsir', description: 'Stag Beetle Pokémon', type: 'Bug', attack: 125, defense: 100, height: 1.5 }
 db.pokemons.insert(pokemon)
-'''
+```
 
-# Listar pokemons existentes
-'''
+## Listar pokemons existentes
+```
 db.pokemons.find({})
-'''
+```
 
-# Buscar pokemon e armazenar na variavel
-'''
+## Buscar pokemon e armazenar na variavel
+```
 var query = { name : 'Pikachu' }
 var poke = db.pokemons.findOne(query)
-'''
+```
 
-# Modificar e salva
-'''
+## Modificar e salva
+```
 poke.description = 'Descrição modificada'
 db.pokemons.save(poke);
-'''
+```
