@@ -2,6 +2,7 @@
 autor: Ronaldo Feitosa
 
 ## **Adicionar** 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander;
+
 ```
 var query = {name: /pikachu/i}
 var attacks = ['raio elétrico', 'rajada de raios']
@@ -120,7 +121,9 @@ Fetched 1 record(s) in 1ms
 
 ```
 
+
 ## **Adicionar** 1 movimento em todos os pokemons: 'desvio';
+
 ```
 var query = {}
 var mod = {$push:{moves: 'desvio'}}
@@ -160,10 +163,11 @@ db.pokemons.find(query)
 Fetched 1 record(s) in 2ms
 
 ```
+
+
 ## Pesquisar todos os pokemons que possuam o ataque 'investida' e mais um que você adicionou, escolha seu pokemon favorito;
 
 ```
-
 var query = {moves: {$in: [/investida/i, /tsunami/i]}}
 db.pokemons.find(query)
 
@@ -191,6 +195,7 @@ db.pokemons.find(query)
 Fetched 1 record(s) in 0ms
 
 ```
+
 
 ## Pesquisar **todos** os pokemons que não são do tipo 'elétrico';
 
@@ -354,6 +359,7 @@ db.pokemons.find(query)
 Fetched 11 record(s) in 4ms
 
 ```
+
 
 ## Pesquisar **todos** os pokemons que tenham o ataque 'investida' **E**tenham o attack **não menor ou igual** a 49;
 
