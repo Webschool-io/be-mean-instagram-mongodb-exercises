@@ -101,6 +101,7 @@ db.pokemons.find(query)
 
 ## Remova **todos** os pokemons do tipo água e com attack menor que 50.
 
+````javascript
+
 var query = {$and: [{"type": "água"}, { "attack" : { $lt: 50 } }]}
 db.pokemons.remove(query)
-
