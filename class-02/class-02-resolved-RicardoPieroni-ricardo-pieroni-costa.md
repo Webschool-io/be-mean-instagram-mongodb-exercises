@@ -4,28 +4,29 @@ autor: Ricardo Pieroni Costa
 
 ## 1. Criar uma database chamada be-mean-pokemons --
 
-
+```
 use be-mean-pokemons
 switched to db be-mean-pokemons
-
+```
 
 ## 2. Liste quais databases você possui nesse servidor
-
+```
 
 show dbs
 be-mean           0.078GB
 be-mean-istagram  0.078GB
 local             0.078GB
 test              0.078GB
-
+```
 
 ## 3. Liste quais coleções você possui nessa database
-
+```
 show collections
 
-
+```
 ## 4. Insira pelo menos 5 pokemons
 
+```
 var pokemon = {nome:"Charizard",description:"Dragão",type:"Flame",atack:60,height:1.7,defense:50}
 db.pokemons.insert(pokemon)
 WriteResult({ "nInserted" : 1 })
@@ -52,6 +53,7 @@ WriteResult({ "nInserted" : 1 })
 
 ## 5. Liste os pokemons existentes na sua coleção
 
+```
 db.pokemons.find()
 { "_id" : ObjectId("56f1f86073ed2430c3fed72b"), "nome" : "Charizard", "description" : "Dragao", "type" : "flame", "atack
 " : 60, "height" : 1.7, "defense" : 50 }
@@ -64,8 +66,11 @@ on", "atack" : 42, "height" : 1, "defense" : 30 }
 { "_id" : ObjectId("56f288eecc5cba5a6e013862"), "nome" : "Sandslash", "description" : "Rato", "type" : "Ground", "atack"
  : 40, "height" : 1, "defense" : 45 }
 
+```
 
 ## 6. Busque um pokemon e armazene-o em uma variável chamada "poke"
+
+```
 
  var query = {nome:"Charizard"}
  var poke = db.pokemons.findOne(query)
@@ -80,9 +85,11 @@ on", "atack" : 42, "height" : 1, "defense" : 30 }
         "defense" : 50
 }
 
+```
 
 ## 7. Modifique sua "description" e salve-o
 
+```
  var query = {nome:"Charizard"}
  var poke = db.pokemons.findOne(query)
  poke
@@ -121,3 +128,4 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
         "defense" : 50
 }
 
+```
