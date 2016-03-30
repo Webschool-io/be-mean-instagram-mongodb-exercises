@@ -34,8 +34,9 @@ on", "atack" : 42, "height" : 1, "defense" : 30 }
 ```
 
 use be-mean-pokemons
-switched to db be-mean-pokemons var query = {$and:[{height:{$lte:0.5}},{type:"grama"}]}
-> query
+switched to db be-mean-pokemons 
+var query = {$and:[{height:{$lte:0.5}},{type:"grama"}]}
+ query
 {
         "$and" : [
                 {
@@ -55,11 +56,12 @@ switched to db be-mean-pokemons var query = {$and:[{height:{$lte:0.5}},{type:"gr
 ```
 ## 4. Liste todos Pokemons com o nome 'Pikachu' ou com attack menor ou igual que 0.5
 ```
-
- var query = {$or:[{atack:{$lte:0.5}},{nome:"pikachu"}]}
+ var query = {$or:[{atack:{$lte:0.5}},{nome:"Pikachu"}]}
  db.pokemons.find(query)
 { "_id" : ObjectId("56facf4ff085eb276b1d94bd"), "nome" : "Caterpie", "description" : "Larva", "type" : "grama", "atack"
 : 0.4, "height" : 0.3, "defense" : 20 }
+{ "_id" : ObjectId("56fad0f5f085eb276b1d94be"), "nome" : "Pikachu", "description" : "bixa", "type" : "eletrico", "atack"
+ : 50, "height" : 0.3, "defense" : 20 }
 
 
 ```
