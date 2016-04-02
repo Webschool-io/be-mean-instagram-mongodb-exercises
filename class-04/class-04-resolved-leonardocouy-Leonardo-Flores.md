@@ -161,9 +161,11 @@ MBP-de-Leonardo(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
   ]
 }
 Fetched 4 record(s) in 2ms
+```
 
 #### Meu pokemon favorito é:
 
+```
 MBP-de-Leonardo(mongod-3.2.1) be-mean-pokemons> var query = {name: /pikachu/i}
 MBP-de-Leonardo(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
 {
@@ -185,9 +187,11 @@ MBP-de-Leonardo(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query)
   ]
 }
 Fetched 1 record(s) in 2ms
+```
 
 ## Pesquisar **todos** os pokemons que não são do tipo `elétrico`.##
 
+```
 MBP-de-Leonardo(mongod-3.2.1) be-mean-pokemons> var query = {types: {$nin: ['electric']}}
 MBP-de-Leonardo(mongod-3.2.1) be-mean-pokemons> var fields = {_id: 0, name: 1, moves: 1}
 MBP-de-Leonardo(mongod-3.2.1) be-mean-pokemons> db.pokemons.find(query, fields)
