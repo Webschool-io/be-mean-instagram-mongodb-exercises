@@ -279,19 +279,19 @@ MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean> db.pokemons.aggregate([
 
 ## Realizar 3 counts na pokemons.
 
-1. count -- todos
+** count -- todos **
 ```
 MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean> db.pokemons.count({})
 610
 ```
 
-2. count -- só tipo fogo
+** count -- só tipo fogo **
 ```
 MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean> db.pokemons.count({types: 'fire'})
 47
 ```
 
-3. count -- só de quantos tem a defesa maior que 70
+** count -- só de quantos tem a defesa maior que 70 **
 ```
 MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean> db.pokemons.count({defense: {$gt: 70}})
 250
