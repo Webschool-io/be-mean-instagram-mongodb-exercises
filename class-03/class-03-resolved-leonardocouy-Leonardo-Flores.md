@@ -3,6 +3,7 @@ autor: **Leonardo Flores**
 
 ## Liste todos Pokemons com a altura **menor que** 0.5
 
+```
 MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean-pokemons> var query = {height: {$lt: 0.5}}
 MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean-pokemons> db.pokedex.find(query)
 {
@@ -15,8 +16,11 @@ MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean-pokemons> db.pokedex.find(query)
   "type": "Electric"
 }
 Fetched 1 record(s) in 1ms
+```
 
 ## Liste todos Pokemons com a altura **maior ou igual que** 0.5
+
+```
 MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean-pokemons> db.pokedex.find(query)
 {
   "_id": ObjectId("56e84d86791235930bbfa214"),
@@ -64,10 +68,11 @@ MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean-pokemons> db.pokedex.find(query)
   "type": "Fire"
 }
 Fetched 5 record(s) in 2ms
-
+```
 
 ## Liste todos Pokemons com a altura **menor ou igual que** 0.5 **E** do tipo grama
 
+```
 MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean-pokemons> var query = {$and: [{height: {$lte: 0.5}}, {type: /grass/i}]}
 
 MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean-pokemons> query
@@ -86,10 +91,11 @@ MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean-pokemons> query
 
 MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean-pokemons> db.pokedex.find(query)
 Fetched 0 record(s) in 1ms
-
+```
 
 ## Liste todos Pokemons com o name `Pikachu` **OU** com attack **menor ou igual que** 0.5
 
+```
 MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean-pokemons> var query = {$or: [{attack: {$lte: 0.5}}, {name: /pikachu/i}]}
 MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean-pokemons> query
 {
@@ -115,9 +121,11 @@ MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean-pokemons> db.pokedex.find(query)
   "type": "Electric"
 }
 Fetched 1 record(s) in 2ms
+```
 
 ## Liste todos Pokemons com o attack **MAIOR OU IGUAL QUE** 48 **E** com  height **menor ou igual que** 0.5
 
+```
 MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean-pokemons> var query = {$and: [{attack: {$gte: 48}}, {height: {$lte: 0.5}}]}
 MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean-pokemons> query
 {
@@ -136,3 +144,4 @@ MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean-pokemons> query
 }
 MacBook-Pro-de-Leonardo(mongod-3.2.1) be-mean-pokemons> db.pokedex.find(query)
 Fetched 0 record(s) in 0ms
+```
