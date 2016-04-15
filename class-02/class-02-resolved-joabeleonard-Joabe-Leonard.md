@@ -1,5 +1,5 @@
 # MongoDB - Aula 02 - Exercício
-autor: Aguinaldo Alves Barbosa Silva
+autor: Joabe Leonard Feitosa
 
 ## Crie uma database chamada be-mean-pokemons;
 
@@ -11,18 +11,20 @@ use be-mean-pokemons
 ## 2. Liste quais databases você possui nesse servidor;
 
 ```
- show dbs
-	 be-mean            0.005GB
-	 be-mean-instagram  0.000GB
-	 local              0.000GB
+ > show dbs
+be-mean            0.005GB
+be-mean-instagram  0.000GB
+be-mean-pokemon    0.000GB
+local              0.000GB
+me-mean-pokemon    0.000GB           0.000GB
 
 ```
 
 
 ## 3. Liste quais coleções você possui nessa database;
 ```
-MacBook-Pro-de-Aguinaldo(mongod-3.1.9) be-mean-pokemons> show collections
-pokemons → 0.000MB / 0.004MB
+> show collections
+pokemons
 
 ```
 
