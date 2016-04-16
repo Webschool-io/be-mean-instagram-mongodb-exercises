@@ -66,17 +66,16 @@
 
 ## Listagem de todos os Pokemons com o nome Pikachu ou com attack menor ou igual que 0.5 (passo 5)
 
-DESKTOP-JV9Q1A8(mongodb\bin\mongod.exe-3.0.4) pokemons> var query = {$or: [{name:'Pikachu'},{attack: {$lte: 0.5}}]}
-DESKTOP-JV9Q1A8(mongodb\bin\mongod.exe-3.0.4) pokemons> db.pokemons.find(query)
-{
-  "_id": ObjectId("567b40ed4527a432ae8ac232"),
-  "name": "Pikachu",
-  "description": "Rato elétrico bem fofinho",
-  "type": "eletric",
-  "attack": 55,
-  "height": 0.4
-}
-Fetched 1 record(s) in 4ms
+> var query = {$or: [{name:'Pikachu'}, {attack:{$lte:0.5}}]}
+> db.pokemons.find(query)
+{ "_id" : ObjectId("5712896e93f8f1fb006b198c"),
+  "name" : "Pikachu",
+   "description" : "Whenever Pikachu comes across something new, it blasts it with a jolt of electricity. If you come across a blackened berry, it's evidence that this Pokémon mistook the intensity of its charge. It is the world's most famouse and cute pokemon.",
+   "type" : "electric",
+   "attack" : 55, 
+   "defense" : 40, 
+   "height" : 0.4 }
+>
 
 ## Listagem de todos os Pokemons com o attack maior ou igual que 48 E com height menor ou igual que 0.5 (passo 6)
 
