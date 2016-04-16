@@ -57,15 +57,17 @@
   "defense" : 50, 
   "height" : 0.9 
 }
-
+```
 ## Listagem de todos os Pokemons com a altura menor ou igual que 0.5 E do tipo grama (passo 4)
 
+```
 > var query = {$and: [{type:'grass'}, {height:{$lte:0.5}}]}
 > db.pokemons.find(query)
 >
-
+```
 ## Listagem de todos os Pokemons com o nome Pikachu ou com attack menor ou igual que 0.5 (passo 5)
 
+```
 > var query = {$or: [{name:'Pikachu'}, {attack:{$lte:0.5}}]}
 > db.pokemons.find(query)
 { "_id" : ObjectId("5712896e93f8f1fb006b198c"),
@@ -76,9 +78,10 @@
    "defense" : 40, 
    "height" : 0.4 }
 >
-
+```
 ## Listagem de todos os Pokemons com o attack maior ou igual que 48 E com height menor ou igual que 0.5 (passo 6)
 
+```
 > var query = {$and: [{attack:{$gte:48}}, {height:{$lte:0.5}}]}
 > db.pokemons.find(query)
 { "_id" : ObjectId("5712815693f8f1fb006b1988"),
