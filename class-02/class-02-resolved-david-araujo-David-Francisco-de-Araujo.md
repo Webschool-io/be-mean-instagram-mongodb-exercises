@@ -3,26 +3,29 @@
 autor: David Araujo
 
 ## 1. Crie uma database chamada be-mean-pokemons;
-
-> use be-mean-pokemons
+'''
+>use be-mean-pokemons
 switched to db be-mean-pokemons
-
+'''
 ## 2. Liste quais databases você possui nesse servidor;
 
-> show dbs
+'''
+>show dbs
 be-mean            0.078GB
 be-mean-instagram  0.078GB
 local              0.078GB
 test               0.078GB
-
+'''
 
 ## 3. Liste quais coleções você possui nessa database;
 
-> show collections
+'''
+>show collections
 >
-
+'''
 ## 4. Insira pelo menos 5 pokemons A SUA ESCOLHA utilizando o mesmo padrão de campos utilizado: name, description, attack, defense e height;
 
+'''
 > pokemons
 [
 	{
@@ -80,10 +83,11 @@ BulkWriteResult({
 	"nRemoved" : 0,
 	"upserted" : [ ]
 })
-
+'''
 
 ## 5. Liste os pokemons existentes na sua coleção;
 
+'''
 > db.pokemons.find().pretty()
 {
 	"_id" : ObjectId("5722ad9bdaee77205cdb3e8f"),
@@ -133,10 +137,11 @@ BulkWriteResult({
 	"defense" : "78",
 	"height" : "1.7"
 }
-
+'''
 
 ## 6. Busque o pokemons a sua escolha, pelo nome, e armazene-o em uma variável chamada 'poke';
 
+'''
 > var poke = db.pokemons.findOne({"name" : "Charizard"})
 > poke
 {
@@ -147,10 +152,11 @@ BulkWriteResult({
 	"defense" : "78",
 	"height" : "1.7"
 }
-
+'''
 
 ## 7. Modifique sua 'description' e salvê-o
 
+'''
 > poke.description = "Pokemon FOOOODA!!!"
 Pokemon FOOOODA!!!
 > db.pokemons.save(poke)
@@ -165,3 +171,4 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 	"defense" : "78",
 	"height" : "1.7"
 }
+'''
