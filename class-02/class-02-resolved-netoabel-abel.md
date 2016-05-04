@@ -45,7 +45,7 @@ be-mean-pokemons> var pokemons = db.pokemons.find()
 be-mean-pokemons> while(pokemons.hasNext()) { print(tojson(pokemons.next())) }
 ```
 
-## Buscando um pokémon pelo nome
+## Buscando um pokémon pelo nome e atualizando a descrição dele
 
 ```
 be-mean-pokemons> var poke = db.pokemons.findOne({name:'Ivysaur'})
