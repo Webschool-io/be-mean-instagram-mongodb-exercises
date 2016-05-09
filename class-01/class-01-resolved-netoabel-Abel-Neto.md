@@ -1,7 +1,7 @@
 # MongoDB - Aula 01 - Exercício
-Autor: Abel Neto
+User: [netoabel](http://www.github.com/netoabel)
 
-## Importando os restaurantes
+Autor: Abel Neto
 
 ```
 $ mongoimport --db be-mean --collection restaurantes --drop --file restaurantes.json
