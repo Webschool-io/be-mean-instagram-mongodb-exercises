@@ -1,4 +1,6 @@
 # MongoDB - Aula 03 - Exercício
+User: [netoabel](http://www.github.com/netoabel)
+
 Autor: Abel Neto
 
 ## Pokémons com altura menor que 0.5
