@@ -1,4 +1,6 @@
 # MongoDB - Aula 02 - Exercício
+User: [netoabel](http://www.github.com/netoabel)
+
 Autor: Abel Neto
 
 ## Criando uma database chamada be-mean-pokemons
