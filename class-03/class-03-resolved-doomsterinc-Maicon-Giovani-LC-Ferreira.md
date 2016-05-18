@@ -42,8 +42,7 @@ autor: Maicon Giovani LC Ferreira
 
 ```
 
-## Liste todos Pokemons com o attack MAIOR OU IGUAL QUE 48 E com
-height menor ou igual que 0.5;
+## Liste todos Pokemons com o attack MAIOR OU IGUAL QUE 48 E com height menor ou igual que 0.5;
 
 ```
 > var query = {$and: [{attack:{$gte:48}},{height:{$lte:0.5}}]}
