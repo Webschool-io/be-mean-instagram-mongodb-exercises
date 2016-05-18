@@ -1,5 +1,5 @@
-
 ## MongoDb - Aula 03
+autor: Fernando Lucas
 
 Na aula 3 continuaremos a desenvolver nosso CRUD no `Terminal` usando o cliente, `mongo`, para isso.
 
