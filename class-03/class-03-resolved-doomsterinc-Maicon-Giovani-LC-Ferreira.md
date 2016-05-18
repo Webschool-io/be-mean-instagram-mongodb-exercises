@@ -33,7 +33,7 @@ autor: Maicon Giovani LC Ferreira
 
 ```
 
-## Liste todos Pokemons com o name `Pikachu` OU com attack menor ou igual que 0.5;
+## Liste todos Pokemons com o name Pikachu OU com attack menor ou igual que 0.5;
 
 ```
 > var query = {$or: [{name:'Pikachu'},{attack:{$lte:0.5}}]}

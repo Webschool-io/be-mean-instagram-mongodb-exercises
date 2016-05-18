@@ -63,7 +63,7 @@ var pokemon = [
 
 ```
 
-## Busque o pokemon da sua escolha, pelo nome, e armazene-o em uma variável chamada `poke`;
+## Busque o pokemon da sua escolha, pelo nome, e armazene-o em uma variável chamada poke;
 
 ```
 > var name = {'name':'Yveltal'}
@@ -81,7 +81,7 @@ var pokemon = [
 
 ```
 
-## Modifique sua `description` e salvê-o;
+## Modifique sua description e salvê-o;
 
 ```
 > poke.description = 'Pokémon fadaum que avua e eu nunca peguei '
