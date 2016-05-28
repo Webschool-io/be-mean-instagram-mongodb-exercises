@@ -74,7 +74,7 @@ Fetched 3 record(s) in 8ms
 
 ##3. lsite todos pokemons com aaltura menor ou igual que 0.5 E do tipo grama
 ```
-macbook-mariosmello(mongod-3.2.6) be-mean-pokemons> var query = {$and: [{height: {$gte: 0.5}}, {type: "grama"}]}
+macbook-mariosmello(mongod-3.2.6) be-mean-pokemons> var query = {$and: [{height: {$gte: 0.5}}, {type: /grama/i}]}
 macbook-mariosmello(mongod-3.2.6) be-mean-pokemons> query
 {
   "$and": [
@@ -84,7 +84,7 @@ macbook-mariosmello(mongod-3.2.6) be-mean-pokemons> query
       }
     },
     {
-      "type": "grama"
+      "type": /grama/i
     }
   ]
 }
@@ -103,7 +103,7 @@ Fetched 1 record(s) in 1ms
 
 ##4. liste todos pokemons com o name 'metapod' OU com attack menor ou igual que 55
 ```
-macbook-mariosmello(mongod-3.2.6) be-mean-pokemons> var query = {$or: [{attack: {$lte: 55}}, {name: "metapod"}]}
+macbook-mariosmello(mongod-3.2.6) be-mean-pokemons> var query = {$or: [{attack: {$lte: 55}}, {name: /Metapod/i}]}
 macbook-mariosmello(mongod-3.2.6) be-mean-pokemons> query
 {
   "$or": [
@@ -113,7 +113,7 @@ macbook-mariosmello(mongod-3.2.6) be-mean-pokemons> query
       }
     },
     {
-      "name": "metapod"
+      "name": /Metapod/i
     }
   ]
 }
@@ -154,7 +154,7 @@ macbook-mariosmello(mongod-3.2.6) be-mean-pokemons> db.pokemons.find(query)
   "defense": 50,
   "height": 0.6
 }
-Fetched 4 record(s) in 8ms
+Fetched 4 record(s) in 5ms
 ```
 
 ##5. liste todos pokemons com o attack Maior ou igual que 48 E com height menor ou igual que 55
