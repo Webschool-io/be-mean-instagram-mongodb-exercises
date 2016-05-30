@@ -129,8 +129,8 @@ Fetched 5 record(s) in 12ms
 ## Busque o pokemon da sua escolha, pelo nome, e armazene-o em uma variável chamada poke;
 
 ```
-Ubuntu16lts(mongod-3.2.6) be-mean-pokemons> var result = db.pokedex.findOne(query)
-Ubuntu16lts(mongod-3.2.6) be-mean-pokemons> result
+Ubuntu16lts(mongod-3.2.6) be-mean-pokemons> var poke = db.pokedex.findOne(query)
+Ubuntu16lts(mongod-3.2.6) be-mean-pokemons> poke
 {
   "_id": ObjectId("574c8eca2e1df3765012b161"),
   "name": "Aipom",
@@ -144,9 +144,9 @@ Ubuntu16lts(mongod-3.2.6) be-mean-pokemons> result
 ## Modifique sua description e salvê-o;
 
 ```
-Ubuntu16lts(mongod-3.2.6) be-mean-pokemons> result.description = 'Macaquinho roxo pilantra'
+Ubuntu16lts(mongod-3.2.6) be-mean-pokemons> poke.description = 'Macaquinho roxo pilantra'
 Macaquinho roxo pilantra
-Ubuntu16lts(mongod-3.2.6) be-mean-pokemons> db.pokedex.save(result)
+Ubuntu16lts(mongod-3.2.6) be-mean-pokemons> db.pokedex.save(poke)
 Updated 1 existing record(s) in 9ms
 WriteResult({
   "nMatched": 1,
