@@ -108,9 +108,9 @@ autor: Cassiano Montanari
 ## Busque um pokemon a sua escolha utilizando o "name" e armazene-o em uma variável chamada 'poke';
 
 	```
-	macmini(mongod-3.2.6) be-mean-pokemon> var poke = {name: "Squirtle"}
-	macmini(mongod-3.2.6) be-mean-pokemon> var p = db.pokemons.findOne(poke)
-	macmini(mongod-3.2.6) be-mean-pokemon> p
+	macmini(mongod-3.2.6) be-mean-pokemon> var query = {name: "Squirtle"}
+	macmini(mongod-3.2.6) be-mean-pokemon> var poke = db.pokemons.findOne(query)
+	macmini(mongod-3.2.6) be-mean-pokemon> poke
 	{
 	  "_id": ObjectId("574dd1208d48c026d9e4fb12"),
 	  "name": "Squirtle",
