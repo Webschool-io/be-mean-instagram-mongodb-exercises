@@ -19,10 +19,8 @@ autor: Cassiano Montanari
 ## Liste quais coleções você possui nessa database;
 
 	```
-	macmini(mongod-3.2.6) be-mean-instagram> show collections
-	pokemons     →  0.001MB / 0.035MB
-	restaurantes → 10.138MB / 4.457MB
-	teste        →  0.000MB / 0.031MB
+	macmini(mongod-3.2.6) be-mean-pokemon> show collections
+	macmini(mongod-3.2.6) be-mean-pokemon>
 	```
 
 ## Insira pelo menos 5 pokemons A SUA ESCOLHA utilizando o mesmo padrão de campos utilizado: name, description, attack, defense e height;
