@@ -126,17 +126,33 @@ autor: Cassiano Montanari
 ## Modifique sua 'description' e salvê-o
 
 	```
-	macmini(mongod-3.2.6) be-mean-pokemon> db.pokemons.update({name:"Squirtle"},{$set:{description:"Tartaruga ninja da agua com description alterada"}})
-	Updated 1 existing record(s) in 72ms
-	WriteResult({
-	  "nMatched": 1,
-	  "nUpserted": 0,
-	  "nModified": 1
-	})
+	macmini(mongod-3.2.6) be-mean-pokemon> poke
+	{
+	  "_id": ObjectId("574dd1208d48c026d9e4fb12"),
+	  "name": "Squirtle",
+	  "description": "Tartaruga ninja da agua",
+	  "type": "water",
+	  "attack": 25,
+	  "height": 0.8,
+	  "defense": 20
+	}
+	macmini(mongod-3.2.6) be-mean-pokemon> poke.description = "Tartaruga ninja da agua com description alterada"
+	Tartaruga ninja da agua com description alterada
+	macmini(mongod-3.2.6) be-mean-pokemon> poke
+	{
+	  "_id": ObjectId("574dd1208d48c026d9e4fb12"),
+	  "name": "Squirtle",
+	  "description": "Tartaruga ninja da agua com description alterada",
+	  "type": "water",
+	  "attack": 25,
+	  "height": 0.8,
+	  "defense": 20
+	}
+	macmini(mongod-3.2.6) be-mean-pokemon>
 
-	macmini(mongod-3.2.6) be-mean-pokemon> var poke = {name: "Squirtle"}
-	macmini(mongod-3.2.6) be-mean-pokemon> var p = db.pokemons.findOne(poke)
-	macmini(mongod-3.2.6) be-mean-pokemon> p
+	macmini(mongod-3.2.6) be-mean-pokemon> var query = {name: "Squirtle"}
+	macmini(mongod-3.2.6) be-mean-pokemon> var poke = db.pokemons.findOne(query)
+	macmini(mongod-3.2.6) be-mean-pokemon> poke
 	{
 	  "_id": ObjectId("574dd1208d48c026d9e4fb12"),
 	  "name": "Squirtle",
