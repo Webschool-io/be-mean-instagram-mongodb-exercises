@@ -5,7 +5,7 @@ autor: Cassiano Montanari
 
 	```
 	macmini(mongod-3.2.6) be-mean-instagram> use be-mean-pokemon
-	switched to db be-mean-pokemon
+	switched to db be-mean-pokemon 
 	```
 
 ## Liste quais databases você possui nesse servidor;

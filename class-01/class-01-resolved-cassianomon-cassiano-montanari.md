@@ -12,7 +12,7 @@ autor: Cassiano Montanari
 	2016-05-30T14:44:14.315-0300	[####################....] database.restaurante	9.8 MB/11.3 MB (86.3%)
 	2016-05-30T14:44:15.958-0300	[########################] database.restaurante	11.3 MB/11.3 MB (100.0%)
 	2016-05-30T14:44:15.958-0300	imported 25359 documents
-	macmini:be-mean-mongodb-excercises cassianomon$
+	macmini:be-mean-mongodb-excercises cassianomon$ 
 
     ```
 
