@@ -1,5 +1,5 @@
 # MongoDb - Aula 02 - Exercício
-Autor: Bruno Alencar
+Autor: Luiz Henrique Soares
 
 ## Criar database chamada be-mean-pokemons
 
@@ -87,6 +87,7 @@ Autor: Bruno Alencar
         "defense" : 100,
         "height" : 0.9
 }
+
     ```
 
 ## Editar a description do pokemon escolhido
