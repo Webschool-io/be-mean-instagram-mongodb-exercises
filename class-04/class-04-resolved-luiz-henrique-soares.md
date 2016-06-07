@@ -1,82 +1,70 @@
-# MongoDB - Aula 03 - Exercício
-autor: ADILO EDUARDO BERTONCELLO
+# MongoDB - Aula 04 - Exercício
+autor: **Luiz Henrique Soares**
 
-## Listando Pokemons com altura menor que 0.5 (Passo 1)
-```
-> var query = {height: {$lt: 0.5}}
-> db.pokemons.find(query)
-{ "_id" : ObjectId("57268e9279836121bc5d265b"), "name" : "Bulbasaur", "description" : "Bulbasaur can be seen napping in bright sunlight", "attack" : 3, "defense" : 2, "height" : 0.3 }
-{ "_id" : ObjectId("57268e9579836121bc5d265c"), "name" : "Ivysaur", "description" : "There is a bud on this Pokémon's back", "attack" : 3, "defense" : 3, "height" : 0.4 }
-```
+## 1. Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
 
-## Listando Pokemons com altura maior ou igual que 0.5 (Passo 2)
 ```
-> var query = {height: {$gte: 0.5}}
-> db.pokemons.find(query)
-{ "_id" : ObjectId("57268e9779836121bc5d265d"), "name" : "Venusaur", "description" : "There is a large flower on Venusaur's back. Sinistro!!", "attack" : 4, "defense" : 4, "height" : 0.5 }
-{ "_id" : ObjectId("57268e9979836121bc5d265e"), "name" : "Charmander", "description" : "The flame that burns at the tip of its tail is an indication of its emotions", "attack" : 3, "defense" : 2, "height" : 0.6 }
-{ "_id" : ObjectId("57268e9c79836121bc5d265f"), "name" : "Charmeleon", "description" : "Charmeleon mercilessly destroys its foes using its sharp claws", "attack" : 3, "defense" : 3, "height" : 0.7 }
-{ "_id" : ObjectId("57268e9e79836121bc5d2660"), "name" : "Charizard", "description" : "Charizard flies around the sky in search of powerful opponents", "attack" : 4, "defense" : 3, "height" : 0.8 }
+var query = {name: {$in: [/abra/i, /squirtle/i, /charmander/i, /caterpie/i,]}}
+var mod = {$pushAll : {moves:['pseudo power','bolha de ar']}}
+var options = {multi: true}
+db.pokemons.update(query, mod, options)
 ```
 
-## Listando Pokemons com altura menor ou igual que 0.5 E do tipo grama (Passo 3)
+## 2. **Adicionar** 1 movimento em todos os pokemons: desvio.
+
 ```
-> var query = {$and: [{height: {$lte: 0.5}},{type: "grama"}] }
-> query
-{
-        "$and" : [
-                {
-                        "height" : {
-                                "$lte" : 0.5
-                        }
-                },
-                {
-                        "type" : "grama"
-                }
-        ]
+var query = {}
+var mod = {$pushAll: {moves: ['desvio']}}
+var options = {multi: true}
+db.pokemons.update(query, mod, options)
+```
+
+## 3. **Adicionar** o pokemon AindaNaoExisteMon caso ele não exista com todos os dados com o valor null e a descrição: "Sem maiores informações".
+
+```
+var query = {name: /AindaNaoExisteMon/i}
+var mod = {
+	$setOnInsert: {
+		name: "AindaNaoExisteMon",
+		attack: null,
+		defense: null,
+		height: null,
+		description: "Sem maiores informações"}
 }
-> db.pokemons.find(query)
-{ "_id" : ObjectId("57268e9579836121bc5d265c"), "name" : "Ivysaur", "description" : "There is a bud on this Pokémon's back", "attack" : 3, "defense" : 3, "height" : 0.4, "type" : "grama" }
+var options = {upsert: true}
 ```
 
-## Listando Pokemons com o name 'Pìkachu' OU com attack menor ou igual que 0.5 (Passo 4)
+## 4. Pesquisar todos o pokemons que possuam o ataque investida e mais um que você adicionou, escolha seu pokemon favorito.
+
 ```
-> var query = { $or: [ {name: "Pikachu"}, {attack : {$lte: 0.5}} ]  }
-> query
-{
-        "$or" : [
-                {
-                        "name" : "Pikachu"
-                },
-                {
-                        "attack" : {
-                                "$lte" : 0.5
-                        }
-                }
-        ]
-}
-> db.pokemons.find(query)
->
+var query = {name: {$in: [/pikachu/i, /bulbassauro/i]}}
+db.pokemons.find(query)
 ```
 
-## Listando Pokemons com attack maior ou igual que 48 E com altura menor ou igual que 0.5 (Passo 5)
+## 5. Pesquisar todos os pokemons que possuam os movimentos que você adicionou, escolha seu pokemon favorito.
+
 ```
-> var query = { $and: [{attack: {$gte: 48}}, {height: {$lte: 0.5}}]  }
-> query
-{
-        "$and" : [
-                {
-                        "attack" : {
-                                "$gte" : 48
-                        }
-                },
-                {
-                        "height" : {
-                                "$lte" : 0.5
-                        }
-                }
-        ]
-}
-> db.pokemons.find(query)
->
+var query = {moves: {$in: [/pseudo power/i, /bolha de ar/i]}}
+db.pokemons.find(query)
+```
+
+## 6. Pesquisar todos os pokemons que não são do tipo elétrico.
+
+```
+var query = {type: {$ne: 'elétrico'}} 
+db.pokemons.find(query)
+```
+
+## 7. Pesquisar todos pokemons que tenham o movimento investida E tenham a defesa não menor ou igual a 49.
+
+```
+var query = {$and: [{moves: /investida/i}, {defense: {$gt: 49}}]}
+db.pokemons.find(query)
+```
+
+## 8. Remova todos os pokemons do tipo água e com attack menor que 50.
+
+```
+var query = {$and: [{type: /agua/i}, {attack: {$lt: 50}}]}
+db.pokemons.remove(query)
 ```
