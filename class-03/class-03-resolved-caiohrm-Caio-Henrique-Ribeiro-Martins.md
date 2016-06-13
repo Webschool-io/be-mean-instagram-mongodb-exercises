@@ -25,43 +25,62 @@ caio-pc(mongod-3.2.7) be-mean-instagram> db.pokemons.find(query)
 
 ## Listando Pokemons com altura menor ou igual que 0.5 E do tipo grama (Passo 3)
 
-caio-pc(mongod-3.2.7) be-mean-instagram> query = {height: {$lte:0.5},type:'grama'}
+caio-pc(mongod-3.2.7) be-mean-instagram> query = {$or:[{height:{$lte:0.5}},{type:'grama'}]}
 {
-  "height": {
-    "$lte": 0.5
-  },
-  "type": "grama"
+  "$or": [
+    {
+      "height": {
+        "$lte": 0.5
+      }
+    },
+    {
+      "type": "grama"
+    }
+  ]
 }
+
 caio-pc(mongod-3.2.7) be-mean-instagram> db.pokemons.find(query)
 
 
 
 ## Listando Pokemons com o name 'Pìkachu' OU com attack menor ou igual que 0.5 (Passo 4)
 
-caio-pc(mongod-3.2.7) be-mean-instagram> query = {name:'Pikachu',attack:{$lte:0.5}}
+caio-pc(mongod-3.2.7) be-mean-instagram> query = {$or:[{name:/pikachu/i},{attack:{$lte:0.5}}]}
 {
-  "name": "Pikachu",
-  "attack": {
-    "$lte": 0.5
-  }
+  "$or": [
+    {
+      "name": /pikachu/i
+    },
+    {
+      "attack": {
+        "$lte": 0.5
+      }
+    }
+  ]
 }
-caio-pc(mongod-3.2.7) be-mean-instagram> db.pokemons.find(query)
+
 
 
 
 ## Listando Pokemons com attack maior ou igual que 48 E com altura menor ou igual que 0.5 (Passo 5)
 
 
-caio-pc(mongod-3.2.7) be-mean-instagram> query = {height:{$lte:0.5},attack:{$gte:48}}
+caio-pc(mongod-3.2.7) be-mean-instagram> query = {$and:[{height:{$lte:0.5}},{attack:{$gte:48}}]}
 {
-  "height": {
-    "$lte": 0.5
-  },
-  "attack": {
-    "$gte": 48
-  }
+  "$and": [
+    {
+      "height": {
+        "$lte": 0.5
+      }
+    },
+    {
+      "attack": {
+        "$gte": 48
+      }
+    }
+  ]
 }
-caio-pc(mongod-3.2.7) be-mean-instagram> db.pokemons.find(query)
+
 
 
 
