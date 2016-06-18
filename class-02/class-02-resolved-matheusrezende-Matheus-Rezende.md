@@ -1,4 +1,4 @@
-# MongoDB - Aula 02 - Exercício
+### MongoDB - Aula 02 - Exercício
 
 autor: Matheus Rezende Figueira
 
