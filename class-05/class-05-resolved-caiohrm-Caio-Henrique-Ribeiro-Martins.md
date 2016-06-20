@@ -133,7 +133,7 @@ caio-pc(mongod-3.2.7) be-mean> db.pokemons.distinct('types')
 ```
 
 ## As primeiras 3 páginas com .limit() e .skip() de pokemons (de 5 em 5)
-
+```
 caio-pc(mongod-3.2.7) be-mean> db.pokemons.find().limit(5).skip(5*0)
 {
   "_id": ObjectId("564b1dad25337263280d0479"),
