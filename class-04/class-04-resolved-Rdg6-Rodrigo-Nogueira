@@ -1,0 +1,442 @@
+## 1  Adicionar 2 ataque ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander
+
+> var query = {name: /pikachu/i}
+> var mod = {$pushAll: {moves: ['esfera elétrica', 'investida trovão']}}
+> db.pokemons.update(query, mod)
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.pokemons.find(query)
+{ "_id" : ObjectId("57703ac572b18e3861434842"), "name" : "Pikachu", "description" : "Rato eletrico", "type" : "eletrico", "attack" : 100, "height" : 0.4, "moves" : [ "esfera elétrica", "investida trovão" ] }
+> db.pokemons.find(query).pretty()
+{
+	"_id" : ObjectId("57703ac572b18e3861434842"),
+	"name" : "Pikachu",
+	"description" : "Rato eletrico",
+	"type" : "eletrico",
+	"attack" : 100,
+	"height" : 0.4,
+	"moves" : [
+		"esfera elétrica",
+		"investida trovão"
+	]
+}
+> var query = {name: /squirtle/i}
+> var mod = {$pushAll: {moves: ['Raio de gelo', 'Giro rápido']}}
+> db.pokemons.update(query, mod)
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.pokemons.find(query).pretty()
+{
+	"_id" : ObjectId("577105d9b0bdfe396389416f"),
+	"name" : "Squirtle",
+	"description" : "Ejeta aguá",
+	"type" : "Aguá",
+	"attack" : 48,
+	"height" : 0.5,
+	"moves" : [
+		"Raio de gelo",
+		"Giro rápido"
+	]
+}
+> var query = {name: /bulbassauro/i}
+> var mod = {$pushAll: {moves: ['Raio solar', 'Dança de pétalas']}}
+> db.pokemons.update(query, mod)
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.pokemons.find(query).pretty()
+{
+	"_id" : ObjectId("57703ac572b18e3861434843"),
+	"name" : "Bulbassauro",
+	"description" : "Chicote",
+	"type" : "grama",
+	"attack" : 49,
+	"height" : 0.4,
+	"moves" : [
+		"Raio solar",
+		"Dança de pétalas"
+	]
+}
+> var query = {name: /Charmander/i}
+> var mod = {$pushAll: {moves: ['Brasas', 'Encarar']}}
+> db.pokemons.update(query, mod)
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.pokemons.find(query).pretty()
+{
+	"_id" : ObjectId("577105d9b0bdfe396389416e"),
+	"name" : "Charmander",
+	"description" : "Dragão",
+	"type" : "fogo",
+	"attack" : 52,
+	"height" : 0.6,
+	"moves" : [
+		"Brasas",
+		"Encarar"
+	]
+}
+
+
+## 2. Adicionar o movimento desvio pra todos os pokemons
+
+> var query = {} 
+> var mod = {$push: {moves: 'desvio'}}
+> query
+> mod
+{ "$push" : { "moves" : "desvio" } }
+> var options = {multi: true}
+> db.pokemons.update(query, mod, options)
+WriteResult({ "nMatched" : 9, "nUpserted" : 0, "nModified" : 9 })
+> db.pokemons.find().pretty()
+{
+	"_id" : ObjectId("57701c7ce727775d5449d5ca"),
+	"name" : "pokemon",
+	"description" : "exemplo",
+	"type" : "pokemon",
+	"attack" : 70,
+	"defence" : 80,
+	"height" : 1.45,
+	"moves" : [
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("57701c7ce727775d5449d5cb"),
+	"name" : "monstermon",
+	"description" : "montro",
+	"type" : "monstruoso",
+	"attack" : 90,
+	"defence" : 50,
+	"height" : 1.75,
+	"moves" : [
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("57701c7ce727775d5449d5cc"),
+	"name" : "mastermon",
+	"description" : "super master",
+	"type" : "supreme",
+	"attack" : 99,
+	"defence" : 30,
+	"height" : 1.1,
+	"moves" : [
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("57703ac572b18e3861434842"),
+	"name" : "Pikachu",
+	"description" : "Rato eletrico",
+	"type" : "eletrico",
+	"attack" : 100,
+	"height" : 0.4,
+	"moves" : [
+		"esfera elétrica",
+		"investida trovão",
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("57703ac572b18e3861434843"),
+	"name" : "Bulbassauro",
+	"description" : "Chicote",
+	"type" : "grama",
+	"attack" : 49,
+	"height" : 0.4,
+	"moves" : [
+		"Raio solar",
+		"Dança de pétalas",
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("577105d9b0bdfe396389416c"),
+	"name" : "AindaNãoExistemon",
+	"description" : "inexistente",
+	"type" : "extinto",
+	"attack" : 50,
+	"height" : 0.8,
+	"moves" : [
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("577105d9b0bdfe396389416d"),
+	"name" : "Caterpie",
+	"description" : "Larva lutadora",
+	"type" : "inseto",
+	"attack" : 30,
+	"defence" : 35,
+	"height" : 0.3,
+	"moves" : [
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("577105d9b0bdfe396389416e"),
+	"name" : "Charmander",
+	"description" : "Dragão",
+	"type" : "fogo",
+	"attack" : 52,
+	"height" : 0.6,
+	"moves" : [
+		"Brasas",
+		"Encarar",
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("577105d9b0bdfe396389416f"),
+	"name" : "Squirtle",
+	"description" : "Ejeta aguá",
+	"type" : "Aguá",
+	"attack" : 48,
+	"height" : 0.5,
+	"moves" : [
+		"Raio de gelo",
+		"Giro rápido",
+		"desvio"
+	]
+}
+
+
+
+## 3. Adicionar o pokemon 'AindaNãoexistemon'
+
+> var query = {name: /AindaNaoExisteMon/i}
+> var mod ={$setOnInsert: {name: 'AindNaoExisteMon', type: null, attack: null, defense: null, height: 'null', description: 'Sem maiores informações'}}
+> var options = {upsert: true}
+> db.pokemons.update(query, mod, options)
+WriteResult({
+	"nMatched" : 0,
+	"nUpserted" : 1,
+	"nModified" : 0,
+	"_id" : ObjectId("57710c29a1ea2ec14e6cad34")
+})
+> db.pokemons.find({"_id" : ObjectId("57710c29a1ea2ec14e6cad34")}).pretty()
+{
+	"_id" : ObjectId("57710c29a1ea2ec14e6cad34"),
+	"name" : "AindNaoExisteMon",
+	"type" : null,
+	"attack" : null,
+	"defense" : null,
+	"height" : "null",
+	"description" : "Sem maiores informações"
+}
+
+
+## 4. Pesquiar pokemons que possuam ataque investida mas um de sua preferência
+
+var query = {moves: {$in: [/investida/i, /esfera elétrica/i]}}
+
+> db.pokemons.find(query).pretty()
+{
+	"_id" : ObjectId("57703ac572b18e3861434842"),
+	"name" : "Pikachu",
+	"description" : "Rato eletrico",
+	"type" : "eletrico",
+	"attack" : 100,
+	"height" : 0.4,
+	"moves" : [
+		"esfera elétrica",
+		"investida trovão",
+		"desvio"
+	]
+}
+> 
+
+
+## 5. Pesquisar pokemons que possuam os attacks que voce add
+
+> var query = {moves: {$all: [/investida trovão/i, /esfera elétrica/i]}}
+> query
+{
+	"moves" : {
+		"$all" : [
+			/investida trovão/i,
+			/esfera elétrica/i
+		]
+	}
+}
+> db.pokemons.find(query).pretty()
+{
+	"_id" : ObjectId("57703ac572b18e3861434842"),
+	"name" : "Pikachu",
+	"description" : "Rato eletrico",
+	"type" : "eletrico",
+	"attack" : 100,
+	"height" : 0.4,
+	"moves" : [
+		"esfera elétrica",
+		"investida trovão",
+		"desvio"
+	]
+}
+> 
+
+## 6. Todos que não são do tipo elétrico
+
+> var query = {type: {$not: /elétrico/i}}
+
+> db.pokemons.find(query).pretty()
+{
+	"_id" : ObjectId("57701c7ce727775d5449d5ca"),
+	"name" : "pokemon",
+	"description" : "exemplo",
+	"type" : "pokemon",
+	"attack" : 70,
+	"defence" : 80,
+	"height" : 1.45,
+	"moves" : [
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("57701c7ce727775d5449d5cb"),
+	"name" : "monstermon",
+	"description" : "montro",
+	"type" : "monstruoso",
+	"attack" : 90,
+	"defence" : 50,
+	"height" : 1.75,
+	"moves" : [
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("57701c7ce727775d5449d5cc"),
+	"name" : "mastermon",
+	"description" : "super master",
+	"type" : "supreme",
+	"attack" : 99,
+	"defence" : 30,
+	"height" : 1.1,
+	"moves" : [
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("57703ac572b18e3861434842"),
+	"name" : "Pikachu",
+	"description" : "Rato eletrico",
+	"type" : "eletrico",
+	"attack" : 100,
+	"height" : 0.4,
+	"moves" : [
+		"esfera elétrica",
+		"investida trovão",
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("57703ac572b18e3861434843"),
+	"name" : "Bulbassauro",
+	"description" : "Chicote",
+	"type" : "grama",
+	"attack" : 49,
+	"height" : 0.4,
+	"moves" : [
+		"Raio solar",
+		"Dança de pétalas",
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("577105d9b0bdfe396389416c"),
+	"name" : "AindaNãoExistemon",
+	"description" : "inexistente",
+	"type" : "extinto",
+	"attack" : 50,
+	"height" : 0.8,
+	"moves" : [
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("577105d9b0bdfe396389416d"),
+	"name" : "Caterpie",
+	"description" : "Larva lutadora",
+	"type" : "inseto",
+	"attack" : 30,
+	"defence" : 35,
+	"height" : 0.3,
+	"moves" : [
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("577105d9b0bdfe396389416e"),
+	"name" : "Charmander",
+	"description" : "Dragão",
+	"type" : "fogo",
+	"attack" : 52,
+	"height" : 0.6,
+	"moves" : [
+		"Brasas",
+		"Encarar",
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("577105d9b0bdfe396389416f"),
+	"name" : "Squirtle",
+	"description" : "Ejeta água",
+	"type" : "Água",
+	"attack" : 48,
+	"height" : 0.5,
+	"moves" : [
+		"Raio de gelo",
+		"Giro rápido",
+		"desvio"
+	]
+}
+{
+	"_id" : ObjectId("57710c29a1ea2ec14e6cad34"),
+	"name" : "AindNaoExisteMon",
+	"type" : null,
+	"attack" : null,
+	"defense" : null,
+	"height" : "null",
+	"description" : "Sem maiores informações"
+}
+> 
+
+
+## 7. Pesquisar todos os pokemons que tenham o ataque investida e tenham a defesa não menor ou igual a 49
+
+> var query = {$and: [{moves: {$in: ['investida trovão']}}, {attack: {$not: {$lte: 49}}}]}
+> db.pokemons.find(query).pretty()
+{
+	"_id" : ObjectId("57703ac572b18e3861434842"),
+	"name" : "Pikachu",
+	"description" : "Rato eletrico",
+	"type" : "eletrico",
+	"attack" : 100,
+	"height" : 0.4,
+	"moves" : [
+		"esfera elétrica",
+		"investida trovão",
+		"desvio"
+	]
+}
+> 
+
+
+## 8. Remova todos os pokemons do tipo aguá e com ataque menor que 50
+
+> var query = {$and: [{type:/Água/i}, {attack:{$lt: 50}}]}
+> db.pokemons.find(query).pretty()
+{
+	"_id" : ObjectId("577105d9b0bdfe396389416f"),
+	"name" : "Squirtle",
+	"description" : "Ejeta aguá",
+	"type" : "Água",
+	"attack" : 48,
+	"height" : 0.5,
+	"moves" : [
+		"Raio de gelo",
+		"Giro rápido",
+		"desvio"
+	]
+}
+> db.pokemons.remove(query)
+WriteResult({ "nRemoved" : 1 })
+> db.pokemons.find(query).pretty()
+> 
+
