@@ -1,0 +1,140 @@
+# MongoDB - Aula 04 - Exercício
+autor: Alessandro Barreto
+
+
+#1. Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
+
+```
+> var query = {name:/pikachu/i}
+> var mod = {$pushAll:{ moves:['esfera eletrica','investida trovao'] } }
+> db.pokemons.update(query,mod)
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+> var query = {name:/squirtle/i}
+> var mod = {$pushAll:{ moves:['raio de gelo','giro rapido'] } }
+> db.pokemons.update(query,mod)
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+> var query = {name:/bulbasaur/i}
+> var mod = {$pushAll: {moves:['raio solar','dança de petalas']}  }
+> db.pokemons.update(query,mod)
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+> var query = {name:/charmander/i}
+> var mod = {$pushAll: {moves:['bola de fogo','larva teste' ] }  }
+> db.pokemons.update(query,mod)
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+```
+
+#2. Adicionar 1 movimento em todos os pokemons: desvio.
+
+```
+> var quer = {}
+> var mod = {$push: {moves:'desvio'} }
+> var options = {multi:true}
+> db.pokemons.update(quer,mod,options)
+WriteResult({ "nMatched" : 610, "nUpserted" : 0, "nModified" : 610 })
+
+```
+
+#3. Adicionar o pokemon AindaNaoExisteMon caso ele não exista com todos os dados com o valor null e a descrição: "Sem maiores informações".
+
+```
+> var query = {name:/AindaNaoExisteMon/i}
+> mod
+{
+        "$setOnInsert" : {
+                "name" : "AindaNaoExisteMon",
+                "type" : null,
+                "attack" : null,
+                "defense" : null,
+                "height" : null,
+                "description" : null
+        }
+}
+> var option = {upsert:true}
+> db.pokemons.update(query,mod,option)
+WriteResult({
+        "nMatched" : 0,
+        "nUpserted" : 1,
+        "nModified" : 0,
+        "_id" : ObjectId("576052f0870e9575c83432cf")
+})
+
+
+```
+
+#4. Pesquisar todos o pokemons que possuam o ataque investida e mais um que você adicionou, escolha seu pokemon favorito.
+
+```
+> var query = {moves: {$in: [/investida/i, /esfera eletrica/i] } }
+> db.pokemons.find(query)
+{ "_id" : ObjectId("564b1db125337263280d04a7"), "attack" : 55, "created" : "2013-11-03T15:05:41.317235", "defense" : 40, "height" : "4", "hp" : 35, "name" : "Pikachu", "speed" : 90, "types" : [ "electric" ], "moves" : [ "esfera eletrica", "investida trovao", "desvio" ] }
+>
+
+
+```
+
+#5. Pesquisar todos os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.
+
+```
+
+> var query = {moves: {$all:[/raio de gelo/i,/giro rapido/i] } }
+> db.pokemons.find(query)
+{ "_id" : ObjectId("564b1db425337263280d04b6"), "attack" : 48, "created" : "2013-11-03T15:05:41.278310", "defense" : 65, "height" : "5", "hp" : 44, "name" : "Squirtle", "speed" : 43, "types" : [ "water" ], "moves" : [ "raio de gelo", "giro rapido", "desvio" ] }
+>
+
+
+```
+
+#6. Pesquisar todos os pokemons que não são do tipo elétrico.
+
+```
+
+> var query = {"types":{$not:/electric/i} }
+> db.pokemons.find(query)
+{ "_id" : ObjectId("564b1dad25337263280d047b"), "attack" : 64, "created" : "2013-11-03T15:05:41.273462", "defense" : 58, "height" : "11", "hp" : 58, "name" : "Charmeleon", "speed" : 80, "types" : [ "fire" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1dad25337263280d0479"), "attack" : 56, "created" : "2013-11-03T15:05:41.305777", "defense" : 35, "height" : "3", "hp" : 30, "name" : "Rattata", "speed" : 72, "types" : [ "normal" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1dad25337263280d047a"), "attack" : 52, "created" : "2013-11-03T15:05:41.271082", "defense" : 43, "height" : "6", "hp" : 39, "name" : "Charmander", "speed" : 65, "types" : [ "fire" ], "moves" : [ "bola de fogo", "larva teste", "desvio", "desvio" ] }
+{ "_id" : ObjectId("564b1dad25337263280d047d"), "attack" : 83, "created" : "2013-11-03T15:05:41.282985", "defense" : 100, "height" : "16", "hp" : 79, "name" : "Blastoise", "speed" : 78, "types" : [ "water" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1dad25337263280d047e"), "attack" : 30, "created" : "2013-11-03T15:05:41.285736", "defense" : 35, "height" : "3", "hp" : 45, "name" : "Caterpie", "speed" : 45, "types" : [ "bug" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1dad25337263280d047c"), "attack" : 63, "created" : "2013-11-03T15:05:41.280718", "defense" : 80, "height" : "10", "hp" : 59, "name" : "Wartortle", "speed" : 58, "types" : [ "water" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1dad25337263280d047f"), "attack" : 20, "created" : "2013-11-03T15:05:41.288107", "defense" : 55, "height" : "7", "hp" : 50, "name" : "Metapod", "speed" : 30, "types" : [ "bug" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1dad25337263280d0480"), "attack" : 45, "created" : "2013-11-03T15:05:41.290411", "defense" : 50, "height" : "11", "hp" : 60, "name" : "Butterfree", "speed" : 70, "types" : [ "flying", "bug" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1dad25337263280d0481"), "attack" : 60, "created" : "2013-11-03T15:05:41.310402", "defense" : 30, "height" : "3", "hp" : 40, "name" : "Spearow", "speed" : 70, "types" : [ "normal", "flying" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1dad25337263280d0482"), "attack" : 25, "created" : "2013-11-03T15:05:41.294947", "defense" : 50, "height" : "6", "hp" : 45, "name" : "Kakuna", "speed" : 35, "types" : [ "poison", "bug" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1dae25337263280d0483"), "attack" : 65, "created" : "2013-11-03T15:05:41.439497", "defense" : 55, "height" : "8", "hp" : 52, "name" : "Farfetchd", "speed" : 60, "types" : [ "normal", "flying" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1dae25337263280d0486"), "attack" : 85, "created" : "2013-11-03T15:05:41.441502", "defense" : 45, "height" : "14", "hp" : 35, "name" : "Doduo", "speed" : 75, "types" : [ "normal", "flying" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1dae25337263280d0487"), "attack" : 45, "created" : "2013-11-03T15:05:41.445749", "defense" : 55, "height" : "11", "hp" : 65, "name" : "Seel", "speed" : 45, "types" : [ "water" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1dae25337263280d0489"), "attack" : 70, "created" : "2013-11-03T15:05:41.447897", "defense" : 80, "height" : "17", "hp" : 90, "name" : "Dewgong", "speed" : 70, "types" : [ "water", "ice" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1dae25337263280d0488"), "attack" : 110, "created" : "2013-11-03T15:05:41.443720", "defense" : 70, "height" : "18", "hp" : 60, "name" : "Dodrio", "speed" : 100, "types" : [ "normal", "flying" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1dae25337263280d048b"), "attack" : 95, "created" : "2013-11-03T15:05:41.456387", "defense" : 180, "height" : "15", "hp" : 50, "name" : "Cloyster", "speed" : 70, "types" : [ "water", "ice" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1daf25337263280d048d"), "attack" : 50, "created" : "2013-11-03T15:05:41.388462", "defense" : 40, "height" : "6", "hp" : 40, "name" : "Poliwag", "speed" : 90, "types" : [ "water" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1daf25337263280d048e"), "attack" : 65, "created" : "2013-11-03T15:05:41.390744", "defense" : 65, "height" : "10", "hp" : 65, "name" : "Poliwhirl", "speed" : 90, "types" : [ "water" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1dae25337263280d048c"), "attack" : 105, "created" : "2013-11-03T15:05:41.452237", "defense" : 75, "height" : "12", "hp" : 105, "name" : "Muk", "speed" : 50, "types" : [ "poison" ], "moves" : [ "desvio" ] }
+{ "_id" : ObjectId("564b1daf25337263280d0490"), "attack" : 20, "created" : "2013-11-03T15:05:41.396006", "defense" : 15, "height" : "9", "hp" : 25, "name" : "Abra", "speed" : 90, "types" : [ "psychic" ], "moves" : [ "desvio" ] }
+Type "it" for more
+
+> db.pokemons.count(query)
+571
+>
+
+```
+
+#7. Pesquisar todos pokemons que tenham o ataque investida E tenham a defesa não menor ou igual a 49.
+
+```
+>  var query = {$and: [ {moves: {$in:['investida']}}, {attack:{$not:{$lte:49}}} ]  }
+> db.pokemons.find(query)
+
+```
+
+#8. Remova todos os pokemons do tipo água e com attack menor que 50.
+
+```
+> var query = {$and:[ {types:/water/i},{attack:{$lt:50}} ] }
+> db.pokemons.remove(query)
+WriteResult({ "nRemoved" : 21 })
+
+```
