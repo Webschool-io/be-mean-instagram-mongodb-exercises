@@ -5,6 +5,7 @@ Autor: sostenesfreitas
 ##1 - Fazer uma query para o campo name utilizando explain para ver o resultado da busca:
 
 ``` 
+corsair(mongod-3.2.7) be-mean> var query = {"name":"Articuno"}
 corsair(mongod-3.2.7) be-mean> db.pokemons.find(query).explain('executionStats').executionStats
 
 {
@@ -55,6 +56,7 @@ corsair(mongod-3.2.7) be-mean> db.pokemons.createIndex(index)
 ##3 - Refazer a query para o campo name utilizando explain para ver o resultado da busca
 
 ```
+corsair(mongod-3.2.7) be-mean> var query = {"name":"Articuno"}
 corsair(mongod-3.2.7) be-mean> db.pokemons.find(query).explain('executionStats').executionStats
 
 
@@ -125,6 +127,7 @@ corsair(mongod-3.2.7) be-mean> db.pokemons.find(query).explain('executionStats')
 ## 4 - Fazer uma query para dois campos juntos utilizando explain para ver o resultado da busca
 
 ```
+corsair(mongod-3.2.7) be-mean> var query = {"name":"Articuno","hp":90}
 corsair(mongod-3.2.7) be-mean> db.pokemons.find(query).explain('executionStats').executionStats
 {
   "executionSuccess": true,
