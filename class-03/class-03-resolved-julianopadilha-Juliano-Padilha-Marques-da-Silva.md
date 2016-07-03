@@ -3,6 +3,7 @@ Autor: Juliano Padilha
 
 ## Liste todos os Pokemons com a altura menor que 0.5
 
+```
 var query = {height: {$lt: 0.5}}
 db.pokemons.find(query)
 {
@@ -15,9 +16,11 @@ db.pokemons.find(query)
   "type": "Terra"
 }
 Fetched 1 record(s) in 1ms
+```
 
 ## Liste todos os Pokemons com a altura maior ou igual que 0.5
 
+```
 var query = {height: {$gte: 0.5}}
 db.pokemons.find(query)
 {
@@ -57,9 +60,11 @@ db.pokemons.find(query)
   "type": "Pobre"
 }
 Fetched 4 record(s) in 3ms
+```
 
 ## Liste todos os Pokemons com a altura menor ou igual que 0.5(0.9) e do tipo grama
 
+```
 var query = {$and: [{height: {$lte: 0.9}}, {type: "Grama"}]}
 db.pokemons.find(query)
 {
@@ -72,9 +77,11 @@ db.pokemons.find(query)
   "type": "Grama"
 }
 Fetched 1 record(s) in 1ms
+```
 
 ## Liste todos os Pokemons com o nome 'Pikachu'('Freelagem') ou com attack menor ou igual que 0.5
 
+```
 var query = {$or: [{name: 'Freelagem'}, {attack: {$lte: 0.5}}]}
 db.pokemons.find(query)
 {
@@ -87,9 +94,11 @@ db.pokemons.find(query)
   "type": "Pobre"
 }
 Fetched 1 record(s) in 1ms
+```
 
 ## Liste todos os Pokemons com attack maior ou igual que 48 e com height menor ou igual que 0.5
 
+```
 var query = {$and: [{attack: {$gte: 48}}, {height: {$lte: 0.5}}]}
 db.pokemons.find(query)
 {
@@ -111,3 +120,4 @@ db.pokemons.find(query)
   "type": "Terra"
 }
 Fetched 2 record(s) in 2ms
+```
