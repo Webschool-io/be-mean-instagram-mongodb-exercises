@@ -1,5 +1,3 @@
-thiago@localthiago:~/dev/workspace-thiago/mongodb$ 
-
 # MongoDB - Aula 01 - Exercício
 autor: Thiago R. M. Bitencourt
 
