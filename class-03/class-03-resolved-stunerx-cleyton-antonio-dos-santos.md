@@ -15,14 +15,15 @@ db.pokemons.find(query)
   "height": 0.3
 }
 
-
+```
 ## Listando Pokemons com altura maior ou igual que 0.5 (Passo 2)
+
 ```
 var query = {height: {$gte: 0.5}}
 db.pokemons.find(query)
 
 {
-  "_id": ObjectId("57643a3ad7ba6d657212bc44"),
+  "_id:" ObjectId("57643a3ad7ba6d657212bc44"),
   "name": "Metapod",
   "description": "The shell covering this Pokémon's body is as hard as an iron slab",
   "type": "inseto",
@@ -54,7 +55,7 @@ db.pokemons.find(query)
   "height": 0.8
 }
 Fetched 4 record(s) in 2ms
-
+```
 
 ## Listando Pokemons com altura menor ou igual que 0.5 E do tipo grama (ou a sua escolha) (Passo 3)
 ```
@@ -71,12 +72,12 @@ db.pokemons.find(query)
   "height": 0.3
 }
 
-
+```
 ## Listando Pokemons com o name 'Pìkachu' OU com attack menor ou igual que 2 (Passo 4)
 ```
 var query = {$or: [{name: "Pikachu"}, {attack: {$lte: 2}}]}
 db.pokemons.find(query)
-```
+
 {
   "_id": ObjectId("57643a3ad7ba6d657212bc44"),
   "name": "Metapod",
@@ -102,7 +103,7 @@ db.pokemons.find(query)
   "height": 0.5
 }
 Fetched 3 record(s) in 2ms
-
+```
 ## Listando Pokemons com attack maior ou igual que 2 E com altura menor ou igual que 0.5 (Passo 5)
 ```
 var query = {$and: [{attack: {$gte: 2}}, {height: {$lte: 0.5}}]}
@@ -125,7 +126,5 @@ db.pokemons.find(query)
   "height": 0.5
 }
 Fetched 2 record(s) in 1ms
-
-
 
 ```
