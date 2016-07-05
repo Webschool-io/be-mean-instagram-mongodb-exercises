@@ -71,7 +71,7 @@ db.pokemons.find(query)
   "attack": 2,
   "height": 0.3
 }
-
+ 
 ```
 ## Listando Pokemons com o name 'Pìkachu' OU com attack menor ou igual que 2 (Passo 4)
 ```

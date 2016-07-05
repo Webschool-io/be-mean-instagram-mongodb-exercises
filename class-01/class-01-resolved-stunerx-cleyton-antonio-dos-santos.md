@@ -13,7 +13,7 @@ autor: Cleyton Antonio dos Santos
 	2016-06-17T02:54:36.857-0300 imported 25359 objects
 
 ```
-
+ 
 ## Contando os restaurantes
 
 ```
