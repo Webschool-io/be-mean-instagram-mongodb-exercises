@@ -3,15 +3,14 @@ autor: Karoline Lemos
 
 ## Criando a database
 
-...
-
+```
 mongo be-mean-pokemons
 
-...
+```
 
 ## Listando Databases  
 
-...
+```
 
 show dbs
 
@@ -21,19 +20,19 @@ be-mean-instagram → 0.000GB
 
 local             → 0.000GB
 
-...
+```
 
 ## Listando Collections  
 
-...
+```
 
 show collections
 
-...
+```
 
 ## Cadastrando Pokemons  
 
-...
+```
 
 var pokemon4 = {name: 'Psyduck', description: 'Patinho legal', type: 'água', attack: 30, height: 0.8}  
 
@@ -95,11 +94,11 @@ WriteResult({
 
 })  
 
-...
+```
 
 ## Listagem dos Pokemons  
 
-...
+```
 
 db.pokemons.find()  
 
@@ -169,11 +168,11 @@ db.pokemons.find()
   "height": 1.2  
 }  
 
-... 
+``` 
 
 ## Buscando Pokemon  
 
-...
+```
 
 var busca = {name: 'Clefairy'}  
 
@@ -195,11 +194,11 @@ poke
   "height": 0.6  
 }  
 
-... 
+``` 
 
 ## Atualizando a descrição  
 
-...
+```
 
 poke.description = 'Fofuuuuuuurinha' 
 
@@ -217,5 +216,5 @@ WriteResult({
   "nModified": 1  
 })  
 
-...
+```
 
