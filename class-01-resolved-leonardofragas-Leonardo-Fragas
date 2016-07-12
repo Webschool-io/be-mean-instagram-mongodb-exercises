@@ -1,0 +1,23 @@
+#MongoDB - Aula 01 - Exercício
+autor: Leonardo Fragas
+
+##Importando os restaurantes
+
+```
+sudo mongoimport -d be-mean -c restaurantes --drop --file restaurantes.json
+2016-07-10T13:52:00.301-0300	connected to: localhost
+2016-07-10T13:52:00.315-0300	dropping: be-mean.restaurantes
+2016-07-10T13:52:03.107-0300	[#####################...] be-mean.restaurantes10.3 MB/11.4 MB (90.8%)
+2016-07-10T13:52:03.450-0300	[########################] be-mean.restaurantes11.4 MB/11.4 MB (100.0%)
+2016-07-10T13:52:03.450-0300	imported 25359 documents
+
+```
+
+Contando os restaurantes
+
+```
+> db.restaurantes.find({}).count()
+25359
+
+
+```
