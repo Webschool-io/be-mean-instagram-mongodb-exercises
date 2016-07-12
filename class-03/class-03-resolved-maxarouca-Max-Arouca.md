@@ -3,7 +3,8 @@ autor: Max Arouca
 
 ## Liste todos Pokemons com a altura **menor que** 0.5;
 
-````
+````javascript
+
 var query = {height: {$lt : 0.5}}
 MacMax(mongod-3.0.7) be-mean-pokemons> query
 {
@@ -13,12 +14,13 @@ MacMax(mongod-3.0.7) be-mean-pokemons> query
 }
 MacMax(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
 Fetched 0 record(s) in 137ms
-````
 
+````
 
 ## Liste todos Pokemons com a altura **maior ou igual que** 0.5
 
-````
+````javascript
+
 be-mean-pokemons> var query = {height: {$gte : 0.5}}
 MacMax(mongod-3.0.7) be-mean-pokemons> query
 {
@@ -73,7 +75,8 @@ Fetched 5 record(s) in 4ms
 
 ## Liste todos Pokemons com a altura **menor ou igual que** 0.5 **E** do tipo grama
 
-````
+````javascript
+
 var query = {$and: [{height: {$lte: 0.5}},{type: {$eq: 'grass'}}]}
 MacMax(mongod-3.0.7) be-mean-pokemons> query
 {
@@ -97,7 +100,8 @@ Fetched 0 record(s) in 0ms
 
 ## Liste todos Pokemons com o name `Pikachu` **OU** com attack **menor ou igual que** 0.5
 
-````
+````javascript
+
 MacMax(mongod-3.0.7) be-mean-pokemons> var query = {$or: [{name: 'Pikachu'}, {attack: {$lte: 0.5}}]}
 MacMax(mongod-3.0.7) be-mean-pokemons> query
 {
@@ -119,7 +123,8 @@ Fetched 0 record(s) in 0ms
 
 ## Liste todos Pokemons com o attack **MAIOR OU IGUAL QUE** 48 **E** com  height **menor ou igual que** 0.5
 
-````
+````javascript
+
 MacMax(mongod-3.0.7) be-mean-pokemons> var query = {$and: [{attack: {$gte: 48}}, {height: {$lte: 0.5}}]}
 MacMax(mongod-3.0.7) be-mean-pokemons> query
 {
@@ -139,5 +144,4 @@ MacMax(mongod-3.0.7) be-mean-pokemons> query
 MacMax(mongod-3.0.7) be-mean-pokemons> db.pokemons.find(query)
 Fetched 0 record(s) in 0ms
 
-```
-
+````
