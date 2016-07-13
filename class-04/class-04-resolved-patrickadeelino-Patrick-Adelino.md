@@ -193,7 +193,7 @@ pontocom-Aspire-4252(mongod-3.2.7) be-mean-pokemons> db.pokemons.find(query)
 
 ```
 
-5. Pesquisar todos os pokemons que possuam os ataques que voce adicionou, escolha seu pokemon favorito.
+## 5. Pesquisar todos os pokemons que possuam os ataques que voce adicionou, escolha seu pokemon favorito.
 
 ```
 pontocom-Aspire-4252(mongod-3.2.7) be-mean-pokemons> var query = {moves: {$ne: null}}
@@ -269,7 +269,7 @@ Fetched 5 record(s) in 13ms
 
 ```
 
-6. Pesquisar todos os pokemons que não sao do tipo 'elétrico'
+## 6. Pesquisar todos os pokemons que não sao do tipo 'elétrico'
 
 ```
 pontocom-Aspire-4252(mongod-3.2.7) be-mean-pokemons> var query = {type: {$ne: "elétrico"}}
@@ -344,7 +344,7 @@ pontocom-Aspire-4252(mongod-3.2.7) be-mean-pokemons> db.pokemons.find(query)
 Fetched 5 record(s) in 12ms
 ```
 
-7. Pesquisar todos os pokemons que tenham o ataque investida E tenham a defesa não menor ou igual a 49
+## 7. Pesquisar todos os pokemons que tenham o ataque investida E tenham a defesa não menor ou igual a 49
 
 ```
 pontocom-Aspire-4252(mongod-3.2.7) be-mean-pokemons> var query = {$and: [{moves: {$in: ["Investida"]}}, {defense: {$gte: 49}}]}
@@ -413,7 +413,7 @@ pontocom-Aspire-4252(mongod-3.2.7) be-mean-pokemons> db.pokemons.find(query)
 Fetched 5 record(s) in 16ms
 ```
 
-8. Remova todos os pokemons do tipo água e com o attack menor que 50
+## 8. Remova todos os pokemons do tipo água e com o attack menor que 50
 ```
 pontocom-Aspire-4252(mongod-3.2.7) be-mean-pokemons> var query = {$and: [{type: "água"},{attack: {$lt: 50}}]}
 pontocom-Aspire-4252(mongod-3.2.7) be-mean-pokemons> query
