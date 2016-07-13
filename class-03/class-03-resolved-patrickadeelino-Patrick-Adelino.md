@@ -93,7 +93,7 @@ pontocom-Aspire-4252(mongod-3.2.7) be-mean-pokemons> db.pokemons.find(query)
 Fetched 0 record(s) in 93ms
 ```
 
-## 4. Liste todos Pokemons com o name 'Pìkachu' OU com attack menor ou igual que 0.5 (Passo
+## 4. Liste todos Pokemons com o name 'Pìkachu' OU com attack menor ou igual que 0.5
 
 ```
 pontocom-Aspire-4252(mongod-3.2.7) be-mean-pokemons> var query = {$or: [{name: "Pikachu"}, {attack: {$lte: 0.5}}]}
