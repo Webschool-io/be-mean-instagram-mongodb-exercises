@@ -15,6 +15,7 @@ autor: Wesley vieira
 	switched to db be-mean
 	> db.restaurantes.find({}).count()
 	25359
+	
 
 
 
