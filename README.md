@@ -1,3 +1,7 @@
+# Como escrever?
+
+Para escrever sua resposta deverá ser no formato Markdown, caso você não conheça **POR FAVOR LEIA** [markdowntutorial.com](http://www.markdowntutorial.com/), pois se você não enviar com a formatação correta para códigos eu não podderei aceitar seu exercício.
+
 # [Grupo do Telegram](https://telegram.me/joinchat/BJ_gtwdXoK18LvFTTBxDKw)
 Para entrar no grupo oficial do Be mean no Telegram basta seguir o link https://telegram.me/joinchat/BJ_gtwdXoK18LvFTTBxDKw, lembrando que só é permitido postagens e discussões sobre dúvidas e/ou assuntos pertinentes ao curso, aquele que não respeitar essas regras será banido.
 
