@@ -194,7 +194,6 @@ Valdir(c:\mongodb\bin\mongod.exe-3.2.8) be-mean-pokemons> db.pokemons.find(query
         "desvio"
     ]
 }
-
 ```
 
 
@@ -265,6 +264,7 @@ Valdir(c:\mongodb\bin\mongod.exe-3.2.8) be-mean-pokemons> db.pokemons.find(query
         "investida"
     ]
 }
+
 ```
 
 # 5. Pesquisar **todos** os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.
