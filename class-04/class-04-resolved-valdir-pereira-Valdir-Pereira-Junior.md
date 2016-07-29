@@ -2,7 +2,7 @@
 autor: Valdir Pereira Júnior
 
 #1. **Adicionar** 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
-
+```
 var poke = ["Pikachu", "Squirtle", "Bulbassauro", "Charmander"]
 
 var query = {"name": {"$in": poke } }
@@ -70,10 +70,10 @@ Valdir(c:\mongodb\bin\mongod.exe-3.2.8) be-mean-pokemons> db.pokemons.find(query
     ]
 }
 
-
+```
 
 # 2. **Adicionar** 1 movimento em todos os pokemons: `desvio`.
-
+```
 var query = {}
 var options = {multi: true}
 var mod = {$push: {moves: 'desvio'} }
@@ -195,11 +195,11 @@ Valdir(c:\mongodb\bin\mongod.exe-3.2.8) be-mean-pokemons> db.pokemons.find(query
     ]
 }
 
-
+```
 
 
 # 3. **Adicionar** o pokemon `AindaNaoExisteMon` caso ele não exista com todos os dados com o valor `null` e a descrição: "Sem maiores informações
-
+```
 var query = {name: /AindaNaoExisteMon/i}
 var mod = {
 	$set: {
@@ -231,10 +231,10 @@ Valdir(c:\mongodb\bin\mongod.exe-3.2.8) be-mean-pokemons> db.pokemons.find(query
     "attack": null,
     "height": null
 }
-
+```
 
 # 4. Pesquisar todos o pokemons que possuam o ataque `investida` e mais um que você adicionou, escolha seu pokemon favorito.
-
+```
 var query = {moves: {$in: ['investida', 'Fogo Flamejante']}}
 
 Valdir(c:\mongodb\bin\mongod.exe-3.2.8) be-mean-pokemons> db.pokemons.find(query)
@@ -265,11 +265,10 @@ Valdir(c:\mongodb\bin\mongod.exe-3.2.8) be-mean-pokemons> db.pokemons.find(query
         "investida"
     ]
 }
-
-
+```
 
 # 5. Pesquisar **todos** os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.
-
+```
 var query = {moves: {$in: ['Fogo Flamejante', 'cabeçada']}}
 
 db.pokemons.find(query)
@@ -297,10 +296,10 @@ db.pokemons.find(query)
         "Fogo Flamejante"
     ]
 }
+```
 
-
-6. Pesquisar **todos** os pokemons que não são do tipo `elétrico`.
-
+# 6. Pesquisar **todos** os pokemons que não são do tipo `elétrico`.
+```
 var query = {type: {$not: /electric/i}}
 Valdir(c:\mongodb\bin\mongod.exe-3.2.8) be-mean-pokemons> db.pokemons.find(query)
 {
@@ -411,10 +410,10 @@ Valdir(c:\mongodb\bin\mongod.exe-3.2.8) be-mean-pokemons> db.pokemons.find(query
         "investida"
     ]
 }
-
+```
 
 # 7. Pesquisar **todos** pokemons que tenham o ataque `investida` **E** tenham a defesa **não menor ou igual** a 49.
-
+```
 var action = {moves: {$in: ['investida']}}
 
 var defense = {attack: {$lte: 49} }
@@ -437,10 +436,10 @@ db.pokemons.find(query)
         "investida"
     ]
 }
-
+```
 
 # 8. Remova **todos** os pokemons do tipo água e com attack menor que 50.
-
+```
 var type = {type:'água'}
 
 var query = {$and: [attack, type] }
@@ -468,3 +467,4 @@ WriteResult({
  var query = {type: 'água'}
 Valdir(c:\mongodb\bin\mongod.exe-3.2.8) be-mean-pokemons> db.pokemons.find(query)
 Fetched 0 record(s) in 1ms
+```
