@@ -3,28 +3,28 @@
 
 ###Criar database chamada be-mean-pokemons###
 
-`
+```
 use be-mean-pokemons
 switched to db be-mean-
-`
+```
 
 ###Listagem de todas dbs###
 
-`
+```
 > show dbs
 be-mean            0.005GB
 be-mean-instagram  0.000GB
 local              0.000GB
-`
+```
 
 ###Listagem de todas as collections###
-`
+```
 show collections
-`
+```
 
 ###Criar cinco pokemons###
 
-`
+```
 > db.pokemons.insert({name:"Bulbasaur", description: "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.", attack: 300, defense:200, height:0.7})
 
 WriteResult({ "nInserted" : 1 })
@@ -46,10 +46,10 @@ WriteResult({ "nInserted" : 1 })
 
 > db.pokemons.insert({name:"Farfetch'd", description: "Farfetch'd is always seen with a stalk from a plant of some sort. Apparently, there are good stalks and bad stalks. This Pokémon has been known to fight with others over stalks.", attack: 300, defense:300, height:0.8})
 WriteResult({ "nInserted" : 1 })
-`
+```
 ###Listar todos os pokemons###
 
-`
+```
 > db.pokemons.find().pretty()
 {
   "_id" : ObjectId("5783d060dc6eb212ff9808e7"),
@@ -116,10 +116,10 @@ WriteResult({ "nInserted" : 1 })
   "height" : 0.8
 }
 > 
-`
+```
 
 ###Buscar um pokemon###
-`
+```
 > var query = {name:"Squirtle"}
 > var poke = db.pokemons.findOne(query)
 > poke
@@ -132,14 +132,14 @@ WriteResult({ "nInserted" : 1 })
   "height" : 0.5
 }
 > 
-`
+```
 
 ###Editar a description do pokemon escolhido###
-`
+```
 > poke.description = "Squirtle's shell is not merely used for protection"
 Squirtle's shell is not merely used for protection
 > poke.description = "Pokemon que lança liquido venenoso"
 Pokemon que lança liquido venenoso
 > db.pokemons.save(poke)
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
-`
+```

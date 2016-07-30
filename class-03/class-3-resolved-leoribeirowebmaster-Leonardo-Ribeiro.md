@@ -6,7 +6,7 @@
 
 ###Liste todos os pokemons com a altura menor que 0.5###
 
-`
+```
 be-mean-pokemons> db.pokemons.find({"height":{$lt: 0.5}});
 {
   "_id": ObjectId("5783d0dcdc6eb212ff9808eb"),
@@ -17,11 +17,11 @@ be-mean-pokemons> db.pokemons.find({"height":{$lt: 0.5}});
   "height": 0.3
 }
 Fetched 1 record(s) in 4ms
-`
+```
 
 ###Liste todos os Pokemons com a altura maior ou igual que 0.5###
 
-`
+```
 be-mean-pokemons> db.pokemons.find({"height":{$gte: 0.5}});
 {
   "_id": ObjectId("5783d060dc6eb212ff9808e7"),
@@ -98,7 +98,7 @@ be-mean-pokemons> db.pokemons.find(query)
 Fetched 1 record(s) in 1ms
 ```
 
-4 #Liste todos os Pokemons com o name "Pikachu" ou com attack menor ou igual que 0.5;
+###Liste todos os Pokemons com o name "Pikachu" ou com attack menor ou igual que 0.5###
 ```
 be-mean-pokemons> var query = {$or: [{name:"Pikachu"},{attack: {$lte: 0.5}}]};
 be-mean-pokemons> db.pokemons.find(query)
@@ -112,10 +112,10 @@ be-mean-pokemons> db.pokemons.find(query)
   "type": "ELECTRIC"
 }
 Fetched 1 record(s) in 1ms
-`
+```
 
 ###Liste todos os Pokemons com o attack maior ou igual que 48 e com height menor ou igual que 0.5###
-`
+```
 be-mean-pokemons> var query = {$and: [{attack:{$gte: 48}},{height: {$lte: 0.5}}]};
 be-mean-pokemons> db.pokemons.find(query)
 {
@@ -145,4 +145,4 @@ be-mean-pokemons> db.pokemons.find(query)
   "type": "grass"
 }
 Fetched 3 record(s) in 1ms
-`
+```
