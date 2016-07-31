@@ -3,7 +3,7 @@
 
 # MongoDB - Aula 05 - Exercício
 User: https://github.com/valdir-pereira
-Autor: Seu Nome
+Autor: Valdir Pereira Júnior
 
 # Importar as collections `restaurantes` e `pokemons`.
 
