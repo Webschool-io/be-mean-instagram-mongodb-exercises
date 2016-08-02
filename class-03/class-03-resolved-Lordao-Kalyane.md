@@ -193,4 +193,4 @@ Mc-Pro-Kalyane-Lordao(mongod-3.2.6) be-mean-pokemons> db.pokemons.find(query)
   "height": 0.4
 }
 Fetched 2 record(s) in 12ms
-``
+```
