@@ -74,8 +74,7 @@ Fetched 4 record(s) in 3ms
 ## 3. Liste todos Pokemons com a altura menor ou igual que 0.5 E do tipo grama
 
 ```
-insta-mongodb(mongod-3.2.8) mean-pokemon> var query = { $and : [ { 'height': {$lte: 0.5} } , { 'type' : 'grama' 
-} ] } 
+insta-mongodb(mongod-3.2.8) mean-pokemon> var query = { $and : [ { 'height': {$lte: 0.5} } , { 'type' : 'grama' } ] } 
 insta-mongodb(mongod-3.2.8) mean-pokemon> query
 {
   "$and": [
@@ -96,8 +95,7 @@ Fetched 0 record(s) in 1ms
 ## 4. Liste todos Pokemons com o name `Pikachu` OU com attack menor ou igual que 0.5
 
 ```
-insta-mongodb(mongod-3.2.8) mean-pokemon> var query = { $or : [ {'name': 'Pikachu'},  { 'attack': {$lte: 0.5} } 
- ] }
+insta-mongodb(mongod-3.2.8) mean-pokemon> var query = { $or : [ {'name': 'Pikachu'},  { 'attack': {$lte: 0.5} }  ] }
 insta-mongodb(mongod-3.2.8) mean-pokemon> query
 {
   "$or": [
@@ -118,8 +116,7 @@ Fetched 0 record(s) in 0ms
 ## 5. Liste todos Pokemons com o attack MAIOR OU IGUAL QUE 48 E com  height menor ou igual que 0.5
 
 ```
-insta-mongodb(mongod-3.2.8) mean-pokemon> var query = { $or : [ {'attack': {$gte: 48}},  { 'height': {$lte: 0.5}
- } ]}
+insta-mongodb(mongod-3.2.8) mean-pokemon> var query = { $or : [ {'attack': {$gte: 48}},  { 'height': {$lte: 0.5} } ]}
 insta-mongodb(mongod-3.2.8) mean-pokemon> query
 {
   "$or": [
