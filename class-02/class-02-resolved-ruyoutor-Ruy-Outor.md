@@ -1,18 +1,18 @@
 # MongoDB - Aula 02 - Exercício
 ```
-autor: **Ruy Outor**
+autor: Ruy Outor
 ```
 
 ## 1 - Criando o database be-mean-pokemons
 
-```
+```js
 > use be-mean-pokemons
 switched to db be-mean-pokemons
 ```
 
 ## 2 - Listando databases
 
-```
+```js
 > show dbs
 be-mean            0.063GB
 be-mean-instagram  0.063GB
@@ -22,7 +22,7 @@ local              0.031GB
 
 ## 3 - Listando as coleções
 
-```
+```js
 > show collections
 pokemons
 system.indexes
@@ -30,7 +30,7 @@ system.indexes
 
 ## 4 - Inserindo pokemons
 
-```
+```js
 > bulbasaur = {"name" : "Bulbasaur", "description" : "Pode ser visto cochilando sob luz solar intensa. Há uma semente na sua parte traseira", "type" : "grama", "attack" : 30, "height" : 0.7, "defense" : 20}
 {
         "name" : "Bulbasaur",
@@ -89,7 +89,7 @@ system.indexes
 
 ## 5 - Listando pokemons
 
-```
+```js
 > db.pokemons.find({})
 { "_id" : ObjectId("57a8df3dbf3e449cf3f49709"), "name" : "Bulbasaur", "description" : "Pode ser visto cochilando sob luz solar intensa. Há uma semente na sua parte traseira", "type" : "grama", "attack" : 30, "height" : 0.7, "defense" : 20 }
 { "_id" : ObjectId("57a8e0f1bf3e449cf3f4970a"), "name" : "Charmander", "description" : "A chama que arde na ponta da sua cauda é uma indicação das suas emoções", "type" : "fogo", "attack" : 30, "height" : 0.6, "defense" : 20 }
@@ -100,7 +100,7 @@ system.indexes
 
 ## 6 - Buscando um pokemon
 
-```
+```js
 > query = {"name": "Charizard"}
 { "name" : "Charizard" }
 > var poke = db.pokemons.findOne(query)
@@ -118,7 +118,7 @@ system.indexes
 
 ## 7 - Alterando a descrição
 
-```
+```js
 > poke.description = "Bicho feio que voa e cospe fogo em adversários mais fortes"
 Bicho feio que voa e cospe fogo em adversários mais fortes
 > bd.pokemons.save(poke)

@@ -1,13 +1,13 @@
 # MongoDB - Aula 03 - Exercício
 ```
-autor: **Ruy Outor**
+autor: Ruy Outor
 ```
 
 **estou usando o arquivo JSON de pokemons que foi disponibilizado no repositório**
 
 ## Liste todos Pokemons com a altura **menor que** 0.5
 
-```
+```js
 > var query = {height: {$lt: 0.5}}
 {"_id" : ObjectId("564b1dad25337263280d047e"), "attack" : 30, "created" : "2013-11-03T15:05:41.285736", "defense" : 35, "height" : 0.3, "hp" : 45, "name" : "Caterpie", "speed" : 45, "types" : [ "bug" ] }
 { "_id" : ObjectId("564b1dad25337263280d0481"), "attack" : 60, "created" : "2013-11-03T15:05:41.310402", "defense" : 30, "height" : 0.3, "hp" : 40, "name" : "Spearow", "speed" : 70, "types" : [ "normal", "flying" ] }
@@ -18,7 +18,7 @@ autor: **Ruy Outor**
 
 ## Liste todos Pokemons com a altura **maior ou igual que** 0.5
 
-```
+```js
 > var query = {height: {$gte: 0.5}}
 { "_id" : ObjectId("564b1db025337263280d0499"), "attack" : 57, "created" : "2013-11-03T15:05:41.328297", "defense" : 40, "height" : 0.5, "hp" : 46, "name" : "Nidoran-m", "speed" : 50, "types" : [ "poison" ] }
 { "_id" : ObjectId("564b1dad25337263280d047a"), "attack" : 52, "created" : "2013-11-03T15:05:41.271082", "defense" : 43, "height" : 0.6, "hp" : 39, "name" : "Charmander", "speed" : 65, "types" : [ "fire" ] }
@@ -31,7 +31,7 @@ autor: **Ruy Outor**
 
 ## Liste todos Pokemons com a altura **menor ou igual que** 0.5 **E** do tipo grama
 
-```
+```js
 > var query = {$and: [{height: {$lte: 0.5}}, {types: /grass/}]}
 { "_id" : ObjectId("564b1db525337263280d04c5"), "attack" : 50, "created" : "2013-11-03T15:05:41.348691", "defense" : 55, "height" : 0.5, "hp" : 45, "name" : "Oddish", "speed" : 30, "types" : [ "poison", "grass" ] }
 { "_id" : ObjectId("564b1db525337263280d04c8"), "attack" : 70, "created" : "2013-11-03T15:05:41.356361", "defense" : 55, "height" : 0.3, "hp" : 35, "name" : "Paras", "speed" : 25, "types" : [ "bug", "grass" ] }
@@ -43,7 +43,7 @@ autor: **Ruy Outor**
 
 ## Liste todos Pokemons com o name `Pikachu` **OU** com attack **menor ou igual que** 0.5
 
-```
+```js
 > var query = {$or: [{attack: {$lte: 0.5}}, {name: /pikachu/i}]}
 { "_id" : ObjectId("564b1dad25337263280d047e"), "attack" : 30, "created" : "2013-11-03T15:05:41.285736", "defense" : 35, "height" : 0.3, "hp" : 45, "name" : "Caterpie", "speed" : 45, "types" : [ "bug" ] }
 { "_id" : ObjectId("564b1dad25337263280d047f"), "attack" : 20, "created" : "2013-11-03T15:05:41.288107", "defense" : 55, "height" : 0.7, "hp" : 50, "name" : "Metapod", "speed" : 30, "types" : [ "bug" ] }
@@ -55,7 +55,7 @@ autor: **Ruy Outor**
 
 ## Liste todos Pokemons com o attack **MAIOR OU IGUAL QUE** 48 **E** com  height **menor ou igual que** 0.5
 
-```
+```js
 > var query = {$and: [{attack: {$gte: 48}}, {height: {$lte: 0.5}}]}
 { "_id" : ObjectId("564b1dad25337263280d0481"), "attack" : 60, "created" : "2013-11-03T15:05:41.310402", "defense" : 30, "height" : 0.3, "hp" : 40, "name" : "Spearow", "speed" : 70, "types" : [ "normal", "flying" ] }
 { "_id" : ObjectId("564b1dad25337263280d0479"), "attack" : 56, "created" : "2013-11-03T15:05:41.305777", "defense" : 35, "height" : 0.3, "hp" : 30, "name" : "Rattata", "speed" : 72, "types" : [ "normal" ] }

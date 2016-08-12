@@ -1,13 +1,13 @@
 # MongoDB - Aula 04 - Exercício
 ```
-autor: **Ruy Outor**
+autor: Ruy Outor
 ```
 
 **estou usando o arquivo JSON de pokemons que foi disponibilizado no repositório**
 
 ## **Adicionar** 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander
 
-```
+```js
 var query = {name: /pikachu/i}
 var mod = {$pushAll: {moves: ['bola de trovão','cuspe a distância']}}
 db.pokemons.update(query, mod)
@@ -113,7 +113,7 @@ db.pokemons.find(query)
 
 ## **Adicionar** 1 movimento a todos os pokemons: `desvio`.
 
-```
+```js
 var query = {}
 var mod = {$pushAll: {moves: ['desvio']}}
 var options = {multi: true}
@@ -182,7 +182,7 @@ db.pokemons.find(query)
 
 ## **Adicionar** o pokemon `NaoExisteMon` caso ele não exista com todos os dados com o valor `null` e a descrição: "Sem maiores informações"
 
-```
+```js
 var query = {name: /NaoExisteMon/i}
 var options = {upsert: true}
 var mod = {$set: {active: true}, $setOnInsert: {name: "NaoExisteMon", attack: null, defense: null, height: null, description: "Sem mais informações"}}
@@ -198,7 +198,7 @@ WriteResult({
 
 ## Pesquisar todos os pokemons que possuam o ataque `investida` e mais um que você adicionou, escolha seu pokemon favorito.
 
-```
+```js
 var query = {moves: {$in: ['investida','bolha de sabão']}}
 db.pokemons.find(query)
 {
@@ -280,7 +280,7 @@ db.pokemons.find(query)
 
 ## Pesquisar **todos** os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.
 
-```
+```js
 var query = {moves: {$all: ['hidro bola','bolha de sabão']}}
 db.pokemons.find(query)
 {
@@ -308,7 +308,7 @@ db.pokemons.find(query)
 
 ## Pesquisar **todos** os pokemons que não são do tipo `elétrico`
 
-```
+```js
 var query = {type: {$nin: ['electric']}}
 db.pokemons.find(query)
 {
@@ -687,7 +687,7 @@ Fetched 20 record(s) in 8ms -- More[true]
 
 ## Pesquisar **todos** os pokemons que tenham o ataque `investida` **E** tenham a defesa **não menor ou igual** a 49
 
-```
+```js
 var query = {$and: [{moves: {$in: ['investida']}}, {defense: {$not:{$lte: 49}}}]}
 db.pokemons.find(query)
 {
@@ -768,7 +768,7 @@ db.pokemons.find(query)
 
 ## Remova **todos** os pokemons do tipo àgua e com attack menor que 50.
 
-```
+```js
 var query = {$and: [{types: {$in: ['water']}}, {attack: {$lt: 50}}]}
 db.pokemons.remove(query)
 Removed 21 record(s) in 4ms

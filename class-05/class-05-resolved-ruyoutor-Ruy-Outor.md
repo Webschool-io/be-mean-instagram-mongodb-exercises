@@ -6,7 +6,7 @@ autor: Ruy Outor
 
 # 1. Importar as collections restaurantes e pokemons
 
-```
+```js
 $ mongoimport --db be-mean --collection restaurantes --drop --file MongoDB/be-mean-instagram-mongodb/exercises/restaurantes.json 
 2016-08-12T01:10:44.135+0000    connected to: localhost
 2016-08-12T01:10:44.136+0000    dropping: be-mean.restaurantes
@@ -20,7 +20,7 @@ mongoimport --db be-mean --collection pokemons --drop --file MongoDB/be-mean-ins
 
 # 2. Distinct por `cuisine` na restaurantes.
 
-```
+```js
 db.restaurantes.distinct('cuisine').sort()
 [
   "Afghan",
@@ -113,7 +113,7 @@ db.restaurantes.distinct('cuisine').sort()
 
 # 3. Distinct por `types` na pokemons
 
-```
+```js
 db.pokemons.distinct('types')
 [
   "fire",
@@ -139,7 +139,7 @@ db.pokemons.distinct('types')
 
 # 4. As primeiras 3 páginas com .limit() e .skip() de pokemons (5 em 5)
 
-```
+```js
 db.pokemons.find({}, {name: 1, _id: 0}).limit(5).skip(5 * 0)
 {
   "name": "Charmander"
@@ -197,7 +197,7 @@ Fetched 5 record(s) in 1ms
 
 # 5. Group ou Aggregate contando a quantidade de pokemons de cada tipo
 
-```
+```js
 db.pokemons.group({
     initial: {total: 0},
     reduce: function(curr, result){
@@ -238,7 +238,7 @@ db.pokemons.group({
 
 # 6. Realizar 3 counts na pokemons.
 
-```
+```js
 db.pokemons.count({})
 610
 
