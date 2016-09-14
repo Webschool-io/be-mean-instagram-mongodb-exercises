@@ -1,5 +1,5 @@
 # MongoDB - Aula 01 - Exercício
-autor: SEU NOME
+autor: Luiz Fernando da Silva Cieslak
 
 ## Importando os restaurantes
 
