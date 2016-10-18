@@ -2,12 +2,15 @@
 autor: Bruno Motta Azevedo do Nascimento
 
 ## Importando os restaurantes
+```
 MacBook-Pro:aula-01 Bruno$ mongoimport --db be-mean --collection restaurantes --drop --file restaurantes.json
 2016-10-18T02:02:57.783-0200	connected to: localhost
 2016-10-18T02:02:57.783-0200	dropping: be-mean.restaurantes
 2016-10-18T02:02:58.592-0200	imported 25359 documents
+```
 
 ## Contando os restaurantes
+```
 MacBook-Pro:aula-01 Bruno$ mongo
 MongoDB shell version: 3.2.10
 connecting to: test
@@ -20,4 +23,5 @@ switched to db be-mean
 MacBook-Pro(mongod-3.2.10) be-mean> db.restaurantes.find({}).count()
 25359
 MacBook-Pro(mongod-3.2.10) be-mean> 
+```
 
