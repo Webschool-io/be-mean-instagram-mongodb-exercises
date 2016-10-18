@@ -1,7 +1,7 @@
 # MongoDB - Aula 05 - Exercício
 
 **autor**: Willian Alberto Lauber
-**data**: Date.
+**data**: Date.now()
 
 ## 1. Importar as collections restaurantes e pokemons
 
