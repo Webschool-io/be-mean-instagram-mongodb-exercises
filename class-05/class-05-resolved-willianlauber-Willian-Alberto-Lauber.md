@@ -1,45 +1,44 @@
 # MongoDB - Aula 05 - Exercício
 
-autor: William Bewzenko de Jesus
+**autor**: Willian Alberto Lauber
+**data**: Date.
 
 ## 1. Importar as collections restaurantes e pokemons
 
-```
-$ mongoimport --db be-mean --collection pokemons --drop --file Documents/projects/pokemons.json 
-2016-01-13T20:02:16.546-0200  connected to: localhost
-2016-01-13T20:02:16.546-0200  dropping: be-mean.pokemons
-2016-01-13T20:02:16.701-0200  imported 610 documents
-$ mongoimport --db be-mean --collection restaurantes --drop --file Documents/projects/restaurantes.json 
-2016-01-13T20:02:42.475-0200  connected to: localhost
-2016-01-13T20:02:42.475-0200  dropping: be-mean.restaurantes
-2016-01-13T20:02:43.467-0200  imported 25359 documents
+```sql
+mongoimport --host 127.0.0.1 --db be-mean-pokemons --collection pokemons --drop --file '/home/lc/Downloads/MongoDb-ebook-6e4007d73d5b25b7218ef0b9c4f8eb700bb5f104/src/data/pokemons.json'
+connected to: 127.0.0.1
+2016-10-18T16:19:30.845-0200 dropping: be-mean-pokemons.pokemons
+2016-10-18T16:19:31.006-0200 check 9 610
+2016-10-18T16:19:31.024-0200 imported 610 objects
 
 ```
 
 
 ## 2. Distinct por `cuisine` na restaurantes
 
-```
-> db.restaurantes.distinct("cuisine")
+```sql
+lubuntu(mongod-2.6.10) be-mean> db.restaurantes.distinct('cuisine')
 [
-  "Hamburgers",
   "Bakery",
+  "Hamburgers",
+  "Irish",
   "American ",
   "Jewish/Kosher",
   "Delicatessen",
   "Ice Cream, Gelato, Yogurt, Ices",
   "Chinese",
-  "Irish",
+  "Other",
   "Chicken",
   "Turkish",
   "Caribbean",
   "Donuts",
+  "Sandwiches/Salads/Mixed Buffet",
   "Bagels/Pretzels",
   "Continental",
   "Pizza",
-  "Sandwiches/Salads/Mixed Buffet",
-  "Steak",
   "Italian",
+  "Steak",
   "Polish",
   "Latin (Cuban, Dominican, Puerto Rican, South & Central American)",
   "German",
@@ -73,7 +72,6 @@ $ mongoimport --db be-mean --collection restaurantes --drop --file Documents/pro
   "Barbecue",
   "Egyptian",
   "English",
-  "Other",
   "Sandwiches",
   "Portuguese",
   "Indonesian",
@@ -112,19 +110,19 @@ $ mongoimport --db be-mean --collection restaurantes --drop --file Documents/pro
 
 ## 3. Distinct por `types` na pokemons
 
-```
-> db.pokemons.distinct('types')
+```sql
+lubuntu(mongod-2.6.10) be-mean-pokemons> db.pokemons.distinct('types')
 [
-  "fire",
   "normal",
+  "fire",
   "water",
   "bug",
   "flying",
   "poison",
   "electric",
   "steel",
-  "ghost",
   "ice",
+  "ghost",
   "fighting",
   "psychic",
   "grass",
@@ -138,8 +136,35 @@ $ mongoimport --db be-mean --collection restaurantes --drop --file Documents/pro
 
 ## 4. As primeiras 3 páginas com .limit() e .skip() de pokemons (5 em 5)
 
-```
-> db.pokemons.find().limit(5).skip(5 * 0)
+```js
+lubuntu(mongod-2.6.10) be-mean-pokemons> db.pokemons.find().limit(5).skip(0*5)
+
+{
+  "_id": ObjectId("564b1dad25337263280d0479"),
+  "attack": 56,
+  "created": "2013-11-03T15:05:41.305777",
+  "defense": 35,
+  "height": "3",
+  "hp": 30,
+  "name": "Rattata",
+  "speed": 72,
+  "types": [
+    "normal"
+  ]
+}
+{
+  "_id": ObjectId("564b1dad25337263280d047a"),
+  "attack": 52,
+  "created": "2013-11-03T15:05:41.271082",
+  "defense": 43,
+  "height": "6",
+  "hp": 39,
+  "name": "Charmander",
+  "speed": 65,
+  "types": [
+    "fire"
+  ]
+}
 {
   "_id": ObjectId("564b1dad25337263280d047b"),
   "attack": 64,
@@ -154,16 +179,16 @@ $ mongoimport --db be-mean --collection restaurantes --drop --file Documents/pro
   ]
 }
 {
-  "_id": ObjectId("564b1dad25337263280d0479"),
-  "attack": 56,
-  "created": "2013-11-03T15:05:41.305777",
-  "defense": 35,
-  "height": "3",
-  "hp": 30,
-  "name": "Rattata",
-  "speed": 72,
+  "_id": ObjectId("564b1dad25337263280d047c"),
+  "attack": 63,
+  "created": "2013-11-03T15:05:41.280718",
+  "defense": 80,
+  "height": "10",
+  "hp": 59,
+  "name": "Wartortle",
+  "speed": 58,
   "types": [
-    "normal"
+    "water"
   ]
 }
 {
@@ -179,6 +204,10 @@ $ mongoimport --db be-mean --collection restaurantes --drop --file Documents/pro
     "water"
   ]
 }
+Fetched 5 record(s) in 2ms
+
+lubuntu(mongod-2.6.10) be-mean-pokemons> db.pokemons.find().limit(5).skip(1*5)
+
 {
   "_id": ObjectId("564b1dad25337263280d047e"),
   "attack": 30,
@@ -205,21 +234,6 @@ $ mongoimport --db be-mean --collection restaurantes --drop --file Documents/pro
     "bug"
   ]
 }
-Fetched 5 record(s) in 5ms
-> db.pokemons.find().limit(5).skip(5 * 1)
-{
-  "_id": ObjectId("564b1dad25337263280d047c"),
-  "attack": 63,
-  "created": "2013-11-03T15:05:41.280718",
-  "defense": 80,
-  "height": "10",
-  "hp": 59,
-  "name": "Wartortle",
-  "speed": 58,
-  "types": [
-    "water"
-  ]
-}
 {
   "_id": ObjectId("564b1dad25337263280d0480"),
   "attack": 45,
@@ -232,19 +246,6 @@ Fetched 5 record(s) in 5ms
   "types": [
     "flying",
     "bug"
-  ]
-}
-{
-  "_id": ObjectId("564b1dad25337263280d047a"),
-  "attack": 52,
-  "created": "2013-11-03T15:05:41.271082",
-  "defense": 43,
-  "height": "6",
-  "hp": 39,
-  "name": "Charmander",
-  "speed": 65,
-  "types": [
-    "fire"
   ]
 }
 {
@@ -275,22 +276,11 @@ Fetched 5 record(s) in 5ms
     "bug"
   ]
 }
-Fetched 5 record(s) in 3ms
-> db.pokemons.find().limit(5).skip(5 * 2)
-{
-  "_id": ObjectId("564b1dae25337263280d0484"),
-  "attack": 35,
-  "created": "2013-11-03T15:05:41.435237",
-  "defense": 70,
-  "height": "3",
-  "hp": 25,
-  "name": "Magnemite",
-  "speed": 45,
-  "types": [
-    "steel",
-    "electric"
-  ]
-}
+
+Fetched 5 record(s) in 6ms
+
+lubuntu(mongod-2.6.10) be-mean-pokemons> db.pokemons.find().limit(5).skip(2*5)
+
 {
   "_id": ObjectId("564b1dae25337263280d0483"),
   "attack": 65,
@@ -303,6 +293,20 @@ Fetched 5 record(s) in 3ms
   "types": [
     "normal",
     "flying"
+  ]
+}
+{
+  "_id": ObjectId("564b1dae25337263280d0484"),
+  "attack": 35,
+  "created": "2013-11-03T15:05:41.435237",
+  "defense": 70,
+  "height": "3",
+  "hp": 25,
+  "name": "Magnemite",
+  "speed": 45,
+  "types": [
+    "steel",
+    "electric"
   ]
 }
 {
@@ -346,111 +350,106 @@ Fetched 5 record(s) in 3ms
     "water"
   ]
 }
-Fetched 5 record(s) in 3ms
+Fetched 5 record(s) in 2ms
+
 ```
 
 ## 5 . Group ou Aggregate contando a quantidade de pokemons de cada tipo
 
-```
-> db.pokemons.aggregate([{$unwind: '$types'}, {$group: {_id: '$types',count: {$sum: 1}}}])
+```jslubuntu(mongod-2.6.10) be-mean-pokemons> db.pokemons.aggregate([{$unwind : '$types'}, {$group: { _id :  '$types', count : {$sum : 1}}}])
 {
-  "waitedMS": NumberLong("0"),
   "result": [
     {
-      "_id": "grass",
-      "count": 75
+      "_id": "dragon",
+      "count": 20
     },
     {
       "_id": "dark",
       "count": 38
     },
     {
-      "_id": "fairy",
-      "count": 28
-    },
-    {
       "_id": "psychic",
       "count": 62
-    },
-    {
-      "_id": "fire",
-      "count": 47
     },
     {
       "_id": "fighting",
       "count": 38
     },
     {
-      "_id": "normal",
-      "count": 78
+      "_id": "ice",
+      "count": 24
     },
     {
       "_id": "rock",
       "count": 46
     },
     {
-      "_id": "water",
-      "count": 105
-    },
-    {
-      "_id": "ghost",
-      "count": 34
-    },
-    {
-      "_id": "flying",
-      "count": 77
-    },
-    {
-      "_id": "ground",
-      "count": 51
-    },
-    {
-      "_id": "poison",
-      "count": 54
-    },
-    {
-      "_id": "ice",
-      "count": 24
-    },
-    {
-      "_id": "dragon",
-      "count": 20
-    },
-    {
-      "_id": "bug",
-      "count": 61
+      "_id": "electric",
+      "count": 40
     },
     {
       "_id": "steel",
       "count": 37
     },
     {
-      "_id": "electric",
-      "count": 40
+      "_id": "fairy",
+      "count": 28
+    },
+    {
+      "_id": "poison",
+      "count": 54
+    },
+    {
+      "_id": "grass",
+      "count": 75
+    },
+    {
+      "_id": "flying",
+      "count": 77
+    },
+    {
+      "_id": "bug",
+      "count": 61
+    },
+    {
+      "_id": "water",
+      "count": 105
+    },
+    {
+      "_id": "fire",
+      "count": 47
+    },
+    {
+      "_id": "ghost",
+      "count": 34
+    },
+    {
+      "_id": "ground",
+      "count": 51
+    },
+    {
+      "_id": "normal",
+      "count": 78
     }
   ],
   "ok": 1
 }
-```
-
-## 6. Realizar 3 counts na pokemons. .count -- todos
 
 ```
-> db.pokemons.count()
+
+## 6. Realizar 3 counts na pokemons.
+
+```sql
+
+
+lubuntu(mongod-2.6.10) be-mean-pokemons> db.pokemons.count()
 610
 
-```
 
-## 6. Realizar 3 counts na pokemons. .count -- só tipo fogo
-
-```
-> db.pokemons.count({types: 'fire'})
+lubuntu(mongod-2.6.10) be-mean-pokemons> db.pokemons.count({'types' : 'fire'})
 47
-```
 
-## 6. Realizar 3 counts na pokemons. .count -- só de quantos tem a defesa maior que 70
-
-```
-> db.pokemons.count({defense: {$gt: 70}})
+lubuntu(mongod-2.6.10) be-mean-pokemons> db.pokemons.count({defense : {$gt : 70}}
+... )
 250
 ```
