@@ -2,11 +2,8 @@
 	autor: Pedro Germano
 
 ## Selecionando o banco be-mean-pokemons criado na aula 02 (passo 1)
-
 pedrogermano-X58A-UD3R(mongod-3.2.10) test> use be-mean-pokemons
 switched to db be-mean-pokemons
-
-	
 pedrogermano-X58A-UD3R(mongod-3.2.10) be-mean-pokemons>
 
 ## Listagem de todos os Pokemons com a altura menor que 0.5 (passo 2)
@@ -39,7 +36,7 @@ pedrogermano-X58A-UD3R(mongod-3.2.10) be-mean-pokemons>
 {
   "_id": ObjectId("580bf9d61211a6a96a3acddc"),
   "name": "Jigglypuff",
-  "description": "Este pokemon usa suas habilidades de cantar precisamente no     comprimento da onda fazendo com que os seus inimigos caiam no sono",
+  "description": "Este pokemon usa suas habilidades de cantar precisamente no comprimento da onda fazendo com que os seus inimigos caiam no sono",
   "type": "fada",
   "attack": "45",
   "height": "5",
@@ -83,9 +80,8 @@ pedrogermano-X58A-UD3R(mongod-3.2.10) be-mean-pokemons>
 
 
 ## Listagem de todos os Pokemons com o nome Pikachu ou com attack menor ou igual que 0.5 (passo 5)
-
-	pedrogermano-X58A-UD3R(mongod-3.2.10) be-mean-pokemons> var query = {$or:[{name:'Pikachu'},{attack:{$lte: "0.5"}}]}
-    pedrogermano-X58A-UD3R(mongod-3.2.10) be-mean-pokemons> db.pokemons.find(query)
+pedrogermano-X58A-UD3R(mongod-3.2.10) be-mean-pokemons> var query = {$or:[{name:'Pikachu'},{attack:{$lte: "0.5"}}]}
+pedrogermano-X58A-UD3R(mongod-3.2.10) be-mean-pokemons> db.pokemons.find(query)
 {
   "_id": ObjectId("580bf7881211a6a96a3acdda"),
   "name": "Pikachu",
@@ -98,9 +94,8 @@ Fetched 1 record(s) in 1ms
 pedrogermano-X58A-UD3R(mongod-3.2.10) be-mean-pokemons> 
 
 ## Listagem de todos os Pokemons com o attack maior ou igual que 48 E com height menor ou igual que 0.5 (passo 6)
-
-	pedrogermano-X58A-UD3R(mongod-3.2.10) be-mean-pokemons> var query = {$and:[{attack:{$gte:"48"}},{height:{$lte:"0.5"}}]}
-    pedrogermano-X58A-UD3R(mongod-3.2.10) be-mean-pokemons> db.pokemons.find(query)
+    pedrogermano-X58A-UD3R(mongod-3.2.10) be-mean-pokemons> var query = {$and:[{attack:{$gte:"48"}},{height:{$lte:"0.5"}}]}
+    pedrogermano(mongod-3.2.10) be-mean-pokemons> db.pokemons.find(query)
 {
   "_id": ObjectId("580bf7881211a6a96a3acdda"),
   "name": "Pikachu",
