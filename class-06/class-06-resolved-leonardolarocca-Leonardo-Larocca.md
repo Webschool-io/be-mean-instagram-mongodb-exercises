@@ -1,4 +1,4 @@
-## Buscando pokemon pelo nome sem Index
+## Buscando pokemon pelo nome sem Index.
 ```
 Leonardo-Larocca(mongod-3.4.0) be-mean> db.pokemons.find({"name":"Pikachu"}).explain('executionStats').executionStats.totalDocsExamined
 610
