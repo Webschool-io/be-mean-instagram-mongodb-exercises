@@ -5,6 +5,7 @@ logs
 
 # Mac
 .DS_Store
+.swp
 
 # Runtime data
 pids
