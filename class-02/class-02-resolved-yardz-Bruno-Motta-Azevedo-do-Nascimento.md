@@ -8,8 +8,8 @@ MacBook-Pro:class-01 Bruno$ mongo
 MongoDB shell version: 3.2.10
 connecting to: test
 Mongo-Hacker 0.0.14
-Server has startup warnings: 
-2016-10-18T01:19:35.547-0200 I CONTROL  [initandlisten] 
+Server has startup warnings:
+2016-10-18T01:19:35.547-0200 I CONTROL  [initandlisten]
 2016-10-18T01:19:35.547-0200 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
 MacBook-Pro(mongod-3.2.10) test> use be-mean-pokemons
 switched to db be-mean-pokemons
