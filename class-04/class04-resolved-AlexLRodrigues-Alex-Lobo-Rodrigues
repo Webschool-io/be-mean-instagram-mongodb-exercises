@@ -1,0 +1,383 @@
+Exercicio 04 - MONGODB
+
+Alex Lobo de Oliveira Rodrigues
+
+1 - Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
+
+be-mean-pokemons> var query = {$or: [{name: /pikachu/i}, {name: /bulbasaur/i}, {name: /charmander/i}, {name: /squirtle/i}]}
+be-mean-pokemons> var mod = {$set: {"attacks": ["ataque1", "ataque2"]}
+be-mean-pokemons> var options = {multi: true}
+be-mean-pokemons> db.pokemons.update(query,mod,options)
+Updated 4 existing record(s) in 1ms
+
+2 - Adicionar 1 movimento em todos os pokemons: desvio.
+
+be-mean-pokemons> var query = {}
+be-mean-pokemons> var mod = {$set: {"move": ["desvio"]}}
+be-mean-pokemons> var options = {multi: true}
+be-mean-pokemons> db.pokemons.update(query,mod,options)
+Updated 5 existing record(s) in 1ms
+
+3 - Adicionar o pokemon AindaNaoExisteMon caso ele não exista com todos os dados com o valor null e a descrição: "Sem maiores informações".
+be-mean-pokemons> var query = {name: /naoExisteMon/i}
+be-mean-pokemons> var mod = {$setOnInsert: { name: "NaoExisteMon", attack: null, defense: null, height: null, description: "Sem maiores informacoes"}}
+be-mean-pokemons> var options = {upsert: true}
+be-mean-pokemons> db.pokemons.update(query,mod,options)
+Updated 1 new record(s) in 0ms
+
+Pesquisar todos o pokemons que possuam o ataque investida e mais um que você adicionou, escolha seu pokemon favorito.
+
+be-mean-pokemons> var query = {$or :[{attacks: {$in:[/investida/i]}},{name: /pikachu/i}]
+be-mean-pokemons> db.pokemons.find(query)
+{
+  "Height": "0.71m",
+  "_id": ObjectId("57bb5e71cbc5a07d78fd2043"),
+  "abilities": [
+    "Overgrow",
+    "Chlorophyll"
+  ],
+  "attack": 49,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": 49,
+  "move": [
+    "desvio"
+  ],
+  "name": "Bulbasaur",
+  "type": "Grass"
+}
+{
+  "Height": "0.61m",
+  "_id": ObjectId("57bb5e71cbc5a07d78fd2044"),
+  "abilities": [
+    "Blaze",
+    "Solar Power"
+  ],
+  "attack": 52,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": 43,
+  "move": [
+    "desvio"
+  ],
+  "name": "Charmander",
+  "type": "Fire"
+}
+{
+  "Height": "0.51m",
+  "_id": ObjectId("57bb5e71cbc5a07d78fd2045"),
+  "abilities": [
+    "Torrent",
+    "Rain Dish"
+  ],
+  "attack": 48,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": 65,
+  "move": [
+    "desvio"
+  ],
+  "name": "Squirtle",
+  "type": "Water"
+}
+{
+  "Height": "0.41m",
+  "_id": ObjectId("57bb5e71cbc5a07d78fd2046"),
+  "abilities": [
+    "Static",
+    "LIghtning Rod"
+  ],
+  "attack": 55,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": 40,
+  "move": [
+    "desvio"
+  ],
+  "name": "Pikachu",
+  "type": "Eletric"
+}
+{
+  "Height": "0.89m",
+  "_id": ObjectId("57bb5e71cbc5a07d78fd2047"),
+  "abilities": [
+    "Inner Focus",
+    "Synchronize",
+    "Magic Guard"
+  ],
+  "attack": 20,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": 15,
+  "move": [
+    "desvio"
+  ],
+  "name": "Abra",
+  "type": "Psychic"
+}
+{
+  "_id": ObjectId("57bb6440cbc5a07d78fd2048"),
+  "attack": null,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": null,
+  "description": "Sem maiores informacoes",
+  "height": null,
+  "name": "NaoExisteMon"
+}
+
+Pesquisar todos os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.
+be-mean-pokemons> var query = {$or :[{attacks: {$in:[/investida/i]}},{name: /pikachu/i}]
+be-mean-pokemons> db.pokemons.find(query)
+{
+  "Height": "0.71m",
+  "_id": ObjectId("57bb5e71cbc5a07d78fd2043"),
+  "abilities": [
+    "Overgrow",
+    "Chlorophyll"
+  ],
+  "attack": 49,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": 49,
+  "move": [
+    "desvio"
+  ],
+  "name": "Bulbasaur",
+  "type": "Grass"
+}
+{
+  "Height": "0.61m",
+  "_id": ObjectId("57bb5e71cbc5a07d78fd2044"),
+  "abilities": [
+    "Blaze",
+    "Solar Power"
+  ],
+  "attack": 52,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": 43,
+  "move": [
+    "desvio"
+  ],
+  "name": "Charmander",
+  "type": "Fire"
+}
+{
+  "Height": "0.51m",
+  "_id": ObjectId("57bb5e71cbc5a07d78fd2045"),
+  "abilities": [
+    "Torrent",
+    "Rain Dish"
+  ],
+  "attack": 48,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": 65,
+  "move": [
+    "desvio"
+  ],
+  "name": "Squirtle",
+  "type": "Water"
+}
+{
+  "Height": "0.41m",
+  "_id": ObjectId("57bb5e71cbc5a07d78fd2046"),
+  "abilities": [
+    "Static",
+    "LIghtning Rod"
+  ],
+  "attack": 55,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": 40,
+  "move": [
+    "desvio"
+  ],
+  "name": "Pikachu",
+  "type": "Eletric"
+}
+{
+  "Height": "0.89m",
+  "_id": ObjectId("57bb5e71cbc5a07d78fd2047"),
+  "abilities": [
+    "Inner Focus",
+    "Synchronize",
+    "Magic Guard"
+  ],
+  "attack": 20,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": 15,
+  "move": [
+    "desvio"
+  ],
+  "name": "Abra",
+  "type": "Psychic"
+}
+{
+  "_id": ObjectId("57bb6440cbc5a07d78fd2048"),
+  "attack": null,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": null,
+  "description": "Sem maiores informacoes",
+  "height": null,
+  "name": "NaoExisteMon"
+}
+
+Pesquisar todos os pokemons que não são do tipo elétrico.
+be-mean-pokemons> query = {type: {$ne: 'Eletric'}}
+{
+  "type": {
+    "$ne": "Eletric"
+  }
+}
+be-mean-pokemons> db.pokemons.find(query)
+{
+  "Height": "0.71m",
+  "_id": ObjectId("57bb5e71cbc5a07d78fd2043"),
+  "abilities": [
+    "Overgrow",
+    "Chlorophyll"
+  ],
+  "attack": 49,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": 49,
+  "move": [
+    "desvio"
+  ],
+  "name": "Bulbasaur",
+  "type": "Grass"
+}
+{
+  "Height": "0.61m",
+  "_id": ObjectId("57bb5e71cbc5a07d78fd2044"),
+  "abilities": [
+    "Blaze",
+    "Solar Power"
+  ],
+  "attack": 52,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": 43,
+  "move": [
+    "desvio"
+  ],
+  "name": "Charmander",
+  "type": "Fire"
+}
+{
+  "Height": "0.51m",
+  "_id": ObjectId("57bb5e71cbc5a07d78fd2045"),
+  "abilities": [
+    "Torrent",
+    "Rain Dish"
+  ],
+  "attack": 48,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": 65,
+  "move": [
+    "desvio"
+  ],
+  "name": "Squirtle",
+  "type": "Water"
+}
+{
+  "Height": "0.89m",
+  "_id": ObjectId("57bb5e71cbc5a07d78fd2047"),
+  "abilities": [
+    "Inner Focus",
+    "Synchronize",
+    "Magic Guard"
+  ],
+  "attack": 20,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": 15,
+  "move": [
+    "desvio"
+  ],
+  "name": "Abra",
+  "type": "Psychic"
+}
+{
+  "_id": ObjectId("57bb6440cbc5a07d78fd2048"),
+  "attack": null,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": null,
+  "description": "Sem maiores informacoes",
+  "height": null,
+  "name": "NaoExisteMon"
+}
+Fetched 5 record(s) in 2ms
+
+Pesquisar todos os pokemons que tenham o ataque investida E tenham a defesa não menor ou igual a 49.
+
+be-mean-pokemons> var query = {$and :[{attacks: {$in:[/investida/i]}},{ defense: {$gt:49}}]}
+be-mean-pokemons> db.pokemons.find(query)
+{
+  "Height": "0.51m",
+  "_id": ObjectId("57bb5e71cbc5a07d78fd2045"),
+  "abilities": [
+    "Torrent",
+    "Rain Dish"
+  ],
+  "attack": 48,
+  "attacks": [
+    "Investida",
+    "ataque2"
+  ],
+  "defense": 65,
+  "move": [
+    "desvio"
+  ],
+  "name": "Squirtle",
+  "type": "Water"
+}
+Fetched 1 record(s) in 1ms
+
+Remova todos os pokemons do tipo água e com attack menor que 50.
+
+be-mean-pokemons> var query = {$and :[{type: /water/i},{ attack: {$lt:50}}]}
+be-mean-pokemons> db.pokemons.remove(query)
+Removed 1 record(s) in 1ms
+
+

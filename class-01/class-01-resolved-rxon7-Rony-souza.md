@@ -1,4 +1,4 @@
- # MongoDB - Aula 01 - Exercício
+# MongoDB - Aula 01 - Exercício
 autor: Ronyclay Barreto de Souza
 
 ## Importando os restaurantes
