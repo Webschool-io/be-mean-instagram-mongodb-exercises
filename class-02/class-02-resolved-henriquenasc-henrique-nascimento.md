@@ -3,29 +3,24 @@ Autor: Henrique Nascimento
 
 #Criar database chamada be-mean-pokemons
     
-    ```
     use be-mean-pokemons
     switched to db be-mean-pokemons
-
-    ```
+    
 #Listagem de todas as dbs
 
-    ```
+    
     show dbs
     be-mean           → 0.005GB
     be-mean-instagram → 0.005GB
     local             → 0.000GB
-    ```
+    
 
 #Listagem das collections
 
-    ```
     show collections
-    ```
 
 #Criar pelo menos 5 pokemons
-
-    ```
+    
     var pokedex = [
 	{'name':'Blastoise', 'description':'Pokemon aguatico evolução Nº 009 do Squirtle', 'type':'Water', 'attack':40, 'height':1.6, 'defense': 40},
 	{'name':'Batterfree', 'description':'Pokemon voador', 'type':'Bug', 'attack':20, 'height':1.1, 'defense': 20},
@@ -47,10 +42,10 @@ Autor: Henrique Nascimento
     "upserted": [ ]
     })
 
-    ```
+    
 #Listando os pokemons
 
-    ```
+    
     be-mean-pokemons> db.pokemon.find()
     {
     "_id": ObjectId("58627adeaa3029422af2f9fb"),
@@ -98,11 +93,8 @@ Autor: Henrique Nascimento
     "defense": 30
     }
     Fetched 5 record(s) in 1ms
-
-    ```
+   
 #Buscando Pokemon pelo nome
-
-    ```
 
     be-mean-pokemons> var busca = {name:'Abra'}
     be-mean-pokemons> var poke = db.pokemon.findOne(busca)
@@ -117,11 +109,9 @@ Autor: Henrique Nascimento
     "defense": 10
     }
 
-    ```
 
 #Alterando a descrição do pokemon escolhido pelo nome
 
-    ```
     be-mean-pokemons> poke.description = 'Pokemon que literalmente usa a cabeça'
     Pokemon que literalmente usa a cabeça
 
@@ -136,4 +126,4 @@ Autor: Henrique Nascimento
     "defense": 10
     }
 
-    ```
+    
