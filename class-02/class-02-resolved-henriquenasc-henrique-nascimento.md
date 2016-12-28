@@ -115,6 +115,8 @@ Autor: Henrique Nascimento
     be-mean-pokemons> poke.description = 'Pokemon que literalmente usa a cabeça'
     Pokemon que literalmente usa a cabeça
 
+    be-mean-pokemons> db.pokemon.save(poke)
+
     be-mean-pokemons> poke
     {
     "_id": ObjectId("58627adeaa3029422af2f9fd"),
