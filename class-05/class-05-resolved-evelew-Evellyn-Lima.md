@@ -1,7 +1,7 @@
 # MongoDb - Aula 05 - Exercício
 # autor: Evellyn Lima
 
-# 1. Importar as collections restaureantes e pokemons
+## 1. Importar as collections restaureantes e pokemons
 > mongoimport --db be-mean --collection restaurantes --drop --file C:/Users/evellyn/Documents/estudo/restaurantes.json
 
 ```
@@ -17,7 +17,7 @@
 2016-12-15T12:53:37.288-0200    imported 25359 documents
 ```
 
-# 2. Distinct por `cuisine` na restaurantes
+## 2. Distinct por `cuisine` na restaurantes
 > db.restaurantes.distinct('cuisine')
 ```
 [
@@ -109,7 +109,7 @@
 ]
 ```
 
-# 3. Distinct por `types` na pokemons
+## 3. Distinct por `types` na pokemons
 > db.pokemons.distinct('types')
 ```
 [
@@ -134,7 +134,7 @@
 ]
 ```
 
-# 4. As primeiras 3 páginas com .limit() e .skip() de pokemons (5 em 5)
+## 4. As primeiras 3 páginas com .limit() e .skip() de pokemons (5 em 5)
 > db.pokemons.find().limit(5).skip(5 * 0)
 ```
 {
@@ -350,7 +350,7 @@
 }
 ```
 
-# 5. Group ou Aggregate contando a quantidade de pokemons
+## 5. Group ou Aggregate contando a quantidade de pokemons
 
 > db.pokemons.aggregate({
 	$group: {
@@ -363,21 +363,21 @@
 { "_id" : {  }, "total" : 610 }
 ```
 
-# 6. Realizar 3 counts na pokemons
-## count --- todos
+## 6. Realizar 3 counts na pokemons
+### count --- todos
 > db.pokemons.count()
 
 ```
 610
 ```
 
-## count -- só tipo fogo
+### count -- só tipo fogo
 > db.pokemons.count({types: 'fire'})
 ```
 47
 ```
 
-## count -- só de quantos tem a defesa maior que 70
+### count -- só de quantos tem a defesa maior que 70
 > db.pokemons.count({defense: {$gt: 70} })
 ```
 250
