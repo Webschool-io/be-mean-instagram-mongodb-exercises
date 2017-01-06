@@ -1,15 +1,15 @@
 # MongoDb - Aula 06 - Exercício
 # autor: Evellyn Lima
 
-## criar dois indices, um simples e 1 composto.
-### simples
+## Criar dois índices, um simples e 1 composto.
+### Simples
 > db.pokemons.createIndex({ name: 1 })
 
-### composto
+### Composto
 > db.pokemons.createIndex({ name: 1 , speed: 1})
 
-##fazer quatro buscas no banco.
-###1 simples sem indice
+## Fazer quatro buscas no banco.
+### 1 simples sem indice
 ```
 > db.pokemons.find({ name: "Rattata" }).explain('executionStats')
 {
@@ -40,7 +40,7 @@
         }
 }
 ```
-###a mesma busca simples porem com indice
+### A mesma busca simples porem com índice
 ```
 > db.pokemons.find({ name: "Rattata" }).explain('executionStats')
 {
@@ -103,7 +103,7 @@
 }
 ```
 
-###uma busca composta sem indice
+### Uma busca composta sem índice
 ```
 > db.pokemons.find({ $and: [{ name: "Rattata"}, { speed: {$gt: 70} } ]}).explain('executionStats')
 {
@@ -143,7 +143,7 @@
         }
 }
 ```
-###a mesma busca composto com indice  
+### A mesma busca composto com índice  
 ```
 > db.pokemons.find({ $and: [{ name: "Rattata"}, { speed: {$gt: 70} } ]}).explain('executionStats')
 
