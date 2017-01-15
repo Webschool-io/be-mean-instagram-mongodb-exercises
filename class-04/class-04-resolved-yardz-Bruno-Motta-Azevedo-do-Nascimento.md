@@ -584,7 +584,7 @@ Fetched 9 record(s) in 5ms
 
 ## Pesquisar **todos** os pokemons que tenham o ataque `investida` **E** tenham a defesa **não menor ou igual** a 49.
 ```js
-db.pokemons.find({moves:{$in:[/investida/i]},defense:{$lte:49}});
+db.pokemons.find({moves:{$in:[/investida/i]},defense:{$gt:49}});
 {
   "_id": ObjectId("5852fc32dce593b3bfc2ada0"),
   "active": false,
