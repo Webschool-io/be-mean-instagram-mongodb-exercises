@@ -1,5 +1,5 @@
 # MongoDB - Aula 01 - Exercício
-autor: Matheus Torres pereira
+autor: Matheus Torres Pereira
 
 ## Importando os restaurantes
 
