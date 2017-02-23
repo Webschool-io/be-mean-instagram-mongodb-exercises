@@ -4,26 +4,7 @@ autor: Matheus Torres Pereira
 ## 1. Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbasauro e Charmander
 
 ```
-ubuntu(mongod-3.2.12) be-mean-pokemons> var query = {$or: [{name: 'Pikachu'},{name: 'Squirtle'},{name: 'Bulbasaur'},{name: 'Charmander'}]}
-
-ubuntu(mongod-3.2.12) be-mean-pokemons> query
-{
-  "$or": [
-    {
-      "name": "Pikachu"
-    },
-    {
-      "name": "Squirtle"
-    },
-    {
-      "name": "Bulbasaur"
-    },
-    {
-      "name": "Charmander"
-    }
-  ]
-}
-
+ubuntu(mongod-3.2.12) be-mean-pokemons> var query = {name: {$in: ['Pikachu', 'Squirtle', 'Bulbasaur', 'Charmander']}}
 
 ubuntu(mongod-3.2.12) be-mean-pokemons> var mod = {$pushAll:{attacks: ['investida', 'cabeçada']}}
 
