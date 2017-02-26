@@ -9,6 +9,8 @@ switched to db be-mean-pokemons
 
 ## Liste quais databases você possui nesse servidor
 ```
+show dbs
+
 be-mean              0.005GB
 be-mean-instagram    0.000GB
 local                0.000GB
