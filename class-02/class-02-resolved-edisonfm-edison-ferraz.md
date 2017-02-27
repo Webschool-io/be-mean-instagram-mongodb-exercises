@@ -40,7 +40,7 @@ db.pokemons.find()
 { "_id" : ObjectId("58b3440f2a7c86562c34f785"), "name" : "Wartortle", "description" : "Pokemon de água", "attack" : 49, "defense" : 88, "height" : 1 }
 { "_id" : ObjectId("58b344132a7c86562c34f786"), "name" : "Metapod", "description" : "Pokemon Inseto", "attack" : 22, "defense" : 70, "height" : 0.7 }
 { "_id" : ObjectId("58b344172a7c86562c34f787"), "name" : "Beedrill", "description" : "Pokemon abelha venenosa", "attack" : 55, "defense" : 33, "height" : 1 }
-{ "_id" : ObjectId("58b3441a2a7c86562c34f788"), "name" : "Cosmoem", "description" : "Pokemon psiquico", "attack" : "77", "defense" : "77", "height" : "0,1" }
+{ "_id" : ObjectId("58b3441a2a7c86562c34f788"), "name" : "Cosmoem", "description" : "Pokemon psiquico", "attack" : 77, "defense" : 77, "height" : 0.1 }
 ```
 
 ## Busque o pokemons a sua escolha, pelo nome, e armazene-o em uma variável chamada `poke`
