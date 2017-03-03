@@ -18,11 +18,11 @@ Be-mean
 `oracy@oracy-X555UB:~/Documentos/be-mean-instagram-mongodb! mongo
 MongoDB shell version: 2.6.10
 connecting to: test
-> db.restaurantes.find({}).count()
+$ db.restaurantes.find({}).count()
 0
-> use bemean
+$ use bemean
 switched to db bemean
-> db.restaurantes.find({}).count()
+$ db.restaurantes.find({}).count()
 11282`
 
 # Contagem feita
