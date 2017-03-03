@@ -6,14 +6,10 @@ Be-mean
 
 # Importando os restaurantes:
 
-oracy@oracy-X555UB:~/Documentos/be-mean-instagram-mongodb! mongoimport --db bemean --collection restaurantes --drop --file data.json
-
-connected to: 127.0.0.1
-2017-03-03T14:05:18.973-0300 dropping: bemean.restaurantes
-exception:BSON representation of supplied JSON is too large: code FailedToParse: FailedToParse: Trailing number at end of input: offset:355 of:{"address": {"building": "80-08", "coord": [-73.789221, 40.726154], "street": "Surrey Place", "zipcode": "11432"}, "borough": "Queens", "cuisine": "Japanese", "grades": [{"date": {"$date": 1421020800000}, "grade": "A", "score": 11}, {"date": {"$date": 1385942400000}, "grade": "A", "score": 12}, {"date": {"$date": 1367020800000}, "grade": "A", "score": 1
-2017-03-03T14:05:19.547-0300 check 9 11282
-2017-03-03T14:05:19.547-0300 imported 11282 objects
-encountered 1 error(s)
+oracy@oracy-X555UB:~/Documentos/bemean/be-mean-instagram-mongodb! mongoimport --db bemean --collection restaurantes --drop --file data.json
+2017-03-03T18:23:15.072-0300	connected to: localhost
+2017-03-03T18:23:15.072-0300	dropping: bemean.restaurantes
+2017-03-03T18:23:15.596-0300	imported 11282 documents
 
 # Restaurantes importados
 
