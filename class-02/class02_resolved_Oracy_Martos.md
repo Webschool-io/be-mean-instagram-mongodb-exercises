@@ -7,7 +7,7 @@ Be-mean
 `switched to db be_mean_pokemons`
 
 # 2- Listar Databases
-`> show dbs`
+`show dbs`
 `bemean  0.078GB`
 `local   0.078GB`
 `test    0.078GB`
