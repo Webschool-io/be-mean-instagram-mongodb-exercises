@@ -1,19 +1,22 @@
 # MongoDB - Aula 01 - Exercício
-Autor: Oracy Martos
-Be-mean
+# Autor: Oracy Martos
+
+# Be-mean
 
 # 1- Criar Database
-`> use be_mean_pokemons`
-`switched to db be_mean_pokemons`
+`> use be_mean_pokemons
+switched to db be_mean_pokemons
 
 # 2- Listar Databases
-`show dbs`
-`bemean  0.078GB`
-`local   0.078GB`
-`test    0.078GB`
+```
+> show dbs
+bemean  0.078GB
+local   0.078GB
+test    0.078GB
+```
 
 # 3- Listar collections
-`> show collections
+> show collections
 empresas
 pokemons
 projects
@@ -23,11 +26,11 @@ teste
 users`
 
 # 4- Criar e inserir 5 pokemons
-`var pokemon = {'name':'Gardevoir', 'description':'Pokemon gay que voa', attack: 79, defense: 30, height: 0.5}`
-`var pokemon = {'name':'Mew', 'description':'Pokemon gay que voa também e rosa', attack: 150, defense: 130, height: 0.4}`
-`var pokemon = {'name':'Rayquaza', 'description':'Pokemon elétrico forte', attack: 160, defense: 100, height: 1.5}`
-`var pokemon = {'name':'Emboar', 'description':'Pokemon lança chamas', attack: 95, defense: 45, height: 0.7}`
-`var pokemon = {'name':'Golduck', 'description':'Pokemon evolução do pato chato', attack: 59, defense: 31, height: 0.6}`
+`var pokemon = {'name':'Gardevoir', 'description':'Pokemon gay que voa', attack: 79, defense: 30, height: 0.5}
+var pokemon = {'name':'Mew', 'description':'Pokemon gay que voa também e rosa', attack: 150, defense: 130, height: 0.4}
+var pokemon = {'name':'Rayquaza', 'description':'Pokemon elétrico forte', attack: 160, defense: 100, height: 1.5}
+var pokemon = {'name':'Emboar', 'description':'Pokemon lança chamas', attack: 95, defense: 45, height: 0.7}
+var pokemon = {'name':'Golduck', 'description':'Pokemon evolução do pato chato', attack: 59, defense: 31, height: 0.6}
 
 
 > var pokemon = {'name':'Gardevoir', 'description':'Pokemon gay que voa', attack: 79, defense: 30, height: 0.5}
