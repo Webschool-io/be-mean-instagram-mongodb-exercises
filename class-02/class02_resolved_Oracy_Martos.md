@@ -3,14 +3,14 @@ Autor: Oracy Martos
 Be-mean
 
 # 1- Criar Database
-`> use be_mean_pokemons
-switched to db be_mean_pokemons`
+`> use be_mean_pokemons`
+`switched to db be_mean_pokemons`
 
 # 2- Listar Databases
-`> show dbs
-bemean  0.078GB
-local   0.078GB
-test    0.078GB
+`> show dbs`
+`bemean  0.078GB`
+`local   0.078GB`
+`test    0.078GB`
 
 # 3- Listar collections
 `> show collections
