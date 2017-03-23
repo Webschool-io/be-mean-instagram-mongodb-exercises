@@ -1,16 +1,19 @@
-1 - adicionar *** 2 ataques ao mesmo tempo para os seguintes pokemons: PIKACHU, SQUIRTLE, BULBASSAURO E CHARMANDER.
-
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var query = {$or: [{name: 'Pikachu'}, {name: 'Squirtle'}, {name:'Bulbassauro'}, {name: 'Charmander'}]}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var mod = {$pushAll: {moves:["ataque strong", "ataque de raio"]}}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var option = {multi: true}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.update(query, mod, option)
+##1 - adicionar *** 2 ataques ao mesmo tempo para os seguintes pokemons: PIKACHU, SQUIRTLE, BULBASSAURO E CHARMANDER.
+```
+> var query = {$or: [{name: 'Pikachu'}, {name: 'Squirtle'}, {name:'Bulbassauro'}, {name: 'Charmander'}]}
+> var mod = {$pushAll: {moves:["ataque strong", "ataque de raio"]}}
+> var option = {multi: true}
+> db.pokemons.update(query, mod, option)
 Updated 1 existing record(s) in 97ms
 WriteResult({
   "nMatched": 1,
   "nUpserted": 0,
   "nModified": 1
 })
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
+```
+
+```
+> db.pokemons.find(query)
 {
   "_id": ObjectId("58b4a420f5080f1ee3f50188"),
   "name": "Pikachu",
@@ -28,23 +31,26 @@ DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
   "active": false
 }
 Fetched 1 record(s) in 14ms
+```
 
 
 
-
-2 - adicionar *** 1 movimento em todos os pokemons: "desvio"
-
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var query = {}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var mod = {$set: {moves: ['desvio rapido']}}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var option = {multi: true}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.update(query, mod, option)
+##2 - adicionar *** 1 movimento em todos os pokemons: "desvio"
+```
+> var query = {}
+> var mod = {$set: {moves: ['desvio rapido']}}
+> var option = {multi: true}
+> db.pokemons.update(query, mod, option)
 Updated 9 existing record(s) in 3ms
 WriteResult({
   "nMatched": 9,
   "nUpserted": 0,
   "nModified": 9
 })
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find()
+```
+
+```
+> db.pokemons.find()
 {
   "_id": ObjectId("58b45b07be365e7ac9eb7c00"),
   "name": "Blastoise",
@@ -154,21 +160,21 @@ DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find()
   ]
 }
 Fetched 9 record(s) in 92ms
+```
 
 
 
 
 
-
-3 - adicionar *** o pokemon 'AindaNaoExisteMon' caso ele não exista com todos os dados com o valor 'null' e a descrição: 'sem maiores informações'
-
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> query
+##3 - adicionar *** o pokemon 'AindaNaoExisteMon' caso ele não exista com todos os dados com o valor 'null' e a descrição: 'sem maiores informações'
+```
+> query
 {
   "name": /AindaNaoExisteMon/i
 }
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var mod = {$setOnInsert: {name:"AindaNaoExisteMon", attack: null, defense: null, type: null, height: null, description: "Sem Maiores Informações"}}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var option = {upsert: true}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.update(query, mod, option)
+> var mod = {$setOnInsert: {name:"AindaNaoExisteMon", attack: null, defense: null, type: null, height: null, description: "Sem Maiores Informações"}}
+> var option = {upsert: true}
+> db.pokemons.update(query, mod, option)
 Updated 1 new record(s) in 180ms
 WriteResult({
   "nMatched": 0,
@@ -176,7 +182,7 @@ WriteResult({
   "nModified": 0,
   "_id": ObjectId("58b80fd98e88fab06253741a")
 })
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
+> db.pokemons.find(query)
 {
   "_id": ObjectId("58b80fd98e88fab06253741a"),
   "name": "AindaNaoExisteMon",
@@ -187,22 +193,25 @@ DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
   "description": "Sem Maiores Informações"
 }
 Fetched 1 record(s) in 10ms
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons>
+
+```
 
 
 
 
-4 Pesquisar todos os pokemons que possuam o ataque 'investida' e mais um que você adicionou, escolha seu pokemon favorito.
 
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var poke = {name: "GaviaonNon", type: 'fogo', attack: 99, defense:'bate asa', description:'Ave de rapina', moves:['voo rapido'], height:1.5, active: true}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.insert(poke)
+##4 Pesquisar todos os pokemons que possuam o ataque 'investida' e mais um que você adicionou, escolha seu pokemon favorito.
+```
+> var poke = {name: "GaviaonNon", type: 'fogo', attack: 99, defense:'bate asa', description:'Ave de rapina', moves:['voo rapido'], height:1.5, active: true}
+
+> db.pokemons.insert(poke)
 Inserted 1 record(s) in 45ms
 WriteResult({
   "nInserted": 1
 })
 
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var query = {$or:[ {moves:['investida']}, {name:"GaviaonNon"}]}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
+> var query = {$or:[ {moves:['investida']}, {name:"GaviaonNon"}]}
+> db.pokemons.find(query)
 {
   "_id": ObjectId("58b4a420f5080f1ee3f50188"),
   "name": "Pikachu",
@@ -239,16 +248,16 @@ DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
   "active": true
 }
 Fetched 2 record(s) in 27ms
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons>
+```
 
 
 
-5 pesquisar "todos" os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.
-
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var query = {}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var mod = {$pushAll:{moves:['bater']}}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var option = {multi:true}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.update(query, mod, option)
+##5 pesquisar "todos" os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.
+```
+> var query = {}
+> var mod = {$pushAll:{moves:['bater']}}
+> var option = {multi:true}
+> db.pokemons.update(query, mod, option)
 Updated 10 existing record(s) in 3ms
 WriteResult({
   "nMatched": 10,
@@ -256,8 +265,8 @@ WriteResult({
   "nModified": 10
 })
 
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var query = {$or:[{name:"Arbok"}, {moves:'bater'}]}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
+> var query = {$or:[{name:"Arbok"}, {moves:'bater'}]}
+> db.pokemons.find(query)
 {
   "_id": ObjectId("58b45b07be365e7ac9eb7c00"),
   "name": "Blastoise",
@@ -447,13 +456,13 @@ DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
   "active": true
 }
 Fetched 10 record(s) in 181ms
+```
 
 
-
-6 pesquisar "todos" que não são do tipo "elétrico".
-
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var query = {type: {$not: /eletrico/i}}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
+##6 pesquisar "todos" que não são do tipo "elétrico".
+```
+> var query = {type: {$not: /eletrico/i}}
+> db.pokemons.find(query)
 {
   "_id": ObjectId("58b45b07be365e7ac9eb7c00"),
   "name": "Blastoise",
@@ -643,12 +652,13 @@ DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
   "active": true
 }
 Fetched 10 record(s) in 178ms
+```
 
 
-
-7 pesquisar todos pokemons que tenham o ataque 'investida' ***E*** tenham a defesa ***Não menor ou igual*** a 49.
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var query =  {$and:[{moves:['investida']}, {defense:{$gte:49}}]}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
+##7 pesquisar todos pokemons que tenham o ataque 'investida' ***E*** tenham a defesa ***Não menor ou igual*** a 49.
+```
+> var query =  {$and:[{moves:['investida']}, {defense:{$gte:49}}]}
+> db.pokemons.find(query)
 {
   "_id": ObjectId("58b4a420f5080f1ee3f50188"),
   "name": "Pikachu",
@@ -674,8 +684,8 @@ DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
 }
 Fetched 1 record(s) in 10ms
 
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var query =  {$and:[{moves:['investida']}, {defense:{$not:{$lte:49}}}]}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
+> var query =  {$and:[{moves:['investida']}, {defense:{$not:{$lte:49}}}]}
+> db.pokemons.find(query)
 {
   "_id": ObjectId("58b4a420f5080f1ee3f50188"),
   "name": "Pikachu",
@@ -699,13 +709,13 @@ DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
   ],
   "active": false
 }
+```
 
+##8 Remova ***todos*** os pokemons do tipo água e com o attack menor que 50.
+```
 
-8 Remova ***todos*** os pokemons do tipo água e com o attack menor que 50.
-
-
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var query = {$and:[{type:'agua'}, {attack:{$lt:50}}]}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> query
+> var query = {$and:[{type:'agua'}, {attack:{$lt:50}}]}
+> query
 {
   "$and": [
     {
@@ -718,8 +728,9 @@ DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> query
     }
   ]
 }
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.remove(query)
+> db.pokemons.remove(query)
 Removed 0 record(s) in 65ms
 WriteResult({
   "nRemoved": 0
 })
+```

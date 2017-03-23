@@ -1,9 +1,9 @@
-'Exercício 3'
+##'Exercício 3'
 
-'Liste todos os pokemons menor que 0.5'
-
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var query = {height: {$lt: 0.5}}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
+##'Liste todos os pokemons menor que 0.5'
+```
+> var query = {height: {$lt: 0.5}}
+> db.pokemons.find(query)
 {
   "_id": ObjectId("58b45cbebe365e7ac9eb7c03"),
   "name": "Beedrill",
@@ -23,12 +23,12 @@ DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
   "height": 0.11
 }
 Fetched 2 record(s) in 15ms
+```
 
-
-'Liste todos os pokemons maior ou igual que 0.5'
-
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var query = {height: {$gte:0.5}}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
+##'Liste todos os pokemons maior ou igual que 0.5'
+```
+> var query = {height: {$gte:0.5}}
+> db.pokemons.find(query)
 {
   "_id": ObjectId("58b45b07be365e7ac9eb7c00"),
   "name": "Blastoise",
@@ -57,17 +57,19 @@ DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
   "height": 0.8
 }
 Fetched 3 record(s) in 27ms
+```
 
-
-'Liste todos os pokemons com altura menor ou igual a 0.5 E do tipo grama'
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var query = {$and: [{type:"grama"}, {height: {$lte:0.5}}]}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
+##'Liste todos os pokemons com altura menor ou igual a 0.5 E do tipo grama'
+```
+> var query = {$and: [{type:"grama"}, {height: {$lte:0.5}}]}
+> db.pokemons.find(query)
 Fetched 0 record(s) in 1ms
+```
 
-
-'EXTRA - Liste todos os pokemons com altura menor ou igual a 0.5 E do tipo VOA'
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var query = {$and: [{type:"voa"}, {height: {$lte:0.5}}]}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
+##'EXTRA - Liste todos os pokemons com altura menor ou igual a 0.5 E do tipo VOA'
+```
+> var query = {$and: [{type:"voa"}, {height: {$lte:0.5}}]}
+> db.pokemons.find(query)
 {
   "_id": ObjectId("58b45cbebe365e7ac9eb7c03"),
   "name": "Beedrill",
@@ -78,16 +80,19 @@ DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
   "height": 0.11
 }
 Fetched 1 record(s) in 10ms
+```
 
-'Liste todos os pokemons com o name Pikachu OU com attack menor ou igual que 0.5'
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var query = {$or: [{name:"Pikachu"}, {attack: {$lte: 0.5}}]}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
+##'Liste todos os pokemons com o name Pikachu OU com attack menor ou igual que 0.5'
+```
+> var query = {$or: [{name:"Pikachu"}, {attack: {$lte: 0.5}}]}
+> db.pokemons.find(query)
 Fetched 0 record(s) in 1ms
+```
 
-
-'EXTRA - Liste todos os pokemons com o name Beedril OU com attack menor ou igual que 0.5'
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var query = {$or: [{name:"Beedrill"}, {attack: {$lte: 79}}]}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
+##'EXTRA - Liste todos os pokemons com o name Beedril OU com attack menor ou igual que 0.5'
+```
+> var query = {$or: [{name:"Beedrill"}, {attack: {$lte: 79}}]}
+> db.pokemons.find(query)
 {
   "_id": ObjectId("58b45b07be365e7ac9eb7c00"),
   "name": "Blastoise",
@@ -125,12 +130,12 @@ DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
   "height": 0.11
 }
 Fetched 4 record(s) in 31ms
+```
 
-
-'Liste todos os pokemons com o attack MAIOR OU IGUAL QUE 48 E com height menor ou igual que 0.5'
-
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> var query = {$and: [{attack: {$gte:48}}, {height:{$lte: 0.5}}]}
-DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
+##'Liste todos os pokemons com o attack MAIOR OU IGUAL QUE 48 E com height menor ou igual que 0.5'
+```
+> var query = {$and: [{attack: {$gte:48}}, {height:{$lte: 0.5}}]}
+> db.pokemons.find(query)
 {
   "_id": ObjectId("58b45b07be365e7ac9eb7c00"),
   "name": "Blastoise",
@@ -159,3 +164,4 @@ DESKTOP-K2FFG0R(mongod-3.4.2) be-mean-pokemons> db.pokemons.find(query)
   "height": 0.11
 }
 Fetched 3 record(s) in 27ms
+```
