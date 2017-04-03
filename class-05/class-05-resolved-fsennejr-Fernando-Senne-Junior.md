@@ -1,3 +1,5 @@
+##Fernando Senne Junior
+
 ##1 import pokemons
 ``` 
 	C:\bin>mongoimport --db be-mean-pokemons --collection pokemons --file c:/pokemons.json
