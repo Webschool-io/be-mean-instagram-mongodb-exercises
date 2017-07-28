@@ -12,4 +12,5 @@ $ mongoimport --db be-mean --collection restaurantes --host=127.0.0.1 --drop --f
 ```
 db.restaurantes.find({}).count()
 25359
+
 ```
