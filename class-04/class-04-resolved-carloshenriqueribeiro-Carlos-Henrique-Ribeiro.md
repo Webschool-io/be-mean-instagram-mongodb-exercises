@@ -3,6 +3,7 @@ autor: Carlos Henrique Ribeiro
 
 ## **Adicionar** 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
 
+
 ```js
 var query = {name: /Pikachu/i}
 var mod = {$pushAll: {moves: ['Pancada de Raio', 'Descarga']}}
